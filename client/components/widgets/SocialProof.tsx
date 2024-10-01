@@ -10,9 +10,10 @@ const SocialProof = ({
   <WidgetWrapper
     id={id ? id : ""}
     hasBackground={hasBackground}
-    containerClass=""
+    containerClass="text-center"
   >
-    <div className="flex items-center justify-center gap-6 md:gap-9">
+    Hecho con
+    <div className="flex items-center justify-center gap-6 md:gap-9 pt-4">
       {images &&
         images.map(({ src, alt, link }, index) => (
           <div key={`item-social-proof-${index}`}>

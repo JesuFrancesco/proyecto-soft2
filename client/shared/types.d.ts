@@ -1,6 +1,6 @@
-import { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
-import type { TablerIcon } from "@tabler/icons-react"
+import { StaticImageData } from "next/image";
+import { ReactElement } from "react";
+import type { TablerIcon } from "@tabler/icons-react";
 
 type Widget = {
   id?: string;
@@ -22,7 +22,7 @@ type Header = {
   title?: string | ReactElement;
   subtitle?: string | ReactElement;
   tagline?: string;
-  position?: 'center' | 'right' | 'left';
+  position?: "center" | "right" | "left";
 };
 
 type HeadlineProps = {
@@ -50,7 +50,7 @@ type LinkOrButton = {
 
 type Button = {
   title: string;
-  type: 'button' | 'submit' | 'reset';
+  type: "button" | "submit" | "reset";
 };
 
 type Input = {
@@ -98,7 +98,7 @@ type FormProps = {
   textarea?: Textarea;
   checkboxes?: Array<Checkbox>;
   btn: Button;
-  btnPosition?: 'center' | 'right' | 'left';
+  btnPosition?: "center" | "right" | "left";
   containerClass?: string;
 };
 
@@ -241,6 +241,7 @@ type HeroProps = {
   callToAction?: CallToActionType;
   callToAction2?: CallToActionType;
   image?: Image;
+  ytPromoVideoId?: string;
 };
 
 type FAQsProps = Widget & {
@@ -358,5 +359,5 @@ type HeaderProps = {
   isSticky?: boolean;
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
-  position?: 'center' | 'right' | 'left';
+  position?: "center" | "right" | "left";
 };

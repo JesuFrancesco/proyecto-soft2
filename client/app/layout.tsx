@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import "./globals.css";
 import { SITE } from "@/config";
 
 import Providers from "@/components/atoms/Providers";
@@ -12,6 +11,8 @@ const rubik = Rubik({
   weight: "400",
   subsets: ["latin"],
 });
+
+import "@/assets/styles/base.css"
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +36,6 @@ export default function RootLayout({
 
       <body className={`${rubik.className} antialiased`}>
         <Providers>
-          <Announcement />
           <Header />
           <main>{children}</main>
           <Footer2 />

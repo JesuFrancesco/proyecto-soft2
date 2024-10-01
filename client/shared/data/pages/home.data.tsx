@@ -1,5 +1,4 @@
 import {
-  ArrowDown,
   Linkedin,
   Twitter,
   Search,
@@ -9,6 +8,7 @@ import {
   Mail,
   MapPin,
   PhoneCall,
+  MapPinCheckInside,
   Rocket,
 } from "lucide-react";
 
@@ -25,55 +25,33 @@ import {
   TeamProps,
   TestimonialsProps,
 } from "../../types";
-import heroImg from "@/assets/images/hero.jpg";
 import nextJsLogo from "@/assets/images/nextjs-logo.png";
 import reactLogo from "@/assets/images/react-logo.png";
 import tailwindCssLogo from "@/assets/images/tailwind-css-logo.png";
 import typescriptLogo from "@/assets/images/typescript-logo.png";
-import cameraFrontImg from "@/assets/images/camera-front.jpg";
-import cameraBackImg from "@/assets/images/camera-back.jpg";
-import gasImg from "@/assets/images/gas.jpg";
 
-// Hero data on Home page *******************
+// import cameraFrontImg from "@/assets/images/camera-front.jpg";
+// import cameraBackImg from "@/assets/images/camera-back.jpg";
+// import gasImg from "@/assets/images/gas.jpg";
+// import heroImg from "@/assets/images/hero.jpg";
+
 export const heroHome: HeroProps = {
-  title: (
-    <>
-      Free template for{" "}
-      <span className="hidden md:inline">starts a website using</span>{" "}
-      <span>Next.js</span> +{" "}
-      <span className="sm:whitespace-nowrap">Tailwind CSS</span>
-    </>
-  ),
+  title: <>Eduyacha</>,
   subtitle: (
     <>
-      <span className="hidden md:inline">
-        <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          TailNext
-        </span>{" "}
-        is a production ready template to start your new website using{" "}
-        <em>Next.js</em> + <em>Tailwind CSS</em>.
+      <span>
+        <em>La educación a tus manos</em>.
       </span>{" "}
-      It has been designed following Best Practices, SEO, Accessibility, Dark
-      Mode, great Page Speed, image optimization.
     </>
   ),
-  callToAction: {
-    text: "Get template",
-    href: "https://github.com/onwidget/tailnext",
-    icon: Download,
-    targetBlank: true,
-  },
-  callToAction2: {
-    text: "Learn more",
-    href: "/",
-  },
-  image: {
-    src: heroImg,
-    alt: "Hero TailNext",
-  },
+
+  // image: {
+  //   src: heroImg,
+  //   alt: "Hero TailNext",
+  // },
+  ytPromoVideoId: "xqKit53XaH0",
 };
 
-// SocialProof data on Home page *******************
 export const socialProofHome: SocialProofProps = {
   id: "socialProof-on-home",
   hasBackground: false,
@@ -107,158 +85,155 @@ export const featuresHome: FeaturesProps = {
   hasBackground: false,
   columns: 3,
   header: {
-    title: (
-      <>
-        What you get with <span className="whitespace-nowrap">TailNext</span>
-      </>
-    ),
+    title: <>La mejor opción para la educación complementaria de tus hijos</>,
     subtitle:
-      "Elevating Your Digital Presence: Discover the Synergies Unleashed in Our Platform's Core Strengths, from Seamless Integration to Open Collaboration.",
+      "Descubre un mundo de aprendizaje divertido y enriquecedor para potenciar su talento.",
     tagline: "Features",
   },
   items: [
     {
-      title: "Best Practices",
+      title: "Amplia variedad de materias para todos los intereses",
       description:
-        "By prioritizing maintainability and scalability through coding standards and design principles, your website stays robust and efficient.",
-      icon: ListCheck,
-      callToAction: {
-        text: "Discover now",
-        href: "/",
-      },
-    },
-    {
-      title: "Excellent Page Speed",
-      description:
-        "Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.",
-      icon: Rocket,
-      callToAction: {
-        text: "Discover now",
-        href: "/",
-      },
-    },
-    {
-      title: "Search Engine Optimization (SEO)",
-      description:
-        "Boost online visibility with our SEO-friendly website. Effective strategies and practices enhance your website's search engine ranking, making it easier for users to find your content.",
+        "En Eduyacha, ofrecemos un repertorio diverso de materias que abarcan desde matemáticas y ciencias hasta arte y tecnología. Cada curso está diseñado para fomentar la curiosidad y el amor por el aprendizaje, permitiendo que tus hijos exploren nuevas áreas y descubran sus verdaderas pasiones. ¡Aquí hay algo para cada interesado!",
       icon: Search,
       callToAction: {
-        text: "Discover now",
+        text: "Ver lista de materias",
+        href: "/",
+      },
+    },
+    {
+      title: "Profesores especializados",
+      description:
+        "En Eduyacha, contamos con un equipo de educadores altamente calificados y apasionados por su materia. Cada profesor tiene experiencia en su campo y utiliza métodos innovadores para hacer que el aprendizaje sea atractivo y efectivo. Con su guía, tus hijos recibirán atención personalizada y apoyo para alcanzar su máximo potencial.",
+      icon: ListCheck,
+      callToAction: {
+        text: "Ver lista de profesores",
+        href: "/",
+      },
+    },
+    {
+      title: "Agenda tu asesoría cuándo y donde quieras",
+      description:
+        "En Eduyacha, la flexibilidad es clave. Te ofrecemos la opción de programar asesorías en el horario y lugar que mejor se adapten a tus necesidades. Ya sea de forma presencial o virtual, nuestros educadores están listos para brindarte el apoyo que necesitas, garantizando que el aprendizaje se ajuste a tu ritmo y estilo de vida. ¡Tu comodidad es nuestra",
+      icon: MapPinCheckInside,
+      callToAction: {
+        text: "Ver disponibilidad de horarios",
         href: "/",
       },
     },
   ],
 };
 
-// Content data on Home page *******************
-export const contentHomeOne: ContentProps = {
-  id: "contentOne-on-home-one",
-  hasBackground: true,
-  header: {
-    title: "Aliquip definiebas ad est",
-    subtitle: "Quando cetero his ne, eum admodum sapientem ut",
-    tagline: "Content",
-  },
-  content:
-    "Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.",
-  items: [
-    {
-      title: "Per ei quaeque sensibus",
-      description:
-        "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
-    },
-    {
-      title: "Cu imperdiet posidonium sed",
-      description:
-        "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
-    },
-    {
-      title: "Nulla omittam sadipscing mel ne",
-      description:
-        "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
-    },
-  ],
-  image: {
-    src: cameraFrontImg,
-    alt: "Colorful Image",
-  },
-  isReversed: false,
-  isAfterContent: false,
-};
+// // Content data on Home page *******************
+// export const contentHomeOne: ContentProps = {
+//   id: "contentOne-on-home-one",
+//   hasBackground: true,
+//   header: {
+//     title: "Aliquip definiebas ad est",
+//     subtitle: "Quando cetero his ne, eum admodum sapientem ut",
+//     tagline: "Content",
+//   },
+//   content:
+//     "Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.",
+//   items: [
+//     {
+//       title: "Per ei quaeque sensibus",
+//       description:
+//         "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+//     },
+//     {
+//       title: "Cu imperdiet posidonium sed",
+//       description:
+//         "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+//     },
+//     {
+//       title: "Nulla omittam sadipscing mel ne",
+//       description:
+//         "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+//     },
+//   ],
+//   image: {
+//     src: cameraFrontImg,
+//     alt: "Colorful Image",
+//   },
+//   isReversed: false,
+//   isAfterContent: false,
+// };
 
-// Content data on Home page *******************
-export const contentHomeTwo: ContentProps = {
-  id: "contentOne-on-home-two",
-  hasBackground: true,
-  content:
-    "Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.",
-  items: [
-    {
-      title: "Per ei quaeque sensibus",
-    },
-    {
-      title: "Cu imperdiet posidonium sed",
-    },
-    {
-      title: "Nulla omittam sadipscing mel ne",
-    },
-    {
-      title: "Per ei quaeque sensibus",
-    },
-    {
-      title: "Cu imperdiet posidonium sed",
-    },
-    {
-      title: "Nulla omittam sadipscing mel ne",
-    },
-  ],
-  image: {
-    src: cameraBackImg,
-    alt: "Colorful Image",
-  },
-  isReversed: true,
-  isAfterContent: true,
-};
+// // Content data on Home page *******************
+// export const contentHomeTwo: ContentProps = {
+//   id: "contentOne-on-home-two",
+//   hasBackground: true,
+//   content:
+//     "Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.",
+//   items: [
+//     {
+//       title: "Per ei quaeque sensibus",
+//     },
+//     {
+//       title: "Cu imperdiet posidonium sed",
+//     },
+//     {
+//       title: "Nulla omittam sadipscing mel ne",
+//     },
+//     {
+//       title: "Per ei quaeque sensibus",
+//     },
+//     {
+//       title: "Cu imperdiet posidonium sed",
+//     },
+//     {
+//       title: "Nulla omittam sadipscing mel ne",
+//     },
+//   ],
+//   image: {
+//     src: cameraBackImg,
+//     alt: "Colorful Image",
+//   },
+//   isReversed: true,
+//   isAfterContent: true,
+// };
 
-// Steps data on Home page *******************
-export const stepsHome: StepsProps = {
-  id: "steps-on-home",
-  hasBackground: false,
-  isReversed: false,
-  isImageDisplayed: true,
-  image: {
-    src: gasImg,
-    alt: "Steps image",
-  },
-  header: {
-    title: "Sed ac magna sit amet risus tristique interdum.",
-  },
-  items: [
-    {
-      title: "Step 1",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.",
-      icon: ArrowDown,
-    },
-    {
-      title: "Step 2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.",
-      icon: ArrowDown,
-    },
-    {
-      title: "Step 3",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.",
-      icon: ArrowDown,
-    },
-    {
-      title: "Ready!",
-    },
-  ],
-};
+// // Steps data on Home page *******************
+// export const stepsHome: StepsProps = {
+//   id: "steps-on-home",
+//   hasBackground: false,
+//   isReversed: false,
+//   isImageDisplayed: true,
+//   image: {
+//     src: gasImg,
+//     alt: "Steps image",
+//   },
+//   header: {
+//     title: "Sed ac magna sit amet risus tristique interdum.",
+//   },
+//   items: [
+//     {
+//       title: "Step 1",
+//       description:
+//         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.",
+//       icon: ArrowDown,
+//     },
+//     {
+//       title: "Step 2",
+//       description:
+//         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.",
+//       icon: ArrowDown,
+//     },
+//     {
+//       title: "Step 3",
+//       description:
+//         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.",
+//       icon: ArrowDown,
+//     },
+//     {
+//       title: "Ready!",
+//     },
+//   ],
+// };
 
 // Testimonials data on Home page *******************
+
 export const testimonialsHome: TestimonialsProps = {
   id: "testimonials-on-home",
   hasBackground: true,

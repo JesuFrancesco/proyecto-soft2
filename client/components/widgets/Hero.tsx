@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HeroProps } from "@/shared/types";
 import CTA from "../common/CTA";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 const Hero = ({
   title,
@@ -9,12 +10,13 @@ const Hero = ({
   callToAction,
   callToAction2,
   image,
+  ytPromoVideoId,
 }: HeroProps) => {
   return (
     <section id="heroOne">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
-          <div className="mx-auto max-w-4xl pb-10 text-center md:pb-16">
+          <div className="mx-auto max-w-4xl pb-3 text-center md:pb-16">
             {tagline && (
               <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
                 {tagline}
@@ -44,7 +46,7 @@ const Hero = ({
               </div>
             </div>
           </div>
-          {image && (
+          {/* {image && (
             <div className="relative m-auto max-w-5xl">
               <Image
                 className="mx-auto h-auto w-full rounded-md bg-gray-400 dark:bg-slate-700"
@@ -57,6 +59,14 @@ const Hero = ({
                 placeholder="blur"
                 priority
               />
+            </div>
+          )} */}
+          {ytPromoVideoId && (
+            <div className="relative m-auto w-full">
+              <YouTubeEmbed
+                style="margin: auto;"
+                videoid={ytPromoVideoId}
+              ></YouTubeEmbed>
             </div>
           )}
         </div>
