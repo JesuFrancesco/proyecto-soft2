@@ -6,6 +6,7 @@ const nextConfig = {
     trailingSlash: SITE.trailingSlash,
     
     output: "export",
+    trailingSlash: true,
     reactStrictMode: true,
   
   

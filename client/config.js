@@ -1,5 +1,5 @@
 export const SITE = {
-    name: 'Eduyacha',
+    name: 'proyecto-soft2',
   
     origin: 'https://undefined.vercel.app',
     basePathname: '/eduyacha',
