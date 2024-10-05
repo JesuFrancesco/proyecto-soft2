@@ -1,8 +1,8 @@
 export const SITE = {
-    name: 'proyecto-soft2',
+    name: 'eduyacha',
   
     origin: 'https://undefined.vercel.app',
-    basePathname: '/eduyacha',
+    basePathname: '/proyecto-soft2',
     trailingSlash: false,
   
     title: 'Eduyacha — La educación a tus manos',
