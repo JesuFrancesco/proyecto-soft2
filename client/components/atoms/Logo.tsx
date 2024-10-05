@@ -1,5 +1,5 @@
 import Image from "next/image";
-import eduyachaLogo from "@/assets/logo.png";
+import eduyachaLogo from "@/static/logo.png";
 
 const Logo = () => (
   <>

@@ -25,15 +25,15 @@ import {
   TeamProps,
   TestimonialsProps,
 } from "../../types";
-import nextJsLogo from "@/assets/images/nextjs-logo.png";
-import reactLogo from "@/assets/images/react-logo.png";
-import tailwindCssLogo from "@/assets/images/tailwind-css-logo.png";
-import typescriptLogo from "@/assets/images/typescript-logo.png";
+import nextJsLogo from "@/static/images/nextjs-logo.png";
+import reactLogo from "@/static/images/react-logo.png";
+import tailwindCssLogo from "@/static/images/tailwind-css-logo.png";
+import typescriptLogo from "@/static/images/typescript-logo.png";
 
-// import cameraFrontImg from "@/assets/images/camera-front.jpg";
-// import cameraBackImg from "@/assets/images/camera-back.jpg";
-// import gasImg from "@/assets/images/gas.jpg";
-// import heroImg from "@/assets/images/hero.jpg";
+// import cameraFrontImg from "@/static/images/camera-front.jpg";
+// import cameraBackImg from "@/static/images/camera-back.jpg";
+// import gasImg from "@/static/images/gas.jpg";
+// import heroImg from "@/static/images/hero.jpg";
 
 export const heroHome: HeroProps = {
   title: <>Eduyacha</>,
