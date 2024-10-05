@@ -12,7 +12,7 @@ const rubik = Rubik({
   subsets: ["latin"],
 });
 
-import "@/public/css/base.css";
+import "./css/base.css";
 
 export const metadata: Metadata = {
   title: {
