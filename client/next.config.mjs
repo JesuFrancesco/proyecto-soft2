@@ -2,12 +2,12 @@ import { SITE } from "./config.js"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/eduyacha",
+    basePath: SITE.basePathname !== '/' ? SITE.basePathname : '',
+    trailingSlash: SITE.trailingSlash,
+    
     output: "export",
     reactStrictMode: true,
   
-    trailingSlash: SITE.trailingSlash,
-    basePath: SITE.basePathname !== '/' ? SITE.basePathname : '',
   
     swcMinify: true,
     poweredByHeader: false,
