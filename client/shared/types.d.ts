@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
-import type { TablerIcon } from "@tabler/icons-react";
+import type { Icon } from "lucide-react";
 
 type Widget = {
   id?: string;
@@ -32,7 +32,7 @@ type HeadlineProps = {
   subtitleClass?: string;
 };
 
-type Icon = TablerIcon;
+type Icon = Icon;
 
 type CallToActionType = {
   text?: string;
