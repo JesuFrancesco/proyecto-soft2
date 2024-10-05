@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { WindowSize } from '~/shared/types';
+import { useEffect, useState } from "react";
+import { WindowSize } from "@/shared/types";
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState<WindowSize>({
@@ -17,10 +17,10 @@ const useWindowSize = () => {
 
     handler();
 
-    window.addEventListener('resize', handler);
+    window.addEventListener("resize", handler);
 
     return () => {
-      window.removeEventListener('resize', handler);
+      window.removeEventListener("resize", handler);
     };
   }, []);
 
