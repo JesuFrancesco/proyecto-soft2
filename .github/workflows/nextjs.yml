@@ -2,7 +2,8 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Next.js site to Pages
+name: Eduyacha CI/CD (frontend)
+run-name: Proceso de despliegue de NextJS a Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -27,6 +28,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    name: Compilar proyecto de NextJS (static)
     defaults:
       run:
         working-directory: client
@@ -35,10 +37,10 @@ jobs:
         node-version: [20]
     runs-on: ubuntu-latest
     steps:
-      - name: Pasar contenido de repositorio
+      - name: Obtener contenido de repositorio
         uses: actions/checkout@v4
 
-      - name: Usar Node.js ${{ matrix.node-version }}
+      - name: Determinar package manager para Node.js ${{ matrix.node-version }}
         id: detect-package-manager
         run: |
           if [ -f "./yarn.lock" ]; then
@@ -56,14 +58,14 @@ jobs:
             exit 1
           fi
 
-      - name: Setup Node
+      - name: Preparar ambiente Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
 
-      - name: Setup Pages
+      - name: Preparar ambiente para Pages
         uses: actions/configure-pages@v5
         with:
           # Automatically inject basePath in your Next.js configuration file and disable
@@ -72,7 +74,7 @@ jobs:
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
 
-      - name: Restore cache
+      - name: Recuperar cache
         uses: actions/cache@v4
         with:
           path: |
@@ -83,10 +85,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
-      - name: Install dependencies
+      - name: Instalar dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Build with Next.js
+      - name: Compilar proyecto Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
@@ -102,6 +104,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Despliegue a GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

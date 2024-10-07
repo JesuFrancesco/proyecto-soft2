@@ -4,12 +4,12 @@
   "description": "backend de eduyacha !",
   "scripts": {
     "dev": "nodemon ./src/index.ts",
-    "build": "/echo \"Error: no test specified\" && exit 1",
-    "start": "/echo \"Error: no test specified\" && exit 1",
+    "build": "npm run db:generate && npx prisma migrate deploy && npx tsc",
+    "start": "node ./build/index.js",
     "db:migrate": "npx prisma migrate dev --name ",
     "db:generate": "npx prisma generate",
     "db:push": "npx prisma db push",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'wip: tests no implementado'"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "joi": "^17.13.3",
     "lodash": "^4.17.21",
     "log4js": "^6.9.1",
+    "mocha": "^10.7.3",
     "nodemon": "^3.1.4",
     "prisma": "^5.19.1",
     "ts-node": "^10.9.2",
