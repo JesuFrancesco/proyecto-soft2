@@ -1,13 +1,11 @@
 -- CreateTable
 CREATE TABLE "accounts" (
-    "id" SERIAL NOT NULL,
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "email" TEXT NOT NULL,
     "role" TEXT NOT NULL DEFAULT 'user',
     "password" TEXT NOT NULL,
     "phone" TEXT,
-    "name" TEXT NOT NULL,
-
-    CONSTRAINT "accounts_pkey" PRIMARY KEY ("id")
+    "name" TEXT NOT NULL
 );
 
 -- CreateIndex
