@@ -11,7 +11,7 @@ on:
     branches: ["prod"]
 
 jobs:
-  # Realizar las pruebas
+  # Realizar pruebas
   tests:
     defaults:
       run:
@@ -75,8 +75,9 @@ jobs:
       - name: Listar archivos (build)
         run: ls -la build/
 
-  # Despliegue del proyecto a Azure Webapp
+  # Despliegue del api
   deploy:
+    name: Despliegue de API a Azure Webapp
     runs-on: ubuntu-latest
     needs: build
     steps:
