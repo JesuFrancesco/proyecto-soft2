@@ -1,6 +1,6 @@
 import { Boom } from "@hapi/boom";
 import { ErrorRequestHandler } from "express";
-import { logger } from "../config";
+import { logger } from "../../../config";
 
 /**
  * Middleware para loggear los errores
