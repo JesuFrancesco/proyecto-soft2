@@ -1,3 +1,5 @@
+// TODO: implementarlo con passport.js o supabase
+
 // import { RequestHandler, RequestParamHandler } from "express";
 // import { config } from "../config";
 // import boom from "@hapi/boom";

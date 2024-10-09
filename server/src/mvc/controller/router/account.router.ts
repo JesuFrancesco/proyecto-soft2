@@ -1,11 +1,16 @@
+import _ from "lodash";
 import { Router } from "express";
 import { validatorHandler } from "../middleware/validator.handler";
-import AccountService from "../service/account.service";
-import _ from "lodash";
-import { createAccountSchema, getAccountSchema, getAccountSchemaByEmail, updateAccountSchema } from "../schemas/account.schema";
+import {
+  createAccountSchema,
+  getAccountSchema,
+  getAccountSchemaByEmail,
+  updateAccountSchema,
+} from "../../model/schemas/account.schema";
+import { AccountDAO } from "../../model/dao/account.dao";
 
 const router = Router();
-const service = new AccountService();
+const service = new AccountDAO();
 
 router.get(
   "/:id",
@@ -16,7 +21,7 @@ router.get(
 
       const accountId = parseInt(id);
 
-      const account = await service.findOneAccount(accountId);
+      const account = await service.findByPk(accountId);
 
       res.json(account);
     } catch (error) {
@@ -27,7 +32,7 @@ router.get(
 
 router.get("/", async (req, res, next) => {
   try {
-    const accounts = await service.findAllAccounts();
+    const accounts = await service.findAll();
     res.json(accounts);
   } catch (error) {
     next(error);
@@ -40,7 +45,7 @@ router.post(
   async (req, res, next) => {
     try {
       const data = req.body;
-      const account = await service.createAccount(data);
+      const account = await service.create(data);
       res.json(account);
     } catch (error) {
       next(error);
