@@ -11,32 +11,37 @@ const contentHomeOne = {
   id: "contentOne-on-home-one",
   hasBackground: true,
   header: {
-    title: "Aliquip definiebas ad est",
-    subtitle: "Quando cetero his ne, eum admodum sapientem ut",
-    tagline: "Content",
+    tagline: "Descripcion",
+    title: "Transformamos la educación de su hijo con asesorías personalizadas",
+    subtitle: "",
   },
   content:
-    "Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.",
+    "Al inscribir a su hijo en uno de las asesorías ofrecidas por nosotros tendra acceso a:",
   items: [
     {
-      title: "Per ei quaeque sensibus",
+      title: "Material Didáctico Exclusivo",
       description:
-        "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+        "Proporcionamos acceso a recursos educativos de alta calidad, incluyendo videos, guías y ejercicios prácticos, diseñados para complementar el aprendizaje.",
     },
     {
-      title: "Cu imperdiet posidonium sed",
+      title: "Seguimiento y Evaluación Continua",
       description:
-        "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+        "Realizamos un seguimiento del progreso de su hijo mediante evaluaciones periódicas, garantizando que se cumplan los objetivos de aprendizaje establecidos.",
     },
     {
-      title: "Nulla omittam sadipscing mel ne",
+      title: "Flexibilidad Horaria",
       description:
-        "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+        "Nuestras asesorías se adaptan al horario de su familia, permitiendo que su hijo aprenda cuando le resulte más conveniente.",
+    },
+    {
+      title: "Comunidad de Aprendizaje",
+      description:
+        "Su hijo formará parte de una comunidad en línea donde podrá interactuar con otros estudiantes, compartir dudas y experiencias, fomentando un aprendizaje colaborativo.",
     },
   ],
   image: {
     src: eduyachaLogo,
-    alt: "Colorful Image",
+    alt: "logo de eduyachin",
   },
   isReversed: false,
   isAfterContent: false,

@@ -1,3 +1,5 @@
-export default function CursoPage() {
-  return <>WIP</>;
-}
+const Curso = () => {
+  return <div>WIP</div>;
+};
+
+export default Curso;
