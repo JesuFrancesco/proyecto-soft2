@@ -24,7 +24,6 @@ const Dropdown = ({
   const onOptionSelected = (option: Tab, index: number) => {
     setSelectedOption(option.link?.label as string);
 
-    // Sends the value to the parent component
     onActiveTabSelected(index);
   };
 

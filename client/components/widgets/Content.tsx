@@ -1,12 +1,48 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
 
-import { ContentProps } from "@/shared/types";
 import Headline from "../common/Headline";
 import WidgetWrapper from "../common/WidgetWrapper";
 import ItemGrid from "../common/ItemGrid";
 
-const Content = ({
+import eduyachaLogo from "@/public/logo.png";
+
+const contentHomeOne = {
+  id: "contentOne-on-home-one",
+  hasBackground: true,
+  header: {
+    title: "Aliquip definiebas ad est",
+    subtitle: "Quando cetero his ne, eum admodum sapientem ut",
+    tagline: "Content",
+  },
+  content:
+    "Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.",
+  items: [
+    {
+      title: "Per ei quaeque sensibus",
+      description:
+        "Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.",
+    },
+    {
+      title: "Cu imperdiet posidonium sed",
+      description:
+        "Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.",
+    },
+    {
+      title: "Nulla omittam sadipscing mel ne",
+      description:
+        "At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.",
+    },
+  ],
+  image: {
+    src: eduyachaLogo,
+    alt: "Colorful Image",
+  },
+  isReversed: false,
+  isAfterContent: false,
+};
+
+const {
   header,
   content,
   items,
@@ -15,7 +51,8 @@ const Content = ({
   isAfterContent,
   id,
   hasBackground = false,
-}: ContentProps) => (
+} = contentHomeOne;
+const Descripcion = () => (
   <WidgetWrapper
     id={id ? id : ""}
     hasBackground={hasBackground}
@@ -68,4 +105,4 @@ const Content = ({
   </WidgetWrapper>
 );
 
-export default Content;
+export default Descripcion;

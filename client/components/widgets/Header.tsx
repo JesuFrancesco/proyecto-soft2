@@ -7,7 +7,7 @@ import ToggleDarkMode from "@/components/atoms/ToggleDarkMode";
 import Link from "next/link";
 import Logo from "@/components/atoms/Logo";
 import ToggleMenu from "../atoms/ToggleMenu";
-import { headerData } from "@/shared/data/global.data";
+import { headerData } from "@/shared/layout.data";
 import CTA from "../common/CTA";
 import { CallToActionType } from "@/shared/types";
 

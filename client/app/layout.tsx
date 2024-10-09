@@ -4,8 +4,7 @@ import { SITE } from "@/config";
 
 import Providers from "@/components/atoms/Providers";
 import Header from "@/components/widgets/Header";
-import Announcement from "@/components/widgets/Announcement";
-import Footer2 from "@/components/widgets/Footer2";
+import Footer from "@/components/widgets/Footer";
 
 const rubik = Rubik({
   weight: "400",
@@ -38,7 +37,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main>{children}</main>
-          <Footer2 />
+          <Footer />
         </Providers>
       </body>
     </html>
