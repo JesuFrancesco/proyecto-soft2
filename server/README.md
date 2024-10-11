@@ -26,7 +26,7 @@ code .env
 3. correr prisma
 
 ```bash
-npx prisma migrate
+npx prisma migrate dev
 ```
 
 4. iniciar server

@@ -4,8 +4,8 @@ import {
   errorHandler,
   logErrores,
   boomErrorHandler,
-} from "./middleware/error.handler";
-import { routerAPI } from "./router";
+} from "./mvc/controller/middleware/error.handler";
+import { routerAPI } from "./mvc/controller/router";
 import { createClient } from "@supabase/supabase-js";
 import { config } from "./config";
 

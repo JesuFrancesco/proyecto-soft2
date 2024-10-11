@@ -16,93 +16,158 @@ datasource db {
 
 // modelos
 model Account {
-  id           Int      @id @default(autoincrement())
-  username     String   @unique
-  email        String   @unique
+  id           Int     @id @default(autoincrement())
+  username     String  @unique
+  email        String  @unique
+  phone        String
   passwordHash String
-  createdAt    DateTime @default(now()) @map("created_at")
-  updatedAt    DateTime @default(now()) @map("updated_at")
   suscripcion  String?
+
+  distrito    Distrito?     @relation(fields: [distritoId], references: [id])
+  provincia   Provincia?    @relation(fields: [provinciaId], references: [id])
+  departmento Departamento? @relation(fields: [departamentoId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   profesores Profesor[] @relation("AccountProfessores")
   alumnos    Alumno[]   @relation("AccountAlumnos")
 
+  distritoId     Int? @map("distrito_id")
+  provinciaId    Int? @map("provincia_id")
+  departamentoId Int? @map("departamento_id")
+
   @@map("accounts")
 }
 
-model Ubicacion {
-  id        Int      @id @default(autoincrement())
-  pais      String?
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @default(now()) @map("updated_at")
+model Preferencia {
+  id     Int     @id @default(autoincrement())
+  nombre String?
 
-  clases Clase[] @relation("UbicacionClases")
+  alumnosRelacionados AlumnoPreferencia[] @relation("PreferenciaAlumnoPreferencias")
 
-  @@map("ubicacion")
+  @@map("preferencias")
 }
 
-model Especialidad {
-  id           Int      @id @default(autoincrement())
-  especialidad String?
-  createdAt    DateTime @default(now()) @map("created_at")
-  updatedAt    DateTime @default(now()) @map("updated_at")
+// location
+model Departamento {
+  id         Int         @id @default(autoincrement())
+  name       String      @unique
+  provincias Provincia[]
+  distritos  Distrito[]
+  Account    Account[]
 
+  @@map("departamentos")
+}
+
+model Provincia {
+  id             Int          @id @default(autoincrement())
+  name           String       @unique
+  departamentoId Int          @map("departamento_id")
+  departamento   Departamento @relation(fields: [departamentoId], references: [id])
+  distritos      Distrito[]
+  Account        Account[]
+
+  @@map("provincias")
+}
+
+model Distrito {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  provinciaId Int       @map("provincia_id")
+  provincia   Provincia @relation(fields: [provinciaId], references: [id])
+
+  departamentoId Int          @map("departamento_id")
+  departamento   Departamento @relation(fields: [departamentoId], references: [id])
+  Account        Account[]
+
+  @@map("distritos")
+}
+
+// models
+model Especialidad {
+  id                     Int                    @id @default(autoincrement())
+  especialidad           String?
   profesorEspecialidades ProfesorEspecialidad[] @relation("EspecialidadProfesorEspecialidades")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("especialidad")
 }
 
 model Profesor {
-  id        Int      @id @default(autoincrement())
-  nombre    String?
-  edad      Int?
+  id               Int                    @id @default(autoincrement())
+  nombre           String?
+  edad             Int?
+  especialidades   ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
+  chats            Chat[]
+  clases           Clase[]                @relation("ProfesorClases")
+  resenasAsociadas Review[]               @relation("ProfesorReviews")
+  alumnosPorClase  AlumnoClase[]
+  cuenta           Account?               @relation("AccountProfessores", fields: [accountId], references: [id])
+
   accountId Int?     @map("account_id")
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
-
-  account        Account?               @relation("AccountProfessores", fields: [accountId], references: [id])
-  clases         Clase[]                @relation("ProfesorClases")
-  reviews        Review[]               @relation("ProfesorReviews")
-  especialidades ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
-  AlumnoClase    AlumnoClase[]
-  Chat           Chat[]
 
   @@map("profesores")
 }
 
-model Alumno {
-  id        Int      @id @default(autoincrement())
-  nombre    String?
-  edad      Int?
-  cursos    String?
-  accountId Int?     @map("account_id")
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @default(now()) @map("updated_at")
+model Review {
+  id             Int       @id @default(autoincrement())
+  profesor       Profesor? @relation("ProfesorReviews", fields: [idProfesor], references: [id])
+  alumno         Alumno?   @relation("AlumnoReviews", fields: [idAlumno], references: [id])
+  ensenanza      Int?
+  puntualidad    Int?
+  disponibilidad Int?
+  comunicacion   Int?
+  evaluacion     Int?
+  empatia        Int?
 
-  account      Account?            @relation("AccountAlumnos", fields: [accountId], references: [id])
-  alumnoClases AlumnoClase[]       @relation("AlumnoClases")
+  idProfesor Int?     @map("id_profesor")
+  idAlumno   Int?     @map("id_alumno")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @default(now()) @map("updated_at")
+
+  @@map("reviews")
+}
+
+model Alumno {
+  id     Int     @id @default(autoincrement())
+  nombre String?
+  edad   Int?
+
+  account      Account?            @relation("AccountAlumnos", fields: [idAccount], references: [id])
+  clases       AlumnoClase[]       @relation("AlumnoClases")
   preferencias AlumnoPreferencia[] @relation("AlumnoPreferencias")
   chats        Chat[]              @relation("AlumnoChats")
   reviews      Review[]            @relation("AlumnoReviews")
+
+  idAccount Int?     @map("account_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("alumnos")
 }
 
 model Seccion {
-  id        Int      @id @default(autoincrement())
-  nombre    String?
+  id         Int               @id @default(autoincrement())
+  nombre     String?
+  materiales MaterialSeccion[] @relation("SeccionMaterialSecciones")
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
-
-  materialSecciones MaterialSeccion[] @relation("SeccionMaterialSecciones")
 
   @@map("secciones")
 }
 
 model MaterialEducativo {
-  id        Int      @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   nombre    String?
   documento Bytes?
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
@@ -123,21 +188,60 @@ model MaterialSeccion {
 }
 
 model Clase {
-  id         Int      @id @default(autoincrement())
-  curso      String?
-  idProfesor Int?     @map("id_profesor")
-  fechaClase DateTime @map("fecha_clase")
-  ubicacion  Int?     @map("ubicacion")
-  esVirtual  Boolean?
-  esGrupal   Boolean?
-  createdAt  DateTime @default(now()) @map("created_at")
-  updatedAt  DateTime @default(now()) @map("updated_at")
+  id        Int      @id @default(autoincrement())
+  curso     String?
+  ubicacion Int?
+  esVirtual Boolean? @map("es_virtual")
+  esGrupal  Boolean? @map("es_grupal")
 
-  profesor     Profesor?     @relation("ProfesorClases", fields: [idProfesor], references: [id])
-  ubicacionRef Ubicacion?    @relation("UbicacionClases", fields: [ubicacion], references: [id])
-  alumnoClases AlumnoClase[] @relation("ClaseAlumnoClases")
+  profesor Profesor?     @relation("ProfesorClases", fields: [idProfesor], references: [id])
+  alumnos  AlumnoClase[] @relation("ClaseAlumnoClases")
+
+  fechaClase DateTime @map("fecha_clase")
+
+  idProfesor Int? @map("id_profesor")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("clase")
+}
+
+model Chat {
+  id Int @id @default(autoincrement())
+
+  alumno   Alumno?       @relation("AlumnoChats", fields: [idAlumno], references: [id])
+  profesor Profesor?     @relation(fields: [idProfesor], references: [id])
+  mensajes ChatMensaje[] @relation("ChatMensajes")
+
+  idAlumno   Int? @map("id_alumno")
+  idProfesor Int? @map("id_profesor")
+
+  createdAt DateTime @default(now()) @map("fecha_creacion")
+
+  @@map("chats")
+}
+
+model Mensaje {
+  id        Int           @id @default(autoincrement())
+  contenido String?
+  chats     ChatMensaje[] @relation("MensajeChatMensajes")
+
+  createdAt DateTime @default(now()) @map("fecha_envio")
+
+  @@map("mensaje")
+}
+
+// many-to-many
+model ChatMensaje {
+  idChat    Int @map("id_chat")
+  idMensaje Int @map("id_mensaje")
+
+  chat    Chat?    @relation("ChatMensajes", fields: [idChat], references: [id])
+  mensaje Mensaje? @relation("MensajeChatMensajes", fields: [idMensaje], references: [id])
+
+  @@id([idChat, idMensaje])
+  @@map("chat_mensaje")
 }
 
 model AlumnoClase {
@@ -156,50 +260,6 @@ model AlumnoClase {
   @@map("alumno_clase")
 }
 
-model Chat {
-  id            Int      @id @default(autoincrement())
-  idAlumno      Int?     @map("id_alumno")
-  idProfesor    Int?     @map("id_profesor")
-  fechaCreacion DateTime @map("fecha_creacion")
-
-  alumno     Alumno?       @relation("AlumnoChats", fields: [idAlumno], references: [id])
-  mensajes   ChatMensaje[] @relation("ChatMensajes")
-  profesorId Int?
-  Profesor   Profesor?     @relation(fields: [profesorId], references: [id])
-
-  @@map("chats")
-}
-
-model Mensaje {
-  id         Int      @id @default(autoincrement())
-  contenido  String?
-  fechaEnvio DateTime @map("fecha_envio")
-
-  chatMensajes ChatMensaje[] @relation("MensajeChatMensajes")
-
-  @@map("mensaje")
-}
-
-model ChatMensaje {
-  idChat    Int @map("id_chat")
-  idMensaje Int @map("id_mensaje")
-
-  chat    Chat?    @relation("ChatMensajes", fields: [idChat], references: [id])
-  mensaje Mensaje? @relation("MensajeChatMensajes", fields: [idMensaje], references: [id])
-
-  @@id([idChat, idMensaje])
-  @@map("chat_mensaje")
-}
-
-model Preferencia {
-  id     Int     @id @default(autoincrement())
-  nombre String?
-
-  alumnoPreferencias AlumnoPreferencia[] @relation("PreferenciaAlumnoPreferencias")
-
-  @@map("preferencias")
-}
-
 model AlumnoPreferencia {
   idAlumno      Int @map("id_alumno")
   idPreferencia Int @map("id_preferencia")
@@ -209,25 +269,6 @@ model AlumnoPreferencia {
 
   @@id([idAlumno, idPreferencia])
   @@map("alumno_preferencia")
-}
-
-model Review {
-  id             Int      @id @default(autoincrement())
-  idProfesor     Int?     @map("id_profesor")
-  idAlumno       Int?     @map("id_alumno")
-  ensenanza      Int?     @map("ensenanza")
-  puntualidad    Int?     @map("puntualidad")
-  disponibilidad Int?     @map("disponibilidad")
-  comunicacion   Int?     @map("comunicacion")
-  evaluacion     Int?     @map("evaluacion")
-  empatia        Int?     @map("empatia")
-  createdAt      DateTime @default(now()) @map("created_at")
-  updatedAt      DateTime @default(now()) @map("updated_at")
-
-  profesor Profesor? @relation("ProfesorReviews", fields: [idProfesor], references: [id])
-  alumno   Alumno?   @relation("AlumnoReviews", fields: [idAlumno], references: [id])
-
-  @@map("reviews")
 }
 
 model ProfesorEspecialidad {

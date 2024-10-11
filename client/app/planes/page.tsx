@@ -1,5 +1,5 @@
-const Planes = () => {
+const PlanesPage = () => {
   return <div>page</div>;
 };
 
-export default Planes;
+export default PlanesPage;
