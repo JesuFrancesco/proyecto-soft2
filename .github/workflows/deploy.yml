@@ -26,6 +26,9 @@ jobs:
           node-version: "20.x"
 
       - name: Preparar env
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
         run: |
           npm i
           npx prisma migrate deploy
