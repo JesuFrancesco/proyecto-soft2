@@ -46,19 +46,24 @@ export default async function CursosDisponiblesPage() {
             >
               <Image
                 src={course.materialClase[0].material.assetUrl}
-                alt={`Imagen de ${course.curso.subEspecialidad}`}
+                alt={`Imagen de ${course.tema.subEspecialidad}`}
                 width={500}
                 height={120}
                 className="rounded-md mb-4 object-cover h-32"
               />
               <h3 className="text-lg font-medium">
-                {course.curso.subEspecialidad}
+                {course.tema.subEspecialidad}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 {course.sector.name}
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Profesor: {course.profesor.nombre}
+                Profesor:{" "}
+                <Link href={`/profesores/${course.idProfesor}`}>
+                  <span className="hover:font-bold">
+                    {course.profesor.nombre}
+                  </span>
+                </Link>
               </p>
               <div className="mt-4 flex justify-between items-center">
                 <Link href={`/cursos/${course.id}`}>

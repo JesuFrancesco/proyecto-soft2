@@ -12,7 +12,7 @@ export interface IClase {
   updatedAt: string;
   subEspecialidadId: number;
   sectorId: number;
-  curso: ISubespecialidad;
+  tema: ISubespecialidad;
   profesor: IProfesor;
   sector: ISector;
   alumnos: any[];
