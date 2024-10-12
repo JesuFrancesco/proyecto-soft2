@@ -1,9 +1,8 @@
 "use client";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 
 const CursoDetalle = () => {
-  const router = useRouter();
-  const { id } = router.query;
+  const { id } = useParams();
 
   return (
     <div>
