@@ -9,7 +9,7 @@ import { routerAPI } from "./mvc/controller/router";
 import { createClient } from "@supabase/supabase-js";
 import { config } from "./config";
 
-const app = express();
+export const app = express();
 const port = 8080;
 
 // supabase auth
