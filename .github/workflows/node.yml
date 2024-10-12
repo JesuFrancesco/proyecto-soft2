@@ -1,7 +1,3 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
 name: Eduyacha CI/CD (backend)
 run-name: Proceso de despliegue de Express API a Azure
 
