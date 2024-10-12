@@ -4,8 +4,5 @@
         "dev": false,
         "prod": true
       }
-    },
-    "rewrites": [
-        {"source": "/(.*)", "destination": "/"}
-    ]
+    }
   }
