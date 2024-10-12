@@ -7,9 +7,9 @@ CREATE TABLE "accounts" (
     "passwordHash" TEXT NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "distrito_id" INTEGER,
-    "provincia_id" INTEGER,
-    "departamento_id" INTEGER,
+    "distrito_id" TEXT,
+    "provincia_id" TEXT,
+    "departamento_id" TEXT,
     CONSTRAINT "accounts_distrito_id_fkey" FOREIGN KEY ("distrito_id") REFERENCES "distritos" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT "accounts_provincia_id_fkey" FOREIGN KEY ("provincia_id") REFERENCES "provincias" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT "accounts_departamento_id_fkey" FOREIGN KEY ("departamento_id") REFERENCES "departamentos" ("id") ON DELETE SET NULL ON UPDATE CASCADE
@@ -210,26 +210,33 @@ CREATE TABLE "profesor_subespecialidad" (
 
 -- CreateTable
 CREATE TABLE "departamentos" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "provincias" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "departamento_id" INTEGER NOT NULL,
+    "departamento_id" TEXT NOT NULL,
     CONSTRAINT "provincias_departamento_id_fkey" FOREIGN KEY ("departamento_id") REFERENCES "departamentos" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable
 CREATE TABLE "distritos" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "provincia_id" INTEGER NOT NULL,
-    "departamento_id" INTEGER NOT NULL,
+    "provincia_id" TEXT NOT NULL,
+    "departamento_id" TEXT NOT NULL,
     CONSTRAINT "distritos_provincia_id_fkey" FOREIGN KEY ("provincia_id") REFERENCES "provincias" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "distritos_departamento_id_fkey" FOREIGN KEY ("departamento_id") REFERENCES "departamentos" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "paises" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "code" TEXT NOT NULL
 );
 
 -- CreateIndex

@@ -11,6 +11,9 @@
     "db:push": "npx prisma db push",
     "test": "echo 'wip: tests no implementado'"
   },
+  "prisma": {
+    "seed": "ts-node ./prisma/seed.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

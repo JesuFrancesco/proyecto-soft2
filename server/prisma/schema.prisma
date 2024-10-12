@@ -10,8 +10,9 @@ datasource db {
 
 // prod
 // datasource db {
-//   provider = "postgresql"
-//   url      = env("DATABASE_URL")
+//   provider  = "postgresql"
+//   url       = env("DATABASE_URL")
+//   directUrl = env("DIRECT_URL")
 // }
 
 // modelos
@@ -33,9 +34,9 @@ model Account {
   alumno   Alumno?   @relation("AccountAlumno")
   profesor Profesor? @relation("AccountProfessores")
 
-  distritoId     Int? @map("distrito_id")
-  provinciaId    Int? @map("provincia_id")
-  departamentoId Int? @map("departamento_id")
+  distritoId     String? @map("distrito_id")
+  provinciaId    String? @map("provincia_id")
+  departamentoId String? @map("departamento_id")
 
   @@map("accounts")
 }
@@ -303,7 +304,7 @@ model ProfesorSubEspecialidad {
 
 // location
 model Departamento {
-  id   Int    @id @default(autoincrement())
+  id   String @id
   name String @unique
 
   provincias Provincia[]
@@ -315,7 +316,7 @@ model Departamento {
 }
 
 model Provincia {
-  id   Int    @id @default(autoincrement())
+  id   String @id
   name String @unique
 
   departamento Departamento @relation(fields: [departamentoId], references: [id])
@@ -323,13 +324,13 @@ model Provincia {
 
   accountsInProvincia Account[]
 
-  departamentoId Int @map("departamento_id")
+  departamentoId String @map("departamento_id")
 
   @@map("provincias")
 }
 
 model Distrito {
-  id   Int    @id @default(autoincrement())
+  id   String @id
   name String
 
   provincia    Provincia    @relation(fields: [provinciaId], references: [id])
@@ -337,8 +338,16 @@ model Distrito {
 
   accountsInDistrito Account[]
 
-  provinciaId    Int @map("provincia_id")
-  departamentoId Int @map("departamento_id")
+  provinciaId    String @map("provincia_id")
+  departamentoId String @map("departamento_id")
 
   @@map("distritos")
+}
+
+model Pais {
+  id   String @id
+  name String
+  code String
+
+  @@map("paises")
 }
