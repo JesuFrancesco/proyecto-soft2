@@ -150,7 +150,7 @@ const ContactoPage = () => {
             key={index}
             className="border rounded-lg p-4 bg-white dark:bg-gray-800 shadow-md"
           >
-            <p className="text-center">"{testimonial.message}"</p>
+            <p className="text-center">{testimonial.message}</p>
             <p className="text-center text-gray-500 mt-2">
               - {testimonial.name}
             </p>
