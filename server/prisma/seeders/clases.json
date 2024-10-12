@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "esVirtual": true,
+    "esGrupal": true,
+    "fechaClase": "2024-10-15T09:00:00Z",
+    "idProfesor": 1,
+    "subEspecialidadId": 1,
+    "sectorId": 1
+  },
+  {
+    "id": 2,
+    "esVirtual": false,
+    "esGrupal": false,
+    "fechaClase": "2024-10-16T10:30:00Z",
+    "idProfesor": 2,
+    "subEspecialidadId": 2,
+    "sectorId": 1
+  },
+  {
+    "id": 3,
+    "esVirtual": true,
+    "esGrupal": false,
+    "fechaClase": "2024-10-17T14:00:00Z",
+    "idProfesor": 3,
+    "subEspecialidadId": 3,
+    "sectorId": 1
+  },
+  {
+    "id": 4,
+    "esVirtual": false,
+    "esGrupal": true,
+    "fechaClase": "2024-10-18T15:00:00Z",
+    "idProfesor": 4,
+    "subEspecialidadId": 4,
+    "sectorId": 1
+  },
+  {
+    "id": 5,
+    "esVirtual": true,
+    "esGrupal": true,
+    "fechaClase": "2024-10-19T08:00:00Z",
+    "idProfesor": 5,
+    "subEspecialidadId": 5,
+    "sectorId": 1
+  },
+  {
+    "id": 6,
+    "esVirtual": false,
+    "esGrupal": false,
+    "fechaClase": "2024-10-20T11:00:00Z",
+    "idProfesor": 6,
+    "subEspecialidadId": 1,
+    "sectorId": 1
+  },
+  {
+    "id": 7,
+    "esVirtual": true,
+    "esGrupal": true,
+    "fechaClase": "2024-10-21T13:00:00Z",
+    "idProfesor": 7,
+    "subEspecialidadId": 2,
+    "sectorId": 1
+  },
+  {
+    "id": 8,
+    "esVirtual": false,
+    "esGrupal": false,
+    "fechaClase": "2024-10-22T16:00:00Z",
+    "idProfesor": 8,
+    "subEspecialidadId": 3,
+    "sectorId": 1
+  },
+  {
+    "id": 9,
+    "esVirtual": true,
+    "esGrupal": false,
+    "fechaClase": "2024-10-23T17:30:00Z",
+    "idProfesor": 9,
+    "subEspecialidadId": 4,
+    "sectorId": 1
+  },
+  {
+    "id": 10,
+    "esVirtual": false,
+    "esGrupal": true,
+    "fechaClase": "2024-10-24T09:30:00Z",
+    "idProfesor": 10,
+    "subEspecialidadId": 5,
+    "sectorId": 1
+  },
+  {
+    "id": 11,
+    "esVirtual": true,
+    "esGrupal": true,
+    "fechaClase": "2024-10-25T10:00:00Z",
+    "idProfesor": 11,
+    "subEspecialidadId": 6,
+    "sectorId": 1
+  },
+  {
+    "id": 12,
+    "esVirtual": false,
+    "esGrupal": false,
+    "fechaClase": "2024-10-26T15:00:00Z",
+    "idProfesor": 12,
+    "subEspecialidadId": 7,
+    "sectorId": 1
+  },
+  {
+    "id": 13,
+    "esVirtual": true,
+    "esGrupal": false,
+    "fechaClase": "2024-10-27T12:00:00Z",
+    "idProfesor": 13,
+    "subEspecialidadId": 8,
+    "sectorId": 1
+  },
+  {
+    "id": 14,
+    "esVirtual": false,
+    "esGrupal": true,
+    "fechaClase": "2024-10-28T14:30:00Z",
+    "idProfesor": 14,
+    "subEspecialidadId": 9,
+    "sectorId": 1
+  },
+  {
+    "id": 15,
+    "esVirtual": true,
+    "esGrupal": true,
+    "fechaClase": "2024-10-29T11:30:00Z",
+    "idProfesor": 15,
+    "subEspecialidadId": 10,
+    "sectorId": 1
+  },
+  {
+    "id": 16,
+    "esVirtual": false,
+    "esGrupal": false,
+    "fechaClase": "2024-10-30T13:00:00Z",
+    "idProfesor": 16,
+    "subEspecialidadId": 11,
+    "sectorId": 1
+  },
+  {
+    "id": 17,
+    "esVirtual": true,
+    "esGrupal": false,
+    "fechaClase": "2024-10-31T16:00:00Z",
+    "idProfesor": 17,
+    "subEspecialidadId": 12,
+    "sectorId": 1
+  },
+  {
+    "id": 18,
+    "esVirtual": false,
+    "esGrupal": true,
+    "fechaClase": "2024-11-01T09:00:00Z",
+    "idProfesor": 18,
+    "subEspecialidadId": 1,
+    "sectorId": 1
+  },
+  {
+    "id": 19,
+    "esVirtual": true,
+    "esGrupal": true,
+    "fechaClase": "2024-11-02T10:30:00Z",
+    "idProfesor": 19,
+    "subEspecialidadId": 2,
+    "sectorId": 1
+  },
+  {
+    "id": 20,
+    "esVirtual": false,
+    "esGrupal": false,
+    "fechaClase": "2024-11-03T14:00:00Z",
+    "idProfesor": 20,
+    "subEspecialidadId": 3,
+    "sectorId": 1
+  }
+]

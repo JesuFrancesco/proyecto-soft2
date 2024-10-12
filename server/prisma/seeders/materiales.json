@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "nombre": "Matemáticas Básicas",
+    "assetUrl": "https://example.com/matematicas_basicas"
+  },
+  {
+    "id": 2,
+    "nombre": "Historia Universal",
+    "assetUrl": "https://example.com/historia_universal"
+  },
+  {
+    "id": 3,
+    "nombre": "Ciencias Naturales",
+    "assetUrl": "https://example.com/ciencias_naturales"
+  },
+  {
+    "id": 4,
+    "nombre": "Literatura Clásica",
+    "assetUrl": "https://example.com/literatura_clasica"
+  },
+  {
+    "id": 5,
+    "nombre": "Química para Principiantes",
+    "assetUrl": "https://example.com/quimica_principiantes"
+  },
+  {
+    "id": 6,
+    "nombre": "Física Moderna",
+    "assetUrl": "https://example.com/fisica_moderna"
+  },
+  {
+    "id": 7,
+    "nombre": "Geografía del Mundo",
+    "assetUrl": "https://example.com/geografia_mundo"
+  },
+  {
+    "id": 8,
+    "nombre": "Arte y Cultura",
+    "assetUrl": "https://example.com/arte_cultura"
+  },
+  {
+    "id": 9,
+    "nombre": "Educación Cívica",
+    "assetUrl": "https://example.com/educacion_civica"
+  },
+  {
+    "id": 10,
+    "nombre": "Tecnología en el Aula",
+    "assetUrl": "https://example.com/tecnologia_aula"
+  },
+  {
+    "id": 11,
+    "nombre": "Desarrollo Personal",
+    "assetUrl": "https://example.com/desarrollo_personal"
+  },
+  {
+    "id": 12,
+    "nombre": "Programación para Niños",
+    "assetUrl": "https://example.com/programacion_ninos"
+  },
+  {
+    "id": 13,
+    "nombre": "Música y Matemáticas",
+    "assetUrl": "https://example.com/musica_matematicas"
+  },
+  {
+    "id": 14,
+    "nombre": "Educación Financiera",
+    "assetUrl": "https://example.com/educacion_financiera"
+  },
+  {
+    "id": 15,
+    "nombre": "Ética y Valores",
+    "assetUrl": "https://example.com/etica_valores"
+  },
+  {
+    "id": 16,
+    "nombre": "Biología Evolutiva",
+    "assetUrl": "https://example.com/biologia_evolutiva"
+  },
+  {
+    "id": 17,
+    "nombre": "Introducción a la Filosofía",
+    "assetUrl": "https://example.com/filosofia"
+  },
+  {
+    "id": 18,
+    "nombre": "Matemáticas Avanzadas",
+    "assetUrl": "https://example.com/matematicas_avanzadas"
+  },
+  {
+    "id": 19,
+    "nombre": "Inglés Básico",
+    "assetUrl": "https://example.com/ingles_basico"
+  },
+  {
+    "id": 20,
+    "nombre": "Ciencias Sociales",
+    "assetUrl": "https://example.com/ciencias_sociales"
+  },
+  {
+    "id": 21,
+    "nombre": "Habilidades de Estudio",
+    "assetUrl": "https://example.com/habilidades_estudio"
+  },
+  {
+    "id": 22,
+    "nombre": "Ética Profesional",
+    "assetUrl": "https://example.com/etica_profesional"
+  },
+  {
+    "id": 23,
+    "nombre": "Literatura Contemporánea",
+    "assetUrl": "https://example.com/literatura_contemporanea"
+  },
+  {
+    "id": 24,
+    "nombre": "Cálculo Diferencial",
+    "assetUrl": "https://example.com/calculo_diferencial"
+  },
+  {
+    "id": 25,
+    "nombre": "Robótica Educativa",
+    "assetUrl": "https://example.com/robotica_educativa"
+  },
+  {
+    "id": 26,
+    "nombre": "Astronomía para Todos",
+    "assetUrl": "https://example.com/astronomia_todos"
+  },
+  {
+    "id": 27,
+    "nombre": "Cuidado del Medio Ambiente",
+    "assetUrl": "https://example.com/cuidado_medio_ambiente"
+  },
+  {
+    "id": 28,
+    "nombre": "Desarrollo de Aplicaciones",
+    "assetUrl": "https://example.com/desarrollo_aplicaciones"
+  },
+  {
+    "id": 29,
+    "nombre": "Comunicaciones Efectivas",
+    "assetUrl": "https://example.com/comunicaciones_efectivas"
+  },
+  {
+    "id": 30,
+    "nombre": "Proyectos de Investigación",
+    "assetUrl": "https://example.com/proyectos_investigacion"
+  }
+]

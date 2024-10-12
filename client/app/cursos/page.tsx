@@ -1,7 +1,8 @@
-"use client";
 import Image from "next/image";
+import axios from "axios";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { EXPRESS_API_URL } from "../config/apiUrls";
 const coursesData = [
   {
     id: 1,
@@ -85,12 +86,25 @@ const coursesData = [
   },
 ];
 
-const CursosDisponibles = () => {
-  const router = useRouter();
+const fetchDataFromAPI = async () => {
+  const res = await axios.get(`${EXPRESS_API_URL}/clases`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-  const handleViewDetails = (id: number) => {
-    router.push(`/curso/${id}`);
-  };
+  if (!res.data) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.data;
+};
+
+export default async function CursosDisponiblesPage() {
+  const clases = await fetchDataFromAPI();
+  console.log(clases);
+
   return (
     <WidgetWrapper
       id="my-courses"
@@ -118,17 +132,18 @@ const CursosDisponibles = () => {
                 className="rounded-md mb-4 object-cover"
               />
               <h3 className="text-lg font-medium">{course.name}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{course.section}</p>
+              <p className="text-gray-600 dark:text-gray-300">
+                {course.section}
+              </p>
               <p className="text-gray-600 dark:text-gray-300">
                 {course.instructor}
               </p>
               <div className="mt-4 flex justify-between items-center">
-                <button
-                  onClick={() => handleViewDetails(course.id)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors duration-200"
-                >
-                  Ver detalles
-                </button>
+                <Link href={`/cursos/${course.id}`}>
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors duration-200">
+                    Ver detalles
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -136,7 +151,4 @@ const CursosDisponibles = () => {
       </div>
     </WidgetWrapper>
   );
-
-};
-
-export default CursosDisponibles;
+}

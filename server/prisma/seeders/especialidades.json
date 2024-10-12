@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "especialidad": "Medicina"
+  },
+  {
+    "id": 2,
+    "especialidad": "Ingeniería Civil"
+  },
+  {
+    "id": 3,
+    "especialidad": "Arquitectura"
+  },
+  {
+    "id": 4,
+    "especialidad": "Derecho"
+  },
+  {
+    "id": 5,
+    "especialidad": "Psicología"
+  },
+  {
+    "id": 6,
+    "especialidad": "Ciencias de la Computación"
+  },
+  {
+    "id": 7,
+    "especialidad": "Biología"
+  },
+  {
+    "id": 8,
+    "especialidad": "Química"
+  },
+  {
+    "id": 9,
+    "especialidad": "Física"
+  },
+  {
+    "id": 10,
+    "especialidad": "Matemáticas"
+  },
+  {
+    "id": 11,
+    "especialidad": "Ciencias Sociales"
+  },
+  {
+    "id": 12,
+    "especialidad": "Educación"
+  },
+  {
+    "id": 13,
+    "especialidad": "Arte"
+  },
+  {
+    "id": 14,
+    "especialidad": "Diseño Gráfico"
+  },
+  {
+    "id": 15,
+    "especialidad": "Negocios Internacionales"
+  },
+  {
+    "id": 16,
+    "especialidad": "Administración de Empresas"
+  },
+  {
+    "id": 17,
+    "especialidad": "Contabilidad"
+  },
+  {
+    "id": 18,
+    "especialidad": "Marketing"
+  },
+  {
+    "id": 19,
+    "especialidad": "Comunicación"
+  },
+  {
+    "id": 20,
+    "especialidad": "Veterinaria"
+  }
+]

@@ -5,10 +5,14 @@
   },
   {
     "id": 2,
-    "tipo": "Full"
+    "tipo": "Por asesoría"
   },
   {
     "id": 3,
+    "tipo": "Full"
+  },
+  {
+    "id": 4,
     "tipo": "Full+"
   }
 ]

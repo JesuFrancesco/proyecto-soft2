@@ -34,9 +34,9 @@ model Account {
   alumno   Alumno?   @relation("AccountAlumno")
   profesor Profesor? @relation("AccountProfessores")
 
-  distritoId     String? @map("distrito_id")
-  provinciaId    String? @map("provincia_id")
-  departamentoId String? @map("departamento_id")
+  distritoId     String? @default("150117") @map("distrito_id")
+  provinciaId    String? @default("1501") @map("provincia_id")
+  departamentoId String? @default("15") @map("departamento_id")
 
   @@map("accounts")
 }
@@ -52,6 +52,7 @@ model AccountSuscripcion {
   suscripcionId Int
 
   @@id([accountId, suscripcionId])
+  @@map("accounts_suscripciones")
 }
 
 model Suscripcion {
@@ -59,6 +60,8 @@ model Suscripcion {
   tipo String @unique
 
   accountsWithSuscripcion AccountSuscripcion[]
+
+  @@map("suscripciones")
 }
 
 model Alumno {
@@ -66,13 +69,13 @@ model Alumno {
   nombre String
   edad   Int
 
-  account      Account?            @relation("AccountAlumno", fields: [idAccount], references: [id])
+  account      Account?            @relation("AccountAlumno", fields: [accountId], references: [id])
   clases       AlumnoClase[]       @relation("AlumnoClases")
   preferencias AlumnoPreferencia[] @relation("AlumnoPreferencias")
   chats        Chat[]              @relation("AlumnoChats")
   reviews      Review[]            @relation("AlumnoReviews")
 
-  idAccount Int?     @unique @map("account_id")
+  accountId Int?     @unique @map("account_id")
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
@@ -131,7 +134,7 @@ model Especialidad {
   AlumnoPreferencia AlumnoPreferencia[] @relation("PreferenciaAlumnoPreferencias")
   SubEspecialidad   SubEspecialidad[]
 
-  @@map("especialidad")
+  @@map("especialidades")
 }
 
 model SubEspecialidad {
@@ -147,7 +150,7 @@ model SubEspecialidad {
   especialidadId Int
   Clase          Clase[]
 
-  @@map("subespecialidad")
+  @@map("subespecialidades")
 }
 
 model MaterialEducativo {
@@ -160,7 +163,7 @@ model MaterialEducativo {
 
   materialClases MaterialClase[] @relation("MaterialEducativoClases")
 
-  @@map("material_educativo")
+  @@map("material_educativos")
 }
 
 model MaterialClase {
@@ -172,15 +175,15 @@ model MaterialClase {
   materialId Int? @map("material_id")
   claseId    Int?
 
-  @@map("material_clase")
+  @@map("material_clases")
 }
 
 model Clase {
   id Int @id @default(autoincrement())
 
   curso         SubEspecialidad? @relation(fields: [subEspecialidadId], references: [id])
-  MaterialClase MaterialClase[]
-  ubicacion     Int?
+  sector        Sector           @relation(fields: [sectorId], references: [id])
+  materialClase MaterialClase[]
 
   esVirtual Boolean? @map("es_virtual")
   esGrupal  Boolean? @map("es_grupal")
@@ -195,8 +198,17 @@ model Clase {
   createdAt         DateTime @default(now()) @map("created_at")
   updatedAt         DateTime @default(now()) @map("updated_at")
   subEspecialidadId Int?
+  sectorId          Int
 
-  @@map("clase")
+  @@map("clases")
+}
+
+model Sector {
+  id     Int     @id @default(autoincrement())
+  name   String
+  clases Clase[]
+
+  @@map("sectores")
 }
 
 model Chat {
@@ -221,7 +233,7 @@ model Mensaje {
 
   createdAt DateTime @default(now()) @map("fecha_envio")
 
-  @@map("mensaje")
+  @@map("mensajes")
 }
 
 // many-to-many
@@ -233,7 +245,7 @@ model ChatMensaje {
   mensaje Mensaje? @relation("MensajeChatMensajes", fields: [idMensaje], references: [id])
 
   @@id([idChat, idMensaje])
-  @@map("chat_mensaje")
+  @@map("chat_mensajes")
 }
 
 model AlumnoClase {
@@ -249,7 +261,7 @@ model AlumnoClase {
   claseId  Int @map("clase_id")
 
   @@id([alumnoId, claseId])
-  @@map("alumno_clase")
+  @@map("alumno_clases")
 }
 
 model AlumnoPreferencia {
@@ -262,7 +274,7 @@ model AlumnoPreferencia {
   subEspecialidadId Int?
 
   @@id([idAlumno, idPreferencia])
-  @@map("alumno_preferencia")
+  @@map("alumno_preferencias")
 }
 
 model ProfesorEspecialidad {
@@ -277,7 +289,7 @@ model ProfesorEspecialidad {
   subEspecialidadId Int?
 
   @@id([profesorId, especialidadId])
-  @@map("profesor_especialidad")
+  @@map("profesor_especialidades")
 }
 
 model ProfesorSubEspecialidad {
@@ -291,7 +303,7 @@ model ProfesorSubEspecialidad {
   profesorId        Int @map("profesor_id")
 
   @@id([profesorId, subEspecialidadId])
-  @@map("profesor_subespecialidad")
+  @@map("profesor_subespecialidades")
 }
 
 // location

@@ -1,12 +1,21 @@
 import {
   Account,
   Alumno,
+  Clase,
   Departamento,
   Distrito,
+  Especialidad,
+  MaterialClase,
+  MaterialEducativo,
   Pais,
+  Prisma,
   PrismaClient,
   Profesor,
+  ProfesorEspecialidad,
+  ProfesorSubEspecialidad,
   Provincia,
+  Sector,
+  SubEspecialidad,
   Suscripcion,
 } from "@prisma/client";
 import * as fs from "fs";
@@ -21,13 +30,16 @@ const loadJSON = (pathToJSON: string) => {
 };
 
 async function main() {
+  // ubigeos
   await loadPaises();
-  await loadDepartamentos();
-  await loadProvincias();
-  await loadDistritos();
+  await loadPeruUbigeos();
 
+  // static
   await loadSuscripciones();
-  await loadAccounts();
+  await loadSectores();
+
+  // mock
+  await loadMockData();
 }
 
 async function loadPaises() {
@@ -35,73 +47,128 @@ async function loadPaises() {
   try {
     await prisma.pais.createMany({
       data: data as Pais[],
+      skipDuplicates: true,
     });
   } catch (error) {
     console.error("Error executing SQL:", error);
   }
 }
-async function loadDepartamentos() {
-  const data = loadJSON("seeders/departamentos.json");
+async function loadPeruUbigeos() {
+  const dataDepa = loadJSON("seeders/departamentos.json") as Departamento[];
+  const dataProv = loadJSON("seeders/provincias.json") as Provincia[];
+  const dataDist = loadJSON("seeders/distritos.json") as Distrito[];
   try {
     await prisma.departamento.createMany({
-      data: data as Departamento[],
+      data: dataDepa,
+      skipDuplicates: true,
     });
-  } catch (error) {
-    console.error("Error executing SQL:", error);
-  }
-}
-async function loadProvincias() {
-  const data = loadJSON("seeders/provincias.json");
-  try {
     await prisma.provincia.createMany({
-      data: data as Provincia[],
+      data: dataProv,
+      skipDuplicates: true,
     });
-  } catch (error) {
-    console.error("Error executing SQL:", error);
-  }
-}
-async function loadDistritos() {
-  const data: any[] = loadJSON("seeders/distritos.json");
-  try {
-    const uniqueItems = data.filter(
-      (item, index, self) => index === self.findIndex((t) => t.id === item.id)
-    );
     await prisma.distrito.createMany({
-      data: uniqueItems as Distrito[],
+      data: dataDist,
+      skipDuplicates: true,
     });
   } catch (error) {
-    console.error("Error executing SQL:", error);
+    console.log("#################");
+    console.error("loadPeruUbigeos | ALGO SALIO MAL:", error);
+    console.log("#################");
   }
 }
+
 async function loadSuscripciones() {
-  const data: any[] = loadJSON("seeders/suscripciones.json");
+  const data = loadJSON("seeders/suscripciones.json") as Suscripcion[];
   try {
-    const uniqueItems = data.filter(
-      (item, index, self) => index === self.findIndex((t) => t.id === item.id)
-    );
     await prisma.suscripcion.createMany({
-      data: uniqueItems as Suscripcion[],
+      data: data,
+      skipDuplicates: true,
     });
   } catch (error) {
-    console.error("Error executing SQL:", error);
+    console.error("loadSuscripciones | Error executing SQL:", error);
   }
 }
-async function loadAccounts() {
-  const dataCuentas: any[] = loadJSON("seeders/accounts.json");
-  const dataAlumnos: any[] = loadJSON("seeders/alumnos.json");
-  const dataProfesores: any[] = loadJSON("seeders/profesores.json");
+async function loadSectores() {
+  const data = loadJSON("seeders/sectores.json") as Sector[];
+  try {
+    await prisma.sector.createMany({
+      data: data,
+      skipDuplicates: true,
+    });
+  } catch (error) {
+    console.error("loadSectores | Error executing SQL:", error);
+  }
+}
+
+async function loadMockData() {
+  const dataCuentas = loadJSON("seeders/accounts.json") as Account[];
+  const dataAlumnos = loadJSON("seeders/alumnos.json") as Alumno[];
+  const dataProfesores = loadJSON("seeders/profesores.json") as Profesor[];
+  const dataEspecialidades = loadJSON(
+    "seeders/especialidades.json"
+  ) as Especialidad[];
+  const dataSubEspecialidades = loadJSON(
+    "seeders/subespecialidades.json"
+  ) as SubEspecialidad[];
+
+  const dataProfesorEspecialidad = loadJSON(
+    "seeders/profesor_especialidad.json"
+  ) as ProfesorEspecialidad[];
+  const dataProfesorSubEspecialidades = loadJSON(
+    "seeders/profesor_subespecialidad.json"
+  ) as ProfesorSubEspecialidad[];
   try {
     await prisma.account.createMany({
-      data: dataCuentas as Account[],
+      data: dataCuentas,
+      skipDuplicates: true,
     });
     await prisma.alumno.createMany({
-      data: dataAlumnos as Alumno[],
+      data: dataAlumnos,
+      skipDuplicates: true,
     });
     await prisma.profesor.createMany({
-      data: dataProfesores as Profesor[],
+      data: dataProfesores,
+      skipDuplicates: true,
+    });
+    await prisma.especialidad.createMany({
+      data: dataEspecialidades,
+      skipDuplicates: true,
+    });
+    await prisma.subEspecialidad.createMany({
+      data: dataSubEspecialidades,
+      skipDuplicates: true,
+    });
+    await prisma.profesorEspecialidad.createMany({
+      data: dataProfesorEspecialidad,
+      skipDuplicates: true,
+    });
+    await prisma.profesorSubEspecialidad.createMany({
+      data: dataProfesorSubEspecialidades,
+      skipDuplicates: true,
     });
   } catch (error) {
-    console.error("Error executing SQL:", error);
+    console.error("loadMockData 1 | Error executing SQL:", error);
+  }
+
+  const dataClases = loadJSON("seeders/clases.json");
+  const dataMaterialesEdu = loadJSON("seeders/materiales.json");
+  const dataMaterialesClase = loadJSON("seeders/materiales_clase.json");
+
+  try {
+    await prisma.clase.createMany({
+      data: dataClases as Clase[],
+      skipDuplicates: true,
+    });
+    await prisma.materialEducativo.createMany({
+      data: dataMaterialesEdu as MaterialEducativo[],
+      skipDuplicates: true,
+    });
+    await prisma.materialClase.createMany({
+      data: dataMaterialesClase as MaterialClase[],
+      skipDuplicates: true,
+    });
+  } catch (error) {
+    console.error("loadMockData 2 | Error executing SQL:", error);
   }
 }
 

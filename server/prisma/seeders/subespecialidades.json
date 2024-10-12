@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "subEspecialidad": "Pediatría",
+    "especialidadId": 1
+  },
+  {
+    "id": 2,
+    "subEspecialidad": "Estructuras",
+    "especialidadId": 2
+  },
+  {
+    "id": 3,
+    "subEspecialidad": "Diseño Arquitectónico",
+    "especialidadId": 3
+  },
+  {
+    "id": 4,
+    "subEspecialidad": "Derecho Penal",
+    "especialidadId": 4
+  },
+  {
+    "id": 5,
+    "subEspecialidad": "Psicología Clínica",
+    "especialidadId": 5
+  },
+  {
+    "id": 6,
+    "subEspecialidad": "Inteligencia Artificial",
+    "especialidadId": 6
+  },
+  {
+    "id": 7,
+    "subEspecialidad": "Biología Molecular",
+    "especialidadId": 7
+  },
+  {
+    "id": 8,
+    "subEspecialidad": "Química Orgánica",
+    "especialidadId": 8
+  },
+  {
+    "id": 9,
+    "subEspecialidad": "Física Teórica",
+    "especialidadId": 9
+  },
+  {
+    "id": 10,
+    "subEspecialidad": "Álgebra",
+    "especialidadId": 10
+  },
+  {
+    "id": 11,
+    "subEspecialidad": "Antropología",
+    "especialidadId": 11
+  },
+  {
+    "id": 12,
+    "subEspecialidad": "Educación Infantil",
+    "especialidadId": 12
+  },
+  {
+    "id": 13,
+    "subEspecialidad": "Arte Digital",
+    "especialidadId": 13
+  },
+  {
+    "id": 14,
+    "subEspecialidad": "Diseño Web",
+    "especialidadId": 14
+  },
+  {
+    "id": 15,
+    "subEspecialidad": "Comercio Internacional",
+    "especialidadId": 15
+  },
+  {
+    "id": 16,
+    "subEspecialidad": "Recursos Humanos",
+    "especialidadId": 16
+  },
+  {
+    "id": 17,
+    "subEspecialidad": "Auditoría",
+    "especialidadId": 17
+  },
+  {
+    "id": 18,
+    "subEspecialidad": "Publicidad",
+    "especialidadId": 18
+  },
+  {
+    "id": 19,
+    "subEspecialidad": "Comunicación Audiovisual",
+    "especialidadId": 19
+  },
+  {
+    "id": 20,
+    "subEspecialidad": "Medicina Veterinaria",
+    "especialidadId": 20
+  }
+]

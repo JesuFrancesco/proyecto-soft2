@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import React from "react";
+import Image from "next/image";
 
 const ProfesoresPage: React.FC = () => {
   const { id } = useParams();
@@ -11,8 +11,10 @@ const ProfesoresPage: React.FC = () => {
           <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             Información del Profesor
           </h1>
-          <img
+          <Image
             src="https://dina.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=29178&ruta=/documents/docInvestigadores/29178/imagenes/Carlos.jpg&content_type=image/jpeg" // Reemplaza esto con la ruta a la imagen del profesor
+            width={300}
+            height={300}
             alt="Profesor Felix"
             className="w-32 h-32 rounded-full shadow-lg mb-4"
           />

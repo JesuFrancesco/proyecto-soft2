@@ -14,8 +14,9 @@ const logger = log4js.getLogger("cheese");
 
 const config = {
   env: process.env.NODE_ENV || "dev",
+  azureOrigin: process.env.EXPRESS_API_URL || "dev",
   supabaseURL: process.env.SUPABASE_URL || "none",
-  supabaseServiceRole: process.env.SUPABASE_SERVICE_ROLE || "none"
+  supabaseServiceRole: process.env.SUPABASE_SERVICE_ROLE || "none",
 };
 
 export { config, logger };
