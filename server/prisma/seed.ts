@@ -1,9 +1,13 @@
 import {
+  Account,
+  Alumno,
   Departamento,
   Distrito,
   Pais,
   PrismaClient,
+  Profesor,
   Provincia,
+  Suscripcion,
 } from "@prisma/client";
 import * as fs from "fs";
 import * as path from "path";
@@ -21,6 +25,9 @@ async function main() {
   await loadDepartamentos();
   await loadProvincias();
   await loadDistritos();
+
+  await loadSuscripciones();
+  await loadAccounts();
 }
 
 async function loadPaises() {
@@ -61,6 +68,37 @@ async function loadDistritos() {
     );
     await prisma.distrito.createMany({
       data: uniqueItems as Distrito[],
+    });
+  } catch (error) {
+    console.error("Error executing SQL:", error);
+  }
+}
+async function loadSuscripciones() {
+  const data: any[] = loadJSON("seeders/suscripciones.json");
+  try {
+    const uniqueItems = data.filter(
+      (item, index, self) => index === self.findIndex((t) => t.id === item.id)
+    );
+    await prisma.suscripcion.createMany({
+      data: uniqueItems as Suscripcion[],
+    });
+  } catch (error) {
+    console.error("Error executing SQL:", error);
+  }
+}
+async function loadAccounts() {
+  const dataCuentas: any[] = loadJSON("seeders/accounts.json");
+  const dataAlumnos: any[] = loadJSON("seeders/alumnos.json");
+  const dataProfesores: any[] = loadJSON("seeders/profesores.json");
+  try {
+    await prisma.account.createMany({
+      data: dataCuentas as Account[],
+    });
+    await prisma.alumno.createMany({
+      data: dataAlumnos as Alumno[],
+    });
+    await prisma.profesor.createMany({
+      data: dataProfesores as Profesor[],
     });
   } catch (error) {
     console.error("Error executing SQL:", error);

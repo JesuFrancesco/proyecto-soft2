@@ -119,17 +119,6 @@ model Review {
   @@map("reviews")
 }
 
-model Seccion {
-  id         Int               @id @default(autoincrement())
-  nombre     String?
-  materiales MaterialSeccion[] @relation("SeccionMaterialSecciones")
-
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @default(now()) @map("updated_at")
-
-  @@map("secciones")
-}
-
 model Especialidad {
   id                     Int                    @id @default(autoincrement())
   especialidad           String
@@ -167,28 +156,29 @@ model MaterialEducativo {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
-  materialSecciones MaterialSeccion[] @relation("MaterialEducativoSecciones")
+  materialClases MaterialClase[] @relation("MaterialEducativoClases")
 
   @@map("material_educativo")
 }
 
-model MaterialSeccion {
+model MaterialClase {
   id Int @id @default(autoincrement())
 
-  material MaterialEducativo? @relation("MaterialEducativoSecciones", fields: [materialId], references: [id])
-  seccion  Seccion?           @relation("SeccionMaterialSecciones", fields: [seccionId], references: [id])
+  clase    Clase?             @relation(fields: [claseId], references: [id])
+  material MaterialEducativo? @relation("MaterialEducativoClases", fields: [materialId], references: [id])
 
   materialId Int? @map("material_id")
-  seccionId  Int? @map("seccion_id")
+  claseId    Int?
 
-  @@map("material_seccion")
+  @@map("material_clase")
 }
 
 model Clase {
   id Int @id @default(autoincrement())
 
-  curso     SubEspecialidad? @relation(fields: [subEspecialidadId], references: [id])
-  ubicacion Int?
+  curso         SubEspecialidad? @relation(fields: [subEspecialidadId], references: [id])
+  MaterialClase MaterialClase[]
+  ubicacion     Int?
 
   esVirtual Boolean? @map("es_virtual")
   esGrupal  Boolean? @map("es_grupal")

@@ -1,14 +1,10 @@
 import { Express, Router } from "express";
 
 import accountRouter from "./account.router";
-// import productRouter from "./product.router";
-// import userRouter from "./user.router";
-// import marketRouter from "./market.router";
-// import categoryRouter from "./category.router";
-// import orderRouter from "./order.router";
-
-// import authRouter from "./auth.router";
-// import profileRouter from "./profile.router";
+import alumnoRouter from "./alumno.router";
+import claseRouter from "./clase.router";
+import profesorRouter from "./profesor.router";
+import reviewRouter from "./review.router";
 
 function routerAPI(app: Express) {
   const router = Router();
@@ -16,14 +12,10 @@ function routerAPI(app: Express) {
   app.use("/api/v1", router);
 
   router.use("/accounts", accountRouter);
-  // router.use("/products", productRouter);
-  // router.use("/users", userRouter);
-  // router.use("/markets", marketRouter);
-  // router.use("/category", categoryRouter);
-  // router.use("/order", orderRouter);
-
-  // router.use("/auth", authRouter);
-  // router.use("/profile", profileRouter);
+  router.use("/alumnos", alumnoRouter);
+  router.use("/profesores", profesorRouter);
+  router.use("/reviews", reviewRouter);
+  router.use("/clases", claseRouter);
 }
 
 export { routerAPI };

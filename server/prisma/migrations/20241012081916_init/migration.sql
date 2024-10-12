@@ -74,14 +74,6 @@ CREATE TABLE "reviews" (
 );
 
 -- CreateTable
-CREATE TABLE "secciones" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "nombre" TEXT,
-    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
--- CreateTable
 CREATE TABLE "especialidad" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "especialidad" TEXT NOT NULL,
@@ -109,12 +101,12 @@ CREATE TABLE "material_educativo" (
 );
 
 -- CreateTable
-CREATE TABLE "material_seccion" (
+CREATE TABLE "material_clase" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "material_id" INTEGER,
-    "seccion_id" INTEGER,
-    CONSTRAINT "material_seccion_material_id_fkey" FOREIGN KEY ("material_id") REFERENCES "material_educativo" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
-    CONSTRAINT "material_seccion_seccion_id_fkey" FOREIGN KEY ("seccion_id") REFERENCES "secciones" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+    "claseId" INTEGER,
+    CONSTRAINT "material_clase_claseId_fkey" FOREIGN KEY ("claseId") REFERENCES "clase" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT "material_clase_material_id_fkey" FOREIGN KEY ("material_id") REFERENCES "material_educativo" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- CreateTable

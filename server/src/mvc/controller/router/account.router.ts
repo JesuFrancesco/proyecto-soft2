@@ -39,6 +39,43 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get(
+  "/email/:email",
+  validatorHandler(getAccountSchemaByEmail, "params"),
+  async (req, res, next) => {
+    try {
+      const { email } = req.params;
+
+      const account = await service.findByEmail(email);
+
+      res.json(account);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+router.patch(
+  "/:id",
+  validatorHandler(getAccountSchemaByEmail, "params"),
+  validatorHandler(updateAccountSchema, "body"),
+  async (req, res, next) => {
+    try {
+      const { id } = req.params;
+
+      const accountId = parseInt(id);
+
+      const data = req.body;
+
+      const account = await service.update(accountId, data);
+
+      res.json(account);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 router.post(
   "/",
   validatorHandler(createAccountSchema, "body"),

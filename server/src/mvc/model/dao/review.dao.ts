@@ -1,8 +1,9 @@
-import { IEduyachaDAO } from "./interfaces/IEduyachaDAO";
+import { ICrud } from "./interfaces/ICrud";
 import { Review, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
+import { IFindReviews } from "./interfaces/IReviewFindable";
 
-export class ReviewDAO implements IEduyachaDAO<Review> {
+export class ReviewDAO implements ICrud<Review>, IFindReviews {
   private prisma = new PrismaClient();
 
   async create(review: Review) {
@@ -17,10 +18,10 @@ export class ReviewDAO implements IEduyachaDAO<Review> {
     return reviews;
   }
 
-  async findByPk(id: number) {
+  async findByPk(id: number | string) {
     const review = await this.prisma.review.findUnique({
       where: {
-        id,
+        id: id as number,
       },
     });
 
@@ -29,6 +30,28 @@ export class ReviewDAO implements IEduyachaDAO<Review> {
     }
 
     return review;
+  }
+
+  async findReviewsByAlumno(alumnoId: number) {
+    const reviews = await this.prisma.review.findMany({
+      where: {
+        alumnoId,
+      },
+    });
+
+    if (!reviews) throw boom.notFound();
+    return reviews;
+  }
+  async findReviewsByProfesor(profesorId: number) {
+    const reviews = await this.prisma.review.findMany({
+      where: {
+        profesorId,
+      },
+    });
+
+    if (!reviews) throw boom.notFound();
+
+    return reviews;
   }
 
   async update(id: number, cambios: Partial<Review>) {

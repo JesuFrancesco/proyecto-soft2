@@ -1,9 +1,9 @@
-import { IEduyachaDAO } from "./interfaces/IEduyachaDAO";
-import { Account, Alumno, PrismaClient } from "@prisma/client";
+import { ICrud } from "./interfaces/ICrud";
+import { Alumno, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
-import { IFindByEmail } from "./interfaces/IFindByEmail";
+import { IFindAlumnoByEmail } from "./interfaces/IFindByEmail";
 
-export class AlumnoDAO implements IEduyachaDAO<Alumno>, IFindByEmail<Alumno> {
+export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
   private prisma = new PrismaClient();
 
   async findByEmail(email: string) {
@@ -41,10 +41,10 @@ export class AlumnoDAO implements IEduyachaDAO<Alumno>, IFindByEmail<Alumno> {
     return alumnos;
   }
 
-  async findByPk(id: number) {
+  async findByPk(id: number | string) {
     const alumno = await this.prisma.alumno.findUnique({
       where: {
-        id,
+        id: id as number,
       },
     });
 

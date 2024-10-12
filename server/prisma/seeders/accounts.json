@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john@example.com",
+    "phone": "1234567890",
+    "passwordHash": "hash1"
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane@example.com",
+    "phone": "0987654321",
+    "passwordHash": "hash2"
+  },
+  {
+    "id": 3,
+    "username": "sam_lee",
+    "email": "sam@example.com",
+    "phone": "1122334455",
+    "passwordHash": "hash3"
+  }
+]

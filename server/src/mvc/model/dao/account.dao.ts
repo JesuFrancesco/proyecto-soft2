@@ -1,11 +1,9 @@
-import { IEduyachaDAO } from "./interfaces/IEduyachaDAO";
+import { ICrud } from "./interfaces/ICrud";
 import { Account, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
-import { IFindByEmail } from "./interfaces/IFindByEmail";
+import { IFindAccountByEmail } from "./interfaces/IFindByEmail";
 
-export class AccountDAO
-  implements IEduyachaDAO<Account>, IFindByEmail<Account>
-{
+export class AccountDAO implements ICrud<Account>, IFindAccountByEmail {
   private prisma = new PrismaClient();
   async findByEmail(email: string) {
     const cuenta = await this.prisma.account.findUnique({
@@ -19,17 +17,6 @@ export class AccountDAO
     }
 
     return cuenta;
-    // const cuenta = await this.prisma.account.findUnique({
-    //   where: {
-    //     email: email,
-    //   },
-    //   include: {
-    //     alumnos: true,
-    //   },
-    // });
-
-    // const alumnos = cuenta?.alumnos;
-    // return alumnos;
   }
 
   async create(cuenta: Account) {
@@ -45,10 +32,10 @@ export class AccountDAO
     return accounts;
   }
 
-  async findByPk(id: number) {
+  async findByPk(id: string | number) {
     const account = await this.prisma.account.findUnique({
       where: {
-        id,
+        id: id as number,
       },
     });
 

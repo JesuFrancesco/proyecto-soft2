@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "tipo": "Basic"
+  },
+  {
+    "id": 2,
+    "tipo": "Full"
+  },
+  {
+    "id": 3,
+    "tipo": "Full+"
+  }
+]

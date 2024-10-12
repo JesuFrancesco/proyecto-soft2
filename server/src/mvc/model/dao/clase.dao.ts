@@ -1,8 +1,8 @@
-import { IEduyachaDAO } from "./interfaces/IEduyachaDAO";
+import { ICrud } from "./interfaces/ICrud";
 import { Clase, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 
-export class ClaseDAO implements IEduyachaDAO<Clase> {
+export class ClaseDAO implements ICrud<Clase> {
   private prisma = new PrismaClient();
 
   async create(clase: Clase) {
@@ -17,10 +17,10 @@ export class ClaseDAO implements IEduyachaDAO<Clase> {
     return clases;
   }
 
-  async findByPk(id: number) {
+  async findByPk(id: string | number) {
     const clase = await this.prisma.clase.findUnique({
       where: {
-        id,
+        id: id as number,
       },
     });
 
