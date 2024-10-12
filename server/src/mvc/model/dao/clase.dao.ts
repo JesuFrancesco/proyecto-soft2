@@ -1,4 +1,4 @@
-import { IEduyachaDAO } from "./schema";
+import { IEduyachaDAO } from "./interfaces/IEduyachaDAO";
 import { Clase, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 
