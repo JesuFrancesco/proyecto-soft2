@@ -3,17 +3,17 @@ generator client {
 }
 
 // dev
-datasource db {
-  provider = "sqlite"
-  url      = "file:dev.db"
-}
+// datasource db {
+//   provider = "sqlite"
+//   url      = "file:dev.db"
+// }
 
 // prod
-// datasource db {
-//   provider  = "postgresql"
-//   url       = env("DATABASE_URL")
-//   directUrl = env("DIRECT_URL")
-// }
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
 
 // modelos
 model Account {
