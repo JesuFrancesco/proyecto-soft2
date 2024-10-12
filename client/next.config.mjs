@@ -3,9 +3,10 @@ import { SITE } from "./config.js";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: SITE.basePathname !== "/" ? SITE.basePathname : "",
-  trailingSlash: SITE.trailingSlash,
+  
+  // trailingSlash: SITE.trailingSlash,
+  // output: "export",
 
-  output: "export",
   trailingSlash: true,
   reactStrictMode: true,
 
