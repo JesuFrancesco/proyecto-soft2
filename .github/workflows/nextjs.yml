@@ -117,7 +117,7 @@ env:
 on:
   push:
     branches:
-      - main
+      - prod
 
 jobs:
   Deploy-development:
