@@ -181,7 +181,7 @@ model MaterialClase {
 model Clase {
   id Int @id @default(autoincrement())
 
-  curso         SubEspecialidad? @relation(fields: [subEspecialidadId], references: [id])
+  tema          SubEspecialidad? @relation(fields: [subEspecialidadId], references: [id])
   sector        Sector           @relation(fields: [sectorId], references: [id])
   materialClase MaterialClase[]
 

@@ -1,3 +1,4 @@
+"use server";
 import Image from "next/image";
 import axios from "axios";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
@@ -103,7 +104,7 @@ const fetchDataFromAPI = async () => {
 
 export default async function CursosDisponiblesPage() {
   const clases = await fetchDataFromAPI();
-  console.log(clases);
+  // console.log(clases);
 
   return (
     <WidgetWrapper
@@ -119,24 +120,24 @@ export default async function CursosDisponiblesPage() {
           </h1>
         </div>
         <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {coursesData.map((course) => (
+          {clases.map((course: any) => (
             <div
               key={course.id}
               className="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md transition-colors duration-200"
             >
               <Image
-                src={course.image}
-                alt={`Imagen de ${course.name}`}
+                src={course.materialClase[0].material.assetUrl}
+                alt={`Imagen de ${course.curso.subEspecialidad}`}
                 width={500}
                 height={120}
                 className="rounded-md mb-4 object-cover"
               />
               <h3 className="text-lg font-medium">{course.name}</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                {course.section}
+                {course.sector.name}
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                {course.instructor}
+                {course.profesor.nombre}
               </p>
               <div className="mt-4 flex justify-between items-center">
                 <Link href={`/cursos/${course.id}`}>

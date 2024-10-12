@@ -1,4 +1,4 @@
-"use client"; // Marca este archivo como un Componente de Cliente
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";

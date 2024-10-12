@@ -1,8 +1,20 @@
-"use client";
-import { useParams } from "next/navigation";
+"use server";
 
-const CursoDetalle = () => {
-  const { id } = useParams();
+import { EXPRESS_API_URL } from "@/app/config/apiUrls";
+import { IClase } from "@/interfaces/IClase";
+import axios from "axios";
+
+interface CursoDetalleProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function CursoDetalle({ params }: CursoDetalleProps) {
+  const { id } = params;
+
+  const curso = (await axios.get(EXPRESS_API_URL + `/clases/${id}`)) as IClase;
+  console.log(curso);
 
   return (
     <div>
@@ -10,6 +22,4 @@ const CursoDetalle = () => {
       <p>ID del curso: {id}</p>
     </div>
   );
-};
-
-export default CursoDetalle;
+}
