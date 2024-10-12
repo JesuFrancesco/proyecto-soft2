@@ -15,7 +15,7 @@ export class ClaseDAO implements ICrud<Clase> {
   async findAll() {
     const clases = await this.prisma.clase.findMany({
       include: {
-        curso: true,
+        tema: true,
         profesor: true,
         sector: true,
         materialClase: {
@@ -34,7 +34,7 @@ export class ClaseDAO implements ICrud<Clase> {
         id: id as number,
       },
       include: {
-        curso: true,
+        tema: true,
         profesor: true,
         sector: true,
         alumnos: true,
