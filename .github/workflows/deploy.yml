@@ -25,9 +25,14 @@ jobs:
         with:
           node-version: "20.x"
 
-      - name: Realizar pruebas
+      - name: Preparar env
         run: |
           npm i
+          npx prisma migrate deploy
+          npx prisma generate
+
+      - name: Realizar pruebas
+        run: |
           npm test
 
   # Compilar proyecto
@@ -57,6 +62,7 @@ jobs:
       - name: Aplicar migraciones a db
         run: |
           npx prisma migrate deploy
+          npx prisma generate
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           DIRECT_URL: ${{ secrets.DIRECT_URL }}
