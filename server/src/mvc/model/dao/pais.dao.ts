@@ -5,7 +5,11 @@ import boom from "@hapi/boom";
 export class PaisDAO implements IReadable<Pais> {
   private prisma = new PrismaClient();
   async findAll() {
-    const paises = await this.prisma.pais.findMany({});
+    const paises = await this.prisma.pais.findMany({
+      include: {
+        profesores: true,
+      },
+    });
     if (!paises) throw boom.notFound();
     return paises;
   }
@@ -13,6 +17,9 @@ export class PaisDAO implements IReadable<Pais> {
     const pais = await this.prisma.pais.findUnique({
       where: {
         id: id as string,
+      },
+      include: {
+        profesores: true,
       },
     });
     if (!pais) throw boom.notFound();

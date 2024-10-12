@@ -82,6 +82,7 @@ model Alumno {
 model Profesor {
   id             Int                    @id @default(autoincrement())
   nombre         String
+  pais           Pais                   @relation(fields: [paisId], references: [id])
   edad           Int
   especialidades ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
 
@@ -94,6 +95,7 @@ model Profesor {
   createdAt               DateTime                  @default(now()) @map("created_at")
   updatedAt               DateTime                  @default(now()) @map("updated_at")
   ProfesorSubEspecialidad ProfesorSubEspecialidad[]
+  paisId                  String                    @default("173") // pe
 
   @@map("profesores")
 }
@@ -335,9 +337,10 @@ model Distrito {
 }
 
 model Pais {
-  id   String @id
-  name String
-  code String
+  id         String     @id
+  name       String
+  code       String
+  profesores Profesor[]
 
   @@map("paises")
 }
