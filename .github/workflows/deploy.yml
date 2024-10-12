@@ -2,7 +2,6 @@ name: Eduyacha CI/CD (backend)
 run-name: Proceso de despliegue de Express API a Azure
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["prod"]
 
@@ -12,7 +11,7 @@ jobs:
     defaults:
       run:
         working-directory: "server"
-    name: Realizar pruebas del proyecto
+    name: Realizar pruebas del proyecto (prod)
     runs-on: ubuntu-latest
     steps:
       - name: Obtener codigo de /server

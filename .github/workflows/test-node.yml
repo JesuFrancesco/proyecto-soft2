@@ -1,0 +1,28 @@
+name: Eduyacha CI/CD (backend)
+run-name: Suite de tests para el backend
+
+on:
+  push:
+    branches: ["dev"]
+
+jobs:
+  # Realizar pruebas
+  tests:
+    defaults:
+      run:
+        working-directory: server
+    name: Realizar pruebas del proyecto (dev)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener codigo de /server
+        uses: actions/checkout@master
+
+      - name: Usar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Realizar pruebas
+        run: |
+          npm i
+          npm test
