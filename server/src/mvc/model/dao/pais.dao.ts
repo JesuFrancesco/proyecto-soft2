@@ -5,7 +5,7 @@ import boom from "@hapi/boom";
 export class PaisDAO implements IReadable<Pais> {
   private prisma = new PrismaClient();
   async findAll() {
-    const paises = await this.prisma.pais.findMany();
+    const paises = await this.prisma.pais.findMany({});
     if (!paises) throw boom.notFound();
     return paises;
   }
