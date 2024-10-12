@@ -6,42 +6,9 @@ on:
     branches: ["prod"]
 
 jobs:
-  # Realizar pruebas
-  tests:
-    defaults:
-      run:
-        working-directory: "server"
-    name: Realizar pruebas del proyecto (prod)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Obtener codigo de /server
-        uses: actions/checkout@master
-        with:
-          sparse-checkout: |
-            server
-
-      - name: Usar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.x"
-
-      - name: Preparar env
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL }}
-        run: |
-          npm i
-          npx prisma migrate deploy
-          npx prisma generate
-
-      - name: Realizar pruebas
-        run: |
-          npm test
-
   # Compilar proyecto
   build-and-deploy:
     name: Compilar proyecto de Express y realizar despliegue
-    needs: tests
     defaults:
       run:
         working-directory: server
@@ -96,3 +63,35 @@ jobs:
           app-name: eduyacha
           publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
           package: ./server/build
+
+  tests:
+    defaults:
+      run:
+        working-directory: "server"
+    name: Realizar pruebas del proyecto (prod)
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    steps:
+      - name: Obtener codigo de /server
+        uses: actions/checkout@master
+        with:
+          sparse-checkout: |
+            server
+
+      - name: Usar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Preparar env
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
+        run: |
+          npm i
+          npx prisma migrate deploy
+          npx prisma generate
+
+      - name: Realizar pruebas
+        run: |
+          npm test
