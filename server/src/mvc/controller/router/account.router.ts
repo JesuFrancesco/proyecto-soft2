@@ -30,15 +30,6 @@ router.get(
   }
 );
 
-router.get("/", async (req, res, next) => {
-  try {
-    const accounts = await service.findAll();
-    res.json(accounts);
-  } catch (error) {
-    next(error);
-  }
-});
-
 router.get(
   "/email/:email",
   validatorHandler(getAccountSchemaByEmail, "params"),
@@ -83,7 +74,7 @@ router.post(
     try {
       const data = req.body;
       const account = await service.create(data);
-      res.json(account);
+      res.status(201).json(account);
     } catch (error) {
       next(error);
     }

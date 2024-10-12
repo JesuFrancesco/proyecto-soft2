@@ -1,6 +1,7 @@
 import { ICrud } from "./interfaces/ICrud";
 import { Alumno, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
+import _ from "lodash";
 import { IFindAlumnoByEmail } from "./interfaces/IFindByEmail";
 
 export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
@@ -32,12 +33,27 @@ export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
   async create(alumno: Alumno) {
     const nuevoAlumno = await this.prisma.alumno.create({
       data: alumno,
+      include: {
+        account: true,
+        preferencias: true,
+        clases: true,
+        reviews: true,
+      },
     });
-    return nuevoAlumno;
+
+    const alumnoCreated = _.omit(nuevoAlumno.account, ["passwordHash"]);
+    return alumnoCreated;
   }
 
   async findAll() {
-    const alumnos = await this.prisma.alumno.findMany();
+    const alumnos = await this.prisma.alumno.findMany({
+      include: {
+        account: true,
+        preferencias: true,
+        clases: true,
+        reviews: true,
+      },
+    });
     return alumnos;
   }
 

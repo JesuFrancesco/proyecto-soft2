@@ -32,7 +32,7 @@ router.post("/", async (req, res, next) => {
   try {
     const data = req.body;
     const alumno = await service.create(data);
-    res.json(alumno);
+    res.status(201).json(alumno);
   } catch (error) {
     next(error);
   }

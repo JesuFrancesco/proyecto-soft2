@@ -9,7 +9,7 @@
     "db:migrate": "npx prisma migrate dev",
     "db:generate": "npx prisma generate",
     "db:push": "npx prisma db push",
-    "test": "echo 'wip: tests no implementado'"
+    "test": "jest"
   },
   "prisma": {
     "seed": "ts-node ./prisma/seed.ts"
@@ -24,20 +24,21 @@
     "@types/chai": "^5.0.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.13",
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.5.5",
     "@types/supertest": "^6.0.2",
-    "chai": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "jest": "^29.7.0",
     "joi": "^17.13.3",
     "lodash": "^4.17.21",
     "log4js": "^6.9.1",
-    "mocha": "^10.7.3",
     "nodemon": "^3.1.4",
     "prisma": "^5.19.1",
     "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.2"

@@ -1,6 +1,7 @@
 import { ICrud } from "./interfaces/ICrud";
 import { Account, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
+import _ from "lodash";
 import { IFindAccountByEmail } from "./interfaces/IFindByEmail";
 
 export class AccountDAO implements ICrud<Account>, IFindAccountByEmail {
@@ -25,11 +26,6 @@ export class AccountDAO implements ICrud<Account>, IFindAccountByEmail {
     });
 
     return account;
-  }
-
-  async findAll() {
-    const accounts = await this.prisma.account.findMany();
-    return accounts;
   }
 
   async findByPk(id: string | number) {
