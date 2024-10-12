@@ -3,7 +3,7 @@ export interface IProfesor {
   nombre: string;
   edad: number;
   accountId: number;
-  createdAt: string; // Consider using Date for better date handling
-  updatedAt: string; // Consider using Date for better date handling
+  createdAt: string;
+  updatedAt: string;
   paisId: string;
 }

@@ -4,88 +4,7 @@ import axios from "axios";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
 import Link from "next/link";
 import { EXPRESS_API_URL } from "../config/apiUrls";
-const coursesData = [
-  {
-    id: 1,
-    name: "Matemáticas Avanzadas",
-    section: "Secundaria",
-    instructor: "Prof. Mario Bros",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 2,
-    name: "Ciencias Naturales",
-    section: "Secundaria",
-    instructor: "Dr. E. Huaranga",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 3,
-    name: "Literatura Hispanoamericana",
-    section: "Secundaria",
-    instructor: "Ms. Pepe Mason",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 4,
-    name: "Programación Básica",
-    section: "Secundaria",
-    instructor: "Ing. Felix Habil",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 5,
-    name: "Historia Universal",
-    section: "Secundaria",
-    instructor: "Prof. Ana Torres",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 6,
-    name: "Física Cuántica",
-    section: "Universidad",
-    instructor: "Dr. Albert Rivero",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 7,
-    name: "Inteligencia Artificial",
-    section: "Universidad",
-    instructor: "Ing. Clara Robles",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 8,
-    name: "Economía Global",
-    section: "Universidad",
-    instructor: "Dr. Pablo Mendoza",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 9,
-    name: "Diseño Gráfico",
-    section: "Técnico",
-    instructor: "Ms. Laura Sánchez",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-  {
-    id: 10,
-    name: "Robótica Avanzada",
-    section: "Técnico",
-    instructor: "Ing. Carlos Zavala",
-    image:
-      "https://i.pinimg.com/736x/53/67/35/5367351a20b215bbbead9f175674fab1.jpg",
-  },
-];
+import { IClase } from "@/interfaces/IClase";
 
 const fetchDataFromAPI = async () => {
   const res = await axios.get(`${EXPRESS_API_URL}/clases`, {
@@ -103,8 +22,8 @@ const fetchDataFromAPI = async () => {
 };
 
 export default async function CursosDisponiblesPage() {
-  const clases = await fetchDataFromAPI();
-  // console.log(clases);
+  const clases = (await fetchDataFromAPI()) as IClase[];
+  console.log(clases);
 
   return (
     <WidgetWrapper
@@ -120,7 +39,7 @@ export default async function CursosDisponiblesPage() {
           </h1>
         </div>
         <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {clases.map((course: any) => (
+          {clases.map((course) => (
             <div
               key={course.id}
               className="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md transition-colors duration-200"
@@ -130,14 +49,16 @@ export default async function CursosDisponiblesPage() {
                 alt={`Imagen de ${course.curso.subEspecialidad}`}
                 width={500}
                 height={120}
-                className="rounded-md mb-4 object-cover"
+                className="rounded-md mb-4 object-cover h-32"
               />
-              <h3 className="text-lg font-medium">{course.name}</h3>
+              <h3 className="text-lg font-medium">
+                {course.curso.subEspecialidad}
+              </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 {course.sector.name}
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                {course.profesor.nombre}
+                Profesor: {course.profesor.nombre}
               </p>
               <div className="mt-4 flex justify-between items-center">
                 <Link href={`/cursos/${course.id}`}>
