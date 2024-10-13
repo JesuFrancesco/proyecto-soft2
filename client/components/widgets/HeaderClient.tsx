@@ -9,7 +9,7 @@ import ToggleMenu from "../atoms/ToggleMenu";
 import { headerData } from "@/shared/layout.data";
 
 const HeaderClient = () => {
-  const { links, isSticky, showToggleTheme, position } = headerData;
+  const { links, showToggleTheme, position } = headerData;
 
   const ref = useRef(null);
 
