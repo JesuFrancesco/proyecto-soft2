@@ -19,7 +19,7 @@ export interface IDeletable<T> {
   deleteMany?: (arg0: number[]) => Promise<T | Partial<T> | null>;
 }
 
-export interface ICrud<T>
+export interface DAO<T>
   extends ICreatable<T>,
     IReadable<T>,
     IUpdatable<T>,

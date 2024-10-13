@@ -1,9 +1,9 @@
-import { ICrud } from "./interfaces/GenericInterfaces";
+import { DAO } from "./interfaces/GenericInterfaces";
 import { Review, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import { IFindReviews } from "./interfaces/ReviewInterfaces";
 
-export class ReviewDAO implements ICrud<Review>, IFindReviews {
+export class ReviewDAO implements DAO<Review>, IFindReviews {
   private prisma = new PrismaClient();
 
   async create(review: Review) {

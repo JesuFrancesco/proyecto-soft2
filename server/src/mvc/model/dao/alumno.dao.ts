@@ -1,10 +1,10 @@
-import { ICrud } from "./interfaces/GenericInterfaces";
+import { DAO } from "./interfaces/GenericInterfaces";
 import { Alumno, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
 import { IFindAlumnoByEmail } from "./interfaces/AlumnoInterfaces";
 
-export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
+export class AlumnoDAO implements DAO<Alumno>, IFindAlumnoByEmail {
   private prisma = new PrismaClient();
 
   async findByEmail(email: string) {

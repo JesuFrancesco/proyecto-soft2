@@ -1,9 +1,9 @@
-import { ICrud } from "./interfaces/GenericInterfaces";
+import { DAO } from "./interfaces/GenericInterfaces";
 import { Profesor, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import { IFindProfesorByEmail } from "./interfaces/ProfesorInterfaces";
 
-export class ProfesorDAO implements ICrud<Profesor>, IFindProfesorByEmail {
+export class ProfesorDAO implements DAO<Profesor>, IFindProfesorByEmail {
   private prisma = new PrismaClient();
 
   async create(profesor: Profesor) {

@@ -1,6 +1,6 @@
 import {
   ICreatable,
-  ICrud,
+  DAO,
   IDeletable,
   IReadable,
 } from "./interfaces/GenericInterfaces";
