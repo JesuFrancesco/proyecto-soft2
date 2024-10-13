@@ -1,4 +1,4 @@
-import { Facebook, Github, Instagram, Twitter, Rss } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, LogIn } from "lucide-react";
 
 import { FooterProps, HeaderProps } from "./types";
 
@@ -33,8 +33,9 @@ export const headerData: HeaderProps = {
     },
     {
       text: "Iniciar sesión",
-      href: "/signin",
+      href: "/login",
       targetBlank: true,
+      icon: LogIn,
     },
   ],
   isSticky: true,

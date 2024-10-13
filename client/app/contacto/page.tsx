@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { GoogleMapsEmbed } from "@next/third-parties/google";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 
 const ContactoPage = () => {
@@ -69,7 +67,7 @@ const ContactoPage = () => {
           </div>
           <div className="mt-4">
             <h3 className="text-lg font-medium">Síguenos en redes sociales:</h3>
-            <div className="flex justify-around mt-2">
+            <div className="flex align-middle justify-around mt-8">
               <a
                 href="https://facebook.com"
                 target="_blank"

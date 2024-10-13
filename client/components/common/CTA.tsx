@@ -2,7 +2,7 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { CallToActionType, LinkOrButton } from "@/shared/types";
 
-const CTA = ({
+const AuthActionsButton = ({
   callToAction,
   containerClass,
   linkClass,
@@ -64,4 +64,4 @@ const CTA = ({
   );
 };
 
-export default CTA;
+export default AuthActionsButton;

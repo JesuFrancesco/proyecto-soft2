@@ -1,6 +1,6 @@
 "use server";
 
-import { EXPRESS_API_URL } from "@/app/config/apiUrls";
+import { EXPRESS_API_URL } from "@/app/config/credentials";
 import { IClase } from "@/interfaces/IClase";
 import axios from "axios";
 

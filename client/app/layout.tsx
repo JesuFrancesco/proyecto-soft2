@@ -3,7 +3,7 @@ import { Rubik } from "next/font/google";
 import { SITE } from "@/config";
 
 import Providers from "@/components/atoms/Providers";
-import Header from "@/components/widgets/Header";
+import HeaderClient from "@/components/widgets/HeaderClient";
 import Footer from "@/components/widgets/Footer";
 
 const rubik = Rubik({
@@ -12,6 +12,7 @@ const rubik = Rubik({
 });
 
 import "./css/base.css";
+import HeaderServer from "@/components/widgets/HeaderServer";
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +36,8 @@ export default function RootLayout({
 
       <body className={`${rubik.className} antialiased`}>
         <Providers>
-          <Header />
+          {/* <HeaderClient /> */}
+          <HeaderServer />
           <main>{children}</main>
           <Footer />
         </Providers>

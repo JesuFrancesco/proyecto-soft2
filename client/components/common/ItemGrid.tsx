@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import type { ItemGrid as ItemGridType } from "@/shared/types";
-import CTA from "./CTA";
+import AuthActionsButton from "./CTA";
 
 const ItemGrid = ({
   id,
@@ -74,7 +74,7 @@ const ItemGrid = ({
                       </p>
                     )}
                     {callToAction && (
-                      <CTA
+                      <AuthActionsButton
                         callToAction={callToAction}
                         linkClass={twMerge(
                           `${
