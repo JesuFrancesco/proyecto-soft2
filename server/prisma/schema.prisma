@@ -18,10 +18,8 @@ datasource db {
 // modelos
 model Account {
   id                 Int                 @id @default(autoincrement())
-  username           String              @unique
   email              String              @unique
-  phone              String              @unique
-  passwordHash       String
+  phone              String?             @unique
   accountSuscripcion AccountSuscripcion?
 
   distrito    Distrito?     @relation(fields: [distritoId], references: [id])

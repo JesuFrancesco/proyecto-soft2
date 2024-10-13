@@ -1,7 +1,7 @@
-import { ICrud } from "./interfaces/ICrud";
+import { ICrud } from "./interfaces/GenericInterfaces";
 import { Profesor, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
-import { IFindProfesorByEmail } from "./interfaces/IFindByEmail";
+import { IFindProfesorByEmail } from "./interfaces/ProfesorInterfaces";
 
 export class ProfesorDAO implements ICrud<Profesor>, IFindProfesorByEmail {
   private prisma = new PrismaClient();

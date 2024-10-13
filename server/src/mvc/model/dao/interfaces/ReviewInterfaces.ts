@@ -1,7 +1,6 @@
-import { Review, Clase } from "@prisma/client";
+import { Review } from "@prisma/client";
 
 // alumno
-
 interface IFindReviewsByAlumno {
   findReviewsByAlumno: (alumnoId: number) => Promise<Review[]>;
 }

@@ -1,9 +1,10 @@
 "use server";
 
-import { EXPRESS_API_URL } from "@/app/config/credentials";
+import { Config } from "@/app/config/credentials";
 import { IClase } from "@/interfaces/IClase";
 import axios from "axios";
 import Image from "next/image";
+import BotonMatricula from "./components/BotonMatricula";
 
 interface CursoDetalleProps {
   params: {
@@ -15,9 +16,8 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
   const { id } = params;
 
   const { data: curso } = await axios.get<IClase>(
-    `${EXPRESS_API_URL}/clases/${id}`
+    `${Config.EXPRESS_API_URL}/clases/${id}`
   );
-  console.log(curso);
 
   return (
     <div className="container mx-auto py-12 px-6">
@@ -84,7 +84,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
         {curso.materialClase && curso.materialClase.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {curso.materialClase.map((item) => {
-              console.log(item);
+              // console.log(item);
               return (
                 <div
                   key={item.id}
@@ -111,12 +111,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
         )}
       </div>
       <div className="text-center mt-8">
-        <button
-          className="bg-blue-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-600 transition duration-200 shadow-lg"
-          disabled
-        >
-          Matricularse en el Curso
-        </button>
+        <BotonMatricula id={parseInt(id)} />
       </div>
     </div>
   );

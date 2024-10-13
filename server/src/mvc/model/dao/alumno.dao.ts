@@ -1,8 +1,8 @@
-import { ICrud } from "./interfaces/ICrud";
+import { ICrud } from "./interfaces/GenericInterfaces";
 import { Alumno, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
-import { IFindAlumnoByEmail } from "./interfaces/IFindByEmail";
+import { IFindAlumnoByEmail } from "./interfaces/AlumnoInterfaces";
 
 export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
   private prisma = new PrismaClient();
@@ -13,7 +13,13 @@ export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
         email,
       },
       include: {
-        alumno: true,
+        alumno: {
+          include: {
+            clases: true,
+            reviews: true,
+            chats: true,
+          },
+        },
       },
     });
 
@@ -28,6 +34,51 @@ export class AlumnoDAO implements ICrud<Alumno>, IFindAlumnoByEmail {
     const { alumno } = cuenta;
 
     return alumno;
+  }
+
+  async findAlumnoClases(email: string) {
+    const cuenta = await this.prisma.account.findUnique({
+      where: {
+        email,
+      },
+      include: {
+        alumno: {
+          include: {
+            clases: {
+              include: {
+                clase: {
+                  include: {
+                    profesor: true,
+                    tema: true,
+                    materialClase: {
+                      include: {
+                        material: true,
+                      },
+                    },
+                    alumnos: true,
+                    sector: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!cuenta) {
+      throw boom.notFound();
+    }
+
+    const { alumno } = cuenta;
+
+    if (!alumno) {
+      throw boom.notFound();
+    }
+
+    const { clases } = alumno;
+
+    return clases;
   }
 
   async create(alumno: Alumno) {

@@ -7,6 +7,11 @@ interface IFindClasesByAlumno {
 interface IFindClasesByProfesor {
   findClasesByProfesor: (profesorId: number) => Promise<Clase[]>;
 }
+
+export interface IMatriculable {
+  matricularAlumnoEnClase: (alumnoId: number, claseId: number) => Promise<any>;
+}
+
 export interface IFindClases
   extends IFindClasesByAlumno,
     IFindClasesByProfesor {}

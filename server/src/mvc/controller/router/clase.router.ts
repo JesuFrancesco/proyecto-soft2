@@ -35,6 +35,17 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.post("/matricula", async (req, res, next) => {
+  try {
+    const data = req.body;
+    const { alumnoId, claseId } = data;
+    const response = await service.matricularAlumnoEnClase(alumnoId, claseId);
+    res.status(201).json(response);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;

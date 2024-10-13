@@ -68,12 +68,26 @@ router.patch(
 );
 
 router.post(
-  "/",
-  validatorHandler(createAccountSchema, "body"),
+  "/alumno",
+  // validatorHandler(createAccountSchema, "body"),
   async (req, res, next) => {
     try {
       const data = req.body;
-      const account = await service.create(data);
+      const account = await service.createAlumnoAccount(data);
+      res.status(201).json(account);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+router.post(
+  "/profesor",
+  // validatorHandler(createAccountSchema, "body"),
+  async (req, res, next) => {
+    try {
+      const data = req.body;
+      const account = await service.createProfesorAccount(data);
       res.status(201).json(account);
     } catch (error) {
       next(error);

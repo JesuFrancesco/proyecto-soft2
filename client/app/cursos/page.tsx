@@ -3,11 +3,11 @@ import Image from "next/image";
 import axios from "axios";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
 import Link from "next/link";
-import { EXPRESS_API_URL } from "../config/credentials";
+import { Config } from "../config/credentials";
 import { IClase } from "@/interfaces/IClase";
 
 const fetchDataFromAPI = async () => {
-  const res = await axios.get(`${EXPRESS_API_URL}/clases`, {
+  const res = await axios.get(`${Config.EXPRESS_API_URL}/clases`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const fetchDataFromAPI = async () => {
 
 export default async function CursosDisponiblesPage() {
   const clases = (await fetchDataFromAPI()) as IClase[];
-  console.log(clases);
+  // console.log(clases);
 
   return (
     <WidgetWrapper

@@ -3,6 +3,7 @@ import { type NextRequest } from "next/server";
 
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
+import { registerCallback } from "@/service/account.service";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -19,6 +20,9 @@ export async function GET(request: NextRequest) {
     });
 
     if (!error) {
+      console.log("CREANDO USER");
+      await registerCallback();
+      console.log("LISSTO USER");
       redirect(next);
     }
 

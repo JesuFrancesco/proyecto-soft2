@@ -1,8 +1,9 @@
-import { ICrud } from "./interfaces/ICrud";
+import { ICrud } from "./interfaces/GenericInterfaces";
 import { Clase, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
+import { IMatriculable } from "./interfaces/ClaseInterfaces";
 
-export class ClaseDAO implements ICrud<Clase> {
+export class ClaseDAO implements ICrud<Clase>, IMatriculable {
   private prisma = new PrismaClient();
 
   async create(clase: Clase) {
@@ -71,5 +72,16 @@ export class ClaseDAO implements ICrud<Clase> {
       },
     });
     return claseEliminada;
+  }
+
+  async matricularAlumnoEnClase(alumnoId: number, claseId: number) {
+    const res = await this.prisma.alumnoClase.create({
+      data: {
+        alumnoId: alumnoId,
+        claseId: claseId,
+      },
+    });
+
+    return res;
   }
 }

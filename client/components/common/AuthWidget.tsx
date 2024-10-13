@@ -16,7 +16,7 @@ const AuthWidget = async () => {
   return (
     actions &&
     actions.length > 0 && (
-      <div className="ml-4 rtl:ml-0 rtl:mr-4 flex w-max flex-wrap justify-end align-bottom items-center">
+      <div className="ml-4 flex w-max gap-4 flex-row justify-end align-bottom items-center">
         {!user ? (
           actions.map((acciones, index) => (
             <AuthActionsButton

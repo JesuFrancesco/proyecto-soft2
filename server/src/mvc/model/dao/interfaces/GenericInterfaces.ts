@@ -24,3 +24,7 @@ export interface ICrud<T>
     IReadable<T>,
     IUpdatable<T>,
     IDeletable<T> {}
+
+export interface IFindByEmail<T> {
+  findByEmail: (email: string) => Promise<T>;
+}

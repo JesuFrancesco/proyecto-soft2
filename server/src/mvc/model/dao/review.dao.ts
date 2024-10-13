@@ -1,7 +1,7 @@
-import { ICrud } from "./interfaces/ICrud";
+import { ICrud } from "./interfaces/GenericInterfaces";
 import { Review, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
-import { IFindReviews } from "./interfaces/IReviewFindable";
+import { IFindReviews } from "./interfaces/ReviewInterfaces";
 
 export class ReviewDAO implements ICrud<Review>, IFindReviews {
   private prisma = new PrismaClient();

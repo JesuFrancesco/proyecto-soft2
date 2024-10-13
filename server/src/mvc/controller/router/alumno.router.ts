@@ -28,10 +28,20 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.get("/email/:email", async (req, res, next) => {
   try {
-    const data = req.body;
-    const alumno = await service.create(data);
+    const { email } = req.params;
+    const alumno = await service.findByEmail(email);
+    res.status(201).json(alumno);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/clases/email/:email", async (req, res, next) => {
+  try {
+    const { email } = req.params;
+    const alumno = await service.findAlumnoClases(email);
     res.status(201).json(alumno);
   } catch (error) {
     next(error);

@@ -1,4 +1,4 @@
-import { IReadable } from "./interfaces/ICrud";
+import { IReadable } from "./interfaces/GenericInterfaces";
 import { PrismaClient, Pais } from "@prisma/client";
 import boom from "@hapi/boom";
 
