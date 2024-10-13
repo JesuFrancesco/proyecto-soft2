@@ -93,5 +93,8 @@ jobs:
           npx prisma generate
 
       - name: Realizar pruebas
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DIRECT_URL: ${{ secrets.DIRECT_URL }}
         run: |
           npm test
