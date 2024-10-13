@@ -2,14 +2,11 @@ import Image from "next/image";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
 import { toggleFavorite } from "./actions";
 import { getAlumnoClasesByEmail } from "@/service/alumno.service";
+import { IAlumnoClase } from "@/interfaces/IAlumnoClase";
+import { Trash } from "lucide-react";
 
 const MyCoursesPage = async () => {
-  const clases: any[] = await getAlumnoClasesByEmail();
-
-  console.log("clases");
-  console.log(clases);
-
-  console.log(clases);
+  const clases: IAlumnoClase[] = await getAlumnoClasesByEmail();
 
   return (
     <WidgetWrapper
@@ -22,14 +19,14 @@ const MyCoursesPage = async () => {
         <h1 className="text-4xl sm:text-6xl font-bold">Cursos Inscritos</h1>
       </div>
       <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {clases.map((e: any, index) => (
+        {clases.map((e) => (
           <div
-            key={index}
+            key={e.claseId}
             className="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md transition-colors duration-200"
           >
             <Image
               src={e.clase.materialClase[0].material.assetUrl}
-              alt={`Imagen de ${e.name}`}
+              alt={`Imagen de ${e.clase.tema.subEspecialidad}`}
               width={500}
               height={120}
               className="rounded-md mb-4 object-cover"
@@ -41,21 +38,18 @@ const MyCoursesPage = async () => {
               {e.clase.sector.name}
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              {e.clase.profesor.nombre}
+              <a href={`/profesores/${e.clase.profesor.id}`}>
+                {e.clase.profesor.nombre}
+              </a>
             </p>
             <div className="mt-4 flex justify-between items-center">
               <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors duration-200">
                 Acceder
               </button>
               <form action={toggleFavorite}>
-                <input type="hidden" name="courseId" value={e.id} />
-                <button
-                  type="submit"
-                  className={`text-xl ${
-                    e.isFavorite ? "text-yellow-500" : "text-gray-400"
-                  }`}
-                >
-                  {e.isFavorite ? "★" : "☆"}
+                <input type="hidden" name="courseId" value={e.claseId} />
+                <button type="submit">
+                  <Trash className="hover:fill-red-400" />
                 </button>
               </form>
             </div>
