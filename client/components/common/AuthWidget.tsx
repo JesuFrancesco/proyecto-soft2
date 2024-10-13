@@ -1,8 +1,9 @@
 import { headerData } from "@/shared/layout.data";
-import { Home } from "lucide-react";
+import { Home, LogOut, RectangleVertical } from "lucide-react";
 import React from "react";
 import AuthActionsButton from "./CTA";
 import { createClient } from "@/utils/supabase/server";
+import { logout } from "@/app/login/actions";
 
 const AuthWidget = async () => {
   const { actions } = headerData;
@@ -31,6 +32,12 @@ const AuthWidget = async () => {
             <a href="/mis-cursos" className="flex">
               <Home />
             </a>
+            <>|</>
+            <form>
+              <button formAction={logout} className="flex text-red-500">
+                <LogOut />
+              </button>
+            </form>
           </>
         )}
       </div>
