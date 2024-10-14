@@ -5,21 +5,22 @@ import { createClient } from "@/utils/supabase/server";
 import { IAuthStrategy } from "../../interfaces/IAuthStrategy";
 
 class SupabaseAuthStrategy implements IAuthStrategy {
-  private supabase = createClient();
-
   async logout() {
-    await this.supabase.auth.signOut();
+    const supabase = createClient();
+    await supabase.auth.signOut();
     revalidatePath("/", "layout");
     redirect("/");
   }
 
   async login(formData: FormData) {
+    const supabase = createClient();
+
     const data = {
       email: formData.get("email") as string,
       password: formData.get("contrasena") as string,
     };
 
-    const { error } = await this.supabase.auth.signInWithPassword(data);
+    const { error } = await supabase.auth.signInWithPassword(data);
     if (error) {
       console.error(error);
       redirect("/error");
@@ -30,12 +31,13 @@ class SupabaseAuthStrategy implements IAuthStrategy {
   }
 
   async signup(formData: FormData) {
+    const supabase = createClient();
     const data = {
       email: formData.get("email") as string,
       password: formData.get("contrasena") as string,
     };
 
-    const { error } = await this.supabase.auth.signUp(data);
+    const { error } = await supabase.auth.signUp(data);
     if (error) {
       console.error(error);
       redirect("/error");
@@ -46,7 +48,8 @@ class SupabaseAuthStrategy implements IAuthStrategy {
   }
 
   async googleSignUp(formData: FormData) {
-    const { data, error } = await this.supabase.auth.signInWithOAuth({
+    const supabase = createClient();
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
     });
     if (error) {
