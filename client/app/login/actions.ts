@@ -46,24 +46,20 @@ class SupabaseAuthStrategy implements IAuthStrategy {
   }
 
   async googleSignUp(formData: FormData) {
-    const { data, error } = await this.supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: "http://localhost:3000/auth/callback",
-      },
-    });
+    console.log("WIP");
 
-    if (error) {
-      console.error(error);
-      redirect("/error");
-    }
-
-    if (data.url) {
-      redirect(data.url);
-    }
-
-    revalidatePath("/", "layout");
-    redirect("/");
+    // const { data, error } = await this.supabase.auth.signInWithOAuth({
+    //   provider: "google",
+    // });
+    // if (error) {
+    //   console.error(error);
+    //   redirect("/error");
+    // }
+    // if (data.url) {
+    //   redirect(data.url);
+    // }
+    // revalidatePath("/", "layout");
+    // redirect("/");
   }
 }
 
