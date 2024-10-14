@@ -1,54 +1,76 @@
 "use server";
-
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
 import { createClient } from "@/utils/supabase/server";
+import { IAuthStrategy } from "../../interfaces/IAuthStrategy";
 
-export async function logout() {
-  const supabase = createClient();
+class SupabaseAuthStrategy implements IAuthStrategy {
+  private supabase = createClient();
 
-  await supabase.auth.signOut();
-
-  revalidatePath("/", "layout");
-  redirect("/");
-}
-
-export async function login(formData: FormData) {
-  const supabase = createClient();
-
-  const data = {
-    email: formData.get("email") as string,
-    password: formData.get("contrasena") as string,
-  };
-
-  const { error } = await supabase.auth.signInWithPassword(data);
-
-  if (error) {
-    console.error(error);
-    redirect("/error");
+  async logout() {
+    await this.supabase.auth.signOut();
+    revalidatePath("/", "layout");
+    redirect("/");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
-}
+  async login(formData: FormData) {
+    const data = {
+      email: formData.get("email") as string,
+      password: formData.get("contrasena") as string,
+    };
 
-export async function signup(formData: FormData) {
-  const supabase = createClient();
+    const { error } = await this.supabase.auth.signInWithPassword(data);
+    if (error) {
+      console.error(error);
+      redirect("/error");
+    }
 
-  const data = {
-    email: formData.get("email") as string,
-    password: formData.get("contrasena") as string,
-  };
-
-  const { error } = await supabase.auth.signUp(data);
-
-  if (error) {
-    console.error(error);
-
-    redirect("/error");
+    revalidatePath("/", "layout");
+    redirect("/");
   }
 
-  revalidatePath("/", "layout");
-  redirect("/");
+  async signup(formData: FormData) {
+    const data = {
+      email: formData.get("email") as string,
+      password: formData.get("contrasena") as string,
+    };
+
+    const { error } = await this.supabase.auth.signUp(data);
+    if (error) {
+      console.error(error);
+      redirect("/error");
+    }
+
+    revalidatePath("/", "layout");
+    redirect("/");
+  }
+
+  async googleSignUp(formData: FormData) {
+    const { data, error } = await this.supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: "http://localhost:3000/auth/callback",
+      },
+    });
+
+    if (error) {
+      console.error(error);
+      redirect("/error");
+    }
+
+    if (data.url) {
+      redirect(data.url);
+    }
+
+    revalidatePath("/", "layout");
+    redirect("/");
+  }
 }
+
+const authStrategy = new SupabaseAuthStrategy();
+
+export const logout = () => authStrategy.logout();
+export const login = (formData: FormData) => authStrategy.login(formData);
+export const signup = (formData: FormData) => authStrategy.signup(formData);
+export const googleSignUp = (formData: FormData) =>
+  authStrategy.googleSignUp(formData);
