@@ -2,8 +2,9 @@
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { NextRequest } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const supabase = createClient();
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
