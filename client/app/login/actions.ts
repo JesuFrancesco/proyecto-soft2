@@ -51,6 +51,9 @@ class SupabaseAuthStrategy implements IAuthStrategy {
     const supabase = createClient();
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo: "/auth/callback",
+      },
     });
     if (error) {
       console.error(error);
@@ -59,8 +62,8 @@ class SupabaseAuthStrategy implements IAuthStrategy {
     if (data.url) {
       redirect(data.url);
     }
-    revalidatePath("/", "layout");
-    redirect("/");
+    // revalidatePath("/", "layout");
+    // redirect("/");
   }
 }
 
