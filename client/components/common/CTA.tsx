@@ -18,11 +18,11 @@ const AuthActionsButton = ({
   return (
     <>
       {href && (text || Icon) && (
-        <div className={twMerge("flex w-auto cursor-pointer", containerClass)}>
+        <div className={twMerge("flex cursor-pointer", containerClass)}>
           {targetBlank ? (
             <Link
               className={twMerge(
-                "inline-flex items-center justify-center w-full sm:mb-0",
+                "inline-flex items-center justify-center sm:mb-0",
                 linkClass
               )}
               href={href}
@@ -42,7 +42,7 @@ const AuthActionsButton = ({
           ) : (
             <Link
               className={twMerge(
-                "inline-flex items-center justify-center w-full sm:mb-0 ",
+                "inline-flex items-center justify-center sm:mb-0 ",
                 linkClass
               )}
               href={href}

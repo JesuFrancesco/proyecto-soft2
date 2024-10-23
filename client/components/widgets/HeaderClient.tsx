@@ -57,23 +57,26 @@ const HeaderClient = () => {
   return (
     <>
       <div
-        className={`flex justify-between py-3 px-3 md:py-0 md:px-0 ${
+        className={`flex justify-between md:py-0 md:px-0 md:mr-10 ${
           isToggleMenuOpen
             ? "md:bg-transparent md:dark:bg-transparent md:border-none bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-600"
             : ""
         }`}
       >
-        <Link
-          className="flex items-center"
-          href="/"
-          onClick={() =>
-            isToggleMenuOpen
-              ? handleToggleMenuOnClick()
-              : setIsDropdownOpen(updatedIsDropdownOpen as boolean[])
-          }
-        >
-          <Logo />
-        </Link>
+        <div className="flex items-center pr-9">
+          <Link
+            className="flex flex-row items-center align-middle"
+            href="/"
+            onClick={() =>
+              isToggleMenuOpen
+                ? handleToggleMenuOnClick()
+                : setIsDropdownOpen(updatedIsDropdownOpen as boolean[])
+            }
+          >
+            <Logo />
+          </Link>
+        </div>
+
         <div className="flex items-center md:hidden">
           <ToggleMenu
             handleToggleMenuOnClick={handleToggleMenuOnClick}
@@ -81,21 +84,22 @@ const HeaderClient = () => {
           />
         </div>
       </div>
+
       <nav
         className={`${
-          isToggleMenuOpen ? "block px-3" : "hidden"
+          isToggleMenuOpen ? "block" : "hidden"
         } h-screen md:w-full ${
           position === "right"
             ? "justify-end"
             : position === "left"
             ? "justify-start"
             : "justify-center"
-        } w-auto overflow-y-auto dark:text-slate-200 md:mx-5 md:flex md:h-auto md:items-center md:overflow-visible`}
+        } w-auto overflow-y-auto dark:text-slate-200 md:mx-5 md:flex md:h-auto md:items-center`}
         aria-label="Main navigation"
       >
         <ul
           ref={ref}
-          className="flex w-full flex-col mt-2 mb-36 md:m-0 text-xl md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
+          className="overflow-x-scroll md:py-3 flex w-full flex-col mt-2 mb-36 md:m-0 text-xl md:w-auto md:flex-row md:self-center md:text-base"
         >
           {links &&
             links.map(({ label, href, icon: Icon, links }, index) => (

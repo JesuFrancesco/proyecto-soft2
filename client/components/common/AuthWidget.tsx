@@ -5,6 +5,20 @@ import AuthActionsButton from "./CTA";
 import { createClient } from "@/utils/supabase/server";
 import { logout } from "@/app/login/actions";
 
+const HomeButton = () => (
+  <a href="/mis-cursos" className="flex">
+    <Home />
+  </a>
+);
+
+const LogoutButton = () => (
+  <form>
+    <button formAction={logout} className="flex text-red-500">
+      <LogOut />
+    </button>
+  </form>
+);
+
 const AuthWidget = async () => {
   const { actions } = headerData;
 
@@ -17,7 +31,7 @@ const AuthWidget = async () => {
   return (
     actions &&
     actions.length > 0 && (
-      <div className="ml-4 flex w-max gap-4 flex-row justify-end align-bottom items-center">
+      <div className="justify-center md:justify-end md:ml-4 flex py-3 md:py-2 gap-4 flex-row align-middle items-center">
         {!user ? (
           actions.map((acciones, index) => (
             <AuthActionsButton
@@ -28,16 +42,9 @@ const AuthWidget = async () => {
           ))
         ) : (
           <>
-            <div className="flex">{user.email}</div>
-            <a href="/mis-cursos" className="flex">
-              <Home />
-            </a>
-            <>|</>
-            <form>
-              <button formAction={logout} className="flex text-red-500">
-                <LogOut />
-              </button>
-            </form>
+            <HomeButton />
+            <div className="flex">Bienvenido de vuelta {user.email}</div>|
+            <LogoutButton />
           </>
         )}
       </div>

@@ -4,7 +4,7 @@ import eduyachaLogo from "@/public/logo.png";
 const Logo = () => (
   <>
     <Image src={eduyachaLogo} height={66} alt={""}></Image>
-    <span className="ml-2 self-center whitespace-nowrap text-2xl font-bold text-gray-900 dark:text-white md:text-xl">
+    <span className="ml-2 text-2xl font-bold text-gray-900 dark:text-white md:text-xl">
       Eduyacha
     </span>
   </>

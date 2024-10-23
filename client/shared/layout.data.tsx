@@ -13,7 +13,7 @@ export const headerData: HeaderProps = {
       href: "/planes",
     },
     {
-      label: "Sobre nosotros",
+      label: "Historia",
       href: "/sobre-nosotros",
     },
     {

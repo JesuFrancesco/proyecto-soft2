@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { SITE } from "@/config";
 
 import Providers from "@/components/atoms/Providers";
 import HeaderClient from "@/components/widgets/HeaderClient";
 import Footer from "@/components/widgets/Footer";
 
-const rubik = Rubik({
+const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
 });
@@ -34,9 +34,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
 
-      <body className={`${rubik.className} antialiased`}>
+      <body className={`${roboto.className} antialiased`}>
         <Providers>
-          {/* <HeaderClient /> */}
           <HeaderServer />
           <main>{children}</main>
           <Footer />
