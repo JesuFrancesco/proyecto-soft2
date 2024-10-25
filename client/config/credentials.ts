@@ -1,3 +1,4 @@
 export class Config {
-  static EXPRESS_API_URL = process.env.EXPRESS_API_URL ?? "";
+  private constructor() {}
+  public static EXPRESS_API_URL = process.env.EXPRESS_API_URL ?? "";
 }
