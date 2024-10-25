@@ -1,11 +1,10 @@
 import React from "npm:react@18.3.1";
 import { Webhook } from "https://esm.sh/standardwebhooks@1.0.0";
-import { Resend } from "npm:resend@4.0.0";
 import { renderAsync } from "npm:@react-email/components@0.0.22";
 import { MagicLinkEmail } from "./_templates/magic-link.tsx";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY") as string);
 const hookSecret = Deno.env.get("SEND_EMAIL_HOOK_SECRET") as string;
+const postmarkAPI = Deno.env.get("POSTMARK_API_KEY") as string;
 
 Deno.serve(async (req) => {
   if (req.method !== "POST") {
@@ -47,14 +46,25 @@ Deno.serve(async (req) => {
       }),
     );
 
-    const { error } = await resend.emails.send({
-      from: "Eduyacha <20210109@aloe.ulima.edu.pe>",
-      to: [user.email],
-      subject: "Eduyacha | Código de verificación",
-      html,
+    const res = await fetch("https://api.postmarkapp.com/email", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-Postmark-Server-Token": postmarkAPI,
+      },
+      body: JSON.stringify({
+        "From": "20210109@aloe.ulima.edu.pe",
+        "To": user.email,
+        "Subject": "Eduyacha | Código de verificación",
+        "TextBody": "Correo de verificación",
+        "HtmlBody": html,
+      }),
     });
-    if (error) {
-      throw error;
+
+    if (!res.ok) {
+      const data = await res.json();
+      throw Error(data);
     }
   } catch (error) {
     console.log(error);
