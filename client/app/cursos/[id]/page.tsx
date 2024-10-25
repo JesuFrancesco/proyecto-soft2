@@ -1,10 +1,10 @@
 "use server";
 
-import { Config } from "@/app/config/credentials";
+import { Config } from "@/config/credentials";
 import { IClase } from "@/interfaces/IClase";
 import axios from "axios";
 import Image from "next/image";
-import BotonMatricula from "./components/BotonMatricula";
+import BotonMatricula from "./_components/BotonMatricula";
 
 interface CursoDetalleProps {
   params: {
@@ -21,7 +21,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
 
   return (
     <div className="container mx-auto py-12 px-6">
-      <h1 className="text-5xl font-bold text-center mb-4 text-blue-600">
+      <h1 className="text-5xl font-bold text-center mb-4 text-primary-800 dark:text-primary-400">
         Detalles del curso: {curso.tema.subEspecialidad}
       </h1>
       <div className="flex flex-col md:flex-row md:space-x-8">

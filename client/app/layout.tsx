@@ -3,7 +3,6 @@ import { Roboto } from "next/font/google";
 import { SITE } from "@/config";
 
 import Providers from "@/components/atoms/Providers";
-import HeaderClient from "@/components/widgets/HeaderClient";
 import Footer from "@/components/widgets/Footer";
 
 const roboto = Roboto({
@@ -13,6 +12,7 @@ const roboto = Roboto({
 
 import "./css/base.css";
 import HeaderServer from "@/components/widgets/HeaderServer";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: {
@@ -39,6 +39,7 @@ export default function RootLayout({
           <HeaderServer />
           <main>{children}</main>
           <Footer />
+          <Toaster />
         </Providers>
       </body>
     </html>

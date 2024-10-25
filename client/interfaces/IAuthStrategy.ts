@@ -1,6 +1,8 @@
+import { SignUpSchemaType } from "@/schema/SignUpSchema";
+
 export interface IAuthStrategy {
-  login(formData: FormData): Promise<void>;
-  logout(): Promise<void>;
-  signup(formData: FormData): Promise<void>;
-  googleSignUp(formData: FormData): Promise<void>;
+  login(formData: SignUpSchemaType): Promise<unknown>;
+  logout(): Promise<unknown>;
+  signup(formData: SignUpSchemaType): Promise<unknown>;
+  googleSignUp(formData: SignUpSchemaType): Promise<unknown>;
 }

@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState, useRef } from "react";
 import Headline from "../common/Headline";
 import WidgetWrapper from "../common/WidgetWrapper";
 import ItemGrid from "../common/ItemGrid";
@@ -37,7 +39,7 @@ const featuresHome = {
     {
       title: "Agenda tu asesoría cuándo y donde quieras",
       description:
-        "En Eduyacha, la flexibilidad es clave. Te ofrecemos la opción de programar asesorías en el horario y lugar que mejor se adapten a tus necesidades. Ya sea de forma presencial o virtual, nuestros educadores están listos para brindarte el apoyo que necesitas, garantizando que el aprendizaje se ajuste a tu ritmo y estilo de vida. ¡Tu comodidad es nuestra",
+        "En Eduyacha, la flexibilidad es clave. Te ofrecemos la opción de programar asesorías en el horario y lugar que mejor se adapten a tus necesidades. Ya sea de forma presencial o virtual, nuestros educadores están listos para brindarte el apoyo que necesitas, garantizando que el aprendizaje se ajuste a tu ritmo y estilo de vida. ¡Tu comodidad es nuestra prioridad!",
       icon: MapPinCheckInside,
       callToAction: {
         text: "Ver disponibilidad de horarios",
@@ -46,30 +48,68 @@ const featuresHome = {
     },
   ],
 };
+
 const { id, header, items, columns = 3, hasBackground = false } = featuresHome;
 
-const Features = () => (
-  <WidgetWrapper
-    id={id ? id : ""}
-    hasBackground={hasBackground}
-    containerClass="scroll-mt-16 max-w-6xl"
-  >
-    {header && <Headline header={header} titleClass="text-4xl md:text-5xl" />}
-    <ItemGrid
-      id={id}
-      items={items}
-      columns={columns}
-      defaultColumns={2}
-      containerClass={`pb-6 ${columns === 2 ? "max-w-5xl" : ""}`}
-      panelClass={`flex max-w-full ${
-        columns === 2 ? "sm:max-w-md mx-auto" : ""
+const Features = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-opacity duration-700 ${
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
-      iconClass="h-12 w-12 flex items-center justify-center rounded-md text-white bg-primary-900 p-2 md:p-3 mt-1.5 mb-4 mr-4 rtl:ml-4 rtl:mr-0"
-      titleClass="mb-3 text-xl font-bold"
-      descriptionClass="text-gray-600 dark:text-slate-400"
-      actionClass="justify-start"
-    />
-  </WidgetWrapper>
-);
+    >
+      <WidgetWrapper
+        id={id ? id : ""}
+        hasBackground={hasBackground}
+        containerClass="scroll-mt-16 max-w-6xl"
+      >
+        {header && (
+          <Headline header={header} titleClass="text-4xl md:text-5xl" />
+        )}
+        <ItemGrid
+          id={id}
+          items={items}
+          columns={columns}
+          defaultColumns={2}
+          containerClass={`pb-6 ${columns === 2 ? "max-w-5xl" : ""}`}
+          panelClass={`flex max-w-full ${
+            columns === 2 ? "sm:max-w-md mx-auto" : ""
+          }`}
+          iconClass="h-12 w-12 flex items-center justify-center rounded-md text-white bg-primary-900 p-2 md:p-3 mt-1.5 mb-4 mr-4 rtl:ml-4 rtl:mr-0"
+          titleClass="mb-3 text-xl font-bold"
+          descriptionClass="text-gray-600 dark:text-slate-400"
+          actionClass="justify-start"
+        />
+      </WidgetWrapper>
+    </div>
+  );
+};
 
 export default Features;

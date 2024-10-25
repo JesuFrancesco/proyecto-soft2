@@ -1,6 +1,6 @@
 "use server";
 import axios from "axios";
-import { Config } from "@/app/config/credentials";
+import { Config } from "@/config/credentials";
 import { getSupabaseUserEmail } from "./utils";
 
 export const registerCallback = async () => {

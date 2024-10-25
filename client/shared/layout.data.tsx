@@ -29,12 +29,12 @@ export const headerData: HeaderProps = {
     {
       text: "Regístrate",
       href: "/signup",
-      targetBlank: true,
+      targetBlank: false,
     },
     {
       text: "Iniciar sesión",
       href: "/login",
-      targetBlank: true,
+      targetBlank: false,
       icon: LogIn,
     },
   ],

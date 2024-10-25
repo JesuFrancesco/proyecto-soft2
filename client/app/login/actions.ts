@@ -1,76 +1,110 @@
 "use server";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import { IAuthStrategy } from "../../interfaces/IAuthStrategy";
+import { SignUpSchemaType } from "@/schema/SignUpSchema";
+import { LoginSchemaType } from "@/schema/LogInSchema";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
 class SupabaseAuthStrategy implements IAuthStrategy {
   async logout() {
     const supabase = createClient();
-    await supabase.auth.signOut();
-    revalidatePath("/", "layout");
-    redirect("/");
+
+    const { error } = await supabase.auth.signOut();
+
+    return error
+      ? {
+          error: true,
+          msg: error.message,
+        }
+      : {
+          error: false,
+        };
   }
 
-  async login(formData: FormData) {
+  async login(data: LoginSchemaType) {
     const supabase = createClient();
 
-    const data = {
-      email: formData.get("email") as string,
-      password: formData.get("contrasena") as string,
-    };
+    const { email, contrasena } = data;
 
-    const { error } = await supabase.auth.signInWithPassword(data);
-    if (error) {
-      console.error(error);
-      redirect("/error");
-    }
+    const { data: logoutData, error } = await supabase.auth.signInWithPassword({
+      email,
+      password: contrasena,
+    });
 
-    revalidatePath("/", "layout");
-    redirect("/");
+    return error
+      ? {
+          error: true,
+          msg: error.message,
+        }
+      : { error: false, ...logoutData };
   }
 
-  async signup(formData: FormData) {
+  async signup(data: SignUpSchemaType) {
     const supabase = createClient();
-    const data = {
-      email: formData.get("email") as string,
-      password: formData.get("contrasena") as string,
-    };
+    const { nombre, email, contrasena } = data;
 
-    const { error } = await supabase.auth.signUp(data);
+    const { data: signUpData, error } = await supabase.auth.signUp({
+      email,
+      password: contrasena,
+    });
+
     if (error) {
-      console.error(error);
-      redirect("/error");
+      return {
+        error: true,
+        msg: error.message,
+      };
     }
 
-    revalidatePath("/", "layout");
-    redirect("/");
+    const { error: updateError } = await supabase
+      .from("users")
+      .update({
+        raw_user_meta_data: {
+          username: nombre,
+        },
+      })
+      .eq("email", email);
+
+    if (updateError) {
+      return {
+        error: true,
+        msg: updateError.message,
+      };
+    }
+
+    return {
+      error: false,
+      ...signUpData,
+    };
   }
 
-  async googleSignUp(formData: FormData) {
+  async googleSignUp() {
+    const origin = headers().get("origin");
     const supabase = createClient();
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: "/auth/callback",
+        redirectTo: `${origin}/auth/callback`,
       },
     });
+
     if (error) {
-      console.error(error);
-      redirect("/error");
+      return {
+        error: true,
+        msg: error.message,
+      };
     }
+
     if (data.url) {
       redirect(data.url);
     }
-    // revalidatePath("/", "layout");
-    // redirect("/");
   }
 }
 
+// exports
 const authStrategy = new SupabaseAuthStrategy();
 
 export const logout = () => authStrategy.logout();
-export const login = (formData: FormData) => authStrategy.login(formData);
-export const signup = (formData: FormData) => authStrategy.signup(formData);
-export const googleSignUp = (formData: FormData) =>
-  authStrategy.googleSignUp(formData);
+export const login = (data: LoginSchemaType) => authStrategy.login(data);
+export const signup = (data: SignUpSchemaType) => authStrategy.signup(data);
+export const googleSignUp = () => authStrategy.googleSignUp();

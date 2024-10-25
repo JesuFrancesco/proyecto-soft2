@@ -1,7 +1,7 @@
 "use server";
 import { getSupabaseUserEmail } from "./utils";
 import axios from "axios";
-import { Config } from "@/app/config/credentials";
+import { Config } from "@/config/credentials";
 
 export const getAlumnoByEmail = async () => {
   try {

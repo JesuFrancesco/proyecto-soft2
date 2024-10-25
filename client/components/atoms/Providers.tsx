@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { ToastProvider } from "../ui/toast";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ export interface ProvidersProps {
 
 const Providers = ({ children }: ProvidersProps) => (
   <ThemeProvider attribute="class" disableTransitionOnChange>
-    {children}
+    <ToastProvider>{children}</ToastProvider>
   </ThemeProvider>
 );
 

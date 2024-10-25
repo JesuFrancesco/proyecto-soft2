@@ -1,6 +1,6 @@
 "use client";
 
-import { Config } from "@/app/config/credentials";
+import { Config } from "@/config/credentials";
 import { realizarMatricula } from "@/service/alumno.service";
 import { useState } from "react";
 

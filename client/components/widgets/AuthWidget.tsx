@@ -1,9 +1,12 @@
 import { headerData } from "@/shared/layout.data";
 import { Home, LogOut, RectangleVertical } from "lucide-react";
 import React from "react";
-import AuthActionsButton from "./CTA";
+import AuthActionsButton from "../common/CTA";
 import { createClient } from "@/utils/supabase/server";
 import { logout } from "@/app/login/actions";
+import { toast } from "@/hooks/use-toast";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 const HomeButton = () => (
   <a href="/mis-cursos" className="flex">
@@ -11,13 +14,33 @@ const HomeButton = () => (
   </a>
 );
 
-const LogoutButton = () => (
-  <form>
-    <button formAction={logout} className="flex text-red-500">
-      <LogOut />
-    </button>
-  </form>
-);
+const LogoutButton = () => {
+  const handleSubmit = async (formData: FormData) => {
+    "use server";
+    const res = await logout();
+    if (!res)
+      toast({
+        variant: "destructive",
+        content: "Algo salio mal.",
+      });
+
+    toast({
+      variant: "default",
+      content: "Se ha terminado la sesión.",
+    });
+
+    revalidatePath("/", "layout");
+    redirect("/");
+  };
+
+  return (
+    <form>
+      <button formAction={handleSubmit} className="flex text-red-500">
+        <LogOut />
+      </button>
+    </form>
+  );
+};
 
 const AuthWidget = async () => {
   const { actions } = headerData;
@@ -31,7 +54,7 @@ const AuthWidget = async () => {
   return (
     actions &&
     actions.length > 0 && (
-      <div className="justify-center md:justify-end md:ml-4 flex py-3 md:py-2 gap-4 flex-row align-middle items-center">
+      <div className="justify-center md:justify-end md:ml-4 flex py-3 md:py-2 gap-4 flex-shrink-0  align-middle items-center">
         {!user ? (
           actions.map((acciones, index) => (
             <AuthActionsButton

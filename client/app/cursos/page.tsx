@@ -3,7 +3,7 @@ import Image from "next/image";
 import axios from "axios";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
 import Link from "next/link";
-import { Config } from "../config/credentials";
+import { Config } from "../../config/credentials";
 import { IClase } from "@/interfaces/IClase";
 
 const fetchDataFromAPI = async () => {
