@@ -99,7 +99,7 @@ const HeaderClient = () => {
       >
         <ul
           ref={ref}
-          className="overflow-x-scroll md:py-3 flex w-full flex-col mt-2 mb-36 md:m-0 text-xl md:w-auto md:flex-row md:self-center md:text-base"
+          className="overflow-x-auto md:py-3 flex w-full flex-col mt-2 mb-36 md:m-0 text-xl md:w-auto md:flex-row md:self-center md:text-base"
         >
           {links &&
             links.map(({ label, href, icon: Icon, links }, index) => (

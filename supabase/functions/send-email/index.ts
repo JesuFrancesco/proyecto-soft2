@@ -13,11 +13,11 @@ Deno.serve(async (req) => {
   }
 
   const payload = await req.text();
-  console.log("req.headers");
-  console.log(req.headers);
 
-  const headers = Object.fromEntries(req.headers);
+  const headers = Object.fromEntries(req.headers.entries());
+
   const wh = new Webhook(hookSecret);
+
   try {
     const {
       user,
@@ -44,13 +44,13 @@ Deno.serve(async (req) => {
         token_hash,
         redirect_to,
         email_action_type,
-      })
+      }),
     );
 
     const { error } = await resend.emails.send({
-      from: "welcome <onboarding@resend.dev>",
+      from: "Eduyacha <20210109@aloe.ulima.edu.pe>",
       to: [user.email],
-      subject: "Supa Custom MagicLink!",
+      subject: "Eduyacha | Código de verificación",
       html,
     });
     if (error) {
@@ -68,7 +68,7 @@ Deno.serve(async (req) => {
       {
         status: 401,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 

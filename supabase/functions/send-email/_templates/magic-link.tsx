@@ -1,9 +1,11 @@
 import {
   Body,
   Container,
+  Img,
   Head,
   Heading,
   Html,
+  Button,
   Link,
   Preview,
   Text,
@@ -27,25 +29,31 @@ export const MagicLinkEmail = ({
 }: MagicLinkEmailProps) => (
   <Html>
     <Head />
-    <Preview>Log in with this magic link</Preview>
+    <Preview>Tu código de registro es {token}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Login</Heading>
-        <Link
+        <Heading style={h1}>Código de confirmación</Heading>
+
+        <Container style={logoPlaceholder}>
+          <Img
+            src="https://eduyacha-jesufrancescos-projects.vercel.app/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Flogo.da5b4922.png&w=256&q=75"
+            alt="Logo"
+            style={logoStyle}
+          />
+        </Container>
+
+        <Button
           href={`${supabase_url}/auth/v1/verify?token=${token_hash}&type=${email_action_type}&redirect_to=${redirect_to}`}
           target="_blank"
           style={{
-            ...link,
+            ...buttonLink,
             display: "block",
             marginBottom: "16px",
           }}
         >
-          Click here to log in with this magic link
-        </Link>
-        <Text style={{ ...text, marginBottom: "14px" }}>
-          Or, copy and paste this temporary login code:
-        </Text>
-        <code style={code}>{token}</code>
+          Haz click aquí para terminar tu registro
+        </Button>
+
         <Text
           style={{
             ...text,
@@ -54,17 +62,17 @@ export const MagicLinkEmail = ({
             marginBottom: "16px",
           }}
         >
-          If you didn&apos;t try to login, you can safely ignore this email.
+          Si usted no autorizó esta acción, porfavor ignore este correo.
         </Text>
         <Text style={footer}>
           <Link
-            href="https://demo.vercel.store/"
+            href="https://eduyacha-jesufrancescos-projects.vercel.app/"
             target="_blank"
             style={{ ...link, color: "#898989" }}
           >
-            ACME Corp
+            Eduyacha
           </Link>
-          , the famouse demo corp.
+          , la educación a tus manos.
         </Text>
       </Container>
     </Body>
@@ -101,6 +109,16 @@ const link = {
   textDecoration: "underline",
 };
 
+const buttonLink = {
+  color: "white",
+  padding: "1em 2.5em",
+  backgroundColor: "#006d75;",
+  fontFamily:
+    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+  fontSize: "14px",
+  textDecoration: "underline",
+};
+
 const text = {
   color: "#333",
   fontFamily:
@@ -119,12 +137,13 @@ const footer = {
   marginBottom: "24px",
 };
 
-const code = {
-  display: "inline-block",
-  padding: "16px 4.5%",
-  width: "90.5%",
-  backgroundColor: "#f4f4f4",
-  borderRadius: "5px",
-  border: "1px solid #eee",
-  color: "#333",
+const logoPlaceholder = {
+  display: "flex",
+  justifyContent: "center",
+  marginBottom: "16px",
+};
+
+const logoStyle = {
+  maxWidth: "100px",
+  height: "auto",
 };

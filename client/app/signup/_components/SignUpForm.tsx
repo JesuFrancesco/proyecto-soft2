@@ -21,21 +21,21 @@ const SignUpForm = () => {
   const onSubmit: SubmitHandler<SignUpSchemaType> = async (data) => {
     const { error, msg } = await signup(data);
 
-    if (error) {
+    if (!error) {
       toast({
-        variant: "destructive",
-        description: `Algo salió mal.\n${msg}`,
+        variant: "default",
+        description:
+          "Se te ha enviado un correo, entra para validar tu registro.",
       });
 
+      router.push("/");
       return;
     }
 
     toast({
-      variant: "default",
-      description: "Sesión iniciada.",
+      variant: "destructive",
+      description: `Algo salió mal.\n${msg}`,
     });
-
-    router.push("/");
   };
 
   return (

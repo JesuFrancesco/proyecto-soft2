@@ -41,34 +41,25 @@ class SupabaseAuthStrategy implements IAuthStrategy {
   }
 
   async signup(data: SignUpSchemaType) {
+    const origin = headers().get("origin");
     const supabase = createClient();
     const { nombre, email, contrasena } = data;
 
     const { data: signUpData, error } = await supabase.auth.signUp({
       email,
       password: contrasena,
+      options: {
+        emailRedirectTo: `${origin}/auth/confirm`,
+        data: {
+          name: nombre,
+        },
+      },
     });
 
     if (error) {
       return {
         error: true,
         msg: error.message,
-      };
-    }
-
-    const { error: updateError } = await supabase
-      .from("users")
-      .update({
-        raw_user_meta_data: {
-          username: nombre,
-        },
-      })
-      .eq("email", email);
-
-    if (updateError) {
-      return {
-        error: true,
-        msg: updateError.message,
       };
     }
 

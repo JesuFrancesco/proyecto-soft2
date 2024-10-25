@@ -1,5 +1,5 @@
 import { headerData } from "@/shared/layout.data";
-import { Home, LogOut, RectangleVertical } from "lucide-react";
+import { Home, LogOut } from "lucide-react";
 import React from "react";
 import AuthActionsButton from "../common/CTA";
 import { createClient } from "@/utils/supabase/server";
@@ -17,17 +17,7 @@ const HomeButton = () => (
 const LogoutButton = () => {
   const handleSubmit = async (formData: FormData) => {
     "use server";
-    const res = await logout();
-    if (!res)
-      toast({
-        variant: "destructive",
-        content: "Algo salio mal.",
-      });
-
-    toast({
-      variant: "default",
-      content: "Se ha terminado la sesión.",
-    });
+    await logout();
 
     revalidatePath("/", "layout");
     redirect("/");
