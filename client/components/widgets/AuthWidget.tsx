@@ -56,7 +56,10 @@ const AuthWidget = async () => {
         ) : (
           <>
             <HomeButton />
-            <div className="flex">Bienvenido de vuelta {user.email}</div>|
+            <div className="flex">
+              Bienvenido de vuelta {user.user_metadata.name}
+            </div>
+            |
             <LogoutButton />
           </>
         )}

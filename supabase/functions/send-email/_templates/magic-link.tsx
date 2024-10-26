@@ -29,7 +29,7 @@ export const MagicLinkEmail = ({
 }: MagicLinkEmailProps) => (
   <Html>
     <Head />
-    <Preview>Tu código de registro es {token}</Preview>
+    <Preview>Estás a un paso de mejorar tu futuro académico.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Heading style={h1}>Código de confirmación</Heading>

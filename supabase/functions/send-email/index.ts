@@ -12,15 +12,19 @@ Deno.serve(async (req) => {
   }
 
   const payload = await req.text();
+  console.log("PAYLOAD");
+  console.log(payload);
 
   const headers = Object.fromEntries(req.headers.entries());
+  console.log("REQ.HEADERS.ENTRIES()");
+  console.log(req.headers.entries());
 
   const wh = new Webhook(hookSecret);
 
   try {
     const {
       user,
-      email_data: { token, token_hash, redirect_to, email_action_type },
+      email_data,
     } = wh.verify(payload, headers) as {
       user: {
         email: string;
@@ -35,6 +39,11 @@ Deno.serve(async (req) => {
         token_hash_new: string;
       };
     };
+
+    console.log("EMAIL_DATA");
+    console.log(email_data);
+
+    const { token, token_hash, redirect_to, email_action_type } = email_data;
 
     const html = await renderAsync(
       React.createElement(MagicLinkEmail, {

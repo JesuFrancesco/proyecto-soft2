@@ -42,6 +42,7 @@ class SupabaseAuthStrategy implements IAuthStrategy {
 
   async signup(data: SignUpSchemaType) {
     const origin = headers().get("origin");
+
     const supabase = createClient();
     const { nombre, email, contrasena } = data;
 
@@ -49,10 +50,10 @@ class SupabaseAuthStrategy implements IAuthStrategy {
       email,
       password: contrasena,
       options: {
-        emailRedirectTo: `${origin}/auth/confirm`,
         data: {
           name: nombre,
         },
+        emailRedirectTo: `${origin}/auth/callback`,
       },
     });
 

@@ -10,7 +10,7 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-import "./css/base.css";
+import "../css/base.css";
 import HeaderServer from "@/components/widgets/HeaderServer";
 import { Toaster } from "@/components/ui/toaster";
 

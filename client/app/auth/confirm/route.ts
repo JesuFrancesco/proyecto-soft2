@@ -3,11 +3,13 @@ import { type NextRequest } from "next/server";
 
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { registerCallback } from "@/service/account.service";
 
 export async function GET(request: NextRequest) {
+  console.log("REQUEST.URL");
+  console.log(request.url);
+
   const { searchParams } = new URL(request.url);
-  const token_hash = searchParams.get("token");
+  const token_hash = searchParams.get("code");
   const type = searchParams.get("type") as EmailOtpType | null;
   const next = searchParams.get("next") ?? "/";
 
@@ -20,15 +22,17 @@ export async function GET(request: NextRequest) {
     });
 
     if (!error) {
-      console.log("CREANDO USER");
-      await registerCallback();
-      console.log("LISSTO USER");
       redirect(next);
+    } else {
+      console.error("error");
+      console.error(error);
     }
-
-    console.error("error");
-    console.error(error);
   }
+
+  console.log("TOKEN_HASH");
+  console.log(token_hash);
+  console.log("TYPE");
+  console.log(type);
 
   redirect("/error");
 }
