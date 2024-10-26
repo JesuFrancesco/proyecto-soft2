@@ -54,8 +54,24 @@ async function main() {
    `);
 
   await sql.query(`
+     create or replace function public.handle_user_delete()
+     returns trigger as $$
+     begin
+       delete from public.accounts where id = old.id;
+       return old;
+     end;
+     $$ language plpgsql security definer;
+   `);
+
+  await sql.query(`
     create or replace trigger on_profile_user_deleted
     after delete on public.accounts
+    for each row execute procedure public.handle_user_delete()
+    `);
+
+  await sql.query(`
+    create or replace trigger on_sb_profile_user_deleted
+    after delete on auth.users
     for each row execute procedure public.handle_user_delete()
     `);
 

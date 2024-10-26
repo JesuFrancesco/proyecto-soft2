@@ -1,9 +1,4 @@
-import {
-  ICreatable,
-  DAO,
-  IDeletable,
-  IReadable,
-} from "./interfaces/GenericInterfaces";
+import { IDeletable, IReadable } from "./interfaces/GenericInterfaces";
 import { Account, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
