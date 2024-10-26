@@ -6,12 +6,14 @@ import Hero from "@/components/widgets/Hero";
 import FrameworksProof from "@/components/widgets/FrameworksProof";
 import Features from "@/components/widgets/Features";
 import Descripcion from "@/components/widgets/Content";
+import { createClient, getAuthHeaders } from "@/utils/supabase/server";
+import axios from "axios";
 
 export const metadata: Metadata = {
   title: SITE.title,
 };
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <Hero />

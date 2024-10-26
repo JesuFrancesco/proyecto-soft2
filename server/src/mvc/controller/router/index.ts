@@ -11,6 +11,13 @@ function routerAPI(app: Express) {
 
   app.use("/api/v1", router);
 
+  router.get("/", (req, res) => {
+    const authHeader = req.headers["authorization"];
+    const refreshToken = req.headers["refreshtoken"];
+
+    res.send("hola desde server express.js");
+  });
+
   router.use("/accounts", accountRouter);
   router.use("/alumnos", alumnoRouter);
   router.use("/profesores", profesorRouter);

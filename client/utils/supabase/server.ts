@@ -27,3 +27,12 @@ export function createClient() {
     }
   );
 }
+
+export const getAuthHeaders = async () => {
+  const session = await createClient().auth.getSession();
+
+  return {
+    Authorization: `Bearer ${session.data.session?.access_token}` as string,
+    RefreshToken: session.data.session?.refresh_token as string,
+  };
+};

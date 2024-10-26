@@ -4,19 +4,11 @@ import * as log4js from "log4js";
 // env
 dotenv.config();
 
-// logger
-log4js.configure({
-  appenders: { consola: { type: "console" } },
-  categories: { default: { appenders: ["consola"], level: "info" } },
-});
-
-const logger = log4js.getLogger("cheese");
-
 const config = {
   env: process.env.NODE_ENV || "dev",
   azureOrigin: process.env.EXPRESS_API_URL || "dev",
   supabaseURL: process.env.SUPABASE_URL || "none",
-  supabaseServiceRole: process.env.SUPABASE_SERVICE_ROLE || "none",
+  supabaseAnonKey: process.env.SUPABASE_ANON_KEY || "none",
 };
 
-export { config, logger };
+export { config };
