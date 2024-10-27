@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 
 const HomeButton = () => (
-  <a href="/mis-cursos" className="flex">
+  <a href="/cuenta" className="flex">
     <Home />
   </a>
 );

@@ -2,6 +2,7 @@
 import { getSupabaseUserEmail } from "./utils";
 import axios from "axios";
 import { Config } from "@/config/credentials";
+import { getAuthHeaders } from "@/utils/supabase/server";
 
 export const getAlumnoByEmail = async () => {
   try {
@@ -17,12 +18,14 @@ export const getAlumnoByEmail = async () => {
   }
 };
 
-export const getAlumnoClasesByEmail = async () => {
+export const getAlumnoClases = async () => {
   try {
-    const email = await getSupabaseUserEmail();
-
+    const headers = await getAuthHeaders();
     const { data } = await axios.get(
-      Config.EXPRESS_API_URL + "/alumnos/clases/email/" + email
+      Config.EXPRESS_API_URL + "/account/alumno/clases/",
+      {
+        headers,
+      }
     );
 
     return data;

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import WidgetWrapper from "@/components/common/WidgetWrapper";
 import { toggleFavorite } from "./actions";
-import { getAlumnoClasesByEmail } from "@/service/alumno.service";
+import { getAlumnoClases } from "@/service/alumno.service";
 import { IAlumnoClase } from "@/interfaces/IAlumnoClase";
 import { Trash } from "lucide-react";
 
 const MyCoursesPage = async () => {
-  const clases: IAlumnoClase[] = await getAlumnoClasesByEmail();
+  const clases: IAlumnoClase[] = await getAlumnoClases();
 
   return (
     <WidgetWrapper

@@ -15,7 +15,8 @@ function routerAPI(app: Express) {
     res.send("Hola desde server Express 🤝");
   });
 
-  router.use("/accounts", accountRouter);
+  router.use("/account", accountRouter);
+
   router.use("/alumnos", alumnoRouter);
   router.use("/profesores", profesorRouter);
   router.use("/reviews", reviewRouter);

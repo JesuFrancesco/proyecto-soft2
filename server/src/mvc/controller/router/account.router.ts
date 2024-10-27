@@ -66,8 +66,8 @@ router.post("/setup-profesor", async (req, res, next) => {
   }
 });
 
-router.use(alumnoRouter);
-router.use(profesorRouter);
+router.use("/alumno", alumnoRouter);
+router.use("/profesor", profesorRouter);
 
 // #=====================
 // | /account/alumno/...

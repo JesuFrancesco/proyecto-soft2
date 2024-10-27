@@ -10,11 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(circle, var(--tw-gradient-stops))",
+      },
       colors: {
-        // background: "var(--background)",
-        // foreground: "var(--foreground)",
         primary: colors.cyan,
         secondary: colors.cyan,
+        border: colors.black,
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
       },
       fontFamily: {
         sans: ["var(--font-custom)", ...defaultTheme.fontFamily.sans],
