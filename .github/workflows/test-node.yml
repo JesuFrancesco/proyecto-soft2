@@ -5,6 +5,12 @@ on:
   push:
     branches: ["dev"]
 
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  DIRECT_URL: ${{ secrets.DIRECT_URL }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+
 jobs:
   # Realizar pruebas
   tests:
@@ -23,20 +29,12 @@ jobs:
           node-version: "20.x"
 
       - name: Preparar env
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL }}
         run: |
           npm i
           npx prisma migrate deploy
           npx prisma generate
 
       - name: Realizar pruebas
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          DIRECT_URL: ${{ secrets.DIRECT_URL }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
           npm i
           npm test
