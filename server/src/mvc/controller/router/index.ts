@@ -5,6 +5,7 @@ import alumnoRouter from "./alumno.router";
 import claseRouter from "./clase.router";
 import profesorRouter from "./profesor.router";
 import reviewRouter from "./review.router";
+import paisRouter from "./pais.router";
 
 function routerAPI(app: Express) {
   const router = Router();
@@ -21,6 +22,7 @@ function routerAPI(app: Express) {
   router.use("/profesores", profesorRouter);
   router.use("/reviews", reviewRouter);
   router.use("/clases", claseRouter);
+  router.use("/paises", paisRouter);
 }
 
 export { routerAPI };

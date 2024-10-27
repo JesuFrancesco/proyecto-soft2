@@ -7,9 +7,11 @@ const service = new PaisDAO();
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
+
     const paisId = parseInt(id);
 
     const pais = await service.findByPk(paisId);
+
     res.json(pais);
   } catch (error) {
     next(error);
