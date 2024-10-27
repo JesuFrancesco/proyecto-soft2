@@ -1,98 +1,138 @@
 import _ from "lodash";
 import { Router } from "express";
-import { validatorHandler } from "../middleware/validator.handler";
-import {
-  createAccountSchema,
-  getAccountSchema,
-  getAccountSchemaByEmail,
-  updateAccountSchema,
-} from "../../model/schemas/account.schema";
 import { AccountDAO } from "../../model/dao/account.dao";
+import { authHandler } from "../middleware/authorization.handler";
+import { AlumnoDAO } from "../../model/dao/alumno.dao";
+import { ProfesorDAO } from "../../model/dao/profesor.dao";
+import { sb } from "../../../app";
 
 const router = Router();
-const service = new AccountDAO();
+const alumnoRouter = Router();
+const profesorRouter = Router();
 
-router.get(
-  "/:id",
-  validatorHandler(getAccountSchema, "params"),
-  async (req, res, next) => {
-    try {
-      const { id } = req.params;
+const accountService = new AccountDAO();
+const alumnoService = new AlumnoDAO();
+const profesorService = new ProfesorDAO();
 
-      const accountId = parseInt(id);
+// router auth
+router.use(authHandler);
 
-      const account = await service.findByPk(accountId);
+// #=====================
+// | /account/...
+// #=====================
+router.get("/", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
 
-      res.json(account);
-    } catch (error) {
-      next(error);
-    }
+    const id = user.data.user?.id as string;
+
+    const account = await accountService.findByPk(id);
+
+    res.json(account);
+  } catch (error) {
+    next(error);
   }
-);
+});
 
-router.get(
-  "/email/:email",
-  validatorHandler(getAccountSchemaByEmail, "params"),
-  async (req, res, next) => {
-    try {
-      const { email } = req.params;
+router.post("/setup-alumno", async (req, res, next) => {
+  try {
+    const data = req.body;
 
-      const account = await service.findByEmail(email);
+    const user = await sb.auth.getUser();
 
-      res.json(account);
-    } catch (error) {
-      next(error);
-    }
+    const id = user.data.user?.id as string;
+
+    const account = await accountService.setupAlumnoAccount(id, data);
+
+    res.json(account);
+  } catch (error) {
+    next(error);
   }
-);
+});
 
-router.patch(
-  "/:id",
-  validatorHandler(getAccountSchemaByEmail, "params"),
-  validatorHandler(updateAccountSchema, "body"),
-  async (req, res, next) => {
-    try {
-      const { id } = req.params;
+router.post("/setup-profesor", async (req, res, next) => {
+  try {
+    const data = req.body;
 
-      const accountId = parseInt(id);
+    const user = await sb.auth.getUser();
 
-      const data = req.body;
+    const id = user.data.user?.id as string;
 
-      const account = await service.update(accountId, data);
+    const account = await accountService.setupProfesorAccount(id, data);
 
-      res.json(account);
-    } catch (error) {
-      next(error);
-    }
+    res.json(account);
+  } catch (error) {
+    next(error);
   }
-);
+});
 
-router.post(
-  "/alumno",
-  // validatorHandler(createAccountSchema, "body"),
-  async (req, res, next) => {
-    try {
-      const data = req.body;
-      const account = await service.createAlumnoAccount(data);
-      res.status(201).json(account);
-    } catch (error) {
-      next(error);
-    }
-  }
-);
+router.use(alumnoRouter);
+router.use(profesorRouter);
 
-router.post(
-  "/profesor",
-  // validatorHandler(createAccountSchema, "body"),
-  async (req, res, next) => {
-    try {
-      const data = req.body;
-      const account = await service.createProfesorAccount(data);
-      res.status(201).json(account);
-    } catch (error) {
-      next(error);
-    }
+// #=====================
+// | /account/alumno/...
+// #=====================
+alumnoRouter.get("/", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const alumno = await alumnoService.findByAccountId(id);
+
+    res.json(alumno);
+  } catch (error) {
+    next(error);
   }
-);
+});
+
+alumnoRouter.get("/clases", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const alumno = await alumnoService.findByAccountId(id);
+
+    const clases = await alumnoService.findAlumnoClases(alumno.id);
+
+    res.json(clases);
+  } catch (error) {
+    next(error);
+  }
+});
+
+alumnoRouter.patch("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const accountId = parseInt(id);
+
+    const data = req.body;
+
+    const account = await accountService.update(accountId, data);
+
+    res.json(account);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// #=====================
+// | /account/profesor/...
+// #=====================
+profesorRouter.get("/", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const alumno = await profesorService.findByAccountId(id);
+
+    res.json(alumno);
+  } catch (error) {
+    next(error);
+  }
+});
 
 export default router;

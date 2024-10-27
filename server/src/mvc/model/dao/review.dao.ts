@@ -54,10 +54,10 @@ export class ReviewDAO implements DAO<Review>, IFindReviews {
     return reviews;
   }
 
-  async update(id: number, cambios: Partial<Review>) {
+  async update(id: string | number, cambios: Partial<Review>) {
     const reviewCambiado = await this.prisma.review.update({
       where: {
-        id,
+        id: id as number,
       },
       data: cambios,
     });
@@ -65,10 +65,10 @@ export class ReviewDAO implements DAO<Review>, IFindReviews {
     return reviewCambiado;
   }
 
-  async deleteByPk(id: number) {
+  async deleteByPk(id: string | number) {
     const reviewEliminado = await this.prisma.review.delete({
       where: {
-        id,
+        id: id as number,
       },
     });
     return reviewEliminado;

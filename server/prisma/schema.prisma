@@ -11,7 +11,7 @@ datasource db {
 
 // modelos
 model Account {
-  id                 Int                 @id @default(autoincrement())
+  id                 String              @id @db.Uuid
   email              String              @unique
   phone              String?             @unique
   accountSuscripcion AccountSuscripcion?
@@ -34,13 +34,13 @@ model Account {
 }
 
 model AccountSuscripcion {
-  tipo String @unique
-
-  account      Account     @relation(fields: [accountId], references: [id])
-  suscripcion  Suscripcion @relation(fields: [suscripcionId], references: [id])
+  tipo         String   @unique
   vigenteHasta DateTime
 
-  accountId     Int @unique
+  account     Account     @relation(fields: [accountId], references: [id])
+  suscripcion Suscripcion @relation(fields: [suscripcionId], references: [id])
+
+  accountId     String @unique @db.Uuid
   suscripcionId Int
 
   @@id([accountId, suscripcionId])
@@ -67,7 +67,7 @@ model Alumno {
   chats        Chat[]              @relation("AlumnoChats")
   reviews      Review[]            @relation("AlumnoReviews")
 
-  accountId Int?     @unique @map("account_id")
+  accountId String?  @unique @map("account_id") @db.Uuid
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
@@ -86,7 +86,7 @@ model Profesor {
   resenasAsociadas Review[] @relation("ProfesorReviews")
   cuenta           Account? @relation("AccountProfessores", fields: [accountId], references: [id])
 
-  accountId               Int?                      @unique @map("account_id")
+  accountId               String?                   @unique @map("account_id") @db.Uuid
   createdAt               DateTime                  @default(now()) @map("created_at")
   updatedAt               DateTime                  @default(now()) @map("updated_at")
   ProfesorSubEspecialidad ProfesorSubEspecialidad[]

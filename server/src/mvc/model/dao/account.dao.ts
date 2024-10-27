@@ -1,5 +1,5 @@
 import { IDeletable, IReadable } from "./interfaces/GenericInterfaces";
-import { Account, PrismaClient } from "@prisma/client";
+import { Account, Alumno, PrismaClient, Profesor } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
 import {
@@ -34,9 +34,14 @@ export class AccountDAO
     return cuenta;
   }
 
-  async createAlumnoAccount(data: Account) {
-    const acc = await this.prisma.account.create({
-      data,
+  async setupAlumnoAccount(accountId: string, data: Partial<Alumno>) {
+    const acc = await this.prisma.account.update({
+      where: {
+        id: accountId,
+      },
+      data: {
+        alumno: data as any,
+      },
       include: {
         alumno: true,
       },
@@ -44,20 +49,27 @@ export class AccountDAO
 
     return acc;
   }
-  async createProfesorAccount(data: Account) {
-    const acc = await this.prisma.account.create({
-      data,
+
+  async setupProfesorAccount(accountId: string, data: Partial<Profesor>) {
+    const acc = await this.prisma.account.update({
+      where: {
+        id: accountId,
+      },
+      data: {
+        profesor: data as any,
+      },
       include: {
         profesor: true,
       },
     });
+
     return acc;
   }
 
   async findByPk(id: string | number) {
     const account = await this.prisma.account.findUnique({
       where: {
-        id: id as number,
+        id: id as string,
       },
     });
 
@@ -68,10 +80,10 @@ export class AccountDAO
     return account;
   }
 
-  async update(id: number, cambios: Partial<Account>) {
+  async update(id: string | number, cambios: Partial<Account>) {
     const cuentaCambiada = await this.prisma.account.update({
       where: {
-        id,
+        id: id as string,
       },
       data: cambios,
     });
@@ -79,10 +91,10 @@ export class AccountDAO
     return cuentaCambiada;
   }
 
-  async deleteByPk(id: number) {
+  async deleteByPk(id: string | number) {
     const cuentaEliminada = await this.prisma.account.delete({
       where: {
-        id,
+        id: id as string,
       },
     });
     return cuentaEliminada;

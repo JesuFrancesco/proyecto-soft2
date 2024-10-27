@@ -1,250 +1,245 @@
-INSERT INTO public.accounts VALUES (1, 'juan.perez@example.com', '999111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (2, 'maria.ruiz@example.com', '999333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (3, 'carlos.soto@example.com', '999555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (4, 'ana.luque@example.com', '999777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (5, 'pedro.garcia@example.com', '999999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (6, 'rosa.ramos@example.com', '998111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (7, 'luis.mendoza@example.com', '998333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (8, 'jose.fernandez@example.com', '998555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (9, 'claudia.gomez@example.com', '998777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (10, 'diego.alarcon@example.com', '998999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (11, 'isabel.reyes@example.com', '997111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (12, 'carlos.vega@example.com', '997333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (13, 'maria.lopez@example.com', '997555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (14, 'victor.ramos@example.com', '997777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (15, 'lucia.soto@example.com', '997999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (16, 'manuel.silva@example.com', '996111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (17, 'angela.lopez@example.com', '996333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (18, 'sergio.gomez@example.com', '996555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (19, 'pablo.fernandez@example.com', '996777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (20, 'paula.perez@example.com', '996999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (21, 'andres.ramirez@example.com', '995111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (22, 'martina.rojas@example.com', '995333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (23, 'sofia.gomez@example.com', '995555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (24, 'antonio.vera@example.com', '995777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (25, 'luisa.rodriguez@example.com', '995999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (26, 'daniela.torres@example.com', '994111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (27, 'marco.antonio@example.com', '994333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (28, 'hector.correa@example.com', '994555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (29, 'juliana.lopez@example.com', '994777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (30, 'francisco.luna@example.com', '994999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (41, 'carlos.martinez@example.com', '987654321', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (42, 'ana.lopez@example.com', '976543210', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (43, 'luis.garcia@example.com', '965432109', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (44, 'maria.rodriguez@example.com', '954321098', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (45, 'javier.perez@example.com', '943210987', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (46, 'patricia.torres@example.com', '932109876', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (47, 'sergio.sanchez@example.com', '921098765', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (48, 'laura.ramirez@example.com', '910987654', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (49, 'diego.morales@example.com', '909876543', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (50, 'veronica.perez@example.com', '898765432', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (51, 'jose.diaz@example.com', '887654321', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (52, 'gabriela.herrera@example.com', '876543210', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (53, 'martin.castro@example.com', '865432109', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (54, 'silvia.aguirre@example.com', '854321098', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (55, 'felipe.mendoza@example.com', '843210987', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (56, 'claudia.vargas@example.com', '832109876', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (57, 'andres.rios@example.com', '821098765', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (58, 'sandra.salazar@example.com', '810987654', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (59, 'hugo.navarro@example.com', '809876543', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (60, 'renata.espinoza@example.com', '798765432', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (61, 'cristina.ortega@example.com', '787654321', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (62, 'rodrigo.cortes@example.com', '776543210', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (63, 'luz.castro@example.com', '765432109', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (64, 'hecto.soto@example.com', '754321098', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (65, 'monica.jimenez@example.com', '743210987', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (66, 'pedro.aguirre@example.com', '732109876', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (67, 'tamara.guzman@example.com', '721098765', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (68, 'mario.villanueva@example.com', '710987654', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (69, 'jazmin.delgado@example.com', '709876543', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (70, 'fernando.morales@example.com', '698765432', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.accounts VALUES (34, '20210109@aloe.ulima.edu.pe', NULL, '2024-10-13 04:19:38.69', '2024-10-13 04:19:38.69', '150117', '1501', '15') ON CONFLICT DO NOTHING;
 
+INSERT INTO public.paises VALUES ('1', 'Afganistán', 'AF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('2', 'Islas Gland', 'AX') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('3', 'Albania', 'AL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('4', 'Alemania', 'DE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('5', 'Andorra', 'AD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('6', 'Angola', 'AO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('7', 'Anguilla', 'AI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('8', 'Antártida', 'AQ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('9', 'Antigua y Barbuda', 'AG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('10', 'Antillas Holandesas', 'AN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('11', 'Arabia Saudí', 'SA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('12', 'Argelia', 'DZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('13', 'Argentina', 'AR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('14', 'Armenia', 'AM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('15', 'Aruba', 'AW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('16', 'Australia', 'AU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('17', 'Austria', 'AT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('18', 'Azerbaiyán', 'AZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('19', 'Bahamas', 'BS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('20', 'Bahréin', 'BH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('21', 'Bangladesh', 'BD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('22', 'Barbados', 'BB') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('23', 'Bielorrusia', 'BY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('24', 'Bélgica', 'BE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('25', 'Belice', 'BZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('26', 'Benin', 'BJ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('27', 'Bermudas', 'BM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('28', 'Bhután', 'BT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('29', 'Bolivia', 'BO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('30', 'Bosnia y Herzegovina', 'BA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('31', 'Botsuana', 'BW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('32', 'Isla Bouvet', 'BV') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('33', 'Brasil', 'BR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('34', 'Brunéi', 'BN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('35', 'Bulgaria', 'BG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('36', 'Burkina Faso', 'BF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('37', 'Burundi', 'BI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('38', 'Cabo Verde', 'CV') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('39', 'Islas Caimán', 'KY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('40', 'Camboya', 'KH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('41', 'Camerún', 'CM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('42', 'Canadá', 'CA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('43', 'República Centroafricana', 'CF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('44', 'Chad', 'TD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('45', 'República Checa', 'CZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('46', 'Chile', 'CL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('47', 'China', 'CN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('48', 'Chipre', 'CY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('49', 'Isla de Navidad', 'CX') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('50', 'Ciudad del Vaticano', 'VA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('51', 'Islas Cocos', 'CC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('52', 'Colombia', 'CO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('53', 'Comoras', 'KM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('54', 'República Democrática del Congo', 'CD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('55', 'Congo', 'CG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('56', 'Islas Cook', 'CK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('57', 'Corea del Norte', 'KP') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('58', 'Corea del Sur', 'KR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('59', 'Costa de Marfil', 'CI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('60', 'Costa Rica', 'CR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('61', 'Croacia', 'HR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('62', 'Cuba', 'CU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('63', 'Dinamarca', 'DK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('64', 'Dominica', 'DM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('65', 'República Dominicana', 'DO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('66', 'Ecuador', 'EC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('67', 'Egipto', 'EG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('68', 'El Salvador', 'SV') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('69', 'Emiratos Árabes Unidos', 'AE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('70', 'Eritrea', 'ER') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('71', 'Eslovaquia', 'SK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('72', 'Eslovenia', 'SI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('73', 'España', 'ES') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('74', 'Islas ultramarinas de Estados Unidos', 'UM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('75', 'Estados Unidos', 'US') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('76', 'Estonia', 'EE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('77', 'Etiopía', 'ET') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('78', 'Islas Feroe', 'FO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('79', 'Filipinas', 'PH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('80', 'Finlandia', 'FI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('81', 'Fiyi', 'FJ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('82', 'Francia', 'FR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('83', 'Gabón', 'GA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('84', 'Gambia', 'GM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('85', 'Georgia', 'GE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('86', 'Islas Georgias del Sur y Sandwich del Sur', 'GS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('87', 'Ghana', 'GH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('88', 'Gibraltar', 'GI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('89', 'Granada', 'GD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('90', 'Grecia', 'GR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('91', 'Groenlandia', 'GL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('92', 'Guadalupe', 'GP') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('93', 'Guam', 'GU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('94', 'Guatemala', 'GT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('95', 'Guayana Francesa', 'GF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('96', 'Guinea', 'GN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('97', 'Guinea Ecuatorial', 'GQ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('98', 'Guinea-Bissau', 'GW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('99', 'Guyana', 'GY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('100', 'Haití', 'HT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('101', 'Islas Heard y McDonald', 'HM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('102', 'Honduras', 'HN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('103', 'Hong Kong', 'HK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('104', 'Hungría', 'HU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('105', 'India', 'IN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('106', 'Indonesia', 'ID') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('107', 'Irán', 'IR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('108', 'Iraq', 'IQ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('109', 'Irlanda', 'IE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('110', 'Islandia', 'IS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('111', 'Israel', 'IL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('112', 'Italia', 'IT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('113', 'Jamaica', 'JM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('114', 'Japón', 'JP') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('115', 'Jordania', 'JO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('116', 'Kazajstán', 'KZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('117', 'Kenia', 'KE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('118', 'Kirguistán', 'KG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('119', 'Kiribati', 'KI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('120', 'Kuwait', 'KW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('121', 'Laos', 'LA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('122', 'Lesotho', 'LS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('123', 'Letonia', 'LV') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('124', 'Líbano', 'LB') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('125', 'Liberia', 'LR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('126', 'Libia', 'LY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('127', 'Liechtenstein', 'LI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('128', 'Lituania', 'LT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('129', 'Luxemburgo', 'LU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('130', 'Macao', 'MO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('131', 'ARY Macedonia', 'MK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('132', 'Madagascar', 'MG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('133', 'Malasia', 'MY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('134', 'Malawi', 'MW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('135', 'Maldivas', 'MV') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('136', 'Malí', 'ML') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('137', 'Malta', 'MT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('138', 'Islas Malvinas', 'FK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('139', 'Islas Marianas del Norte', 'MP') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('140', 'Marruecos', 'MA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('141', 'Islas Marshall', 'MH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('142', 'Martinica', 'MQ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('143', 'Mauricio', 'MU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('144', 'Mauritania', 'MR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('145', 'Mayotte', 'YT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('146', 'México', 'MX') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('147', 'Micronesia', 'FM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('148', 'Moldavia', 'MD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('149', 'Mónaco', 'MC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('150', 'Mongolia', 'MN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('151', 'Montserrat', 'MS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('152', 'Mozambique', 'MZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('153', 'Myanmar', 'MM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('154', 'Namibia', 'NA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('155', 'Nauru', 'NR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('156', 'Nepal', 'NP') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('157', 'Nicaragua', 'NI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('158', 'Níger', 'NE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('159', 'Nigeria', 'NG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('160', 'Niue', 'NU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('161', 'Isla Norfolk', 'NF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('162', 'Noruega', 'NO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('163', 'Nueva Caledonia', 'NC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('164', 'Nueva Zelanda', 'NZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('165', 'Omán', 'OM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('166', 'Países Bajos', 'NL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('167', 'Pakistán', 'PK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('168', 'Palau', 'PW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('169', 'Palestina', 'PS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('170', 'Panamá', 'PA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('171', 'Papúa Nueva Guinea', 'PG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('172', 'Paraguay', 'PY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('173', 'Perú', 'PE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('174', 'Islas Pitcairn', 'PN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('175', 'Polinesia Francesa', 'PF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('176', 'Polonia', 'PL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('177', 'Portugal', 'PT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('178', 'Puerto Rico', 'PR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('179', 'Qatar', 'QA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('180', 'Reino Unido', 'GB') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('181', 'Reunión', 'RE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('182', 'Ruanda', 'RW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('183', 'Rumania', 'RO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('184', 'Rusia', 'RU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('185', 'Sahara Occidental', 'EH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('186', 'Islas Salomón', 'SB') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('187', 'Samoa', 'WS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('188', 'Samoa Americana', 'AS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('189', 'San Cristóbal y Nevis', 'KN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('190', 'San Marino', 'SM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('191', 'San Pedro y Miquelón', 'PM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('192', 'San Vicente y las Granadinas', 'VC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('193', 'Santa Helena', 'SH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('194', 'Santa Lucía', 'LC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('195', 'Santo Tomé y Príncipe', 'ST') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('196', 'Senegal', 'SN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('197', 'Serbia y Montenegro', 'CS') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('198', 'Seychelles', 'SC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('199', 'Sierra Leona', 'SL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('200', 'Singapur', 'SG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('201', 'Siria', 'SY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('202', 'Somalia', 'SO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('203', 'Sri Lanka', 'LK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('204', 'Suazilandia', 'SZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('205', 'Sudáfrica', 'ZA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('206', 'Sudán', 'SD') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('207', 'Suecia', 'SE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('208', 'Suiza', 'CH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('209', 'Surinam', 'SR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('210', 'Svalbard y Jan Mayen', 'SJ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('211', 'Tailandia', 'TH') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('212', 'Taiwán', 'TW') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('213', 'Tanzania', 'TZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('214', 'Tayikistán', 'TJ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('215', 'Territorio Británico del Océano Índico', 'IO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('216', 'Territorios Australes Franceses', 'TF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('217', 'Timor Oriental', 'TL') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('218', 'Togo', 'TG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('219', 'Tokelau', 'TK') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('220', 'Tonga', 'TO') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('221', 'Trinidad y Tobago', 'TT') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('222', 'Túnez', 'TN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('223', 'Islas Turcas y Caicos', 'TC') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('224', 'Turkmenistán', 'TM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('225', 'Turquía', 'TR') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('226', 'Tuvalu', 'TV') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('227', 'Ucrania', 'UA') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('228', 'Uganda', 'UG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('229', 'Uruguay', 'UY') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('230', 'Uzbekistán', 'UZ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('231', 'Vanuatu', 'VU') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('232', 'Venezuela', 'VE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('233', 'Vietnam', 'VN') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('234', 'Islas Vírgenes Británicas', 'VG') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('235', 'Islas Vírgenes de los Estados Unidos', 'VI') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('236', 'Wallis y Futuna', 'WF') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('237', 'Yemen', 'YE') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('238', 'Yibuti', 'DJ') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('239', 'Zambia', 'ZM') ON CONFLICT DO NOTHING;
+INSERT INTO public.paises VALUES ('240', 'Zimbabue', 'ZW') ON CONFLICT DO NOTHING;
 
---
--- TOC entry 4011 (class 0 OID 36921)
--- Dependencies: 304
--- Data for Name: accounts_suscripciones; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 4026 (class 0 OID 37006)
--- Dependencies: 319
--- Data for Name: alumno_clases; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.alumno_clases VALUES (NULL, '2024-10-13 05:49:43.947', '2024-10-13 05:49:43.947', 126, 11) ON CONFLICT DO NOTHING;
-INSERT INTO public.alumno_clases VALUES (NULL, '2024-10-15 01:11:28.717', '2024-10-15 01:11:28.717', 126, 1) ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4027 (class 0 OID 37013)
--- Dependencies: 320
--- Data for Name: alumno_preferencias; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 4000 (class 0 OID 31774)
--- Dependencies: 293
--- Data for Name: alumnos; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.alumnos VALUES (1, 'Juan Pérez', 20, 1, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (2, 'María Ruiz', 22, 2, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (3, 'Carlos Soto', 21, 3, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (4, 'Ana Luque', 23, 4, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (5, 'Pedro García', 19, 5, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (6, 'Rosa Ramos', 24, 6, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (7, 'Luis Mendoza', 18, 7, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (8, 'José Fernández', 20, 8, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (9, 'Claudia Gómez', 22, 9, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (10, 'Diego Alarcón', 21, 10, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (11, 'Isabel Reyes', 20, 11, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (12, 'Carlos Vega', 24, 12, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (13, 'María López', 23, 13, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (14, 'Víctor Ramos', 19, 14, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (15, 'Lucía Soto', 21, 15, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (16, 'Manuel Silva', 22, 16, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (17, 'Ángela López', 20, 17, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (18, 'Sergio Gómez', 19, 18, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (19, 'Pablo Fernández', 23, 19, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (20, 'Paula Pérez', 24, 20, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (21, 'Andrés Ramírez', 21, 21, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (22, 'Martina Rojas', 22, 22, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (23, 'Sofía Gómez', 20, 23, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (24, 'Antonio Vera', 19, 24, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (25, 'Luisa Rodríguez', 21, 25, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (26, 'Daniela Torres', 22, 26, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (27, 'Marco Antonio', 20, 27, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (28, 'Héctor Correa', 23, 28, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (29, 'Juliana López', 19, 29, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (30, 'Francisco Luna', 24, 30, '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
-INSERT INTO public.alumnos VALUES (126, 'Alumno Anónimo', 12, 34, '2024-10-13 04:19:38.69', '2024-10-13 04:19:38.69') ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4025 (class 0 OID 37001)
--- Dependencies: 318
--- Data for Name: chat_mensajes; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.chat_mensajes VALUES (1, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (1, 2) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (1, 3) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (2, 4) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (2, 5) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (2, 6) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (3, 7) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (3, 8) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (3, 9) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (4, 10) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (4, 11) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (4, 12) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (5, 13) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (5, 14) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (5, 15) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (6, 16) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (6, 17) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (6, 18) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (7, 19) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (7, 20) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (7, 21) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (8, 22) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (8, 23) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (8, 24) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (9, 25) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (9, 26) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (9, 27) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (10, 28) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (10, 29) ON CONFLICT DO NOTHING;
-INSERT INTO public.chat_mensajes VALUES (10, 30) ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4006 (class 0 OID 31856)
--- Dependencies: 299
--- Data for Name: chats; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.chats VALUES (1, 4, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (2, 5, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (3, 6, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (4, 7, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (5, 8, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (6, 9, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (7, 10, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (8, 11, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (9, 12, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (10, 13, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (11, 4, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (12, 5, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (13, 6, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (14, 7, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (15, 8, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (16, 9, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (17, 10, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (18, 11, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (19, 12, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (20, 13, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (21, 9, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (22, 5, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (23, 6, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (24, 7, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (25, 8, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (26, 9, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (27, 10, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (28, 11, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (29, 12, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (30, 13, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (31, 4, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (32, 5, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (33, 6, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (34, 7, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (35, 8, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (36, 9, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (37, 10, 2, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (38, 11, 3, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (39, 12, 4, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-INSERT INTO public.chats VALUES (40, 3, 1, '2024-10-12 21:41:54.602') ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4022 (class 0 OID 36974)
--- Dependencies: 315
--- Data for Name: clases; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.clases VALUES (1, true, true, '2024-10-15 09:00:00', 1, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 1, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (2, false, false, '2024-10-16 10:30:00', 2, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 2, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (3, true, false, '2024-10-17 14:00:00', 3, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 3, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (4, false, true, '2024-10-18 15:00:00', 4, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 4, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (5, true, true, '2024-10-19 08:00:00', 5, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 5, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (6, false, false, '2024-10-20 11:00:00', 6, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 1, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (7, true, true, '2024-10-21 13:00:00', 7, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 2, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (8, false, false, '2024-10-22 16:00:00', 8, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 3, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (9, true, false, '2024-10-23 17:30:00', 9, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 4, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (10, false, true, '2024-10-24 09:30:00', 10, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 5, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (11, true, true, '2024-10-25 10:00:00', 11, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 6, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (12, false, false, '2024-10-26 15:00:00', 12, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 7, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (13, true, false, '2024-10-27 12:00:00', 13, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 8, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (14, false, true, '2024-10-28 14:30:00', 14, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 9, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (15, true, true, '2024-10-29 11:30:00', 15, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 10, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (16, false, false, '2024-10-30 13:00:00', 16, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 11, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (17, true, false, '2024-10-31 16:00:00', 17, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 12, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (18, false, true, '2024-11-01 09:00:00', 18, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 1, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (19, true, true, '2024-11-02 10:30:00', 19, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 2, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.clases VALUES (20, false, false, '2024-11-03 14:00:00', 20, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 3, 1) ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4007 (class 0 OID 31904)
--- Dependencies: 300
--- Data for Name: departamentos; Type: TABLE DATA; Schema: public; Owner: postgres
---
 
 INSERT INTO public.departamentos VALUES ('01', 'Amazonas') ON CONFLICT DO NOTHING;
 INSERT INTO public.departamentos VALUES ('02', 'Áncash') ON CONFLICT DO NOTHING;
@@ -273,11 +268,203 @@ INSERT INTO public.departamentos VALUES ('24', 'Tumbes') ON CONFLICT DO NOTHING;
 INSERT INTO public.departamentos VALUES ('25', 'Ucayali') ON CONFLICT DO NOTHING;
 
 
---
--- TOC entry 4009 (class 0 OID 31918)
--- Dependencies: 302
--- Data for Name: distritos; Type: TABLE DATA; Schema: public; Owner: postgres
---
+INSERT INTO public.provincias VALUES ('0101', 'Chachapoyas', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0102', 'Bagua', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0103', 'Bongará', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0104', 'Condorcanqui', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0105', 'Luya', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0106', 'Rodríguez de Mendoza', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0107', 'Utcubamba', '01') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0201', 'Huaraz', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0202', 'Aija', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0203', 'Antonio Raymondi', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0204', 'Asunción', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0205', 'Bolognesi', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0206', 'Carhuaz', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0207', 'Carlos Fermín Fitzcarrald', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0208', 'Casma', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0209', 'Corongo', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0210', 'Huari', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0211', 'Huarmey', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0212', 'Huaylas', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0213', 'Mariscal Luzuriaga', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0214', 'Ocros', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0215', 'Pallasca', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0216', 'Pomabamba', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0217', 'Recuay', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0218', 'Santa', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0219', 'Sihuas', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0220', 'Yungay', '02') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0301', 'Abancay', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0302', 'Andahuaylas', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0303', 'Antabamba', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0304', 'Aymaraes', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0305', 'Cotabambas', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0306', 'Chincheros', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0307', 'Grau', '03') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0401', 'Arequipa', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0402', 'Camaná', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0403', 'Caravelí', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0404', 'Castilla', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0405', 'Caylloma', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0406', 'Condesuyos', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0407', 'Islay', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0408', 'La Uniòn', '04') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0501', 'Huamanga', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0502', 'Cangallo', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0503', 'Huanca Sancos', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0504', 'Huanta', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0505', 'La Mar', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0506', 'Lucanas', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0507', 'Parinacochas', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0508', 'Pàucar del Sara Sara', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0509', 'Sucre', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0510', 'Víctor Fajardo', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0511', 'Vilcas Huamán', '05') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0601', 'Cajamarca', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0602', 'Cajabamba', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0603', 'Celendín', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0604', 'Chota', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0605', 'Contumazá', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0606', 'Cutervo', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0607', 'Hualgayoc', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0608', 'Jaén', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0609', 'San Ignacio', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0610', 'San Marcos', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0611', 'San Miguel', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0612', 'San Pablo', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0613', 'Santa Cruz', '06') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0701', 'Prov. Const. del Callao', '07') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0801', 'Cusco', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0802', 'Acomayo', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0803', 'Anta', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0804', 'Calca', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0805', 'Canas', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0806', 'Canchis', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0807', 'Chumbivilcas', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0808', 'Espinar', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0809', 'La Convención', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0810', 'Paruro', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0811', 'Paucartambo', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0812', 'Quispicanchi', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0813', 'Urubamba', '08') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0901', 'Huancavelica', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0902', 'Acobamba', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0903', 'Angaraes', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0904', 'Castrovirreyna', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0905', 'Churcampa', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0906', 'Huaytará', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('0907', 'Tayacaja', '09') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1001', 'Huánuco', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1002', 'Ambo', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1003', 'Dos de Mayo', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1004', 'Huacaybamba', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1005', 'Huamalíes', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1006', 'Leoncio Prado', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1007', 'Marañón', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1008', 'Pachitea', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1009', 'Puerto Inca', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1010', 'Lauricocha ', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1011', 'Yarowilca ', '10') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1101', 'Ica ', '11') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1102', 'Chincha ', '11') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1103', 'Nasca ', '11') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1104', 'Palpa ', '11') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1105', 'Pisco ', '11') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1201', 'Huancayo ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1202', 'Concepción ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1203', 'Chanchamayo ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1204', 'Jauja ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1205', 'Junín ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1206', 'Satipo ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1207', 'Tarma ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1208', 'Yauli ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1209', 'Chupaca ', '12') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1301', 'Trujillo ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1302', 'Ascope ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1303', 'Bolívar ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1304', 'Chepén ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1305', 'Julcán ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1306', 'Otuzco ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1307', 'Pacasmayo ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1308', 'Pataz ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1309', 'Sánchez Carrión ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1310', 'Santiago de Chuco ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1311', 'Gran Chimú ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1312', 'Virú ', '13') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1401', 'Chiclayo ', '14') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1402', 'Ferreñafe ', '14') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1403', 'Lambayeque ', '14') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1501', 'Lima ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1502', 'Barranca ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1503', 'Cajatambo ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1504', 'Canta ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1505', 'Cañete ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1506', 'Huaral ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1507', 'Huarochirí ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1508', 'Huaura ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1509', 'Oyón ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1510', 'Yauyos ', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1601', 'Maynas ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1602', 'Alto Amazonas ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1603', 'Loreto ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1604', 'Mariscal Ramón Castilla ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1605', 'Requena ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1606', 'Ucayali ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1607', 'Datem del Marañón ', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1608', 'Putumayo', '16') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1701', 'Tambopata ', '17') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1702', 'Manu ', '17') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1703', 'Tahuamanu ', '17') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1801', 'Mariscal Nieto ', '18') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1802', 'General Sánchez Cerro ', '18') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1803', 'Ilo ', '18') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1901', 'Pasco ', '19') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1902', 'Daniel Alcides Carrión ', '19') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('1903', 'Oxapampa ', '19') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2001', 'Piura ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2002', 'Ayabaca ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2003', 'Huancabamba ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2004', 'Morropón ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2005', 'Paita ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2006', 'Sullana ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2007', 'Talara ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2008', 'Sechura ', '20') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2101', 'Puno ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2102', 'Azángaro ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2103', 'Carabaya ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2104', 'Chucuito ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2105', 'El Collao ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2106', 'Huancané ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2107', 'Lampa ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2108', 'Melgar ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2109', 'Moho ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2110', 'San Antonio de Putina ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2111', 'San Román ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2112', 'Sandia ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2113', 'Yunguyo ', '21') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2201', 'Moyobamba ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2202', 'Bellavista ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2203', 'El Dorado ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2204', 'Huallaga ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2205', 'Lamas ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2206', 'Mariscal Cáceres ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2207', 'Picota ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2208', 'Rioja ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2209', 'San Martín ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2210', 'Tocache ', '22') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2301', 'Tacna ', '23') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2302', 'Candarave ', '23') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2303', 'Jorge Basadre ', '23') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2304', 'Tarata ', '23') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2401', 'Tumbes ', '24') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2402', 'Contralmirante Villar ', '24') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2403', 'Zarumilla ', '24') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2501', 'Coronel Portillo ', '25') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2502', 'Atalaya ', '25') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2503', 'Padre Abad ', '25') ON CONFLICT DO NOTHING;
+INSERT INTO public.provincias VALUES ('2504', 'Purús', '25') ON CONFLICT DO NOTHING;
+
 
 INSERT INTO public.distritos VALUES ('010101', 'Chachapoyas', '0101', '01') ON CONFLICT DO NOTHING;
 INSERT INTO public.distritos VALUES ('010102', 'Asunción', '0101', '01') ON CONFLICT DO NOTHING;
@@ -2154,69 +2341,6 @@ INSERT INTO public.distritos VALUES ('250304', 'Neshuya', '2503', '25') ON CONFL
 INSERT INTO public.distritos VALUES ('250305', 'Alexander Von Humboldt', '2503', '25') ON CONFLICT DO NOTHING;
 INSERT INTO public.distritos VALUES ('250401', 'Purus', '2504', '25') ON CONFLICT DO NOTHING;
 
-
---
--- TOC entry 4014 (class 0 OID 36934)
--- Dependencies: 307
--- Data for Name: especialidades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.especialidades VALUES (1, 'Medicina', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (2, 'Ingeniería Civil', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (3, 'Arquitectura', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (4, 'Derecho', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (5, 'Psicología', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (6, 'Ciencias de la Computación', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (7, 'Biología', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (8, 'Química', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (9, 'Física', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (10, 'Matemáticas', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (11, 'Ciencias Sociales', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (12, 'Educación', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (13, 'Arte', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (14, 'Diseño Gráfico', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (15, 'Negocios Internacionales', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (16, 'Administración de Empresas', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (17, 'Contabilidad', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (18, 'Marketing', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (19, 'Comunicación', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-INSERT INTO public.especialidades VALUES (20, 'Veterinaria', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4020 (class 0 OID 36967)
--- Dependencies: 313
--- Data for Name: material_clases; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.material_clases VALUES (1, 1, 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (2, 2, 2) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (3, 3, 3) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (4, 4, 4) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (5, 5, 5) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (6, 6, 6) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (7, 7, 7) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (8, 8, 8) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (9, 9, 9) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (10, 10, 10) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (11, 11, 11) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (12, 12, 12) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (13, 13, 13) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (14, 14, 14) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (15, 15, 15) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (16, 16, 16) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (17, 17, 17) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (18, 18, 18) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (19, 19, 19) ON CONFLICT DO NOTHING;
-INSERT INTO public.material_clases VALUES (20, 20, 20) ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4018 (class 0 OID 36956)
--- Dependencies: 311
--- Data for Name: material_educativos; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.material_educativos VALUES (1, 'Matemáticas Básicas', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeYd11X1e8qkUMW1rjd2vlUaJWQme07bBAQg&s', '2024-10-12 21:10:06.904', '2024-10-12 21:57:19.131') ON CONFLICT DO NOTHING;
 INSERT INTO public.material_educativos VALUES (2, 'Historia Universal', 'https://portalacademico.cch.unam.mx/sites/default/files/portadas/2019-07/HistoriaUniversal1-Portada.jpg', '2024-10-12 21:10:06.904', '2024-10-12 21:57:19.131') ON CONFLICT DO NOTHING;
 INSERT INTO public.material_educativos VALUES (3, 'Ciencias Naturales', 'https://i.pinimg.com/736x/e0/00/54/e00054f82b19f9a0975795cbe9e28a43.jpg', '2024-10-12 21:10:06.904', '2024-10-12 21:57:19.131') ON CONFLICT DO NOTHING;
@@ -2248,298 +2372,179 @@ INSERT INTO public.material_educativos VALUES (28, 'Desarrollo de Aplicaciones',
 INSERT INTO public.material_educativos VALUES (29, 'Comunicaciones Efectivas', 'https://cdn.prod.website-files.com/608aa9c186d01effa385942e/61ae859b9679e33903c7fd25_Que%20es%20la%20comunicacion%20efectiva%20simla.png', '2024-10-12 21:10:06.904', '2024-10-12 21:57:19.131') ON CONFLICT DO NOTHING;
 INSERT INTO public.material_educativos VALUES (30, 'Proyectos de Investigación', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyia0ul_KYnbCkuBtEI_48xy0YwkYCN-z5Bw&s', '2024-10-12 21:10:06.904', '2024-10-12 21:57:19.131') ON CONFLICT DO NOTHING;
 
+INSERT INTO public.suscripciones VALUES (1, 'Basic') ON CONFLICT DO NOTHING;
+INSERT INTO public.suscripciones VALUES (2, 'Por asesoría') ON CONFLICT DO NOTHING;
+INSERT INTO public.suscripciones VALUES (3, 'Full') ON CONFLICT DO NOTHING;
+INSERT INTO public.suscripciones VALUES (4, 'Full+') ON CONFLICT DO NOTHING;
 
---
--- TOC entry 4024 (class 0 OID 36992)
--- Dependencies: 317
--- Data for Name: mensajes; Type: TABLE DATA; Schema: public; Owner: postgres
---
+INSERT INTO public.sectores VALUES (1, 'Primaria') ON CONFLICT DO NOTHING;
+INSERT INTO public.sectores VALUES (2, 'Secundaria') ON CONFLICT DO NOTHING;
 
-INSERT INTO public.mensajes VALUES (1, 'Hola, ¿cómo estás?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (2, 'Recuerda que tenemos clase mañana a las 10 AM.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (3, '¿Alguien tiene la tarea para compartir?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (4, 'Estoy organizando un grupo de estudio para el examen.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (5, '¿Pudiste entender el tema de matemáticas?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (6, 'No olvides traer tu libro el lunes.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (7, 'Felicidades a todos por los resultados del examen.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (8, '¿Qué les pareció la clase de hoy?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (9, 'Voy a enviar un resumen de la clase más tarde.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (10, '¿Alguien puede ayudarme con el proyecto?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (11, 'El próximo examen será en dos semanas.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (12, 'Gracias por sus respuestas en el foro.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (13, '¿Alguien va a la biblioteca esta tarde?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (14, '¡Excelente trabajo en la presentación!', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (15, '¿Qué tal el fin de semana?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (16, 'Estoy buscando compañeros para un proyecto.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (17, 'El material para la próxima clase ya está disponible.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (18, '¿Alguien tiene recomendaciones de libros?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (19, 'Por favor, confirmen su asistencia a la reunión.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (20, '¿Quién se anima a dar un repaso del tema?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (21, 'La fecha límite para entregar la tarea es el viernes.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (22, 'El clima se ve bonito para este fin de semana.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (23, '¿Alguien ha visto el nuevo documental?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (24, 'Espero que todos estén listos para el viaje.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (25, 'La próxima clase será más interactiva.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (26, '¿Quién quiere unirse a la liga de debate?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (27, 'Estoy preparando una charla sobre historia.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (28, '¿Alguien puede explicarme este ejercicio?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (29, 'Los clubes están organizando un evento el próximo mes.', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
-INSERT INTO public.mensajes VALUES (30, '¿Alguien tiene un buen lugar para estudiar?', '2024-10-12 21:42:51.555') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (1, 'Medicina', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (2, 'Ingeniería Civil', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (3, 'Arquitectura', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (4, 'Derecho', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (5, 'Psicología', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (6, 'Ciencias de la Computación', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (7, 'Biología', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (8, 'Química', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (9, 'Física', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (10, 'Matemáticas', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (11, 'Ciencias Sociales', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (12, 'Educación', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (13, 'Arte', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (14, 'Diseño Gráfico', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (15, 'Negocios Internacionales', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (16, 'Administración de Empresas', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (17, 'Contabilidad', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (18, 'Marketing', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (19, 'Comunicación', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
+INSERT INTO public.especialidades VALUES (20, 'Veterinaria', '2024-10-12 21:10:05.395', '2024-10-12 21:10:05.395') ON CONFLICT DO NOTHING;
 
+INSERT INTO public.subespecialidades VALUES (1, 'Pediatría', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (2, 'Estructuras', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 2) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (3, 'Diseño Arquitectónico', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 3) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (4, 'Derecho Penal', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 4) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (5, 'Psicología Clínica', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 5) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (6, 'Inteligencia Artificial', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 6) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (7, 'Biología Molecular', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 7) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (8, 'Química Orgánica', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 8) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (9, 'Física Teórica', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 9) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (10, 'Álgebra', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 10) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (11, 'Antropología', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 11) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (12, 'Educación Infantil', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 12) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (13, 'Arte Digital', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 13) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (14, 'Diseño Web', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 14) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (15, 'Comercio Internacional', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 15) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (16, 'Recursos Humanos', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 16) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (17, 'Auditoría', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 17) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (18, 'Publicidad', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 18) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (19, 'Comunicación Audiovisual', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 19) ON CONFLICT DO NOTHING;
+INSERT INTO public.subespecialidades VALUES (20, 'Medicina Veterinaria', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 20) ON CONFLICT DO NOTHING;
 
---
--- TOC entry 4010 (class 0 OID 31925)
--- Dependencies: 303
--- Data for Name: paises; Type: TABLE DATA; Schema: public; Owner: postgres
---
+INSERT INTO public.accounts VALUES ('1daf8267-63cf-4c83-97cf-a2a383abdf82', 'juan.perez@example.com', '999111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('3426e7d4-0825-4efd-b11a-42ab0763137e', 'maria.ruiz@example.com', '999333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('d1e21639-a9ce-423d-a46e-86993c7fa6b5', 'carlos.soto@example.com', '999555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('48b6c98d-b07d-4265-9283-c4ce4e8f35c9', 'ana.luque@example.com', '999777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('6f9f20fa-f8af-450d-a99e-a11f893e6e63', 'pedro.garcia@example.com', '999999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('11ed72ea-abd2-45f6-8fde-f196d9b53c30', 'rosa.ramos@example.com', '998111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('4e235a5d-8ece-43e9-a847-7190e99e7fb0', 'luis.mendoza@example.com', '998333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('4604853a-89d8-4da8-a4b8-19c3d1aba8f1', 'jose.fernandez@example.com', '998555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('a2d3820b-0cf9-46b4-8bda-abb09a584134', 'claudia.gomez@example.com', '998777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('3c7b4a90-87df-4fba-93ae-a2f7f13ce7fa', 'diego.alarcon@example.com', '998999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('16f3f500-a130-4dea-bdaa-7077e5b738d9', 'isabel.reyes@example.com', '997111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('f047d806-3eb1-4c46-909d-7d0881b11d92', 'carlos.vega@example.com', '997333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('2a64b5dd-e6d1-4d0d-892f-65b5520e0705', 'maria.lopez@example.com', '997555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('85f62434-50be-4e75-9dfd-38324278b458', 'victor.ramos@example.com', '997777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('f1ea79ed-a924-49d0-97a2-fa479c0a136c', 'lucia.soto@example.com', '997999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('de4e9a92-d820-43b7-b400-ad642249d409', 'manuel.silva@example.com', '996111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('e8e78fe9-c2fd-4e8b-bc62-928e062e4b0a', 'angela.lopez@example.com', '996333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('47f7e738-1f24-4b44-a8bc-ab7f81b638e3', 'sergio.gomez@example.com', '996555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('570e7238-7329-459e-aa63-637266c90a52', 'pablo.fernandez@example.com', '996777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('7fcb526a-9bc8-472b-83e4-1961b28de6a6', 'paula.perez@example.com', '996999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('966a6af1-8b88-4698-a25c-ab918380a7bc', 'andres.ramirez@example.com', '995111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('7bd2581e-9877-4602-8321-b3e77435bb43', 'martina.rojas@example.com', '995333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('97994f67-73f3-4783-8d94-cd6cfd124e74', 'sofia.gomez@example.com', '995555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('7d82ad3b-4211-4c7e-91e1-873ded4d0077', 'antonio.vera@example.com', '995777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('bfb5cfff-870b-447e-89ec-5dcd7009330d', 'luisa.rodriguez@example.com', '995999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('d7bee1fe-e569-458d-a97f-9a50a743fb49', 'daniela.torres@example.com', '994111222', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('11ce737f-0b2e-4f22-98f1-648c6d0fa644', 'marco.antonio@example.com', '994333444', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('a9434dd3-d288-4326-ac18-43644324d650', 'hector.correa@example.com', '994555666', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('061be8fc-1112-4179-8285-cbd5775563dc', 'juliana.lopez@example.com', '994777888', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('2de2bfc7-c72c-4347-994e-94009eb618c5', 'francisco.luna@example.com', '994999000', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('b9201fb3-df6a-4914-a44c-8aa8b2631ae0', 'carlos.martinez@example.com', '987654321', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('b70c2fb5-3bb4-4433-8d5e-f18f759083a4', 'ana.lopez@example.com', '976543210', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('2d4a07b0-3493-4678-ba69-256b13ac5e96', 'luis.garcia@example.com', '965432109', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('3107c128-05c4-4660-ad5c-462dba61669a', 'maria.rodriguez@example.com', '954321098', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('d8358488-8004-4793-93bc-f34efe6979be', 'javier.perez@example.com', '943210987', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('c3421896-8768-4aeb-a3d5-7b455b6ca88c', 'patricia.torres@example.com', '932109876', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('6c6dea05-7d84-48d8-bb93-bf1c9d44b493', 'sergio.sanchez@example.com', '921098765', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('fee8528b-fc52-49cf-954a-f7189dcb69dc', 'laura.ramirez@example.com', '910987654', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('e4d82a39-809c-43ba-8600-9aeed0307157', 'diego.morales@example.com', '909876543', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('1bc27af0-59f8-420b-b2ea-f568953fcb9b', 'veronica.perez@example.com', '898765432', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('2181916b-7ff8-4c12-9222-d8ad167e79ee', 'jose.diaz@example.com', '887654321', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('f81d263b-3f20-4ece-94d3-57cae2bd9fbf', 'gabriela.herrera@example.com', '876543210', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('726e52cc-1ea9-478e-8e68-e5a72c735627', 'martin.castro@example.com', '865432109', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('44dea03f-c53b-441a-ac92-fc82f7a08275', 'silvia.aguirre@example.com', '854321098', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('b377ae3d-9348-4fcd-b724-0c6155b46983', 'felipe.mendoza@example.com', '843210987', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('2ff4c882-3894-44b0-8975-0aaae255950b', 'claudia.vargas@example.com', '832109876', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('b360728f-9da3-4987-ad34-20ee14546909', 'andres.rios@example.com', '821098765', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('f9dbf3ac-5e8d-47ab-aac8-2a4a2bd20dcb', 'sandra.salazar@example.com', '810987654', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('7b589159-475d-4587-a6bd-76b07b6f6f75', 'hugo.navarro@example.com', '809876543', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('992f6f30-9fdf-4f64-9d8f-0ae99b9bb9cd', 'renata.espinoza@example.com', '798765432', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('01b90371-a2ab-42a0-8b91-56a17d7f9dd1', 'cristina.ortega@example.com', '787654321', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('c0d38648-0fa8-4dd8-a353-90eb5b68fb49', 'rodrigo.cortes@example.com', '776543210', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('581c4d94-9b0c-41ac-9fc6-78e959f722a2', 'luz.castro@example.com', '765432109', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('1e6321fc-56ab-4747-98a6-4ecc3f971d25', 'hecto.soto@example.com', '754321098', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('5e7c29cc-1178-4ac6-9743-853e59052bfc', 'monica.jimenez@example.com', '743210987', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('e22a2641-7e40-4bb9-8fb7-6b395250aa55', 'pedro.aguirre@example.com', '732109876', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('bfecc3e8-9721-47fb-bcf9-e1c52934321a', 'tamara.guzman@example.com', '721098765', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('35e4fe3d-2516-4974-a9f0-c2ff586ac3ed', 'mario.villanueva@example.com', '710987654', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('a843b4c6-0975-4b0b-a4cc-e9ded39cca82', 'jazmin.delgado@example.com', '709876543', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
+INSERT INTO public.accounts VALUES ('f9fd276e-ea56-4a80-a00f-5897cd97980b', 'fernando.morales@example.com', '698765432', '2024-10-12 21:22:48.432', '2024-10-12 21:22:48.432', '150117', '1501', '15') ON CONFLICT DO NOTHING;
 
-INSERT INTO public.paises VALUES ('1', 'Afganistán', 'AF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('2', 'Islas Gland', 'AX') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('3', 'Albania', 'AL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('4', 'Alemania', 'DE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('5', 'Andorra', 'AD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('6', 'Angola', 'AO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('7', 'Anguilla', 'AI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('8', 'Antártida', 'AQ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('9', 'Antigua y Barbuda', 'AG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('10', 'Antillas Holandesas', 'AN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('11', 'Arabia Saudí', 'SA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('12', 'Argelia', 'DZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('13', 'Argentina', 'AR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('14', 'Armenia', 'AM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('15', 'Aruba', 'AW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('16', 'Australia', 'AU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('17', 'Austria', 'AT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('18', 'Azerbaiyán', 'AZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('19', 'Bahamas', 'BS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('20', 'Bahréin', 'BH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('21', 'Bangladesh', 'BD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('22', 'Barbados', 'BB') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('23', 'Bielorrusia', 'BY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('24', 'Bélgica', 'BE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('25', 'Belice', 'BZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('26', 'Benin', 'BJ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('27', 'Bermudas', 'BM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('28', 'Bhután', 'BT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('29', 'Bolivia', 'BO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('30', 'Bosnia y Herzegovina', 'BA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('31', 'Botsuana', 'BW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('32', 'Isla Bouvet', 'BV') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('33', 'Brasil', 'BR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('34', 'Brunéi', 'BN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('35', 'Bulgaria', 'BG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('36', 'Burkina Faso', 'BF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('37', 'Burundi', 'BI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('38', 'Cabo Verde', 'CV') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('39', 'Islas Caimán', 'KY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('40', 'Camboya', 'KH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('41', 'Camerún', 'CM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('42', 'Canadá', 'CA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('43', 'República Centroafricana', 'CF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('44', 'Chad', 'TD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('45', 'República Checa', 'CZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('46', 'Chile', 'CL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('47', 'China', 'CN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('48', 'Chipre', 'CY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('49', 'Isla de Navidad', 'CX') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('50', 'Ciudad del Vaticano', 'VA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('51', 'Islas Cocos', 'CC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('52', 'Colombia', 'CO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('53', 'Comoras', 'KM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('54', 'República Democrática del Congo', 'CD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('55', 'Congo', 'CG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('56', 'Islas Cook', 'CK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('57', 'Corea del Norte', 'KP') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('58', 'Corea del Sur', 'KR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('59', 'Costa de Marfil', 'CI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('60', 'Costa Rica', 'CR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('61', 'Croacia', 'HR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('62', 'Cuba', 'CU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('63', 'Dinamarca', 'DK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('64', 'Dominica', 'DM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('65', 'República Dominicana', 'DO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('66', 'Ecuador', 'EC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('67', 'Egipto', 'EG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('68', 'El Salvador', 'SV') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('69', 'Emiratos Árabes Unidos', 'AE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('70', 'Eritrea', 'ER') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('71', 'Eslovaquia', 'SK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('72', 'Eslovenia', 'SI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('73', 'España', 'ES') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('74', 'Islas ultramarinas de Estados Unidos', 'UM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('75', 'Estados Unidos', 'US') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('76', 'Estonia', 'EE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('77', 'Etiopía', 'ET') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('78', 'Islas Feroe', 'FO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('79', 'Filipinas', 'PH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('80', 'Finlandia', 'FI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('81', 'Fiyi', 'FJ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('82', 'Francia', 'FR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('83', 'Gabón', 'GA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('84', 'Gambia', 'GM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('85', 'Georgia', 'GE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('86', 'Islas Georgias del Sur y Sandwich del Sur', 'GS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('87', 'Ghana', 'GH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('88', 'Gibraltar', 'GI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('89', 'Granada', 'GD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('90', 'Grecia', 'GR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('91', 'Groenlandia', 'GL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('92', 'Guadalupe', 'GP') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('93', 'Guam', 'GU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('94', 'Guatemala', 'GT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('95', 'Guayana Francesa', 'GF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('96', 'Guinea', 'GN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('97', 'Guinea Ecuatorial', 'GQ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('98', 'Guinea-Bissau', 'GW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('99', 'Guyana', 'GY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('100', 'Haití', 'HT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('101', 'Islas Heard y McDonald', 'HM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('102', 'Honduras', 'HN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('103', 'Hong Kong', 'HK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('104', 'Hungría', 'HU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('105', 'India', 'IN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('106', 'Indonesia', 'ID') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('107', 'Irán', 'IR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('108', 'Iraq', 'IQ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('109', 'Irlanda', 'IE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('110', 'Islandia', 'IS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('111', 'Israel', 'IL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('112', 'Italia', 'IT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('113', 'Jamaica', 'JM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('114', 'Japón', 'JP') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('115', 'Jordania', 'JO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('116', 'Kazajstán', 'KZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('117', 'Kenia', 'KE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('118', 'Kirguistán', 'KG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('119', 'Kiribati', 'KI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('120', 'Kuwait', 'KW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('121', 'Laos', 'LA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('122', 'Lesotho', 'LS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('123', 'Letonia', 'LV') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('124', 'Líbano', 'LB') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('125', 'Liberia', 'LR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('126', 'Libia', 'LY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('127', 'Liechtenstein', 'LI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('128', 'Lituania', 'LT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('129', 'Luxemburgo', 'LU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('130', 'Macao', 'MO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('131', 'ARY Macedonia', 'MK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('132', 'Madagascar', 'MG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('133', 'Malasia', 'MY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('134', 'Malawi', 'MW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('135', 'Maldivas', 'MV') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('136', 'Malí', 'ML') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('137', 'Malta', 'MT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('138', 'Islas Malvinas', 'FK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('139', 'Islas Marianas del Norte', 'MP') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('140', 'Marruecos', 'MA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('141', 'Islas Marshall', 'MH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('142', 'Martinica', 'MQ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('143', 'Mauricio', 'MU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('144', 'Mauritania', 'MR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('145', 'Mayotte', 'YT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('146', 'México', 'MX') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('147', 'Micronesia', 'FM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('148', 'Moldavia', 'MD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('149', 'Mónaco', 'MC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('150', 'Mongolia', 'MN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('151', 'Montserrat', 'MS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('152', 'Mozambique', 'MZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('153', 'Myanmar', 'MM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('154', 'Namibia', 'NA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('155', 'Nauru', 'NR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('156', 'Nepal', 'NP') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('157', 'Nicaragua', 'NI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('158', 'Níger', 'NE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('159', 'Nigeria', 'NG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('160', 'Niue', 'NU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('161', 'Isla Norfolk', 'NF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('162', 'Noruega', 'NO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('163', 'Nueva Caledonia', 'NC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('164', 'Nueva Zelanda', 'NZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('165', 'Omán', 'OM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('166', 'Países Bajos', 'NL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('167', 'Pakistán', 'PK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('168', 'Palau', 'PW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('169', 'Palestina', 'PS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('170', 'Panamá', 'PA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('171', 'Papúa Nueva Guinea', 'PG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('172', 'Paraguay', 'PY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('173', 'Perú', 'PE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('174', 'Islas Pitcairn', 'PN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('175', 'Polinesia Francesa', 'PF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('176', 'Polonia', 'PL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('177', 'Portugal', 'PT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('178', 'Puerto Rico', 'PR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('179', 'Qatar', 'QA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('180', 'Reino Unido', 'GB') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('181', 'Reunión', 'RE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('182', 'Ruanda', 'RW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('183', 'Rumania', 'RO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('184', 'Rusia', 'RU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('185', 'Sahara Occidental', 'EH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('186', 'Islas Salomón', 'SB') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('187', 'Samoa', 'WS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('188', 'Samoa Americana', 'AS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('189', 'San Cristóbal y Nevis', 'KN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('190', 'San Marino', 'SM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('191', 'San Pedro y Miquelón', 'PM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('192', 'San Vicente y las Granadinas', 'VC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('193', 'Santa Helena', 'SH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('194', 'Santa Lucía', 'LC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('195', 'Santo Tomé y Príncipe', 'ST') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('196', 'Senegal', 'SN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('197', 'Serbia y Montenegro', 'CS') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('198', 'Seychelles', 'SC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('199', 'Sierra Leona', 'SL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('200', 'Singapur', 'SG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('201', 'Siria', 'SY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('202', 'Somalia', 'SO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('203', 'Sri Lanka', 'LK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('204', 'Suazilandia', 'SZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('205', 'Sudáfrica', 'ZA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('206', 'Sudán', 'SD') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('207', 'Suecia', 'SE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('208', 'Suiza', 'CH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('209', 'Surinam', 'SR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('210', 'Svalbard y Jan Mayen', 'SJ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('211', 'Tailandia', 'TH') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('212', 'Taiwán', 'TW') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('213', 'Tanzania', 'TZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('214', 'Tayikistán', 'TJ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('215', 'Territorio Británico del Océano Índico', 'IO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('216', 'Territorios Australes Franceses', 'TF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('217', 'Timor Oriental', 'TL') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('218', 'Togo', 'TG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('219', 'Tokelau', 'TK') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('220', 'Tonga', 'TO') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('221', 'Trinidad y Tobago', 'TT') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('222', 'Túnez', 'TN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('223', 'Islas Turcas y Caicos', 'TC') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('224', 'Turkmenistán', 'TM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('225', 'Turquía', 'TR') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('226', 'Tuvalu', 'TV') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('227', 'Ucrania', 'UA') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('228', 'Uganda', 'UG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('229', 'Uruguay', 'UY') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('230', 'Uzbekistán', 'UZ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('231', 'Vanuatu', 'VU') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('232', 'Venezuela', 'VE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('233', 'Vietnam', 'VN') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('234', 'Islas Vírgenes Británicas', 'VG') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('235', 'Islas Vírgenes de los Estados Unidos', 'VI') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('236', 'Wallis y Futuna', 'WF') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('237', 'Yemen', 'YE') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('238', 'Yibuti', 'DJ') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('239', 'Zambia', 'ZM') ON CONFLICT DO NOTHING;
-INSERT INTO public.paises VALUES ('240', 'Zimbabue', 'ZW') ON CONFLICT DO NOTHING;
+-- xd
+INSERT INTO public.alumnos VALUES (31, 'Juan Pérez', 20, '1daf8267-63cf-4c83-97cf-a2a383abdf82', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (32, 'María Ruiz', 22, '3426e7d4-0825-4efd-b11a-42ab0763137e', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (33, 'Carlos Soto', 21, 'd1e21639-a9ce-423d-a46e-86993c7fa6b5', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (34, 'Ana Luque', 23, '48b6c98d-b07d-4265-9283-c4ce4e8f35c9', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (35, 'Pedro García', 19, '6f9f20fa-f8af-450d-a99e-a11f893e6e63', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (36, 'Rosa Ramos', 24, '11ed72ea-abd2-45f6-8fde-f196d9b53c30', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (37, 'Luis Mendoza', 18, '4e235a5d-8ece-43e9-a847-7190e99e7fb0', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (38, 'José Fernández', 20, '4604853a-89d8-4da8-a4b8-19c3d1aba8f1', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (39, 'Claudia Gómez', 22, 'a2d3820b-0cf9-46b4-8bda-abb09a584134', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (40, 'Diego Alarcón', 21, '3c7b4a90-87df-4fba-93ae-a2f7f13ce7fa', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (41, 'Isabel Reyes', 20, '16f3f500-a130-4dea-bdaa-7077e5b738d9', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (42, 'Carlos Vega', 24, 'f047d806-3eb1-4c46-909d-7d0881b11d92', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (43, 'María López', 23, '2a64b5dd-e6d1-4d0d-892f-65b5520e0705', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (44, 'Víctor Ramos', 19, '85f62434-50be-4e75-9dfd-38324278b458', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (45, 'Lucía Soto', 21, 'f1ea79ed-a924-49d0-97a2-fa479c0a136c', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (46, 'Manuel Silva', 22, 'de4e9a92-d820-43b7-b400-ad642249d409', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (47, 'Ángela López', 20, 'e8e78fe9-c2fd-4e8b-bc62-928e062e4b0a', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (48, 'Sergio Gómez', 19, '47f7e738-1f24-4b44-a8bc-ab7f81b638e3', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (49, 'Pablo Fernández', 23, '570e7238-7329-459e-aa63-637266c90a52', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (50, 'Paula Pérez', 24, '7fcb526a-9bc8-472b-83e4-1961b28de6a6', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (51, 'Andrés Ramírez', 21, '966a6af1-8b88-4698-a25c-ab918380a7bc', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (52, 'Martina Rojas', 22, '7bd2581e-9877-4602-8321-b3e77435bb43', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (53, 'Sofía Gómez', 20, '97994f67-73f3-4783-8d94-cd6cfd124e74', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (54, 'Antonio Vera', 19, '7d82ad3b-4211-4c7e-91e1-873ded4d0077', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (55, 'Luisa Rodríguez', 21, 'bfb5cfff-870b-447e-89ec-5dcd7009330d', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (56, 'Daniela Torres', 22, 'd7bee1fe-e569-458d-a97f-9a50a743fb49', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (57, 'Marco Antonio', 20, '11ce737f-0b2e-4f22-98f1-648c6d0fa644', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (58, 'Héctor Correa', 23, 'a9434dd3-d288-4326-ac18-43644324d650', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (59, 'Juliana López', 19, '061be8fc-1112-4179-8285-cbd5775563dc', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
+INSERT INTO public.alumnos VALUES (60, 'Francisco Luna', 24, '2de2bfc7-c72c-4347-994e-94009eb618c5', '2024-10-12 21:22:48.911', '2024-10-12 21:22:48.911') ON CONFLICT DO NOTHING;
 
-
---
--- TOC entry 4028 (class 0 OID 37018)
--- Dependencies: 321
--- Data for Name: profesor_especialidades; Type: TABLE DATA; Schema: public; Owner: postgres
---
+INSERT INTO public.profesores VALUES (1, 'Carlos Martínez', 35, 'b9201fb3-df6a-4914-a44c-8aa8b2631ae0', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (2, 'Ana López', 30, 'b70c2fb5-3bb4-4433-8d5e-f18f759083a4', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (3, 'Luis García', 40, '2d4a07b0-3493-4678-ba69-256b13ac5e96', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (4, 'María Rodríguez', 32, '3107c128-05c4-4660-ad5c-462dba61669a', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (5, 'Javier Pérez', 38, 'd8358488-8004-4793-93bc-f34efe6979be', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (6, 'Patricia Torres', 28, 'c3421896-8768-4aeb-a3d5-7b455b6ca88c', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (7, 'Sergio Sánchez', 45, '6c6dea05-7d84-48d8-bb93-bf1c9d44b493', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (8, 'Laura Ramírez', 29, 'fee8528b-fc52-49cf-954a-f7189dcb69dc', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (9, 'Diego Morales', 37, 'e4d82a39-809c-43ba-8600-9aeed0307157', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (10, 'Verónica Fernández', 36, '1bc27af0-59f8-420b-b2ea-f568953fcb9b', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (11, 'José Díaz', 33, '2181916b-7ff8-4c12-9222-d8ad167e79ee', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (12, 'Gabriela Herrera', 27, 'f81d263b-3f20-4ece-94d3-57cae2bd9fbf', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (13, 'Martín Castro', 39, '726e52cc-1ea9-478e-8e68-e5a72c735627', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (14, 'Silvia Aguirre', 31, '44dea03f-c53b-441a-ac92-fc82f7a08275', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (15, 'Felipe Mendoza', 41, 'b377ae3d-9348-4fcd-b724-0c6155b46983', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (16, 'Claudia Vargas', 29, '2ff4c882-3894-44b0-8975-0aaae255950b', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (17, 'Andrés Ríos', 34, 'b360728f-9da3-4987-ad34-20ee14546909', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (18, 'Sandra Salazar', 38, 'f9dbf3ac-5e8d-47ab-aac8-2a4a2bd20dcb', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (19, 'Hugo Navarro', 36, '7b589159-475d-4587-a6bd-76b07b6f6f75', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (20, 'Renata Espinoza', 27, '992f6f30-9fdf-4f64-9d8f-0ae99b9bb9cd', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (21, 'Cristina Ortega', 32, '01b90371-a2ab-42a0-8b91-56a17d7f9dd1', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (22, 'Rodrigo Cortés', 43, 'c0d38648-0fa8-4dd8-a353-90eb5b68fb49', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (23, 'Luz Castro', 30, '581c4d94-9b0c-41ac-9fc6-78e959f722a2', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (24, 'Héctor Soto', 35, '1e6321fc-56ab-4747-98a6-4ecc3f971d25', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (25, 'Mónica Jiménez', 33, '5e7c29cc-1178-4ac6-9743-853e59052bfc', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (26, 'Pedro Aguirre', 42, 'e22a2641-7e40-4bb9-8fb7-6b395250aa55', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (27, 'Tamara Guzmán', 31, 'bfecc3e8-9721-47fb-bcf9-e1c52934321a', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (28, 'Mario Villanueva', 39, '35e4fe3d-2516-4974-a9f0-c2ff586ac3ed', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (29, 'Jazmín Delgado', 28, 'a843b4c6-0975-4b0b-a4cc-e9ded39cca82', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
+INSERT INTO public.profesores VALUES (30, 'Fernando Morales', 34, 'f9fd276e-ea56-4a80-a00f-5897cd97980b', '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
 
 INSERT INTO public.profesor_especialidades VALUES ('2024-10-12 21:22:50.803', '2024-10-12 21:22:50.803', 1, 1, NULL) ON CONFLICT DO NOTHING;
 INSERT INTO public.profesor_especialidades VALUES ('2024-10-12 21:22:50.803', '2024-10-12 21:22:50.803', 2, 1, NULL) ON CONFLICT DO NOTHING;
@@ -2572,13 +2577,6 @@ INSERT INTO public.profesor_especialidades VALUES ('2024-10-12 21:22:50.803', '2
 INSERT INTO public.profesor_especialidades VALUES ('2024-10-12 21:22:50.803', '2024-10-12 21:22:50.803', 29, 6, NULL) ON CONFLICT DO NOTHING;
 INSERT INTO public.profesor_especialidades VALUES ('2024-10-12 21:22:50.803', '2024-10-12 21:22:50.803', 30, 7, NULL) ON CONFLICT DO NOTHING;
 
-
---
--- TOC entry 4029 (class 0 OID 37025)
--- Dependencies: 322
--- Data for Name: profesor_subespecialidades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 INSERT INTO public.profesor_subespecialidades VALUES ('2024-10-12 21:22:51.279', '2024-10-12 21:22:51.279', 1, 1) ON CONFLICT DO NOTHING;
 INSERT INTO public.profesor_subespecialidades VALUES ('2024-10-12 21:22:51.279', '2024-10-12 21:22:51.279', 2, 2) ON CONFLICT DO NOTHING;
 INSERT INTO public.profesor_subespecialidades VALUES ('2024-10-12 21:22:51.279', '2024-10-12 21:22:51.279', 3, 3) ON CONFLICT DO NOTHING;
@@ -2600,336 +2598,79 @@ INSERT INTO public.profesor_subespecialidades VALUES ('2024-10-12 21:22:51.279',
 INSERT INTO public.profesor_subespecialidades VALUES ('2024-10-12 21:22:51.279', '2024-10-12 21:22:51.279', 19, 19) ON CONFLICT DO NOTHING;
 INSERT INTO public.profesor_subespecialidades VALUES ('2024-10-12 21:22:51.279', '2024-10-12 21:22:51.279', 20, 20) ON CONFLICT DO NOTHING;
 
+INSERT INTO public.clases VALUES (1, true, true, '2024-10-15 09:00:00', 1, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 1, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (2, false, false, '2024-10-16 10:30:00', 2, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 2, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (3, true, false, '2024-10-17 14:00:00', 3, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 3, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (4, false, true, '2024-10-18 15:00:00', 4, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 4, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (5, true, true, '2024-10-19 08:00:00', 5, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 5, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (6, false, false, '2024-10-20 11:00:00', 6, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 1, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (7, true, true, '2024-10-21 13:00:00', 7, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 2, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (8, false, false, '2024-10-22 16:00:00', 8, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 3, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (9, true, false, '2024-10-23 17:30:00', 9, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 4, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (10, false, true, '2024-10-24 09:30:00', 10, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 5, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (11, true, true, '2024-10-25 10:00:00', 11, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 6, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (12, false, false, '2024-10-26 15:00:00', 12, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 7, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (13, true, false, '2024-10-27 12:00:00', 13, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 8, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (14, false, true, '2024-10-28 14:30:00', 14, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 9, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (15, true, true, '2024-10-29 11:30:00', 15, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 10, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (16, false, false, '2024-10-30 13:00:00', 16, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 11, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (17, true, false, '2024-10-31 16:00:00', 17, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 12, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (18, false, true, '2024-11-01 09:00:00', 18, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 1, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (19, true, true, '2024-11-02 10:30:00', 19, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 2, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.clases VALUES (20, false, false, '2024-11-03 14:00:00', 20, '2024-10-12 21:22:51.757', '2024-10-12 21:22:51.757', 3, 1) ON CONFLICT DO NOTHING;
 
---
--- TOC entry 4002 (class 0 OID 31785)
--- Dependencies: 295
--- Data for Name: profesores; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.profesores VALUES (1, 'Carlos Martínez', 35, 41, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (2, 'Ana López', 30, 42, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (3, 'Luis García', 40, 43, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (4, 'María Rodríguez', 32, 44, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (5, 'Javier Pérez', 38, 45, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (6, 'Patricia Torres', 28, 46, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (7, 'Sergio Sánchez', 45, 47, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (8, 'Laura Ramírez', 29, 48, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (9, 'Diego Morales', 37, 49, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (10, 'Verónica Fernández', 36, 50, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (11, 'José Díaz', 33, 51, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (12, 'Gabriela Herrera', 27, 52, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (13, 'Martín Castro', 39, 53, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (14, 'Silvia Aguirre', 31, 54, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (15, 'Felipe Mendoza', 41, 55, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (16, 'Claudia Vargas', 29, 56, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (17, 'Andrés Ríos', 34, 57, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (18, 'Sandra Salazar', 38, 58, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (19, 'Hugo Navarro', 36, 59, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (20, 'Renata Espinoza', 27, 60, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (21, 'Cristina Ortega', 32, 61, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (22, 'Rodrigo Cortés', 43, 62, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (23, 'Luz Castro', 30, 63, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (24, 'Héctor Soto', 35, 64, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (25, 'Mónica Jiménez', 33, 65, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (26, 'Pedro Aguirre', 42, 66, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (27, 'Tamara Guzmán', 31, 67, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (28, 'Mario Villanueva', 39, 68, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (29, 'Jazmín Delgado', 28, 69, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-INSERT INTO public.profesores VALUES (30, 'Fernando Morales', 34, 70, '2024-10-12 21:22:49.384', '2024-10-12 21:22:49.384', '173') ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4008 (class 0 OID 31911)
--- Dependencies: 301
--- Data for Name: provincias; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.provincias VALUES ('0101', 'Chachapoyas', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0102', 'Bagua', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0103', 'Bongará', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0104', 'Condorcanqui', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0105', 'Luya', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0106', 'Rodríguez de Mendoza', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0107', 'Utcubamba', '01') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0201', 'Huaraz', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0202', 'Aija', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0203', 'Antonio Raymondi', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0204', 'Asunción', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0205', 'Bolognesi', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0206', 'Carhuaz', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0207', 'Carlos Fermín Fitzcarrald', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0208', 'Casma', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0209', 'Corongo', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0210', 'Huari', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0211', 'Huarmey', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0212', 'Huaylas', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0213', 'Mariscal Luzuriaga', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0214', 'Ocros', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0215', 'Pallasca', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0216', 'Pomabamba', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0217', 'Recuay', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0218', 'Santa', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0219', 'Sihuas', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0220', 'Yungay', '02') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0301', 'Abancay', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0302', 'Andahuaylas', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0303', 'Antabamba', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0304', 'Aymaraes', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0305', 'Cotabambas', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0306', 'Chincheros', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0307', 'Grau', '03') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0401', 'Arequipa', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0402', 'Camaná', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0403', 'Caravelí', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0404', 'Castilla', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0405', 'Caylloma', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0406', 'Condesuyos', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0407', 'Islay', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0408', 'La Uniòn', '04') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0501', 'Huamanga', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0502', 'Cangallo', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0503', 'Huanca Sancos', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0504', 'Huanta', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0505', 'La Mar', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0506', 'Lucanas', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0507', 'Parinacochas', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0508', 'Pàucar del Sara Sara', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0509', 'Sucre', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0510', 'Víctor Fajardo', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0511', 'Vilcas Huamán', '05') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0601', 'Cajamarca', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0602', 'Cajabamba', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0603', 'Celendín', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0604', 'Chota', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0605', 'Contumazá', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0606', 'Cutervo', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0607', 'Hualgayoc', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0608', 'Jaén', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0609', 'San Ignacio', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0610', 'San Marcos', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0611', 'San Miguel', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0612', 'San Pablo', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0613', 'Santa Cruz', '06') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0701', 'Prov. Const. del Callao', '07') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0801', 'Cusco', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0802', 'Acomayo', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0803', 'Anta', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0804', 'Calca', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0805', 'Canas', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0806', 'Canchis', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0807', 'Chumbivilcas', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0808', 'Espinar', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0809', 'La Convención', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0810', 'Paruro', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0811', 'Paucartambo', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0812', 'Quispicanchi', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0813', 'Urubamba', '08') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0901', 'Huancavelica', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0902', 'Acobamba', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0903', 'Angaraes', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0904', 'Castrovirreyna', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0905', 'Churcampa', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0906', 'Huaytará', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('0907', 'Tayacaja', '09') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1001', 'Huánuco', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1002', 'Ambo', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1003', 'Dos de Mayo', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1004', 'Huacaybamba', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1005', 'Huamalíes', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1006', 'Leoncio Prado', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1007', 'Marañón', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1008', 'Pachitea', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1009', 'Puerto Inca', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1010', 'Lauricocha ', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1011', 'Yarowilca ', '10') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1101', 'Ica ', '11') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1102', 'Chincha ', '11') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1103', 'Nasca ', '11') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1104', 'Palpa ', '11') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1105', 'Pisco ', '11') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1201', 'Huancayo ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1202', 'Concepción ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1203', 'Chanchamayo ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1204', 'Jauja ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1205', 'Junín ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1206', 'Satipo ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1207', 'Tarma ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1208', 'Yauli ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1209', 'Chupaca ', '12') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1301', 'Trujillo ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1302', 'Ascope ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1303', 'Bolívar ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1304', 'Chepén ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1305', 'Julcán ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1306', 'Otuzco ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1307', 'Pacasmayo ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1308', 'Pataz ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1309', 'Sánchez Carrión ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1310', 'Santiago de Chuco ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1311', 'Gran Chimú ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1312', 'Virú ', '13') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1401', 'Chiclayo ', '14') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1402', 'Ferreñafe ', '14') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1403', 'Lambayeque ', '14') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1501', 'Lima ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1502', 'Barranca ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1503', 'Cajatambo ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1504', 'Canta ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1505', 'Cañete ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1506', 'Huaral ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1507', 'Huarochirí ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1508', 'Huaura ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1509', 'Oyón ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1510', 'Yauyos ', '15') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1601', 'Maynas ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1602', 'Alto Amazonas ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1603', 'Loreto ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1604', 'Mariscal Ramón Castilla ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1605', 'Requena ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1606', 'Ucayali ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1607', 'Datem del Marañón ', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1608', 'Putumayo', '16') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1701', 'Tambopata ', '17') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1702', 'Manu ', '17') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1703', 'Tahuamanu ', '17') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1801', 'Mariscal Nieto ', '18') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1802', 'General Sánchez Cerro ', '18') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1803', 'Ilo ', '18') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1901', 'Pasco ', '19') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1902', 'Daniel Alcides Carrión ', '19') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('1903', 'Oxapampa ', '19') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2001', 'Piura ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2002', 'Ayabaca ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2003', 'Huancabamba ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2004', 'Morropón ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2005', 'Paita ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2006', 'Sullana ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2007', 'Talara ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2008', 'Sechura ', '20') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2101', 'Puno ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2102', 'Azángaro ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2103', 'Carabaya ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2104', 'Chucuito ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2105', 'El Collao ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2106', 'Huancané ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2107', 'Lampa ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2108', 'Melgar ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2109', 'Moho ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2110', 'San Antonio de Putina ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2111', 'San Román ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2112', 'Sandia ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2113', 'Yunguyo ', '21') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2201', 'Moyobamba ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2202', 'Bellavista ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2203', 'El Dorado ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2204', 'Huallaga ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2205', 'Lamas ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2206', 'Mariscal Cáceres ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2207', 'Picota ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2208', 'Rioja ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2209', 'San Martín ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2210', 'Tocache ', '22') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2301', 'Tacna ', '23') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2302', 'Candarave ', '23') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2303', 'Jorge Basadre ', '23') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2304', 'Tarata ', '23') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2401', 'Tumbes ', '24') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2402', 'Contralmirante Villar ', '24') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2403', 'Zarumilla ', '24') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2501', 'Coronel Portillo ', '25') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2502', 'Atalaya ', '25') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2503', 'Padre Abad ', '25') ON CONFLICT DO NOTHING;
-INSERT INTO public.provincias VALUES ('2504', 'Purús', '25') ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (1, 1, 1) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (2, 2, 2) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (3, 3, 3) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (4, 4, 4) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (5, 5, 5) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (6, 6, 6) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (7, 7, 7) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (8, 8, 8) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (9, 9, 9) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (10, 10, 10) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (11, 11, 11) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (12, 12, 12) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (13, 13, 13) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (14, 14, 14) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (15, 15, 15) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (16, 16, 16) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (17, 17, 17) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (18, 18, 18) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (19, 19, 19) ON CONFLICT DO NOTHING;
+INSERT INTO public.material_clases VALUES (20, 20, 20) ON CONFLICT DO NOTHING;
 
 
---
--- TOC entry 4004 (class 0 OID 31796)
--- Dependencies: 297
--- Data for Name: reviews; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.reviews VALUES (100, 'Excelente profesor, muy claro en sus explicaciones.', 5, 5, 5, 5, 5, 5, 1, 1, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (101, 'La clase fue muy útil y aprendí bastante.', 4, 5, 4, 4, 4, 4, 2, 2, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (102, 'Un profesor muy paciente, pero a veces se retrasa.', 3, 3, 4, 4, 3, 4, 1, 3, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (103, 'Gran disponibilidad, siempre responde a tiempo.', 4, 5, 5, 5, 4, 5, 3, 4, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (104, 'No cumplió con las expectativas, pero tiene buena intención.', 2, 2, 3, 3, 2, 2, 2, 5, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (105, 'Las explicaciones son confusas, pero se esfuerza.', 3, 3, 3, 2, 3, 3, 4, 6, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (106, 'Súper empático, entiende mis dificultades.', 5, 5, 4, 5, 5, 5, 3, 7, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (107, 'Buena comunicación, aunque a veces se desvía del tema.', 4, 4, 3, 4, 4, 4, 5, 8, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (108, 'Las clases son dinámicas y entretenidas.', 4, 4, 5, 4, 4, 4, 1, 9, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (109, 'Siempre puntual, muy profesional.', 5, 5, 5, 5, 5, 5, 2, 4, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (110, 'Muy buena conexión con los alumnos, se siente cercano.', 4, 4, 4, 5, 4, 4, 3, 5, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (111, 'Las tareas son desafiantes pero justas.', 4, 5, 5, 4, 4, 5, 4, 6, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (112, 'Enseña bien, pero a veces es difícil seguirle el ritmo.', 3, 3, 4, 3, 3, 3, 5, 7, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (113, 'Me gustaría que se tomara más tiempo para repasar conceptos.', 2, 2, 3, 3, 3, 2, 1, 8, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (114, 'Siento que he mejorado mucho gracias a sus clases.', 5, 5, 5, 5, 5, 5, 2, 9, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (115, 'Es un buen profesor, pero necesita mejorar su organización.', 3, 3, 4, 3, 3, 3, 3, 4, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (116, 'Excelente disposición para ayudar, se siente muy accesible.', 5, 5, 5, 5, 5, 5, 4, 5, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (117, 'Se enfoca mucho en la teoría, falta práctica.', 2, 3, 2, 2, 3, 2, 5, 6, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (118, 'Sabe mucho de la materia, me gustaría más ejemplos prácticos.', 4, 4, 4, 4, 4, 4, 3, 7, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (119, 'El ambiente de clase es muy agradable, se puede aprender bien.', 5, 5, 5, 5, 5, 5, 1, 8, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (120, 'No siempre está disponible, pero cuando lo está, es útil.', 3, 2, 3, 3, 3, 3, 2, 9, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (121, 'Mucha claridad en las explicaciones, un buen profesor.', 4, 5, 4, 4, 4, 4, 1, 4, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (122, 'Es bastante estricto, pero eso me ayuda a enfocarme.', 4, 4, 4, 4, 4, 4, 2, 5, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (123, 'Algunas veces se distrae, pero en general es bueno.', 3, 3, 3, 3, 3, 3, 3, 6, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (124, 'Es un buen profesor, pero necesita un poco más de paciencia.', 3, 3, 4, 4, 3, 3, 4, 9, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (125, 'Recomiendo tomar clases con él, es muy profesional.', 5, 5, 5, 5, 5, 5, 5, 8, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (126, 'Gran profesor, pero a veces se pierde en sus explicaciones.', 3, 3, 4, 4, 3, 3, 1, 9, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (127, 'Me gusta su metodología de enseñanza, es efectiva.', 5, 5, 5, 5, 5, 5, 2, 4, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (128, 'Es un buen profesor, pero sus clases pueden ser lentas.', 3, 3, 3, 3, 3, 3, 3, 5, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (129, 'Las clases son interactivas, lo que me gusta mucho.', 4, 4, 4, 4, 4, 4, 4, 6, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (130, 'Se esfuerza por conectar con los alumnos, eso es valioso.', 5, 5, 5, 5, 5, 5, 5, 7, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (131, 'Las explicaciones son detalladas, pero un poco largas.', 3, 3, 3, 3, 3, 3, 1, 8, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-INSERT INTO public.reviews VALUES (132, 'Un profesor muy apasionado por su materia.', 5, 5, 5, 5, 5, 5, 2, 9, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4031 (class 0 OID 40998)
--- Dependencies: 324
--- Data for Name: sectores; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.sectores VALUES (1, 'Primaria') ON CONFLICT DO NOTHING;
-INSERT INTO public.sectores VALUES (2, 'Secundaria') ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4016 (class 0 OID 36945)
--- Dependencies: 309
--- Data for Name: subespecialidades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.subespecialidades VALUES (1, 'Pediatría', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 1) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (2, 'Estructuras', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 2) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (3, 'Diseño Arquitectónico', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 3) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (4, 'Derecho Penal', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 4) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (5, 'Psicología Clínica', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 5) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (6, 'Inteligencia Artificial', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 6) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (7, 'Biología Molecular', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 7) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (8, 'Química Orgánica', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 8) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (9, 'Física Teórica', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 9) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (10, 'Álgebra', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 10) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (11, 'Antropología', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 11) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (12, 'Educación Infantil', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 12) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (13, 'Arte Digital', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 13) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (14, 'Diseño Web', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 14) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (15, 'Comercio Internacional', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 15) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (16, 'Recursos Humanos', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 16) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (17, 'Auditoría', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 17) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (18, 'Publicidad', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 18) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (19, 'Comunicación Audiovisual', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 19) ON CONFLICT DO NOTHING;
-INSERT INTO public.subespecialidades VALUES (20, 'Medicina Veterinaria', '2024-10-12 21:10:05.873', '2024-10-12 21:10:05.873', 20) ON CONFLICT DO NOTHING;
-
-
---
--- TOC entry 4012 (class 0 OID 36928)
--- Dependencies: 305
--- Data for Name: suscripciones; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO public.suscripciones VALUES (1, 'Basic') ON CONFLICT DO NOTHING;
-INSERT INTO public.suscripciones VALUES (2, 'Por asesoría') ON CONFLICT DO NOTHING;
-INSERT INTO public.suscripciones VALUES (3, 'Full') ON CONFLICT DO NOTHING;
-INSERT INTO public.suscripciones VALUES (4, 'Full+') ON CONFLICT DO NOTHING;
-
+INSERT INTO public.reviews VALUES (100, 'Excelente profesor, muy claro en sus explicaciones.', 5, 5, 5, 5, 5, 5, 1, 31, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (101, 'La clase fue muy útil y aprendí bastante.', 4, 5, 4, 4, 4, 4, 2, 32, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (102, 'Un profesor muy paciente, pero a veces se retrasa.', 3, 3, 4, 4, 3, 4, 1, 33, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (103, 'Gran disponibilidad, siempre responde a tiempo.', 4, 5, 5, 5, 4, 5, 3, 34, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (104, 'No cumplió con las expectativas, pero tiene buena intención.', 2, 2, 3, 3, 2, 2, 2, 35, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (105, 'Las explicaciones son confusas, pero se esfuerza.', 3, 3, 3, 2, 3, 3, 4, 36, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (106, 'Súper empático, entiende mis dificultades.', 5, 5, 4, 5, 5, 5, 3, 37, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (107, 'Buena comunicación, aunque a veces se desvía del tema.', 4, 4, 3, 4, 4, 4, 5, 38, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (108, 'Las clases son dinámicas y entretenidas.', 4, 4, 5, 4, 4, 4, 1, 39, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (109, 'Siempre puntual, muy profesional.', 5, 5, 5, 5, 5, 5, 2, 40, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (110, 'Muy buena conexión con los alumnos, se siente cercano.', 4, 4, 4, 5, 4, 4, 3, 41, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (111, 'Las tareas son desafiantes pero justas.', 4, 5, 5, 4, 4, 5, 4, 42, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (112, 'Enseña bien, pero a veces es difícil seguirle el ritmo.', 3, 3, 4, 3, 3, 3, 5, 43, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (113, 'Me gustaría que se tomara más tiempo para repasar conceptos.', 2, 2, 3, 3, 3, 2, 1, 44, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (114, 'Siento que he mejorado mucho gracias a sus clases.', 5, 5, 5, 5, 5, 5, 2, 45, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (115, 'Es un buen profesor, pero necesita mejorar su organización.', 3, 3, 4, 3, 3, 3, 3, 46, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (116, 'Excelente disposición para ayudar, se siente muy accesible.', 5, 5, 5, 5, 5, 5, 4, 47, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (117, 'Se enfoca mucho en la teoría, falta práctica.', 2, 3, 2, 2, 3, 2, 5, 48, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (118, 'Sabe mucho de la materia, me gustaría más ejemplos prácticos.', 4, 4, 4, 4, 4, 4, 3, 49, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (119, 'El ambiente de clase es muy agradable, se puede aprender bien.', 5, 5, 5, 5, 5, 5, 1, 50, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (120, 'No siempre está disponible, pero cuando lo está, es útil.', 3, 2, 3, 3, 3, 3, 2, 51, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (121, 'Mucha claridad en las explicaciones, un buen profesor.', 4, 5, 4, 4, 4, 4, 1, 52, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (122, 'Es bastante estricto, pero eso me ayuda a enfocarme.', 4, 4, 4, 4, 4, 4, 2, 53, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (123, 'Algunas veces se distrae, pero en general es bueno.', 3, 3, 3, 3, 3, 3, 3, 54, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (124, 'Es un buen profesor, pero necesita un poco más de paciencia.', 3, 3, 4, 4, 3, 3, 4, 55, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (125, 'Recomiendo tomar clases con él, es muy profesional.', 5, 5, 5, 5, 5, 5, 5, 56, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (126, 'Gran profesor, pero a veces se pierde en sus explicaciones.', 3, 3, 4, 4, 3, 3, 1, 57, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (127, 'Me gusta su metodología de enseñanza, es efectiva.', 5, 5, 5, 5, 5, 5, 2, 58, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (128, 'Es un buen profesor, pero sus clases pueden ser lentas.', 3, 3, 3, 3, 3, 3, 3, 59, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (129, 'Las clases son interactivas, lo que me gusta mucho.', 4, 4, 4, 4, 4, 4, 4, 60, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (130, 'Se esfuerza por conectar con los alumnos, eso es valioso.', 5, 5, 5, 5, 5, 5, 5, 31, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (131, 'Las explicaciones son detalladas, pero un poco largas.', 3, 3, 3, 3, 3, 3, 1, 32, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;
+INSERT INTO public.reviews VALUES (132, 'Un profesor muy apasionado por su materia.', 5, 5, 5, 5, 5, 5, 2, 33, '2024-10-12 21:39:46.536', '2024-10-12 21:39:46.536') ON CONFLICT DO NOTHING;

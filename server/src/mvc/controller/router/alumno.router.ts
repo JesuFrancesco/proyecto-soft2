@@ -28,25 +28,25 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/email/:email", async (req, res, next) => {
-  try {
-    const { email } = req.params;
-    const alumno = await service.findByEmail(email);
-    res.status(201).json(alumno);
-  } catch (error) {
-    next(error);
-  }
-});
+// router.get("/email/:email", async (req, res, next) => {
+//   try {
+//     const { email } = req.params;
+//     const alumno = await service.findByEmail(email);
+//     res.status(201).json(alumno);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
-router.get("/clases/email/:email", async (req, res, next) => {
-  try {
-    const { email } = req.params;
-    const alumno = await service.findAlumnoClases(email);
-    res.status(201).json(alumno);
-  } catch (error) {
-    next(error);
-  }
-});
+// router.get("/clases/email/:email", async (req, res, next) => {
+//   try {
+//     const { email } = req.params;
+//     const alumno = await service.findAlumnoClases(email);
+//     res.status(201).json(alumno);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.delete("/:id", async (req, res, next) => {
   try {

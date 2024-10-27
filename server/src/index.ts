@@ -1,7 +1,7 @@
 import app from "./app";
 import { logger } from "./log";
 
-const port = 9090;
+const port = 8080;
 
 // entry point
 app.listen(port, () => {

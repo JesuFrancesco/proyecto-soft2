@@ -54,7 +54,7 @@ async function main() {
    `);
 
   await sql.query(`
-     create or replace function public.handle_user_delete()
+     create or replace function public.handle_sb_user_delete()
      returns trigger as $$
      begin
        delete from public.accounts where id = old.id;
@@ -72,11 +72,11 @@ async function main() {
   await sql.query(`
     create or replace trigger on_sb_profile_user_deleted
     after delete on auth.users
-    for each row execute procedure public.handle_user_delete()
+    for each row execute procedure public.handle_sb_user_delete()
     `);
 
   log.info(
-    "Se han agregado los triggers y funciones que se vinculan con supabase."
+    "Se han agregado los triggers y funciones que se vinculan con supabase.",
   );
 
   // static
@@ -89,7 +89,7 @@ async function main() {
     } catch (error: unknown) {
       if (error instanceof DatabaseError) {
         log.warn(
-          `${filePath} | Algo salio mal en DB. Más detalle en errors.log`
+          `${filePath} | Algo salio mal en DB. Más detalle en errors.log`,
         );
         errorLog.error(error);
       } else {

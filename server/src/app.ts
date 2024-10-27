@@ -33,7 +33,8 @@ app.use(
 app.use(logRequestsHandler);
 
 // auth middleware
-app.use(authHandler);
+// OJO: ACTIVAR EL MIDDLEWARE AQUI HARA QUE EL ENDPOINT SE BLOQUEE EN LO ABSOLUTO DE NO TENER UN TOKEN DE AUTORIZACION
+// app.use(authHandler);
 
 // main router
 routerAPI(app);

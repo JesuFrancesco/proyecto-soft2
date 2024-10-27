@@ -54,10 +54,10 @@ export class ClaseDAO implements DAO<Clase>, IMatriculable {
     return clase;
   }
 
-  async update(id: number, cambios: Partial<Clase>) {
+  async update(id: string | number, cambios: Partial<Clase>) {
     const claseCambiada = await this.prisma.clase.update({
       where: {
-        id,
+        id: id as number,
       },
       data: cambios,
     });
@@ -65,10 +65,10 @@ export class ClaseDAO implements DAO<Clase>, IMatriculable {
     return claseCambiada;
   }
 
-  async deleteByPk(id: number) {
+  async deleteByPk(id: string | number) {
     const claseEliminada = await this.prisma.clase.delete({
       where: {
-        id,
+        id: id as number,
       },
     });
     return claseEliminada;

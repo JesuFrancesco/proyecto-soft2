@@ -32,7 +32,12 @@ export const MagicLinkEmail = ({
     <Preview>Estás a un paso de mejorar tu futuro académico.</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Código de confirmación</Heading>
+        <Heading style={h1}>Bienvenido a Eduyacha</Heading>
+
+        <Container>
+          Aqui está tu código de confirmación
+          <Container style={code}>{token}</Container>
+        </Container>
 
         <Container style={logoPlaceholder}>
           <Img
@@ -51,7 +56,7 @@ export const MagicLinkEmail = ({
             marginBottom: "16px",
           }}
         >
-          Haz click aquí para terminar tu registro
+          O también puedes hacer click aquí para terminar tu registro
         </Button>
 
         <Text
@@ -89,6 +94,16 @@ const container = {
   paddingLeft: "12px",
   paddingRight: "12px",
   margin: "0 auto",
+};
+
+const code = {
+  display: "inline-block",
+  padding: "16px 4.5%",
+  width: "90.5%",
+  backgroundColor: "#f4f4f4",
+  borderRadius: "5px",
+  border: "1px solid #eee",
+  color: "#333",
 };
 
 const h1 = {

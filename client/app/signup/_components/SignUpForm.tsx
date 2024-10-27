@@ -28,7 +28,7 @@ const SignUpForm = () => {
           "Se te ha enviado un correo, entra para validar tu registro.",
       });
 
-      router.push("/");
+      router.push(`/signup/otp?email=${data.email}`);
       return;
     }
 

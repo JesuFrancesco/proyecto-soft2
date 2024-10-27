@@ -1,9 +1,30 @@
 import { DAO } from "./interfaces/GenericInterfaces";
 import { Profesor, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
-import { IFindProfesorByEmail } from "./interfaces/ProfesorInterfaces";
+import { IFindByAccountId } from "./interfaces/AccountInterfaces";
 
-export class ProfesorDAO implements DAO<Profesor>, IFindProfesorByEmail {
+export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
+  async findByAccountId(
+    arg0: string
+  ): Promise<{
+    id: number;
+    nombre: string;
+    edad: number;
+    accountId: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+    paisId: string;
+  }> {
+    const profesor = await this.prisma.profesor.findUnique({
+      where: {
+        accountId: arg0,
+      },
+    });
+
+    if (!profesor) throw boom.notFound();
+
+    return profesor;
+  }
   private prisma = new PrismaClient();
 
   async create(profesor: Profesor) {
@@ -11,28 +32,6 @@ export class ProfesorDAO implements DAO<Profesor>, IFindProfesorByEmail {
       data: profesor,
     });
     return nuevoProfesor;
-  }
-
-  async findByEmail(email: string) {
-    const cuenta = await this.prisma.account.findUnique({
-      where: {
-        email,
-      },
-      include: {
-        profesor: true,
-      },
-    });
-
-    if (!cuenta) {
-      throw boom.notFound();
-    }
-    const { profesor } = cuenta;
-
-    if (!profesor) {
-      throw boom.notFound();
-    }
-
-    return profesor;
   }
 
   async findAll() {
@@ -54,10 +53,10 @@ export class ProfesorDAO implements DAO<Profesor>, IFindProfesorByEmail {
     return profesor;
   }
 
-  async update(id: number, cambios: Partial<Profesor>) {
+  async update(id: string | number, cambios: Partial<Profesor>) {
     const profesorCambiado = await this.prisma.profesor.update({
       where: {
-        id,
+        id: id as number,
       },
       data: cambios,
     });
@@ -65,10 +64,10 @@ export class ProfesorDAO implements DAO<Profesor>, IFindProfesorByEmail {
     return profesorCambiado;
   }
 
-  async deleteByPk(id: number) {
+  async deleteByPk(id: string | number) {
     const profesorEliminado = await this.prisma.profesor.delete({
       where: {
-        id,
+        id: id as number,
       },
     });
     return profesorEliminado;
