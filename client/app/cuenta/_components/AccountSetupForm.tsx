@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   Select,
@@ -31,6 +31,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+import {
+  submitAlumnoAccountSetup,
+  submitProfesorAccountSetup,
+} from "@/service/account.service";
 
 const AccountSetupForm: React.FC = () => {
   const [esAlumno, setEsAlumno] = useState<boolean | null>(null);
@@ -83,19 +90,24 @@ const AccountSetupForm: React.FC = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<AccountSetupSchemaType> = async (data) => {
-    // const { error, msg } = await submitAlumnoAccountSetup(data);
-    // if (!error) {
-    //   toast({
-    //     variant: "default",
-    //     description: "Se han validado tus datos.",
-    //   });
-    //   router.push(`/cuenta`);
-    //   return;
-    // }
-    // toast({
-    //   variant: "destructive",
-    //   description: `Algo salió mal.\n${msg}`,
-    // });
+    const { role } = data;
+    const { error, msg } =
+      role === "alumno"
+        ? await submitAlumnoAccountSetup(data)
+        : await submitProfesorAccountSetup(data);
+
+    if (!error) {
+      toast({
+        variant: "default",
+        description: "Se han validado tus datos.",
+      });
+      router.push(`/cuenta`);
+      return;
+    }
+    toast({
+      variant: "destructive",
+      description: `Algo salió mal.\n${msg}`,
+    });
   };
 
   return (
@@ -303,6 +315,92 @@ const AccountSetupForm: React.FC = () => {
                   )}
                 />
               </>
+            )}
+
+            {/* Alumno adicional */}
+            {esAlumno === null ? null : esAlumno ? (
+              <>
+                {/* Edad */}
+                <FormField
+                  control={form.control}
+                  name="country"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="block mb-2">
+                        País de origen
+                      </FormLabel>
+                      {paisesIsLoading ? (
+                        <LoaderCircle className="animate-spin" />
+                      ) : (
+                        <Select
+                          value={field.value}
+                          onValueChange={(e) => {
+                            field.onChange(e);
+                            if (e === "173") {
+                              // codigo para peru
+                              setEsPeruano(true);
+                              departamentosRefetch();
+                            } else {
+                              setEsPeruano(false);
+                            }
+                          }}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="w-full">
+                              <SelectValue placeholder="Selecciona tu país" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {paisesData &&
+                              paisesData.map((pais) => (
+                                <SelectItem key={pais.id} value={pais.id}>
+                                  {pais.name}
+                                </SelectItem>
+                              ))}
+                          </SelectContent>
+                        </Select>
+                      )}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="alumno.edad"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>¿Qué edad tienes?</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          min={4}
+                          placeholder="Tu edad"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
+            ) : (
+              <FormField
+                control={form.control}
+                name="profesor.biografia"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Biografía</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Cuéntanos sobre ti..."
+                        className="resize-none"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             )}
           </fieldset>
 

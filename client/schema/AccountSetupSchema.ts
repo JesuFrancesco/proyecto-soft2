@@ -16,6 +16,17 @@ export const AccountSetupSchema = z.object({
   distrito: z.string({
     required_error: "Selecciona tu distrito",
   }),
+  alumno: z
+    .object({
+      edad: z.number(),
+    })
+    .optional(),
+  profesor: z
+    .object({
+      biografia: z.string(),
+      // TODO: agregar especialidades
+    })
+    .optional(),
 });
 
 export type AccountSetupSchemaType = z.infer<typeof AccountSetupSchema>;

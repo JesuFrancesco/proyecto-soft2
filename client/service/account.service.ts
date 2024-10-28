@@ -29,3 +29,28 @@ export const submitAlumnoAccountSetup = async (
     return error;
   }
 };
+
+export const submitProfesorAccountSetup = async (
+  data: AccountSetupSchemaType
+) => {
+  try {
+    const headers = await getAuthHeaders();
+
+    const config = {
+      data,
+      headers,
+    } as AxiosRequestConfig;
+
+    const { data: responseData } = await axios.post(
+      `${Config.EXPRESS_API_URL}/accounts/setup-profesor`,
+      config
+    );
+
+    return responseData;
+  } catch (error) {
+    console.error("error");
+    console.error(error);
+
+    return error;
+  }
+};
