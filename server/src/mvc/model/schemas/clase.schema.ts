@@ -7,8 +7,6 @@ const esVirtual = Joi.boolean().optional();
 const esGrupal = Joi.boolean().optional();
 const fechaClase = Joi.date().iso().required();
 const idProfesor = Joi.number().optional();
-const createdAt = Joi.date().default(Date.now);
-const updatedAt = Joi.date().default(Date.now);
 
 const createClaseSchema = Joi.object({
   id: id.optional(),

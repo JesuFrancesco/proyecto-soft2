@@ -4,7 +4,18 @@ export const AccountSetupSchema = z.object({
   role: z.enum(["alumno", "profesor"], {
     required_error: "Selecciona tu rol",
   }),
-  country: z.string().min(1, { message: "Selecciona tu país" }),
+  country: z.string({
+    required_error: "Selecciona tu país",
+  }),
+  departamento: z.string({
+    required_error: "Selecciona tu país",
+  }),
+  provincia: z.string({
+    required_error: "Selecciona tu provincia",
+  }),
+  distrito: z.string({
+    required_error: "Selecciona tu distrito",
+  }),
 });
 
 export type AccountSetupSchemaType = z.infer<typeof AccountSetupSchema>;
