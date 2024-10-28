@@ -5,6 +5,7 @@ import WidgetWrapper from "@/components/common/WidgetWrapper";
 import Link from "next/link";
 import { Config } from "../../config/credentials";
 import { IClase } from "@/interfaces/IClase";
+import { Button } from "@/components/ui/button";
 
 const fetchDataFromAPI = async () => {
   const res = await axios.get(`${Config.EXPRESS_API_URL}/clases`, {
@@ -67,9 +68,9 @@ export default async function CursosDisponiblesPage() {
               </p>
               <div className="mt-4 flex justify-between items-center">
                 <Link href={`/cursos/${course.id}`}>
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors duration-200">
+                  <Button className="bg-primary-600 hover:bg-primary-500 text-white py-2 px-4 rounded-md transition-colors duration-200">
                     Ver detalles
-                  </button>
+                  </Button>
                 </Link>
               </div>
             </div>

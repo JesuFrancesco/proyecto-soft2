@@ -1,7 +1,7 @@
 "use client";
+import React from "react";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
-import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignUpSchema, SignUpSchemaType } from "@/schema/SignUpSchema";

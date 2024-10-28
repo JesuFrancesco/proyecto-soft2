@@ -1,35 +1,54 @@
-"use client";
+"use server";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import axios from "axios";
+import { Config } from "@/config/credentials";
+import { IProfesor } from "@/interfaces/IProfesor";
 
-const ProfesoresPage: React.FC = () => {
-  const { id } = useParams();
+interface ProfesorDetalleProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
+  const { id } = params;
+
+  const { data: profesor } = await axios.get<IProfesor>(
+    `${Config.EXPRESS_API_URL}/profesores/${id}`
+  );
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-6">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-lg w-full">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             Información del Profesor
           </h1>
-          <Image
-            src="https://dina.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=29178&ruta=/documents/docInvestigadores/29178/imagenes/Carlos.jpg&content_type=image/jpeg" // Reemplaza esto con la ruta a la imagen del profesor
-            width={300}
-            height={300}
-            alt="Profesor Felix"
-            className="w-32 h-32 rounded-full shadow-lg mb-4"
-          />
-          <h2 className="text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
-            Profesor: Felix
+          <h2 className="text-2xl font-semibold self-center text-gray-700 dark:text-gray-300 mb-2">
+            Profesor: {profesor.nombre}
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Curso: Cálculo III
-          </p>
+          <div className="self-center">
+            <Image
+              src="https://dina.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=29178&ruta=/documents/docInvestigadores/29178/imagenes/Carlos.jpg&content_type=image/jpeg" // Reemplaza esto con la ruta a la imagen del profesor
+              width={300}
+              height={300}
+              alt="Profesor Felix"
+              className="w-32 h-32 rounded-full shadow-lg mb-4"
+            />
+          </div>
 
-          {/* Sección de habilidades */}
-
-          <img
-            src="https://i0.wp.com/granpausa.com/wp-content/uploads/2015/02/completo-e1424557455185.jpg?fit=1000%2C1000&ssl=1" // Reemplaza esto con la ruta a la imagen del profesor
-          />
+          <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
+            <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              Habilidades
+            </h2>
+            <Image
+              src="https://i0.wp.com/granpausa.com/wp-content/uploads/2015/02/completo-e1424557455185.jpg?fit=1000%2C1000&ssl=1" // Reemplaza esto con la ruta a la imagen del profesor
+              alt="foto-perfil-profesor"
+              width={512}
+              height={512}
+            />
+          </div>
 
           {/* Sección de biografía */}
           <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
@@ -101,6 +120,4 @@ const ProfesoresPage: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default ProfesoresPage;
+}

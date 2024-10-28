@@ -1,34 +1,31 @@
 "use server";
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { Config } from "@/config/credentials";
 import { getSupabaseUserEmail } from "./utils";
+import { getAuthHeaders } from "@/utils/supabase/server";
+import { AccountSetupSchemaType } from "@/schema/AccountSetupSchema";
 
-export const registerCallback = async () => {
+export const submitAlumnoAccountSetup = async (
+  data: AccountSetupSchemaType
+) => {
   try {
-    const email = await getSupabaseUserEmail();
+    const headers = await getAuthHeaders();
 
-    const data = {
-      email,
-    };
+    const config = {
+      data,
+      headers,
+    } as AxiosRequestConfig;
 
-    const cuentaCreada = await axios.post(
-      Config.EXPRESS_API_URL + "/accounts/alumno",
-      {
-        ...data,
-        alumno: {
-          create: {
-            nombre: data.email,
-            edad: 12,
-          },
-        },
-      }
+    const { data: responseData } = await axios.post(
+      `${Config.EXPRESS_API_URL}/accounts/setup-alumno`,
+      config
     );
 
-    return cuentaCreada;
+    return responseData;
   } catch (error) {
     console.error("error");
     console.error(error);
 
-    return null;
+    return error;
   }
 };

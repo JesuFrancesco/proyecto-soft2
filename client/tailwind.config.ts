@@ -16,7 +16,10 @@ const config: Config = {
       colors: {
         primary: colors.cyan,
         secondary: colors.cyan,
-        border: colors.black,
+        popover: "hsl(var(--popover))",
+        input: "hsl(var(--input))",
+        accent: "hsl(var(--accent))",
+        border: "hsl(var(--border))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
       },

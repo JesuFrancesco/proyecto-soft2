@@ -27,6 +27,8 @@
 @layer base {
   :root {
 
+    --border: #475569;
+    
     --background: #fafafa;
 
     --foreground: 240 10% 3.9%;
@@ -94,6 +96,7 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%}
   .dark {
+    --border: #fafafa;
 
     --background: #1e293b;
 
