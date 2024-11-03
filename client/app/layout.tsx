@@ -13,7 +13,6 @@ const roboto = Roboto({
 import "./css/base.css";
 import HeaderServer from "@/components/widgets/HeaderServer";
 import { Toaster } from "@/components/ui/toaster";
-import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: {

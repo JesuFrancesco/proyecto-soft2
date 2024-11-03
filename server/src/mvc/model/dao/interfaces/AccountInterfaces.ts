@@ -4,12 +4,12 @@ import { IFindByEmail } from "./GenericInterfaces";
 export interface IAccountCreatable {
   setupAlumnoAccount: (
     accountId: string,
-    alumnoProps: Partial<Alumno>
+    alumnoProps: Alumno
   ) => Promise<Account>;
 
   setupProfesorAccount: (
     accountId: string,
-    profesorProps: Partial<Profesor>
+    profesorProps: Profesor
   ) => Promise<Account>;
 }
 

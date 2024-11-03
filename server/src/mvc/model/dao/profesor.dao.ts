@@ -4,20 +4,12 @@ import boom from "@hapi/boom";
 import { IFindByAccountId } from "./interfaces/AccountInterfaces";
 
 export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
-  async findByAccountId(
-    arg0: string
-  ): Promise<{
-    id: number;
-    nombre: string;
-    edad: number;
-    accountId: string | null;
-    createdAt: Date;
-    updatedAt: Date;
-    paisId: string;
-  }> {
+  private prisma = new PrismaClient();
+
+  async findByAccountId(id: string) {
     const profesor = await this.prisma.profesor.findUnique({
       where: {
-        accountId: arg0,
+        accountId: id,
       },
     });
 
@@ -25,7 +17,6 @@ export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
 
     return profesor;
   }
-  private prisma = new PrismaClient();
 
   async create(profesor: Profesor) {
     const nuevoProfesor = await this.prisma.profesor.create({

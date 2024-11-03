@@ -25,10 +25,12 @@ model Account {
 
   alumno   Alumno?   @relation("AccountAlumno")
   profesor Profesor? @relation("AccountProfessores")
+  pais     Pais?     @relation(fields: [paisId], references: [id])
 
-  distritoId     String? @default("150117") @map("distrito_id")
-  provinciaId    String? @default("1501") @map("provincia_id")
-  departamentoId String? @default("15") @map("departamento_id")
+  paisId         String? @map("pais_id")
+  distritoId     String? @map("distrito_id")
+  provinciaId    String? @map("provincia_id")
+  departamentoId String? @map("departamento_id")
 
   @@map("accounts")
 }
@@ -77,7 +79,6 @@ model Alumno {
 model Profesor {
   id             Int                    @id @default(autoincrement())
   nombre         String
-  pais           Pais                   @relation(fields: [paisId], references: [id])
   edad           Int
   especialidades ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
 
@@ -90,7 +91,6 @@ model Profesor {
   createdAt               DateTime                  @default(now()) @map("created_at")
   updatedAt               DateTime                  @default(now()) @map("updated_at")
   ProfesorSubEspecialidad ProfesorSubEspecialidad[]
-  paisId                  String                    @default("173") // pe
 
   @@map("profesores")
 }
@@ -263,8 +263,6 @@ model AlumnoPreferencia {
   alumno      Alumno?       @relation("AlumnoPreferencias", fields: [idAlumno], references: [id])
   preferencia Especialidad? @relation("PreferenciaAlumnoPreferencias", fields: [idPreferencia], references: [id])
 
-  subEspecialidadId Int?
-
   @@id([idAlumno, idPreferencia])
   @@map("alumno_preferencias")
 }
@@ -341,10 +339,10 @@ model Distrito {
 }
 
 model Pais {
-  id         String     @id
-  name       String
-  code       String
-  profesores Profesor[]
+  id      String    @id
+  name    String
+  code    String
+  Account Account[]
 
   @@map("paises")
 }

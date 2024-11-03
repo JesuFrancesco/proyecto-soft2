@@ -1,24 +1,29 @@
 import { z } from "zod";
 
 export const AccountSetupSchema = z.object({
-  role: z.enum(["alumno", "profesor"], {
+  rol: z.enum(["alumno", "profesor"], {
     required_error: "Selecciona tu rol",
   }),
-  country: z.string({
+  pais: z.string({
     required_error: "Selecciona tu país",
   }),
-  departamento: z.string({
-    required_error: "Selecciona tu país",
-  }),
-  provincia: z.string({
-    required_error: "Selecciona tu provincia",
-  }),
-  distrito: z.string({
-    required_error: "Selecciona tu distrito",
-  }),
+  peru: z
+    .object({
+      departamento: z.string({
+        required_error: "Selecciona tu país",
+      }),
+      provincia: z.string({
+        required_error: "Selecciona tu provincia",
+      }),
+      distrito: z.string({
+        required_error: "Selecciona tu distrito",
+      }),
+    })
+    .optional(),
   alumno: z
     .object({
       edad: z.number(),
+      preferencias: z.array(z.number()),
     })
     .optional(),
   profesor: z

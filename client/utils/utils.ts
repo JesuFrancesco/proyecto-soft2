@@ -1,3 +1,5 @@
+import { AxiosError } from "axios";
+
 export function zodGetDirtyValues<
   DirtyFields extends Record<string, unknown>,
   Values extends Record<keyof DirtyFields, unknown>
@@ -23,3 +25,12 @@ export function zodGetDirtyValues<
 export function capitalizeFirstLetter(cadena: string) {
   return String(cadena).charAt(0).toUpperCase() + String(cadena).slice(1);
 }
+
+export function isNumeric(str: string) {
+  return /^\d+$/.test(str);
+}
+
+export const axiosErrorHandler = (error: AxiosError) => ({
+  error: true,
+  msg: error.message,
+});

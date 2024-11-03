@@ -16,11 +16,15 @@ instalar extensiones de:
 npm i
 ```
 
-2. setear .env
+2. copiar el .env del backend del drive
 
 ```bash
-code .env
-# completar elementos de .env.example
+├── client
+├── server
+│   ├── .env.example
+│   └── → .env ←
+├── README.md
+├── .gitignore
 ```
 
 3. correr prisma

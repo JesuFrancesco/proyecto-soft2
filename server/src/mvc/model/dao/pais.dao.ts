@@ -22,9 +22,6 @@ export class PaisDAO implements IReadable<Pais> {
       where: {
         id: id as string,
       },
-      include: {
-        profesores: true,
-      },
     });
     if (!pais) throw boom.notFound();
     return pais;

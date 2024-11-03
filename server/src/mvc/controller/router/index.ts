@@ -8,6 +8,8 @@ import reviewRouter from "./review.router";
 import paisRouter from "./pais.router";
 import ubigeosRouter from "./ubigeos.router";
 
+import especialidadRouter from "./especialidad.router";
+
 function routerAPI(app: Express) {
   const router = Router();
 
@@ -25,6 +27,8 @@ function routerAPI(app: Express) {
   router.use("/clases", claseRouter);
   router.use("/paises", paisRouter);
   router.use("/ubigeos", ubigeosRouter);
+  router.use("/especialidades", especialidadRouter);
+  // router.use("/subespecialidades", null);
 }
 
 export { routerAPI };

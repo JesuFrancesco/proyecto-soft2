@@ -34,6 +34,43 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.patch("/update-country", async (req, res, next) => {
+  try {
+    const data = req.body;
+
+    const { paisId } = data;
+
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const account = await accountService.updateAccountCountry(id, paisId);
+
+    res.json(account);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.patch("/update-peru-ubigeo", async (req, res, next) => {
+  try {
+    const data = req.body;
+
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const account = await accountService.updateAccountPeruUbigeoLocation(
+      id,
+      data
+    );
+
+    res.json(account);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post("/setup-alumno", async (req, res, next) => {
   try {
     const data = req.body;
@@ -42,7 +79,12 @@ router.post("/setup-alumno", async (req, res, next) => {
 
     const id = user.data.user?.id as string;
 
-    const account = await accountService.setupAlumnoAccount(id, data);
+    const nombre = user.data.user?.user_metadata["name"] as string;
+
+    const account = await accountService.setupAlumnoAccount(id, {
+      ...data,
+      nombre,
+    });
 
     res.json(account);
   } catch (error) {
@@ -58,7 +100,12 @@ router.post("/setup-profesor", async (req, res, next) => {
 
     const id = user.data.user?.id as string;
 
-    const account = await accountService.setupProfesorAccount(id, data);
+    const nombre = user.data.user?.user_metadata["name"] as string;
+
+    const account = await accountService.setupProfesorAccount(id, {
+      ...data,
+      nombre,
+    });
 
     res.json(account);
   } catch (error) {

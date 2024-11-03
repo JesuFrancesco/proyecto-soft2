@@ -35,3 +35,9 @@ export const fetchDistritos = async (
   if (!data) throw Error("Algo salio mal");
   return data;
 };
+
+export const fetchEspecialidades = async () => {
+  const { data } = await axios.get(`${Config.EXPRESS_API_URL}/especialidades`);
+  if (!data) throw Error("Algo salio mal");
+  return data;
+};

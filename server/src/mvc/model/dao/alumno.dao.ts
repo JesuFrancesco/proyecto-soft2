@@ -2,7 +2,6 @@ import { DAO } from "./interfaces/GenericInterfaces";
 import { Alumno, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
-import { IFindAlumnoByEmail } from "./interfaces/AlumnoInterfaces";
 import { IFindByAccountId } from "./interfaces/AccountInterfaces";
 
 export class AlumnoDAO implements DAO<Alumno>, IFindByAccountId<Alumno> {

@@ -4,9 +4,9 @@ import React from "react";
 import AuthActionsButton from "../common/CTA";
 import { createClient } from "@/utils/supabase/server";
 import { logout } from "@/app/login/actions";
-import { toast } from "@/hooks/use-toast";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import DropdownUserOptions from "./DropdownUser";
 
 const HomeButton = () => (
   <a href="/cuenta" className="flex">
@@ -55,10 +55,7 @@ const AuthWidget = async () => {
           ))
         ) : (
           <>
-            <HomeButton />
-            <div className="flex">
-              Bienvenido de vuelta {user.user_metadata.name}
-            </div>
+            <DropdownUserOptions user={user} />
             |
             <LogoutButton />
           </>

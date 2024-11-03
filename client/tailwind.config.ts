@@ -18,6 +18,7 @@ const config: Config = {
         secondary: colors.cyan,
         popover: "hsl(var(--popover))",
         input: "hsl(var(--input))",
+        destructive: "hsl(var(--destructive))",
         accent: "hsl(var(--accent))",
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",

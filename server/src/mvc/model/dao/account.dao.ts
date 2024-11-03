@@ -34,29 +34,89 @@ export class AccountDAO
     return cuenta;
   }
 
-  async setupAlumnoAccount(accountId: string, data: Partial<Alumno>) {
+  async updateAccountCountry(accountId: string, paisId: any) {
     const acc = await this.prisma.account.update({
       where: {
         id: accountId,
       },
       data: {
-        alumno: data as any,
-      },
-      include: {
-        alumno: true,
+        paisId: {
+          set: paisId,
+        },
       },
     });
 
     return acc;
   }
 
-  async setupProfesorAccount(accountId: string, data: Partial<Profesor>) {
+  async updateAccountPeruUbigeoLocation(accountId: string, data: any) {
     const acc = await this.prisma.account.update({
       where: {
         id: accountId,
       },
       data: {
-        profesor: data as any,
+        departamentoId: {
+          set: data.departamentoId,
+        },
+        provinciaId: {
+          set: data.provinciaId,
+        },
+        distritoId: {
+          set: data.distritoId,
+        },
+      },
+    });
+
+    return acc;
+  }
+
+  async setupAlumnoAccount(accountId: string, data: any) {
+    const { preferencias } = data as { preferencias: number[] };
+
+    const updatedAccount = await this.prisma.account.update({
+      where: {
+        id: accountId,
+      },
+
+      data: {
+        alumno: {
+          create: {
+            edad: data.edad,
+            nombre: data.nombre,
+          },
+        },
+      },
+
+      include: {
+        alumno: true,
+      },
+    });
+
+    const { alumno } = updatedAccount;
+
+    if (alumno !== null && preferencias.length !== 0) {
+      await this.prisma.alumnoPreferencia.createMany({
+        data: preferencias.map((p) => ({
+          idAlumno: alumno.id,
+          idPreferencia: p,
+        })),
+      });
+    }
+
+    return updatedAccount;
+  }
+
+  async setupProfesorAccount(accountId: string, data: any) {
+    const acc = await this.prisma.account.update({
+      where: {
+        id: accountId,
+      },
+      data: {
+        profesor: {
+          create: {
+            ...data,
+          },
+        },
       },
       include: {
         profesor: true,

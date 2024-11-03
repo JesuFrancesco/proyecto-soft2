@@ -1,5 +1,5 @@
 "use client";
-import { Shield, Trash } from "lucide-react";
+import { Settings, Shield, Trash } from "lucide-react";
 
 import {
   Sidebar,
@@ -12,7 +12,9 @@ import {
 } from "@/components/ui/sidebar";
 import { ReactNode, useState } from "react";
 import { Icon } from "@/shared/types";
-import AccountSetupForm from "./AccountSetupForm";
+import AccountSetupForm from "./sidebar-items/AccountSetupForm";
+import DeleteAccountForm from "./sidebar-items/DeleteAccount";
+import AccountConfigureForm from "./sidebar-items/AccountCustomForm";
 
 type Item = {
   title: string;
@@ -31,8 +33,14 @@ export function AccountSidebar() {
       selected: true,
     },
     {
+      title: "Configuración",
+      body: <AccountConfigureForm />,
+      icon: Settings,
+      selected: false,
+    },
+    {
       title: "Eliminar cuenta",
-      body: <>test</>,
+      body: <DeleteAccountForm />,
       icon: Trash,
       selected: false,
     },
