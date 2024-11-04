@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
-import defaultTheme from "tailwindcss/defaultTheme";
+// import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         // primary: colors.cyan,
         // secondary: colors.slate,
+        primaryg: colors.cyan,
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -26,7 +27,10 @@ const config: Config = {
         },
         popover: "hsl(var(--popover))",
         input: "hsl(var(--input))",
-        destructive: "hsl(var(--destructive))",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
         accent: "hsl(var(--accent))",
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",

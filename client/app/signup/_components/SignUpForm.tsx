@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SignUpSchema, SignUpSchemaType } from "@/schema/SignUpSchema";
 import GoogleSignUp from "@/components/widgets/GoogleSignUp";
 import { signup } from "@/app/login/actions";
+import { Button } from "@/components/ui/button";
 
 const SignUpForm = () => {
   const router = useRouter();
@@ -45,7 +46,7 @@ const SignUpForm = () => {
       </h2>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white dark:bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-slate-200 dark:bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label
@@ -112,12 +113,12 @@ const SignUpForm = () => {
             </div>
 
             <div>
-              <button
+              <Button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:focus:ring-offset-gray-800"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-primaryg-700 hover:bg-primaryg-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryg-500 dark:bg-primaryg-500 dark:hover:bg-primaryg-600 dark:focus:ring-offset-gray-800"
               >
                 Registrarse
-              </button>
+              </Button>
             </div>
           </form>
 
@@ -127,9 +128,7 @@ const SignUpForm = () => {
                 <div className="w-full border-t border-gray-300 dark:border-gray-600" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-                  O continúa con
-                </span>
+                <span className="px-2">O continúa con</span>
               </div>
             </div>
 

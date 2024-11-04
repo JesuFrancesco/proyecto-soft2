@@ -12,7 +12,7 @@ const MyCoursesPage = async () => {
   return (
     <WidgetWrapper
       id="my-courses"
-      hasBackground={true}
+      hasBackground={false}
       containerClass="pb-12 md:pb-16 lg:pb-20"
     >
       <div className="text-center mb-8">

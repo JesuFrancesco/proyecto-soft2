@@ -10,14 +10,16 @@ const DeleteAccountForm = () => {
       <p className="text-sm  mb-6">Esta acción no se puede deshacer.</p>
       <div className="flex space-x-4">
         <Button
+          type="button"
+          variant={"destructive"}
           onClick={() => console.log("accion ")}
-          className="px-4 py-2  bg-red-600 rounded hover:bg-red-700 transition"
+          className="px-4 py-2 bg-destructive transition"
         >
           Confirmar
         </Button>
         <Button
           onClick={() => console.log("accion ")}
-          className="px-4 py-2  rounded bg-primary-700  transition"
+          className="px-4 py-2 rounded bg-primary transition"
         >
           Cancelar
         </Button>

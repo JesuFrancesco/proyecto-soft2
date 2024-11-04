@@ -2,7 +2,7 @@
 
 import { Config } from "@/config/credentials";
 import { IAlumnoClase, IClase } from "@/interfaces/IClase";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Image from "next/image";
 import BotonMatricula from "./_components/BotonMatricula";
 import { getAuthHeaders } from "@/utils/supabase/server";
@@ -26,12 +26,23 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
 
   const headers = await getAuthHeaders();
 
-  const { data: cursosMatriculados } = await axios.get<IAlumnoClase[]>(
-    `${Config.EXPRESS_API_URL}/account/alumno/clases`,
-    {
-      headers,
+  let cursosMatriculados: IAlumnoClase[] | null = null;
+
+  try {
+    const { data } = await axios.get<IAlumnoClase[]>(
+      `${Config.EXPRESS_API_URL}/account/alumno/clases`,
+      {
+        headers,
+      }
+    );
+
+    cursosMatriculados = data;
+  } catch (err) {
+    if (!(err instanceof AxiosError) || err.status !== 401) {
+      console.error(err);
+      throw new Error("Algo salio mal");
     }
-  );
+  }
 
   return (
     <div className="container mx-auto py-12 px-6">
@@ -127,7 +138,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
       <div className="text-center mt-8">
         {cursosMatriculados ? (
           cursosMatriculados.some((c) => c.claseId === id) ? (
-            <Button className="bg-gray-400" disabled={true}>
+            <Button variant={"outline"} disabled={true}>
               Ya te encuentras matriculado
             </Button>
           ) : (

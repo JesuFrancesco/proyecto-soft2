@@ -7,6 +7,7 @@ import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LogInSchema, LoginSchemaType } from "@/schema/LogInSchema";
+import { Button } from "@/components/ui/button";
 
 const LogInForm = () => {
   const router = useRouter();
@@ -63,7 +64,7 @@ const LogInForm = () => {
                   id="email"
                   type="email"
                   {...register("email")}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-indigo-400 dark:focus:border-indigo-400 sm:text-sm dark:bg-gray-700 dark:text-white"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-primaryg-500 focus:border-primaryg-500 dark:focus:ring-primaryg-400 dark:focus:border-primaryg-400 sm:text-sm dark:bg-gray-700 dark:text-white"
                   required
                 />
                 {errors.email && (
@@ -84,7 +85,7 @@ const LogInForm = () => {
                   id="contrasena"
                   type="password"
                   {...register("contrasena")}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-indigo-400 dark:focus:border-indigo-400 sm:text-sm dark:bg-gray-700 dark:text-white"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-primaryg-500 focus:border-primaryg-500 dark:focus:ring-primaryg-400 dark:focus:border-primaryg-400 sm:text-sm dark:bg-gray-700 dark:text-white"
                   required
                 />
                 {errors.contrasena && (
@@ -101,7 +102,7 @@ const LogInForm = () => {
                   id="recordar"
                   name="recordar"
                   type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-primaryg-600 focus:ring-primaryg-500 border-gray-300 rounded"
                 />
                 <label
                   htmlFor="recordar"
@@ -114,7 +115,7 @@ const LogInForm = () => {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+                  className="font-medium text-primaryg-600 hover:text-primaryg-500 dark:text-primaryg-400 dark:hover:text-primaryg-300"
                 >
                   ¿Olvidaste tu contraseña?
                 </a>
@@ -122,12 +123,12 @@ const LogInForm = () => {
             </div>
 
             <div>
-              <button
+              <Button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:focus:ring-offset-gray-800"
+                className="w-full flex font-bold justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm text-white bg-primaryg-600 hover:bg-primaryg-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryg-500  dark:focus:ring-offset-gray-800"
               >
                 Iniciar sesión
-              </button>
+              </Button>
             </div>
           </form>
 

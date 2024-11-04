@@ -6,7 +6,7 @@ import WidgetWrapper from "@/components/common/WidgetWrapper";
 
 const contentHelp = {
   id: "content-help",
-  hasBackground: true,
+  hasBackground: false,
   header: {
     tagline: "Ayuda",
     title: "Preguntas Frecuentes de EduYacha",
@@ -177,7 +177,8 @@ const contentHelp = {
             "No, EduYacha no comparte tu información personal con terceros sin tu consentimiento, salvo en situaciones requeridas por la ley.",
         },
         {
-          question: "¿Qué medidas de seguridad se implementan en la plataforma?",
+          question:
+            "¿Qué medidas de seguridad se implementan en la plataforma?",
           answer:
             "Implementamos diversas medidas de seguridad, como autenticación de dos factores, monitoreo de actividad sospechosa y encriptación de datos para proteger la información de nuestros usuarios.",
         },
@@ -197,7 +198,9 @@ const contentHelp = {
 };
 
 const FAQ = () => {
-  const [openSections, setOpenSections] = useState<Record<number, number | null>>({});
+  const [openSections, setOpenSections] = useState<
+    Record<number, number | null>
+  >({});
 
   const toggleItem = (sectionIndex: number, itemIndex: number) => {
     setOpenSections((prev) => ({

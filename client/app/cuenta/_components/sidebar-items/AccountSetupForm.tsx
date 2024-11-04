@@ -443,7 +443,7 @@ const AccountSetupForm: React.FC = () => {
           {/* Botón de envío */}
           <Button
             type="submit"
-            className="w-full bg-primary-600 hover:bg-primary-500 text-white font-semibold py-2 rounded"
+            className="w-full bg-primary hover:bg-primaryg-500 text-white font-semibold py-2 rounded"
           >
             Enviar
           </Button>

@@ -6,7 +6,7 @@ import imgVirtual from "@/public/images/claseVirtual.jpg";
 
 const contentAboutUs = {
   id: "content-about-us",
-  hasBackground: true,
+  hasBackground: false,
   header: {
     tagline: "Sobre Nosotros",
     title: "EduYacha: Transformando la Educación Complementaria",
@@ -42,14 +42,7 @@ const contentAboutUs = {
   isReversed: false,
 };
 
-const {
-  header,
-  content,
-  items,
-  image,
-  id,
-  hasBackground,
-} = contentAboutUs;
+const { header, content, items, image, id, hasBackground } = contentAboutUs;
 
 const SobreNosotrosPage = () => {
   return (
@@ -83,12 +76,19 @@ const SobreNosotrosPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((item, index) => (
-            <div key={index} className="border rounded-lg p-6 shadow-md bg-white dark:bg-slate-800">
+            <div
+              key={index}
+              className="border rounded-lg p-6 shadow-md bg-slate-200 dark:bg-slate-800"
+            >
               <div className="flex items-center mb-2">
                 <Check className="text-primary-900 mr-2" />
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                  {item.title}
+                </h3>
               </div>
-              <p className="text-gray-600 dark:text-slate-400">{item.description}</p>
+              <p className="text-gray-600 dark:text-slate-400">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>

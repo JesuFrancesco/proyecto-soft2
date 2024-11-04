@@ -2,14 +2,15 @@
 import Image from "next/image";
 import googleSVG from "@/public/google.svg";
 import { googleSignUp } from "@/app/login/actions";
+import { Button } from "../ui/button";
 
 const GoogleSignUp = ({ title }: { title?: string }) => {
   const handleGoogleSubmit = async () => await googleSignUp();
 
   return (
     <div className="w-full flex justify-center">
-      <button
-        className="p-2 px-6 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-100 transition duration-200"
+      <Button
+        className="p-6 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-100 transition duration-200"
         onClick={handleGoogleSubmit}
       >
         <div className="flex flex-row justify-around items-center">
@@ -24,7 +25,7 @@ const GoogleSignUp = ({ title }: { title?: string }) => {
             {title ? title : "Registrarse con Google"}
           </span>
         </div>
-      </button>
+      </Button>
     </div>
   );
 };
