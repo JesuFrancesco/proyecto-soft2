@@ -7,29 +7,17 @@ import { Config } from "../../config/credentials";
 import { IClase } from "@/interfaces/IClase";
 import { Button } from "@/components/ui/button";
 
-const fetchDataFromAPI = async () => {
-  const res = await axios.get(`${Config.EXPRESS_API_URL}/clases`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (!res.data) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.data;
-};
-
 export default async function CursosDisponiblesPage() {
-  const clases = (await fetchDataFromAPI()) as IClase[];
-  // console.log(clases);
+  const { data: clases } = await axios.get<IClase[]>(
+    `${Config.EXPRESS_API_URL}/clases`
+  );
+
+  if (!clases) throw new Error("Algo salio mal.");
 
   return (
     <WidgetWrapper
       id="my-courses"
-      hasBackground={true}
+      hasBackground={false}
       containerClass="pb-12 md:pb-16 lg:pb-20"
     >
       <div id="general-courses" className="pb-12 md:pb-16 lg:pb-20">
@@ -68,7 +56,7 @@ export default async function CursosDisponiblesPage() {
               </p>
               <div className="mt-4 flex justify-between items-center">
                 <Link href={`/cursos/${course.id}`}>
-                  <Button className="bg-primary-600 hover:bg-primary-500 text-white py-2 px-4 rounded-md transition-colors duration-200">
+                  <Button className="text-white py-2 px-4 rounded-md transition-colors duration-200">
                     Ver detalles
                   </Button>
                 </Link>

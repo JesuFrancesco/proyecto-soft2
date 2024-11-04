@@ -87,13 +87,13 @@ const PlanesPage = () => {
           >
             <div className="p-6 flex-grow">
               <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-              <p className="text-2xl text-blue-500 mb-4">{plan.price}</p>
+              <p className="text-2xl text-prbg-primary mb-4">{plan.price}</p>
               <p className="text-gray-600 mb-4">{plan.highlight}</p>
 
               <ul className="list-disc list-inside text-left mb-4">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center">
-                    <CheckIcon className="text-blue-500 mr-2" /> {feature}
+                    <CheckIcon className="text-prbg-primary mr-2" /> {feature}
                   </li>
                 ))}
               </ul>
@@ -111,7 +111,7 @@ const PlanesPage = () => {
             </div>
             <Link
               href={plan.href}
-              className="mt-4 bg-blue-500 text-white font-semibold py-2 rounded-md transition-all duration-300 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800"
+              className="mt-4 bg-primary text-white font-semibold py-2 rounded-md transition-all duration-300 hover:bg-primary dark:bg-primary dark:hover:bg-primary"
             >
               Seleccionar Plan
             </Link>

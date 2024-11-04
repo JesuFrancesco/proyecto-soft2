@@ -2,7 +2,7 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { CallToActionType, LinkOrButton } from "@/shared/types";
 
-const AuthActionsButton = ({
+const CallToAction = ({
   callToAction,
   containerClass,
   linkClass,
@@ -22,7 +22,7 @@ const AuthActionsButton = ({
           {targetBlank ? (
             <Link
               className={twMerge(
-                "inline-flex items-center justify-center sm:mb-0",
+                "btn-primary inline-flex items-center justify-center sm:mb-0",
                 linkClass
               )}
               href={href}
@@ -42,7 +42,7 @@ const AuthActionsButton = ({
           ) : (
             <Link
               className={twMerge(
-                "inline-flex items-center justify-center sm:mb-0 ",
+                "btn-primary inline-flex items-center justify-center sm:mb-0 ",
                 linkClass
               )}
               href={href}
@@ -64,4 +64,4 @@ const AuthActionsButton = ({
   );
 };
 
-export default AuthActionsButton;
+export default CallToAction;

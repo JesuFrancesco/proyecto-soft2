@@ -4,6 +4,7 @@ import { toggleFavorite } from "./actions";
 import { getAlumnoClases } from "@/service/alumno.service";
 import { IAlumnoClase } from "@/interfaces/IAlumnoClase";
 import { Trash } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const MyCoursesPage = async () => {
   const clases: IAlumnoClase[] = await getAlumnoClases();
@@ -43,9 +44,9 @@ const MyCoursesPage = async () => {
               </a>
             </p>
             <div className="mt-4 flex justify-between items-center">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors duration-200">
+              <Button className="text-white py-2 px-4 rounded-md transition-colors duration-200">
                 Acceder
-              </button>
+              </Button>
               <form action={toggleFavorite}>
                 <input type="hidden" name="courseId" value={e.claseId} />
                 <button type="submit">

@@ -35,19 +35,23 @@ export const getAlumnoClases = async () => {
 };
 
 export const realizarMatricula = async (claseId: number) => {
-  // try {
-  //   const alumno: any = await getAlumnoByEmail();
-  //   console.log("alumno");
-  //   const data = {
-  //     alumnoId: alumno?.id,
-  //     claseId,
-  //   };
-  //   const { data: res } = await axios.post(
-  //     Config.EXPRESS_API_URL + "/clases/matricula",
-  //     data
-  //   );
-  //   return res;
-  // } catch (error) {
-  //   return null;
-  // }
+  try {
+    const headers = await getAuthHeaders();
+
+    if (!headers) throw Error();
+
+    const data = {
+      claseId,
+    };
+
+    const { data: res } = await axios.post(
+      Config.EXPRESS_API_URL + "/account/alumno/matricula",
+      data,
+      { headers }
+    );
+
+    return res;
+  } catch (error) {
+    return null;
+  }
 };

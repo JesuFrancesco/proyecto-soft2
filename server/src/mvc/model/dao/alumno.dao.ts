@@ -3,8 +3,11 @@ import { Alumno, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
 import { IFindByAccountId } from "./interfaces/AccountInterfaces";
+import { IMatriculable } from "./interfaces/ClaseInterfaces";
 
-export class AlumnoDAO implements DAO<Alumno>, IFindByAccountId<Alumno> {
+export class AlumnoDAO
+  implements DAO<Alumno>, IFindByAccountId<Alumno>, IMatriculable
+{
   private prisma = new PrismaClient();
 
   async findByAccountId(accountId: string): Promise<{
@@ -50,11 +53,18 @@ export class AlumnoDAO implements DAO<Alumno>, IFindByAccountId<Alumno> {
       },
     });
 
-    if (!clases) {
-      throw boom.notFound();
-    }
-
     return clases;
+  }
+
+  async matricularAlumnoEnClase(alumnoId: number, claseId: number) {
+    const res = await this.prisma.alumnoClase.create({
+      data: {
+        alumnoId: alumnoId,
+        claseId: claseId,
+      },
+    });
+
+    return res;
   }
 
   async create(alumno: Alumno) {

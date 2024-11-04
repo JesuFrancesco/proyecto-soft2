@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 
 const ContactoPage = () => {
@@ -115,12 +116,9 @@ const ContactoPage = () => {
               rows={4}
               required
             />
-            <button
-              type="submit"
-              className="w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
-            >
+            <Button type="submit" className="w-full py-2 text-white rounded ">
               Enviar Mensaje
-            </button>
+            </Button>
           </form>
         </div>
       </div>

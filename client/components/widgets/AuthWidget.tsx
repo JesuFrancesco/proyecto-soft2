@@ -1,18 +1,18 @@
 import { headerData } from "@/shared/layout.data";
 import { Home, LogOut } from "lucide-react";
 import React from "react";
-import AuthActionsButton from "../common/CTA";
+import CallToAction from "../common/CTA";
 import { createClient } from "@/utils/supabase/server";
 import { logout } from "@/app/login/actions";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import DropdownUserOptions from "./DropdownUser";
 
-const HomeButton = () => (
-  <a href="/cuenta" className="flex">
-    <Home />
-  </a>
-);
+// const HomeButton = () => (
+//   <a href="/cuenta" className="flex">
+//     <Home />
+//   </a>
+// );
 
 const LogoutButton = () => {
   const handleSubmit = async (formData: FormData) => {
@@ -47,10 +47,10 @@ const AuthWidget = async () => {
       <div className="justify-center md:justify-end md:ml-4 flex py-3 md:py-2 gap-4 flex-shrink-0  align-middle items-center">
         {!user ? (
           actions.map((acciones, index) => (
-            <AuthActionsButton
+            <CallToAction
               key={`item-action-${index}`}
               callToAction={acciones}
-              linkClass="btn btn-primary m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6"
+              linkClass="m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6"
             />
           ))
         ) : (

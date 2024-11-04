@@ -1,9 +1,8 @@
 import { DAO } from "./interfaces/GenericInterfaces";
 import { Clase, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
-import { IMatriculable } from "./interfaces/ClaseInterfaces";
 
-export class ClaseDAO implements DAO<Clase>, IMatriculable {
+export class ClaseDAO implements DAO<Clase> {
   private prisma = new PrismaClient();
 
   async create(clase: Clase) {
@@ -74,14 +73,14 @@ export class ClaseDAO implements DAO<Clase>, IMatriculable {
     return claseEliminada;
   }
 
-  async matricularAlumnoEnClase(alumnoId: number, claseId: number) {
-    const res = await this.prisma.alumnoClase.create({
-      data: {
-        alumnoId: alumnoId,
-        claseId: claseId,
-      },
-    });
+  // async matricularAlumnoEnClase(alumnoId: number, claseId: number) {
+  //   const res = await this.prisma.alumnoClase.create({
+  //     data: {
+  //       alumnoId: alumnoId,
+  //       claseId: claseId,
+  //     },
+  //   });
 
-    return res;
-  }
+  //   return res;
+  // }
 }

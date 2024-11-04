@@ -14,8 +14,16 @@ const config: Config = {
         "gradient-radial": "radial-gradient(circle, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: colors.cyan,
-        secondary: colors.cyan,
+        // primary: colors.cyan,
+        // secondary: colors.slate,
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
         popover: "hsl(var(--popover))",
         input: "hsl(var(--input))",
         destructive: "hsl(var(--destructive))",
@@ -25,7 +33,8 @@ const config: Config = {
         foreground: "hsl(var(--foreground))",
       },
       fontFamily: {
-        sans: ["var(--font-custom)", ...defaultTheme.fontFamily.sans],
+        roboto: ["Roboto", "sans-serif"],
+        // sans: ["var(--font-custom)", ...defaultTheme.fontFamily.sans],
       },
     },
   },

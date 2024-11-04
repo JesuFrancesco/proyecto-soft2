@@ -1,10 +1,13 @@
 "use server";
 
 import { Config } from "@/config/credentials";
-import { IClase } from "@/interfaces/IClase";
+import { IAlumnoClase, IClase } from "@/interfaces/IClase";
 import axios from "axios";
 import Image from "next/image";
 import BotonMatricula from "./_components/BotonMatricula";
+import { getAuthHeaders } from "@/utils/supabase/server";
+import { Button } from "@/components/ui/button";
+import CallToAction from "@/components/common/CTA";
 
 interface CursoDetalleProps {
   params: {
@@ -13,10 +16,21 @@ interface CursoDetalleProps {
 }
 
 export default async function CursoDetalle({ params }: CursoDetalleProps) {
-  const { id } = params;
+  const { id: idStr } = params;
+
+  const id = parseInt(idStr);
 
   const { data: curso } = await axios.get<IClase>(
-    `${Config.EXPRESS_API_URL}/clases/${id}`
+    `${Config.EXPRESS_API_URL}/clases/${idStr}`
+  );
+
+  const headers = await getAuthHeaders();
+
+  const { data: cursosMatriculados } = await axios.get<IAlumnoClase[]>(
+    `${Config.EXPRESS_API_URL}/account/alumno/clases`,
+    {
+      headers,
+    }
   );
 
   return (
@@ -111,7 +125,25 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
         )}
       </div>
       <div className="text-center mt-8">
-        <BotonMatricula id={parseInt(id)} />
+        {cursosMatriculados ? (
+          cursosMatriculados.some((c) => c.claseId === id) ? (
+            <Button className="bg-gray-400" disabled={true}>
+              Ya te encuentras matriculado
+            </Button>
+          ) : (
+            <BotonMatricula id={id} />
+          )
+        ) : (
+          <CallToAction
+            callToAction={{
+              href: "/signup",
+              icon: null,
+              targetBlank: false,
+              text: "Crea una cuenta para matricularte",
+            }}
+            linkClass="btn btn-primary m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6"
+          />
+        )}
       </div>
     </div>
   );

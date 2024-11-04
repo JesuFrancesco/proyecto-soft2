@@ -149,6 +149,29 @@ alumnoRouter.get("/clases", async (req, res, next) => {
   }
 });
 
+alumnoRouter.post("/matricula", async (req, res, next) => {
+  try {
+    const data = req.body;
+
+    const { claseId } = data;
+
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const alumno = await alumnoService.findByAccountId(id);
+
+    const clases = await alumnoService.matricularAlumnoEnClase(
+      alumno.id,
+      claseId
+    );
+
+    res.json(clases);
+  } catch (error) {
+    next(error);
+  }
+});
+
 alumnoRouter.patch("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
