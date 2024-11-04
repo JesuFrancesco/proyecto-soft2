@@ -1,4 +1,7 @@
 "use client";
+
+import { Button } from "@/components/ui/button";
+
 const ErrorPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-radial from-primary-600 to-black">
@@ -9,9 +12,9 @@ const ErrorPage = () => {
         tarde.
       </p>
       <a href="/">
-        <button className="mt-6 px-4 py-2 bg-white text-primary-600 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition duration-300">
+        <Button className="mt-6 px-4 py-2 text-primary-600 font-semibold rounded-lg shadow-md transition duration-300">
           Volver a inicio
-        </button>
+        </Button>
       </a>
     </div>
   );
