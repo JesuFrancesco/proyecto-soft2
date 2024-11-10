@@ -28,6 +28,71 @@ export class ClaseDAO implements DAO<Clase> {
     return clases;
   }
 
+  async findByQuery(query: string) {
+    const clases = await this.prisma.clase.findMany({
+      where: {
+        OR: [
+          {
+            tema: {
+              especialidad: {
+                especialidad: {
+                  contains: query,
+                  mode: "insensitive",
+                },
+              },
+            },
+          },
+          {
+            tema: {
+              subEspecialidad: {
+                contains: query,
+                mode: "insensitive",
+              },
+            },
+          },
+        ],
+      },
+      include: {
+        tema: true,
+        profesor: true,
+        sector: true,
+        alumnos: true,
+        materialClase: {
+          include: {
+            material: true,
+          },
+        },
+      },
+    });
+
+    return clases;
+  }
+
+  async findByEspecialidades(especialidades: number[]) {
+    const clases = await this.prisma.clase.findMany({
+      where: {
+        tema: {
+          especialidadId: {
+            in: especialidades,
+          },
+        },
+      },
+      include: {
+        tema: true,
+        profesor: true,
+        sector: true,
+        alumnos: true,
+        materialClase: {
+          include: {
+            material: true,
+          },
+        },
+      },
+    });
+
+    return clases;
+  }
+
   async findByPk(id: string | number) {
     const clase = await this.prisma.clase.findUnique({
       where: {

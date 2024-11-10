@@ -7,11 +7,9 @@ const queryClient = new QueryClient();
 
 const CuentaPage = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <SidebarProvider>
-        <AccountSidebar />
-      </SidebarProvider>
-    </QueryClientProvider>
+    <SidebarProvider>
+      <AccountSidebar />
+    </SidebarProvider>
   );
 };
 

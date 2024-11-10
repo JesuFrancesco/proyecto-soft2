@@ -97,8 +97,8 @@ export class AccountDAO
     if (alumno !== null && preferencias.length !== 0) {
       await this.prisma.alumnoPreferencia.createMany({
         data: preferencias.map((p) => ({
-          idAlumno: alumno.id,
-          idPreferencia: p,
+          alumnoId: alumno.id,
+          preferenciaId: p,
         })),
       });
     }

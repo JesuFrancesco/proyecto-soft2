@@ -10,7 +10,6 @@ import { routerAPI } from "./mvc/controller/router";
 
 import { createClient } from "@supabase/supabase-js";
 import { config } from "./config";
-import { authHandler } from "./mvc/controller/middleware/authorization.handler";
 
 // supabase anon client
 export const sb = createClient(config.supabaseURL, config.supabaseAnonKey);

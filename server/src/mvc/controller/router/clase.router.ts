@@ -25,6 +25,30 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/query/:query", async (req, res, next) => {
+  try {
+    const { query } = req.params;
+
+    const clases = await service.findByQuery(query);
+
+    res.json(clases);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/filter-especialidad", async (req, res, next) => {
+  try {
+    const { especialidades } = req.body;
+
+    const clases = await service.findByEspecialidades(especialidades);
+
+    res.json(clases);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post("/", async (req, res, next) => {
   try {
     const data = req.body;

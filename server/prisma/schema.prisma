@@ -88,10 +88,11 @@ model Profesor {
   resenasAsociadas Review[] @relation("ProfesorReviews")
   cuenta           Account? @relation("AccountProfessores", fields: [accountId], references: [id])
 
-  accountId               String?                   @unique @map("account_id") @db.Uuid
-  createdAt               DateTime                  @default(now()) @map("created_at")
-  updatedAt               DateTime                  @default(now()) @map("updated_at")
-  ProfesorSubEspecialidad ProfesorSubEspecialidad[]
+  profesorSubEspecialidades ProfesorSubEspecialidad[]
+  accountId                 String?                   @unique @map("account_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("profesores")
 }
@@ -109,23 +110,25 @@ model Review {
   evaluacion     Int?
   empatia        Int?
 
-  profesorId Int?     @map("id_profesor")
-  alumnoId   Int?     @map("id_alumno")
-  createdAt  DateTime @default(now()) @map("created_at")
-  updatedAt  DateTime @default(now()) @map("updated_at")
+  profesorId Int? @map("profesor_id")
+  alumnoId   Int? @map("alumno_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("reviews")
 }
 
 model Especialidad {
-  id                     Int                    @id @default(autoincrement())
-  especialidad           String
-  profesorEspecialidades ProfesorEspecialidad[] @relation("EspecialidadProfesorEspecialidades")
+  id           Int    @id @default(autoincrement())
+  especialidad String
 
-  createdAt         DateTime            @default(now()) @map("created_at")
-  updatedAt         DateTime            @default(now()) @map("updated_at")
-  AlumnoPreferencia AlumnoPreferencia[] @relation("PreferenciaAlumnoPreferencias")
-  SubEspecialidad   SubEspecialidad[]
+  profesorEspecialidades ProfesorEspecialidad[] @relation("EspecialidadProfesorEspecialidades")
+  alumnoPreferenciaes    AlumnoPreferencia[]    @relation("PreferenciaAlumnoPreferencias")
+  subEspecialidades      SubEspecialidad[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("especialidades")
 }
@@ -135,21 +138,22 @@ model SubEspecialidad {
   especialidad    Especialidad @relation(fields: [especialidadId], references: [id])
   subEspecialidad String
 
+  clases                    Clase[]
+  profesorSubEspecialidades ProfesorSubEspecialidad[] @relation("SubEspecialidadProfesorSubEspecialidades")
+
+  especialidadId Int @map("especialidad_id")
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
-
-  ProfesorSubEspecialidad ProfesorSubEspecialidad[] @relation("SubEspecialidadProfesorSubEspecialidades")
-
-  especialidadId Int
-  Clase          Clase[]
 
   @@map("subespecialidades")
 }
 
 model MaterialEducativo {
-  id       Int     @id @default(autoincrement())
+  id Int @id @default(autoincrement())
+
   nombre   String?
-  assetUrl String? @unique
+  assetUrl String? @unique @map("asset_url")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
@@ -166,7 +170,10 @@ model MaterialClase {
   material MaterialEducativo? @relation("MaterialEducativoClases", fields: [materialId], references: [id])
 
   materialId Int? @map("material_id")
-  claseId    Int?
+  claseId    Int? @map("clase_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("material_clases")
 }
@@ -181,25 +188,29 @@ model Clase {
   esVirtual Boolean? @map("es_virtual")
   esGrupal  Boolean? @map("es_grupal")
 
-  profesor Profesor?     @relation("ProfesorClases", fields: [idProfesor], references: [id])
-  alumnos  AlumnoClase[] @relation("ClaseAlumnoClases")
-
   fechaClase DateTime @map("fecha_clase")
 
-  idProfesor Int? @map("id_profesor")
+  profesorId        Int? @map("profesor_id")
+  subEspecialidadId Int? @map("subespecialidad_id")
+  sectorId          Int  @map("sector_id")
 
-  createdAt         DateTime @default(now()) @map("created_at")
-  updatedAt         DateTime @default(now()) @map("updated_at")
-  subEspecialidadId Int?
-  sectorId          Int
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+
+  profesor Profesor?     @relation("ProfesorClases", fields: [profesorId], references: [id])
+  alumnos  AlumnoClase[] @relation("ClaseAlumnoClases")
 
   @@map("clases")
 }
 
 model Sector {
-  id     Int     @id @default(autoincrement())
+  id Int @id @default(autoincrement())
+
   name   String
   clases Clase[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("sectores")
 }
@@ -207,12 +218,12 @@ model Sector {
 model Chat {
   id Int @id @default(autoincrement())
 
-  alumno   Alumno?       @relation("AlumnoChats", fields: [idAlumno], references: [id])
-  profesor Profesor?     @relation(fields: [idProfesor], references: [id])
+  alumno   Alumno?       @relation("AlumnoChats", fields: [alumnoId], references: [id])
+  profesor Profesor?     @relation(fields: [profesorId], references: [id])
   mensajes ChatMensaje[] @relation("ChatMensajes")
 
-  idAlumno   Int? @map("id_alumno")
-  idProfesor Int? @map("id_profesor")
+  alumnoId   Int? @map("id_alumno")
+  profesorId Int? @map("id_profesor")
 
   createdAt DateTime @default(now()) @map("fecha_creacion")
 
@@ -224,20 +235,21 @@ model Mensaje {
   contenido String?
   chats     ChatMensaje[] @relation("MensajeChatMensajes")
 
-  createdAt DateTime @default(now()) @map("fecha_envio")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
 
   @@map("mensajes")
 }
 
 // many-to-many
 model ChatMensaje {
-  idChat    Int @map("id_chat")
-  idMensaje Int @map("id_mensaje")
+  chatId    Int @map("id_chat")
+  mensajeId Int @map("id_mensaje")
 
-  chat    Chat?    @relation("ChatMensajes", fields: [idChat], references: [id])
-  mensaje Mensaje? @relation("MensajeChatMensajes", fields: [idMensaje], references: [id])
+  chat    Chat?    @relation("ChatMensajes", fields: [chatId], references: [id])
+  mensaje Mensaje? @relation("MensajeChatMensajes", fields: [mensajeId], references: [id])
 
-  @@id([idChat, idMensaje])
+  @@id([chatId, mensajeId])
   @@map("chat_mensajes")
 }
 
@@ -258,40 +270,40 @@ model AlumnoClase {
 }
 
 model AlumnoPreferencia {
-  idAlumno      Int @map("id_alumno")
-  idPreferencia Int @map("id_preferencia")
+  alumnoId      Int @map("id_alumno")
+  preferenciaId Int @map("id_preferencia")
 
-  alumno      Alumno?       @relation("AlumnoPreferencias", fields: [idAlumno], references: [id])
-  preferencia Especialidad? @relation("PreferenciaAlumnoPreferencias", fields: [idPreferencia], references: [id])
+  alumno      Alumno?       @relation("AlumnoPreferencias", fields: [alumnoId], references: [id])
+  preferencia Especialidad? @relation("PreferenciaAlumnoPreferencias", fields: [preferenciaId], references: [id])
 
-  @@id([idAlumno, idPreferencia])
+  @@id([alumnoId, preferenciaId])
   @@map("alumno_preferencias")
 }
 
 model ProfesorEspecialidad {
-  profesor     Profesor?     @relation("ProfesorEspecialidades", fields: [profesorId], references: [id])
-  especialidad Especialidad? @relation("EspecialidadProfesorEspecialidades", fields: [especialidadId], references: [id])
+  profesorId        Int  @map("profesor_id")
+  especialidadId    Int  @map("especialidad_id")
+  subEspecialidadId Int? @map("subespecialidad_id")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
-  profesorId        Int  @map("id_profesor")
-  especialidadId    Int  @map("id_especialidad")
-  subEspecialidadId Int?
+  profesor     Profesor?     @relation("ProfesorEspecialidades", fields: [profesorId], references: [id])
+  especialidad Especialidad? @relation("EspecialidadProfesorEspecialidades", fields: [especialidadId], references: [id])
 
   @@id([profesorId, especialidadId])
   @@map("profesor_especialidades")
 }
 
 model ProfesorSubEspecialidad {
-  profesor        Profesor         @relation(fields: [profesorId], references: [id])
-  subEspecialidad SubEspecialidad? @relation("SubEspecialidadProfesorSubEspecialidades", fields: [subEspecialidadId], references: [id])
+  subEspecialidadId Int @map("subespecialidad_id")
+  profesorId        Int @map("profesor_id")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
-  subEspecialidadId Int @map("subespecialidad_id")
-  profesorId        Int @map("profesor_id")
+  profesor        Profesor         @relation(fields: [profesorId], references: [id])
+  subEspecialidad SubEspecialidad? @relation("SubEspecialidadProfesorSubEspecialidades", fields: [subEspecialidadId], references: [id])
 
   @@id([profesorId, subEspecialidadId])
   @@map("profesor_subespecialidades")

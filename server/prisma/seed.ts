@@ -76,7 +76,7 @@ async function main() {
     `);
 
   log.info(
-    "Se han agregado los triggers y funciones que se vinculan con supabase.",
+    "Se han agregado los triggers y funciones que se vinculan con supabase."
   );
 
   // static
@@ -89,7 +89,7 @@ async function main() {
     } catch (error: unknown) {
       if (error instanceof DatabaseError) {
         log.warn(
-          `${filePath} | Algo salio mal en DB. Más detalle en errors.log`,
+          `${filePath} | Algo salio mal en DB. Más detalle en errors.log`
         );
         errorLog.error(error);
       } else {
