@@ -1,6 +1,6 @@
 export interface ISubespecialidad {
   id: number;
-  subEspecialidad: string;
+  subespecialidad: string;
   createdAt: Date;
   updatedAt: Date;
   especialidadId: number;

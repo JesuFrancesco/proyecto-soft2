@@ -30,7 +30,7 @@ const SignUpOTPConfirm = () => {
   }, [searchParams, router]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 bg-gray-100 dark:bg-slate-950">
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 ">
       <h2 className="mb-4 text-xl font-semibold ">Confirmación de OTP</h2>
       <p className="text-lg  mb-7 ">
         Se te ha enviado un código de verificación a tu correo. Ingresa el
@@ -72,11 +72,11 @@ const SignUpOTPConfirm = () => {
         </InputOTPGroup>
       </InputOTP>
 
-      <Button
-        asChild
-        className="mt-6 bg-primary-700 hover:bg-primary-600 text-white py-2 px-6 rounded-lg"
-      >
-        <Link href={`/auth/otp?token=${otpValue}&type=signup&email=${email}`}>
+      <Button asChild className="mt-6  py-2 px-6 rounded-lg">
+        <Link
+          className="btn btn-primary"
+          href={`/auth/otp?token=${otpValue}&type=signup&email=${email}&next=/setup`}
+        >
           Verificar
         </Link>
       </Button>

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -45,7 +46,7 @@ import { FancyMultiSelect } from "@/components/ui/fancy-multiselect";
 import { IEspecialidad } from "@/interfaces/IEspecialidad";
 import { isNumeric } from "@/utils/utils";
 
-const AccountSetupForm: React.FC = () => {
+const AccountSetupClientForm = () => {
   const [esAlumno, setEsAlumno] = useState<boolean | null>(null);
   const [esPeruano, setEsPeruano] = useState<boolean | null>(null);
 
@@ -139,11 +140,10 @@ const AccountSetupForm: React.FC = () => {
       }
 
       toast({
-        variant: "default",
         description: "Se han validado tus datos.",
       });
 
-      router.push(`/cuenta`);
+      router.push(`/`);
     } catch (error) {
       toast({
         variant: "destructive",
@@ -453,4 +453,4 @@ const AccountSetupForm: React.FC = () => {
   );
 };
 
-export default AccountSetupForm;
+export default AccountSetupClientForm;

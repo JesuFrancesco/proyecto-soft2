@@ -12,9 +12,11 @@ datasource db {
 
 // modelos
 model Account {
-  id                 String              @id @db.Uuid
-  email              String              @unique
-  phone              String?             @unique
+  id    String  @id @db.Uuid
+  email String  @unique
+  phone String? @unique
+  role  String  @default("NA")
+
   accountSuscripcion AccountSuscripcion?
 
   distrito    Distrito?     @relation(fields: [distritoId], references: [id])
@@ -38,7 +40,7 @@ model Account {
 
 model AccountSuscripcion {
   tipo         String   @unique
-  vigenteHasta DateTime
+  vigenteHasta DateTime @map("vigente_hasta")
 
   account     Account     @relation(fields: [accountId], references: [id])
   suscripcion Suscripcion @relation(fields: [suscripcionId], references: [id])
@@ -60,9 +62,12 @@ model Suscripcion {
 }
 
 model Alumno {
-  id     Int    @id @default(autoincrement())
+  id Int @id @default(autoincrement())
+
   nombre String
   edad   Int
+
+  imageUrl String @default("https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg") @map("image_url")
 
   account      Account?            @relation("AccountAlumno", fields: [accountId], references: [id])
   clases       AlumnoClase[]       @relation("AlumnoClases")
@@ -78,15 +83,18 @@ model Alumno {
 }
 
 model Profesor {
-  id             Int                    @id @default(autoincrement())
-  nombre         String
-  edad           Int
-  especialidades ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
+  id Int @id @default(autoincrement())
 
+  nombre String
+  edad   Int
+
+  imageUrl String @default("https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg") @map("image_url")
+
+  especialidades   ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
   chats            Chat[]
-  clases           Clase[]  @relation("ProfesorClases")
-  resenasAsociadas Review[] @relation("ProfesorReviews")
-  cuenta           Account? @relation("AccountProfessores", fields: [accountId], references: [id])
+  clases           Clase[]                @relation("ProfesorClases")
+  resenasAsociadas Review[]               @relation("ProfesorReviews")
+  cuenta           Account?               @relation("AccountProfessores", fields: [accountId], references: [id])
 
   profesorSubEspecialidades ProfesorSubEspecialidad[]
   accountId                 String?                   @unique @map("account_id") @db.Uuid
@@ -136,7 +144,7 @@ model Especialidad {
 model SubEspecialidad {
   id              Int          @id @default(autoincrement())
   especialidad    Especialidad @relation(fields: [especialidadId], references: [id])
-  subEspecialidad String
+  subespecialidad String
 
   clases                    Clase[]
   profesorSubEspecialidades ProfesorSubEspecialidad[] @relation("SubEspecialidadProfesorSubEspecialidades")

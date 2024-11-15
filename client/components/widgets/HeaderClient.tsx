@@ -7,6 +7,13 @@ import Link from "next/link";
 import Logo from "@/components/atoms/Logo";
 import ToggleMenu from "../atoms/ToggleMenu";
 import { headerData } from "@/shared/layout.data";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
 
 const HeaderClient = () => {
   const { links, showToggleTheme, position } = headerData;
@@ -103,59 +110,37 @@ const HeaderClient = () => {
         >
           {links &&
             links.map(({ label, href, icon: Icon, links }, index) => (
-              <li
-                key={`item-link-${index}`}
-                className={links?.length ? "dropdown" : ""}
-              >
+              <li key={`item-link-${index}`}>
                 {links && links.length ? (
-                  <>
-                    <button
-                      className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
-                      onClick={() => handleDropdownOnClick(index)}
-                    >
-                      {label}{" "}
-                      {Icon && (
-                        <Icon
-                          className={`${
-                            isDropdownOpen[index] ? "rotate-180" : ""
-                          } ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden h-3.5 w-3.5 md:inline`}
-                        />
-                      )}
-                    </button>
-                    <ul
-                      className={`${
-                        isDropdownOpen[index] ? "block" : "md:hidden"
-                      } rounded pl-4 font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md dark:md:bg-slate-900/90 md:border md:border-gray-200 md:dark:border-slate-700`}
-                    >
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white">
+                        {label}{" "}
+                        {Icon && (
+                          <Icon className="ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden h-3.5 w-3.5 md:inline" />
+                        )}
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="rounded font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:bg-white/90 md:backdrop-blur-md dark:md:bg-slate-900/90 md:border md:border-gray-200 md:dark:border-slate-700">
                       {links.map(({ label: label2, href: href2 }, index2) => (
-                        <li key={`item-link-${index2}`}>
-                          <Link
-                            className="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
-                            href={href2 as string}
-                            onClick={() =>
-                              isToggleMenuOpen
-                                ? handleToggleMenuOnClick()
-                                : handleCloseDropdownOnClick(index)
-                            }
+                        <DropdownMenuItem key={`item-link-${index2}`}>
+                          <a
+                            className="whitespace-no-wrap block py-2 px-5"
+                            href={href2}
                           >
                             {label2}
-                          </Link>
-                        </li>
+                          </a>
+                        </DropdownMenuItem>
                       ))}
-                    </ul>
-                  </>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 ) : (
-                  <Link
+                  <a
                     className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
-                    href={href as string}
-                    onClick={() =>
-                      isToggleMenuOpen
-                        ? handleToggleMenuOnClick()
-                        : handleDropdownOnClick(index)
-                    }
+                    href={href}
                   >
                     {label}
-                  </Link>
+                  </a>
                 )}
               </li>
             ))}

@@ -24,7 +24,6 @@ const SignUpForm = () => {
 
     if (!error) {
       toast({
-        variant: "default",
         description:
           "Se te ha enviado un correo, entra para validar tu registro.",
       });

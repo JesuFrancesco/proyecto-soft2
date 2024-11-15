@@ -1,6 +1,7 @@
 import React from "react";
 import { Check as CheckIcon, Star as StarIcon, Shield } from "lucide-react";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 const PlanesPage = () => {
   const plans = [
@@ -19,6 +20,7 @@ const PlanesPage = () => {
       contentUpdates: "Actualizaciones mensuales",
       highlight:
         "Acceso gratuito con funciones limitadas para probar la plataforma.",
+      disabled: false,
     },
     {
       name: "Pago por Asesoría",
@@ -35,6 +37,7 @@ const PlanesPage = () => {
       contentUpdates: "Material de apoyo actualizado",
       highlight:
         "Plan ideal para quienes buscan ayuda específica en temas concretos.",
+      disabled: true,
     },
     {
       name: "Full",
@@ -50,6 +53,7 @@ const PlanesPage = () => {
       supportLevel: "Soporte 24/7",
       contentUpdates: "Actualizaciones quincenales",
       highlight: "Acceso completo a todos los cursos y soporte mejorado.",
+      disabled: true,
     },
     {
       name: "Full+",
@@ -67,6 +71,7 @@ const PlanesPage = () => {
       contentUpdates: "Actualizaciones semanales",
       highlight:
         "Acceso premium a todo el contenido, con beneficios exclusivos y soporte prioritario.",
+      disabled: true,
     },
   ];
 
@@ -111,9 +116,14 @@ const PlanesPage = () => {
             </div>
             <Link
               href={plan.href}
-              className="mt-4 bg-primary text-white font-semibold py-2 rounded-md transition-all duration-300 hover:bg-primary dark:bg-primary dark:hover:bg-primary"
+              className={twMerge(
+                "mt-4 bg-primary text-white font-semibold py-2 rounded-md transition-all duration-300 hover:bg-primary dark:bg-primary dark:hover:bg-primary",
+                plan.disabled
+                  ? "pointer-events-none bg-primaryg-900 dark:bg-primaryg-900"
+                  : ""
+              )}
             >
-              Seleccionar Plan
+              {plan.disabled ? "Próximamente" : "Seleccionar Plan"}
             </Link>
           </div>
         ))}

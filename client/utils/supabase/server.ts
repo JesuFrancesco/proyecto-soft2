@@ -28,11 +28,16 @@ export function createClient() {
   );
 }
 
-export const getAuthHeaders = async () => {
+export type AuthHeaders = {
+  Authorization: string;
+  RefreshToken: string | undefined;
+};
+
+export const getAuthHeaders = async (): Promise<AuthHeaders> => {
   const session = await createClient().auth.getSession();
 
   return {
-    Authorization: `Bearer ${session.data.session?.access_token}` as string,
-    RefreshToken: session.data.session?.refresh_token as string,
+    Authorization: `Bearer ${session.data.session?.access_token}`,
+    RefreshToken: session.data.session?.refresh_token,
   };
 };

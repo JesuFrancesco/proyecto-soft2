@@ -31,7 +31,6 @@ const LogInForm = () => {
     }
 
     toast({
-      variant: "default",
       content: "Sesión iniciada.",
     });
 

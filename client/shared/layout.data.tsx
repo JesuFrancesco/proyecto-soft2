@@ -1,4 +1,11 @@
-import { Facebook, Github, Instagram, Twitter, LogIn } from "lucide-react";
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Twitter,
+  LogIn,
+  ChevronDown,
+} from "lucide-react";
 
 import { FooterProps, HeaderProps } from "./types";
 
@@ -6,7 +13,17 @@ export const headerData: HeaderProps = {
   links: [
     {
       label: "Cursos",
-      href: "/cursos",
+      icon: ChevronDown,
+      links: [
+        {
+          label: "Todos los cursos",
+          href: "/cursos",
+        },
+        {
+          label: "Preferencias",
+          href: "/cursos-favoritos",
+        },
+      ],
     },
     {
       label: "Planes",

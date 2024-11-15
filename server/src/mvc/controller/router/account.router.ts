@@ -113,9 +113,6 @@ router.post("/setup-profesor", async (req, res, next) => {
   }
 });
 
-router.use("/alumno", alumnoRouter);
-router.use("/profesor", profesorRouter);
-
 // #=====================
 // | /account/alumno/...
 // #=====================
@@ -204,5 +201,8 @@ profesorRouter.get("/", async (req, res, next) => {
     next(error);
   }
 });
+
+router.use("/alumno", alumnoRouter);
+router.use("/profesor", profesorRouter);
 
 export default router;

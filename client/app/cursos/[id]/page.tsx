@@ -32,7 +32,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
     const { data } = await axios.get<IAlumnoClase[]>(
       `${Config.EXPRESS_API_URL}/account/alumno/clases`,
       {
-        headers,
+        headers: headers,
       }
     );
 
@@ -109,7 +109,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
         {curso.materialClase && curso.materialClase.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {curso.materialClase.map((item) => {
-              // console.log(item);
+              //
               return (
                 <div
                   key={item.id}

@@ -44,7 +44,7 @@ export class ClaseDAO implements DAO<Clase> {
           },
           {
             tema: {
-              subEspecialidad: {
+              subespecialidad: {
                 contains: query,
                 mode: "insensitive",
               },

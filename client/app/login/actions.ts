@@ -57,12 +57,26 @@ class SupabaseAuthStrategy implements IAuthStrategy {
       },
     });
 
+    if (
+      signUpData.user &&
+      signUpData.user.identities &&
+      signUpData.user.identities.length === 0
+    ) {
+      return {
+        error: true,
+        msg: "Ya encontramos una cuenta asociada a tu correo electrónico.",
+      };
+    }
+
     if (error) {
       return {
         error: true,
         msg: error.message,
       };
     }
+
+    console.log("signUpData");
+    console.log(signUpData);
 
     return {
       error: false,

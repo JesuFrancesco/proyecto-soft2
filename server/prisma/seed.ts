@@ -27,52 +27,52 @@ async function main() {
 
   // supabase auth setup
   await sql.query(`
-     create or replace function public.handle_new_user()
-     returns trigger as $$
-     begin
-     insert into public.accounts (id, email)
-         values (new.id, new.email);
-         return new;
-         end;
-         $$ language plpgsql security definer;
-         `);
+    CREATE OR REPLACE FUNCTION public.handle_new_user()
+    RETURNS TRIGGER AS $$
+    BEGIN
+      INSERT INTO public.accounts (id, email)
+          VALUES (new.id, new.email);
+          RETURN new;
+    END;
+    $$ LANGUAGE PLPGSQL SECURITY DEFINER;
+  `);
 
   await sql.query(`
-     create or replace trigger on_auth_user_created
-         after insert on auth.users
-         for each row execute procedure public.handle_new_user();
+     CREATE OR REPLACE TRIGGER on_auth_user_created
+         AFTER INSERT ON auth.users
+         FOR EACH ROW EXECUTE PROCEDURE public.handle_new_user();
+  `);
+
+  await sql.query(`
+     CREATE OR REPLACE FUNCTION public.handle_user_delete()
+     RETURNS TRIGGER AS $$
+     BEGIN
+       DELETE FROM auth.users WHERE id = old.id;
+       RETURN old;
+     END;
+     $$ LANGUAGE PLPGSQL SECURITY DEFINER;
    `);
 
   await sql.query(`
-     create or replace function public.handle_user_delete()
-     returns trigger as $$
-     begin
-       delete from auth.users where id = old.id;
-       return old;
-     end;
-     $$ language plpgsql security definer;
+     CREATE OR REPLACE FUNCTION public.handle_sb_user_delete()
+     RETURNS TRIGGER AS $$
+     BEGIN
+       DELETE FROM public.accounts WHERE id = old.id;
+       RETURN old;
+     END;
+     $$ LANGUAGE PLPGSQL SECURITY DEFINER;
    `);
 
   await sql.query(`
-     create or replace function public.handle_sb_user_delete()
-     returns trigger as $$
-     begin
-       delete from public.accounts where id = old.id;
-       return old;
-     end;
-     $$ language plpgsql security definer;
-   `);
-
-  await sql.query(`
-    create or replace trigger on_profile_user_deleted
-    after delete on public.accounts
-    for each row execute procedure public.handle_user_delete()
+    CREATE OR REPLACE TRIGGER on_profile_user_deleted
+    AFTER DELETE ON public.accounts
+    FOR EACH ROW EXECUTE PROCEDURE public.handle_user_delete()
     `);
 
   await sql.query(`
-    create or replace trigger on_sb_profile_user_deleted
-    after delete on auth.users
-    for each row execute procedure public.handle_sb_user_delete()
+    CREATE OR REPLACE trigger on_sb_profile_user_deleted
+    AFTER DELETE ON auth.users
+    FOR EACH ROW EXECUTE PROCEDURE public.handle_sb_user_delete()
     `);
 
   log.info(
@@ -101,6 +101,7 @@ async function main() {
   };
 
   // static
+  await seedFromSQL("prisma/seeders/ubigeos.sql");
   await seedFromSQL("prisma/seeders/init_script.sql");
 
   log.info("Proceso de seeding terminado");

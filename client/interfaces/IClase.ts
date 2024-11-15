@@ -19,7 +19,7 @@ export interface IClase {
   esVirtual: boolean;
   esGrupal: boolean;
   fechaClase: string;
-  idProfesor: number;
+  profesorId: number;
   createdAt: string;
   updatedAt: string;
   subEspecialidadId: number;

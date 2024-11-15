@@ -139,7 +139,6 @@ const AccountConfigureForm: React.FC = () => {
       }
 
       toast({
-        variant: "default",
         description: "Se han validado tus datos.",
       });
 

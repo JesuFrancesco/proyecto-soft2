@@ -85,6 +85,7 @@ export class AccountDAO
             nombre: data.nombre,
           },
         },
+        role: "student",
       },
 
       include: {

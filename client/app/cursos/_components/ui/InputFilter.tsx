@@ -36,14 +36,14 @@ export function TextInputCursosFilter({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
         <FormField
           control={form.control}
           name="query"
           render={({ field }) => (
             <FormItem>
               <div className="mb-4">
-                <FormLabel className="text-base">Filtro</FormLabel>
+                <FormLabel className="text-base">Búsqueda por query</FormLabel>
                 <FormDescription>
                   Introduce el texto para filtrar
                 </FormDescription>

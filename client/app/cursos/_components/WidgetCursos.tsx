@@ -13,14 +13,14 @@ import {
   fetchClasesByEspecialidad,
 } from "@/service/clase.service";
 import { Loader2 } from "lucide-react";
-import { CheckboxCursosFilter } from "./CheckboxFilters";
+import { CheckboxCursosFilter } from "./ui/CheckboxFilters";
 import {
   CursoFilterSchema,
   CursoFilterSchemaType,
   CursoQuerySchema,
   CursoQuerySchemaType,
 } from "@/schema/CursoFilterSchema";
-import { TextInputCursosFilter } from "./InputFilter";
+import { TextInputCursosFilter } from "./ui/InputFilter";
 
 const WidgetCursos = () => {
   const checkboxForm = useForm<CursoFilterSchemaType>({
@@ -56,54 +56,80 @@ const WidgetCursos = () => {
     retry: true,
   });
 
-  if (isLoading) return <Loader2 className="animate-spin" />;
+  if (isLoading) return <Loader2 className="animate-spin mx-auto" />;
 
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <div className="flex justify-center items-center p-3">
         {isFetching && <Loader2 className="text-yellow-300 animate-spin" />}
       </div>
-      <div className="flex justify-between items-start p-3">
-        <CheckboxCursosFilter form={checkboxForm} onSubmit={onSubmit} />
-        <TextInputCursosFilter form={inputForm} />
-      </div>
-      <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {clases &&
-          clases.map((course) => (
-            <div
-              key={course.id}
-              className="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md transition-colors duration-200"
-            >
-              <Image
-                src={course.materialClase[0].material.assetUrl}
-                alt={`Imagen de ${course.tema.subEspecialidad}`}
-                width={500}
-                height={120}
-                className="rounded-md mb-4 object-cover h-32"
-              />
-              <h3 className="text-lg font-medium">
-                {course.tema.subEspecialidad}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {course.sector.name}
-              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                Profesor:{" "}
-                <Link href={`/profesores/${course.idProfesor}`}>
-                  <span className="hover:font-bold">
-                    {course.profesor.nombre}
-                  </span>
-                </Link>
-              </p>
-              <div className="mt-4 flex justify-between items-center">
-                <Link href={`/cursos/${course.id}`}>
-                  <Button className="text-white py-2 px-4 rounded-md transition-colors duration-200">
-                    Ver detalles
-                  </Button>
-                </Link>
-              </div>
+
+      {/* Main content layout */}
+      <div className="flex flex-col lg:flex-row gap-6 relative">
+        {/* Filters sidebar */}
+        <div className="w-full lg:w-64 flex-shrink-0">
+          <div className="sticky top-4">
+            <TextInputCursosFilter form={inputForm} />
+            <hr className="bg-primary py-0.5 my-8 rounded-md" />
+            <CheckboxCursosFilter form={checkboxForm} onSubmit={onSubmit} />
+          </div>
+        </div>
+
+        {/* Course grid */}
+        {clases?.length === 0 ? (
+          <div className="flex justify-center items-center text-xl">
+            <h1>No hay cursos disponibles...</h1>
+          </div>
+        ) : (
+          <div className="flex-grow">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+              {clases?.map((course) => (
+                <div
+                  key={course.id}
+                  className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
+                >
+                  <div className="relative aspect-video w-full mb-4">
+                    <Image
+                      src={course.materialClase[0].material.assetUrl}
+                      alt={`Imagen de ${course.tema.subespecialidad}`}
+                      fill
+                      className="rounded-md object-cover"
+                    />
+                  </div>
+
+                  <h3 className="text-lg font-semibold line-clamp-2">
+                    {course.tema.subespecialidad}
+                  </h3>
+
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">
+                    {course.sector.name}
+                  </p>
+
+                  <p className="text-gray-600 dark:text-gray-300 mt-1">
+                    Profesor:{" "}
+                    <Link
+                      href={`/profesores/${course.profesorId}`}
+                      className="hover:text-primary transition-colors duration-200"
+                    >
+                      <span className="hover:underline">
+                        {course.profesor.nombre}
+                      </span>
+                    </Link>
+                  </p>
+
+                  <div className="mt-4">
+                    <Link
+                      href={`/cursos/${course.id}`}
+                      className="w-full block"
+                    >
+                      <Button className="w-full">Ver detalles</Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+        )}
       </div>
     </div>
   );

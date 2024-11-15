@@ -12,6 +12,7 @@ export class AlumnoDAO
 
   async findByAccountId(accountId: string): Promise<{
     id: number;
+    imageUrl: string;
     nombre: string;
     edad: number;
     accountId: string | null;
