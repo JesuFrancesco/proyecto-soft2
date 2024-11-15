@@ -47,7 +47,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
   return (
     <div className="container mx-auto py-12 px-6">
       <h1 className="text-5xl font-bold text-center mb-4 text-primary-800 dark:text-primary-400">
-        Detalles del curso: {curso.tema.subEspecialidad}
+        Detalles del curso: {curso.tema.subespecialidad}
       </h1>
       <div className="flex flex-col md:flex-row md:space-x-8">
         {curso.materialClase && curso.materialClase.length > 0 && (
