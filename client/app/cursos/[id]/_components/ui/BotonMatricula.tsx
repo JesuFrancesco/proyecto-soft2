@@ -14,7 +14,7 @@ import {
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
-const BotonMatricula = ({ id }: { id: number }) => {
+const AlumnoCTAButton = ({ id }: { id: number }) => {
   const router = useRouter();
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -82,4 +82,4 @@ const BotonMatricula = ({ id }: { id: number }) => {
   );
 };
 
-export default BotonMatricula;
+export default AlumnoCTAButton;

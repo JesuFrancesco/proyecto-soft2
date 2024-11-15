@@ -15,11 +15,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const CursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
+const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const handleFavoriteOnClick = async () => {
@@ -216,4 +214,4 @@ const CursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
   );
 };
 
-export default CursoWidget;
+export default AlumnoCursoWidget;

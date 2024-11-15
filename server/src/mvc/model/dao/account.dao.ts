@@ -1,5 +1,5 @@
 import { IDeletable, IReadable } from "./interfaces/GenericInterfaces";
-import { Account, Alumno, PrismaClient, Profesor } from "@prisma/client";
+import { Account, PrismaClient } from "@prisma/client";
 import boom from "@hapi/boom";
 import _ from "lodash";
 import {
@@ -8,30 +8,22 @@ import {
 } from "./interfaces/AccountInterfaces";
 
 export class AccountDAO
-  implements
-    IReadable<Account>,
-    IDeletable<Account>,
-    IAccountCreatable,
-    IFindAccountByEmail
+  implements IReadable<Account>, IDeletable<Account>, IAccountCreatable
 {
   private prisma = new PrismaClient();
 
-  async findByEmail(email: string) {
-    const cuenta = await this.prisma.account.findUnique({
+  async findByPk(id: string | number) {
+    const account = await this.prisma.account.findUnique({
       where: {
-        email: email,
-      },
-      include: {
-        alumno: true,
-        profesor: true,
+        id: id as string,
       },
     });
 
-    if (!cuenta) {
+    if (!account) {
       throw boom.notFound();
     }
 
-    return cuenta;
+    return account;
   }
 
   async updateAccountCountry(accountId: string, paisId: any) {
@@ -125,20 +117,6 @@ export class AccountDAO
     });
 
     return acc;
-  }
-
-  async findByPk(id: string | number) {
-    const account = await this.prisma.account.findUnique({
-      where: {
-        id: id as string,
-      },
-    });
-
-    if (!account) {
-      throw boom.notFound();
-    }
-
-    return account;
   }
 
   async update(id: string | number, cambios: Partial<Account>) {

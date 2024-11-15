@@ -19,15 +19,6 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-router.get("/", async (req, res, next) => {
-  try {
-    const alumnos = await service.findAll();
-    res.json(alumnos);
-  } catch (error) {
-    next(error);
-  }
-});
-
 router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;

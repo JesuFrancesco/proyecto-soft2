@@ -13,9 +13,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
+import { useRouter } from "next-nprogress-bar";
 
 const HeaderClient = () => {
+  const router = useRouter();
   const { links, showToggleTheme, position } = headerData;
 
   const ref = useRef(null);
@@ -121,15 +122,14 @@ const HeaderClient = () => {
                         )}
                       </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="rounded font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:bg-white/90 md:backdrop-blur-md dark:md:bg-slate-900/90 md:border md:border-gray-200 md:dark:border-slate-700">
+                    <DropdownMenuContent className="rounded font-medium drop-shadow-xl md:backdrop-blur-md  md:border md:border-gray-200 md:dark:border-slate-700">
                       {links.map(({ label: label2, href: href2 }, index2) => (
-                        <DropdownMenuItem key={`item-link-${index2}`}>
-                          <a
-                            className="whitespace-no-wrap block py-2 px-5"
-                            href={href2}
-                          >
-                            {label2}
-                          </a>
+                        <DropdownMenuItem
+                          onClick={() => router.push(href2 ? href2 : "#")}
+                          key={`item-link-${index2}`}
+                          className="cursor-pointer"
+                        >
+                          {label2}
                         </DropdownMenuItem>
                       ))}
                     </DropdownMenuContent>

@@ -1,9 +1,13 @@
+import { IAccount } from "./IAccount";
+import { IClase } from "./IClase";
+
 export interface IAlumno {
   id: number;
   nombre: string;
   edad: number;
-  // account:      IAccount
-  // clases:
+  imageUrl: string;
+  account: IAccount;
+  clases: IClase[];
   // preferencias: alumnopreferencia
   // chats:        chat
   // reviews:      review

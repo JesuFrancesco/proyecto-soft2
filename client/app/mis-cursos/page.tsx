@@ -1,8 +1,8 @@
 import WidgetWrapper from "@/components/common/WidgetWrapper";
 import { getAlumnoClases } from "@/service/alumno.service";
-import CursoWidget from "./_components/CursoWidget";
+import AlumnoCursoWidget from "./_components/AlumnoCursoWidget";
 
-const MyCoursesPage = async () => {
+const MisCursosPage = async () => {
   const clases = await getAlumnoClases();
 
   return (
@@ -19,11 +19,11 @@ const MyCoursesPage = async () => {
         {clases?.length === 0 ? (
           <h1>No hay nada</h1>
         ) : (
-          clases?.map((e, i) => <CursoWidget key={i} alumnoClase={e} />)
+          clases?.map((e, i) => <AlumnoCursoWidget key={i} alumnoClase={e} />)
         )}
       </div>
     </WidgetWrapper>
   );
 };
 
-export default MyCoursesPage;
+export default MisCursosPage;

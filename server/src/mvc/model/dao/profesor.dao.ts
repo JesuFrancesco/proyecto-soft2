@@ -26,7 +26,20 @@ export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
   }
 
   async findAll() {
-    const profesores = await this.prisma.profesor.findMany();
+    const profesores = await this.prisma.profesor.findMany({
+      include: {
+        especialidades: {
+          include: {
+            especialidad: true,
+          },
+        },
+        profesorSubEspecialidades: {
+          include: {
+            subEspecialidad: true,
+          },
+        },
+      },
+    });
     return profesores;
   }
 
@@ -34,6 +47,37 @@ export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
     const profesor = await this.prisma.profesor.findUnique({
       where: {
         id: id as number,
+      },
+      select: {
+        id: true,
+        nombre: true,
+        edad: true,
+        biografia: true,
+        imageUrl: true,
+        especialidades: true,
+        profesorSubEspecialidades: true,
+        resenasAsociadas: true,
+
+        clases: {
+          select: {
+            id: true,
+            esVirtual: true,
+            esGrupal: true,
+            fechaClase: true,
+            tema: {
+              select: {
+                subespecialidad: true,
+              },
+            },
+          },
+        },
+
+        cuenta: {
+          select: {
+            email: true,
+            phone: true,
+          },
+        },
       },
     });
 

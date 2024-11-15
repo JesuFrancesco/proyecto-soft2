@@ -25,7 +25,7 @@ const DropdownUserOptions = ({
           {user.user_metadata.name}
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="rounded md:backdrop-blur-md  md:border md:border-gray-200 md:dark:border-slate-700 w-56">
         <DropdownMenuLabel>Mi cuenta</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

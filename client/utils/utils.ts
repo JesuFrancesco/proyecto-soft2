@@ -34,3 +34,9 @@ export const axiosErrorHandler = (error: AxiosError) => ({
   error: true,
   msg: error.message,
 });
+
+export const obtenerPromediosObject = () => {
+  return {
+    olamundo: "",
+  };
+};

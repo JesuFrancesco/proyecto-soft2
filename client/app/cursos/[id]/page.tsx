@@ -4,10 +4,11 @@ import { Config } from "@/config/credentials";
 import { IAlumnoClase, IClase } from "@/interfaces/IClase";
 import axios, { AxiosError } from "axios";
 import Image from "next/image";
-import BotonMatricula from "./_components/BotonMatricula";
+import AlumnoCTAButton from "./_components/ui/BotonMatricula";
 import { getAuthHeaders } from "@/utils/supabase/server";
 import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/common/CTA";
+import AlumnoCTA from "./_components/AlumnoCTA";
 
 interface CursoDetalleProps {
   params: {
@@ -16,33 +17,11 @@ interface CursoDetalleProps {
 }
 
 export default async function CursoDetalle({ params }: CursoDetalleProps) {
-  const { id: idStr } = params;
-
-  const id = parseInt(idStr);
+  const { id } = params;
 
   const { data: curso } = await axios.get<IClase>(
-    `${Config.EXPRESS_API_URL}/clases/${idStr}`
+    `${Config.EXPRESS_API_URL}/clases/${id}`
   );
-
-  const headers = await getAuthHeaders();
-
-  let cursosMatriculados: IAlumnoClase[] | null = null;
-
-  try {
-    const { data } = await axios.get<IAlumnoClase[]>(
-      `${Config.EXPRESS_API_URL}/account/alumno/clases`,
-      {
-        headers: headers,
-      }
-    );
-
-    cursosMatriculados = data;
-  } catch (err) {
-    if (!(err instanceof AxiosError) || err.status !== 401) {
-      console.error(err);
-      throw new Error("Algo salio mal");
-    }
-  }
 
   return (
     <div className="container mx-auto py-12 px-6">
@@ -61,6 +40,8 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
             />
           </div>
         )}
+
+        {/* Informacion general */}
         <div className="flex-1 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">
             Información General
@@ -88,6 +69,8 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
           </div>
         </div>
       </div>
+
+      {/* Resumen de profesor */}
       <div className="my-8">
         <hr className="border-gray-300" />
       </div>
@@ -102,6 +85,8 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
           <strong>Edad:</strong> {curso.profesor.edad} años
         </p>
       </div>
+
+      {/* Material de clase */}
       <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">
           Material de Clase
@@ -135,26 +120,10 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
           </p>
         )}
       </div>
-      <div className="text-center mt-8">
-        {cursosMatriculados ? (
-          cursosMatriculados.some((c) => c.claseId === id) ? (
-            <Button variant={"outline"} disabled={true}>
-              Ya te encuentras matriculado
-            </Button>
-          ) : (
-            <BotonMatricula id={id} />
-          )
-        ) : (
-          <CallToAction
-            callToAction={{
-              href: "/signup",
-              icon: null,
-              targetBlank: false,
-              text: "Crea una cuenta para matricularte",
-            }}
-            linkClass="btn btn-primary m-1 py-2 px-5 text-sm font-semibold shadow-none md:px-6"
-          />
-        )}
+
+      {/* Boton de matricula */}
+      <div className="flex justify-center items-center my-4 self-center">
+        <AlumnoCTA id={parseInt(id)} />
       </div>
     </div>
   );

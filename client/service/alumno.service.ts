@@ -1,23 +1,8 @@
 "use server";
-import { getSupabaseUserEmail } from "./utils";
 import axios from "axios";
 import { Config } from "@/config/credentials";
 import { getAuthHeaders } from "@/utils/supabase/server";
-import { IAlumnoClase, IClase } from "@/interfaces/IClase";
-
-export const getAlumnoByEmail = async () => {
-  try {
-    const email = await getSupabaseUserEmail();
-
-    const { data } = await axios.get(
-      Config.EXPRESS_API_URL + "/alumnos/email/" + email
-    );
-
-    return data;
-  } catch (error) {
-    return null;
-  }
-};
+import { IAlumnoClase } from "@/interfaces/IClase";
 
 export const getAlumnoClases = async () => {
   try {

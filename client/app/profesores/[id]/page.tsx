@@ -1,15 +1,43 @@
 "use server";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
 import { Config } from "@/config/credentials";
 import { IProfesor } from "@/interfaces/IProfesor";
+import Link from "next/link";
+import { ProfesorRadarScore } from "./_components/ProfesorRadarChart";
+import ProfesorReview from "./_components/ProfesorReview";
+import { IReview } from "@/interfaces/IReview";
 
 interface ProfesorDetalleProps {
   params: {
     id: string;
   };
 }
+const getProfesorAverageScores = (data: IReview[]) => {
+  const skillScores = {
+    Enseñanza: 0,
+    Puntualidad: 0,
+    Disponibilidad: 0,
+    Comunicación: 0,
+    Evaluación: 0,
+    Empatía: 0,
+  };
+
+  data.forEach((review) => {
+    skillScores.Enseñanza += review.ensenanza ?? 0;
+    skillScores.Puntualidad += review.puntualidad ?? 0;
+    skillScores.Disponibilidad += review.disponibilidad ?? 0;
+    skillScores.Comunicación += review.comunicacion ?? 0;
+    skillScores.Evaluación += review.evaluacion ?? 0;
+    skillScores.Empatía += review.empatia ?? 0;
+  });
+
+  const numReviews = data.length || 1;
+  return Object.entries(skillScores).map(([habilidad, total]) => ({
+    habilidad,
+    puntaje: total / numReviews,
+  }));
+};
 
 export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
   const { id } = params;
@@ -19,103 +47,112 @@ export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-6">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-lg w-full">
-        <div className="flex flex-col">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-            Información del Profesor
-          </h1>
-          <h2 className="text-2xl font-semibold self-center text-gray-700 dark:text-gray-300 mb-2">
+    <div className="flex flex-col items-center justify-center p-1 md:p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 w-full md:w-3/4">
+        <div className="flex flex-col items-center">
+          <h1 className="text-4xl font-bold mb-4">Información del Profesor</h1>
+          <h2 className="text-2xl font-semibold self-center mb-2">
             Profesor: {profesor.nombre}
           </h2>
-          <div className="self-center">
+          <div className="my-4 self-center">
             <Image
-              src="https://dina.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=29178&ruta=/documents/docInvestigadores/29178/imagenes/Carlos.jpg&content_type=image/jpeg" // Reemplaza esto con la ruta a la imagen del profesor
-              width={300}
-              height={300}
-              alt="Profesor Felix"
-              className="w-32 h-32 rounded-full shadow-lg mb-4"
-            />
-          </div>
-
-          <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
-            <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Habilidades
-            </h2>
-            <Image
-              src="https://i0.wp.com/granpausa.com/wp-content/uploads/2015/02/completo-e1424557455185.jpg?fit=1000%2C1000&ssl=1" // Reemplaza esto con la ruta a la imagen del profesor
-              alt="foto-perfil-profesor"
+              src={
+                profesor.imageUrl
+                  ? profesor.imageUrl
+                  : "https://dina.concytec.gob.pe/appDirectorioCTI/UploadFotoPath.do?tipo=visualizar_archivo&id_investigador=29178&ruta=/documents/docInvestigadores/29178/imagenes/Carlos.jpg&content_type=image/jpeg"
+              }
               width={512}
               height={512}
+              alt="Profesor Felix"
+              className="w-64 h-64 rounded-full shadow-lg"
             />
           </div>
 
-          {/* Sección de biografía */}
-          <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
-              Biografía
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              Felix es un apasionado profesor de matemáticas con más de 10 años
-              de experiencia en la enseñanza. Su enfoque pedagógico se centra en
-              hacer que los conceptos complejos sean accesibles y comprensibles
-              para todos los estudiantes. Ha participado en diversas
-              conferencias y talleres sobre enseñanza de matemáticas y está
-              comprometido con el desarrollo académico de sus alumnos.
-            </p>
+          {/* Habilidades */}
+          <div className="mt-4 border-t relative self-center w-full md:w-3/4 border-gray-300 dark:border-gray-600 pt-4">
+            <ProfesorRadarScore
+              data={getProfesorAverageScores(profesor.resenasAsociadas)}
+            />
           </div>
+        </div>
 
-          {/* Sección de horarios de clase */}
-          <div className="mt-4 border-t border-gray-300 dark:border-gray-600 pt-4">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
-              Horarios de Clase
-            </h3>
-            <ul className="list-disc pl-5 text-gray-600 dark:text-gray-400">
-              <li>Lunes: 10:00 AM - 12:00 PM</li>
-              <li>Miércoles: 10:00 AM - 12:00 PM</li>
-              <li>Viernes: 2:00 PM - 4:00 PM</li>
+        {/* Sección de biografía */}
+        <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
+          <h3 className="text-lg font-semibold mb-2">Biografía</h3>
+          <p className="text-justify">
+            {profesor.biografia ??
+              "Felix es un apasionado profesor de matemáticas con más de 10 años de experiencia en la enseñanza. Su enfoque pedagógico se centra en hacer que los conceptos complejos sean accesibles y comprensibles para todos los estudiantes. Ha participado en diversas conferencias y talleres sobre enseñanza de matemáticas y está comprometido con el desarrollo académico de sus alumnos."}
+          </p>
+        </div>
+
+        {/* Sección de clases */}
+        <div className="mt-4 border-t border-gray-300 dark:border-gray-600 pt-4">
+          <h3 className="text-lg font-semibold   mb-2">Clases</h3>
+          {profesor.clases && profesor.clases.length > 0 ? (
+            <ul className="list-disc pl-5  ">
+              {profesor.clases.map((clase) => (
+                <li key={clase.id} className="mb-2">
+                  <span className="font-semibold">
+                    <Link href={`/cursos/${clase.id}`}>
+                      {clase.tema.subespecialidad}
+                    </Link>
+                  </span>{" "}
+                  -{" "}
+                  <span className="italic">
+                    {new Date(clase.fechaClase).toLocaleString("es-PE", {
+                      weekday: "long",
+                      hour: "numeric",
+                      minute: "numeric",
+                      hour12: true,
+                    })}
+                  </span>{" "}
+                  {clase.esVirtual && <span>(Virtual)</span>}
+                  {clase.esGrupal && <span>(Grupal)</span>}
+                </li>
+              ))}
             </ul>
-          </div>
+          ) : (
+            <p className=" ">No hay clases programadas actualmente.</p>
+          )}
+        </div>
 
-          {/* Sección de comentarios de estudiantes */}
-          <div className="mt-4 border-t border-gray-300 dark:border-gray-600 pt-4">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
-              Comentarios de Estudiantes
-            </h3>
-            <div className="text-gray-600 dark:text-gray-400 space-y-2">
-              <p>
-                “Felix hace que Cálculo III sea mucho más fácil de entender. Su
-                paciencia y dedicación son admirables.” - Ana M.
-              </p>
-              <p>
-                “Las clases son interactivas y divertidas. Aprendí mucho más de
-                lo que esperaba.” - Luis P.
-              </p>
-              <p>
-                “Un excelente profesor que siempre está dispuesto a ayudar.” -
-                Sofia R.
-              </p>
+        {/* Sección de comentarios de estudiantes */}
+        <div className="mt-4 border-t border-gray-300 dark:border-gray-600 pt-4">
+          <h3 className="text-lg font-semibold   mb-2">
+            Comentarios de Estudiantes
+          </h3>
+          {profesor.resenasAsociadas && profesor.resenasAsociadas.length > 0 ? (
+            <div className="space-y-6">
+              {profesor.resenasAsociadas.length ? (
+                profesor.resenasAsociadas.map((resena, i) => (
+                  <ProfesorReview key={i} resena={resena} />
+                ))
+              ) : (
+                <p className="italic">
+                  Este profesor no tiene reseñas asociadas
+                </p>
+              )}
             </div>
-          </div>
+          ) : (
+            <p className=" ">No hay comentarios de estudiantes disponibles.</p>
+          )}
+        </div>
 
-          {/* Información de contacto */}
-          <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
-              Contacto
-            </h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              ✉️ Email:{" "}
-              <a
-                href="mailto:felix@ejemplo.com"
-                className="text-blue-600 dark:text-blue-400 hover:underline"
-              >
-                felix@ejemplo.com
-              </a>
-            </p>
-            <p className="text-gray-600 dark:text-gray-400">
-              📞 Teléfono: +51 999 999 999
-            </p>
-          </div>
+        {/* Información de contacto */}
+        <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
+          <h3 className="text-lg font-semibold   mb-2">Contacto</h3>
+          <p className=" ">
+            ✉️ Email:{" "}
+            <Link
+              href={profesor.cuenta.email ?? "felix@ejemplo.com"}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              {profesor.cuenta.email ?? "felix@ejemplo.com"}
+            </Link>
+          </p>
+          <p className=" ">
+            📞 Teléfono: {profesor.cuenta.phone ?? "+51 999 999 999"}
+          </p>
         </div>
       </div>
     </div>

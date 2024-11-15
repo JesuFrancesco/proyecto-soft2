@@ -5,6 +5,7 @@ import { authHandler } from "../middleware/authorization.handler";
 import { AlumnoDAO } from "../../model/dao/alumno.dao";
 import { ProfesorDAO } from "../../model/dao/profesor.dao";
 import { sb } from "../../../app";
+import { ClaseDAO } from "../../model/dao/clase.dao";
 
 const router = Router();
 const alumnoRouter = Router();
@@ -13,6 +14,7 @@ const profesorRouter = Router();
 const accountService = new AccountDAO();
 const alumnoService = new AlumnoDAO();
 const profesorService = new ProfesorDAO();
+const claseService = new ClaseDAO();
 
 // router auth
 router.use(authHandler);
@@ -139,6 +141,24 @@ alumnoRouter.get("/clases", async (req, res, next) => {
     const alumno = await alumnoService.findByAccountId(id);
 
     const clases = await alumnoService.findAlumnoClases(alumno.id);
+
+    res.json(clases);
+  } catch (error) {
+    next(error);
+  }
+});
+
+alumnoRouter.get("/clases-by-preferencia", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const { preferencias } = await alumnoService.findByAccountId(id);
+
+    const especialidades = preferencias.map((e) => e.preferenciaId);
+
+    const clases = await claseService.findByEspecialidades(especialidades);
 
     res.json(clases);
   } catch (error) {

@@ -18,6 +18,7 @@ export const config = {
     "/signup(/.*)?",
     "/login",
     "/mis-cursos",
+    "/cursos-por-preferencia",
     "/horario",
   ],
 };

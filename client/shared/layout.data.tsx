@@ -20,8 +20,8 @@ export const headerData: HeaderProps = {
           href: "/cursos",
         },
         {
-          label: "Preferencias",
-          href: "/cursos-favoritos",
+          label: "Preferencia",
+          href: "/cursos-por-preferencia",
         },
       ],
     },
@@ -38,8 +38,18 @@ export const headerData: HeaderProps = {
       href: "/contacto",
     },
     {
-      label: "Ayuda",
-      href: "/faq",
+      label: "Otro",
+      icon: ChevronDown,
+      links: [
+        {
+          label: "Profesores",
+          href: "/profesores",
+        },
+        {
+          label: "FAQ",
+          href: "/faq",
+        },
+      ],
     },
   ],
   actions: [

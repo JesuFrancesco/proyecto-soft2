@@ -31,6 +31,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        card: "hsl(var(--card))",
         accent: "hsl(var(--accent))",
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",
