@@ -40,3 +40,20 @@ export const obtenerPromediosObject = () => {
     olamundo: "",
   };
 };
+
+export const clientDownloadItem = async (uri: string, name?: string) => {
+  const response = await fetch(uri);
+  if (!response.ok) {
+    throw new Error("Error al descargar el material");
+  }
+
+  const blob = await response.blob();
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = name || "archivo";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  window.URL.revokeObjectURL(url);
+};

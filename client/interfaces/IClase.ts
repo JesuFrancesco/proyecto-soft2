@@ -16,6 +16,7 @@ export interface IAlumnoClase {
 
 export interface IClase {
   id: number;
+  vacantesMax: number;
   esVirtual: boolean;
   esGrupal: boolean;
   fechaClase: string;

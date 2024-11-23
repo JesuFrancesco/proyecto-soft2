@@ -14,7 +14,7 @@ const ProfesoresPage = async () => {
         <h2 className="text-2xl font-bold mb-4">Docentes</h2>
         <h1 className="text-4xl sm:text-6xl font-bold">Nuestros profesores</h1>
       </div>
-      <ProfesoresWidget profesores={data} />
+      <ProfesoresWidget />
     </div>
   );
 };

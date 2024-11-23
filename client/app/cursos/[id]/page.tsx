@@ -7,6 +7,11 @@ import Image from "next/image";
 import AlumnoCTA from "./_components/AlumnoCTA";
 import CursosGrid from "@/components/common/CursosGrid";
 import SimilarCursos from "./_components/SimilarCursos";
+import { useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
+import MaterialCursoWidget from "./_components/MaterialCursoWidget";
 
 interface CursoDetalleProps {
   params: {
@@ -20,6 +25,8 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
   const { data: curso } = await axios.get<IClase>(
     `${Config.EXPRESS_API_URL}/clases/${id}`
   );
+
+  const hayVacantes = curso.vacantesMax - curso.alumnos.length >= 0;
 
   return (
     <div className="container mx-auto py-12 px-6">
@@ -45,6 +52,13 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
             Información General
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <p>
+              <strong>Número de vacantes:</strong> {curso.vacantesMax}
+            </p>
+            <p>
+              <strong>Vacantes disponibles:</strong>{" "}
+              {curso.vacantesMax - curso.alumnos.length}
+            </p>
             <p>
               <strong>Sector:</strong> {curso.sector.name}
             </p>
@@ -93,23 +107,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {curso.materialClase.map((item) => {
               //
-              return (
-                <div
-                  key={item.id}
-                  className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105"
-                >
-                  <h3 className="font-semibold text-lg">
-                    {item.material.nombre}
-                  </h3>
-                  <Image
-                    src={item.material.assetUrl}
-                    alt={item.material.nombre}
-                    width={400}
-                    height={300}
-                    className="w-full h-[300px] object-cover rounded-md mt-2"
-                  />
-                </div>
-              );
+              return <MaterialCursoWidget key={item.id} item={item} />;
             })}
           </div>
         ) : (
@@ -121,11 +119,17 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
 
       {/* Boton de matricula */}
       <div className="flex justify-center items-center my-4 self-center">
-        <AlumnoCTA id={parseInt(id)} />
+        {hayVacantes ? (
+          <AlumnoCTA id={parseInt(id)} />
+        ) : (
+          <Button variant={"outline"} disabled={true}>
+            Ya no hay vacantes disponibles
+          </Button>
+        )}
       </div>
 
       <div>
-        Tambien te puede interesar...
+        <div className="text-2xl my-2">Tambien te puede interesar...</div>
         <SimilarCursos especialidades={[curso.tema.especialidadId]} />
       </div>
     </div>

@@ -104,7 +104,7 @@ export class AlumnoDAO
         account: true,
         preferencias: true,
         clases: true,
-        reviews: true,
+        alumnoProfesorReviews: true,
       },
     });
 

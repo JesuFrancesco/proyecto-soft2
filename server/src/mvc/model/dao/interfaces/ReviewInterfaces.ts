@@ -1,15 +1,33 @@
-import { Review } from "@prisma/client";
+import { ClaseReview, ProfesorReview } from "@prisma/client";
+
+// == PROFESOR REVIEWS
 
 // alumno
-interface IFindReviewsByAlumno {
-  findReviewsByAlumno: (alumnoId: number) => Promise<Review[]>;
+interface IFindProfesorReviewsByAlumno {
+  findProfesorReviewsByAlumno: (alumnoId: number) => Promise<ProfesorReview[]>;
 }
 
 // profesor
-interface IFindReviewsByProfesor {
-  findReviewsByProfesor: (profesorId: number) => Promise<Review[]>;
+interface IFindProfesorReviewsByProfesor {
+  findProfesorReviewsByProfesor: (
+    profesorId: number
+  ) => Promise<ProfesorReview[]>;
 }
 
-export interface IFindReviews
-  extends IFindReviewsByAlumno,
-    IFindReviewsByProfesor {}
+export interface IFindProfesorReviews
+  extends IFindProfesorReviewsByAlumno,
+    IFindProfesorReviewsByProfesor {}
+
+// alumno
+interface IFindClaseReviewsByAlumno {
+  findClaseReviewsByAlumno: (alumnoId: number) => Promise<ClaseReview[]>;
+}
+
+// profesor
+interface IFindClaseReviewsByProfesor {
+  findClaseReviewsByProfesor: (claseId: number) => Promise<ClaseReview[]>;
+}
+
+export interface IFindClaseReviews
+  extends IFindClaseReviewsByAlumno,
+    IFindClaseReviewsByProfesor {}

@@ -25,6 +25,18 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/query/:query", async (req, res, next) => {
+  try {
+    const { query } = req.params;
+
+    const profesores = await service.findByQuery(query);
+
+    res.json(profesores);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post("/", async (req, res, next) => {
   try {
     const data = req.body;

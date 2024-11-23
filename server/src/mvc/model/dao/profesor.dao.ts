@@ -43,6 +43,30 @@ export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
     return profesores;
   }
 
+  async findByQuery(query: string) {
+    const profesores = await this.prisma.profesor.findMany({
+      where: {
+        nombre: {
+          mode: "insensitive",
+          contains: query,
+        },
+      },
+      include: {
+        especialidades: {
+          include: {
+            especialidad: true,
+          },
+        },
+        profesorSubEspecialidades: {
+          include: {
+            subEspecialidad: true,
+          },
+        },
+      },
+    });
+    return profesores;
+  }
+
   async findByPk(id: number | string) {
     const profesor = await this.prisma.profesor.findUnique({
       where: {

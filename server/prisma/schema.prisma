@@ -73,7 +73,9 @@ model Alumno {
   clases       AlumnoClase[]       @relation("AlumnoClases")
   preferencias AlumnoPreferencia[] @relation("AlumnoPreferencias")
   chats        Chat[]              @relation("AlumnoChats")
-  reviews      Review[]            @relation("AlumnoReviews")
+
+  alumnoProfesorReviews ProfesorReview[] @relation("AlumnoReviews")
+  alumnoClaseReviews    ClaseReview[]
 
   accountId String?  @unique @map("account_id") @db.Uuid
   createdAt DateTime @default(now()) @map("created_at")
@@ -85,8 +87,8 @@ model Alumno {
 model Profesor {
   id Int @id @default(autoincrement())
 
-  nombre String
-  edad   Int
+  nombre    String
+  edad      Int
   biografia String?
 
   imageUrl String @default("https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg") @map("image_url")
@@ -94,7 +96,7 @@ model Profesor {
   especialidades   ProfesorEspecialidad[] @relation("ProfesorEspecialidades")
   chats            Chat[]
   clases           Clase[]                @relation("ProfesorClases")
-  resenasAsociadas Review[]               @relation("ProfesorReviews")
+  resenasAsociadas ProfesorReview[]       @relation("ProfesorReviews")
   cuenta           Account?               @relation("AccountProfessores", fields: [accountId], references: [id])
 
   profesorSubEspecialidades ProfesorSubEspecialidad[]
@@ -106,10 +108,9 @@ model Profesor {
   @@map("profesores")
 }
 
-model Review {
-  id          Int       @id @default(autoincrement())
-  profesor    Profesor? @relation("ProfesorReviews", fields: [profesorId], references: [id])
+model ProfesorReview {
   alumno      Alumno?   @relation("AlumnoReviews", fields: [alumnoId], references: [id])
+  profesor    Profesor? @relation("ProfesorReviews", fields: [profesorId], references: [id])
   descripcion String
 
   ensenanza      Int?
@@ -119,13 +120,14 @@ model Review {
   evaluacion     Int?
   empatia        Int?
 
-  profesorId Int? @map("profesor_id")
-  alumnoId   Int? @map("alumno_id")
+  alumnoId   Int @map("alumno_id")
+  profesorId Int @map("profesor_id")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
-  @@map("reviews")
+  @@id([alumnoId, profesorId])
+  @@map("profesor_reviews")
 }
 
 model Especialidad {
@@ -190,6 +192,7 @@ model MaterialClase {
 model Clase {
   id Int @id @default(autoincrement())
 
+  vacantesMax   Int              @default(8) @map("vacantes_max")
   tema          SubEspecialidad? @relation(fields: [subEspecialidadId], references: [id])
   sector        Sector           @relation(fields: [sectorId], references: [id])
   materialClase MaterialClase[]
@@ -206,10 +209,33 @@ model Clase {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 
-  profesor Profesor?     @relation("ProfesorClases", fields: [profesorId], references: [id])
-  alumnos  AlumnoClase[] @relation("ClaseAlumnoClases")
+  profesor     Profesor?     @relation("ProfesorClases", fields: [profesorId], references: [id])
+  alumnos      AlumnoClase[] @relation("ClaseAlumnoClases")
+  claseReviews ClaseReview[]
 
   @@map("clases")
+}
+
+model ClaseReview {
+  alumno      Alumno @relation(fields: [alumnoId], references: [id])
+  clase       Clase  @relation(fields: [claseId], references: [id])
+  descripcion String
+
+  ensenanza      Int?
+  puntualidad    Int?
+  disponibilidad Int?
+  comunicacion   Int?
+  evaluacion     Int?
+  empatia        Int?
+
+  alumnoId Int @map("alumno_id")
+  claseId  Int @map("clase_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @map("updated_at")
+
+  @@id([alumnoId, claseId])
+  @@map("clase_reviews")
 }
 
 model Sector {
