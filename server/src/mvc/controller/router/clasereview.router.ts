@@ -1,8 +1,12 @@
 import { Router } from "express";
 import { ClaseReviewDAO } from "../../model/dao/clasereview.dao";
+import { authHandler } from "../middleware/authorization.handler";
+import { sb } from "../../../app";
+import { AlumnoDAO } from "../../model/dao/alumno.dao";
 
 const router = Router();
 const service = new ClaseReviewDAO();
+const alumnoService = new AlumnoDAO();
 
 router.get("/", async (req, res, next) => {
   try {
@@ -13,10 +17,20 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", authHandler, async (req, res, next) => {
   try {
     const data = req.body;
-    const review = await service.create(data);
+
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const alumno = await alumnoService.findByAccountId(id);
+
+    const review = await service.create({
+      ...data,
+      alumnoId: alumno.id,
+    });
     res.status(201).json(review);
   } catch (error) {
     next(error);

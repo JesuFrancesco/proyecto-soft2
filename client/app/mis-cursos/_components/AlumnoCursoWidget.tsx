@@ -13,9 +13,17 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "@/components/ui/sheet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import TabContenido from "./ui/TabContenido";
+import TabCalendario from "./ui/TabCalendario";
+import TabAnuncios from "./ui/TabAnuncios";
+import TabDebates from "./ui/TabDebates";
+import TabMensajes from "./ui/TabMensajes";
+import TabGrupos from "./ui/TabGrupos";
+import TabCalificaciones from "./ui/TabCalificaciones";
+import TabResenias from "./ui/TabResenias";
 
 const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -103,110 +111,43 @@ const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
               <TabsTrigger value="libro">Libro de calificaciones</TabsTrigger>
               <TabsTrigger value="mensajes">Mensajes</TabsTrigger>
               <TabsTrigger value="grupos">Grupos</TabsTrigger>
+              <TabsTrigger value="resenias">Reseñas</TabsTrigger>
             </TabsList>
             <TabsContent value="contenido">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Temas del curso</h4>
-                <ul className="list-disc list-inside">
-                  <li>Introducción al tema</li>
-                  <li>Conceptos clave</li>
-                  <li>Actividades prácticas</li>
-                  <li>Recursos adicionales</li>
-                </ul>
-              </div>
+              <TabContenido />
             </TabsContent>
 
             <TabsContent value="calendario">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Próximos eventos</h4>
-                <ul className="list-none">
-                  <li>📅 Examen: 15 de Noviembre</li>
-                  <li>📅 Clase en vivo: 20 de Noviembre</li>
-                  <li>📅 Proyecto final: 30 de Noviembre</li>
-                </ul>
-              </div>
+              <TabCalendario />
             </TabsContent>
 
             <TabsContent value="anuncios">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Anuncios recientes</h4>
-                <p>📢 La clase del jueves se reprograma al viernes.</p>
-                <p>
-                  📢 Nuevo material de lectura disponible en la sección de
-                  recursos.
-                </p>
-              </div>
+              <TabAnuncios />
             </TabsContent>
 
             <TabsContent value="debates">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Foro de debates</h4>
-                <p>
-                  💬 <b>Juan Pérez:</b> ¿Qué opinan sobre el tema de la última
-                  clase?
-                </p>
-                <p>
-                  💬 <b>María López:</b> Me pareció muy interesante,
-                  especialmente la parte sobre...
-                </p>
-                <p>
-                  💬 <b>Iniciar un nuevo debate...</b>
-                </p>
-              </div>
+              <TabDebates />
             </TabsContent>
 
             <TabsContent value="libro">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">
-                  Libro de calificaciones
-                </h4>
-                <table className="w-full text-left">
-                  <thead>
-                    <tr>
-                      <th className="px-2 py-1">Actividad</th>
-                      <th className="px-2 py-1">Calificación</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="px-2 py-1">Examen parcial</td>
-                      <td className="px-2 py-1">85/100</td>
-                    </tr>
-                    <tr>
-                      <td className="px-2 py-1">Proyecto 1</td>
-                      <td className="px-2 py-1">90/100</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <TabCalificaciones />
             </TabsContent>
 
             <TabsContent value="mensajes">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Mensajes de la clase</h4>
-                <p>
-                  📩 <b>Profesor:</b> Recuerden revisar el material para la
-                  próxima clase.
-                </p>
-                <p>
-                  📩 <b>Alumno:</b> ¿Podría aclarar la tarea asignada?
-                </p>
-              </div>
+              <TabMensajes />
             </TabsContent>
 
             <TabsContent value="grupos">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-lg">Grupos de trabajo</h4>
-                <p>👥 Grupo 1: Juan, María, Carlos</p>
-                <p>👥 Grupo 2: Ana, Jorge, Sara</p>
-                <Button className="mt-2">Unirse a un grupo</Button>
-              </div>
+              <TabGrupos />
+            </TabsContent>
+            <TabsContent value="resenias">
+              <TabResenias />
             </TabsContent>
           </Tabs>
           <SheetFooter>
-            {/* <SheetClose asChild>
+            <SheetClose asChild>
               <Button type="submit">Cerrar</Button>
-            </SheetClose> */}
+            </SheetClose>
           </SheetFooter>
         </SheetContent>
       </Sheet>

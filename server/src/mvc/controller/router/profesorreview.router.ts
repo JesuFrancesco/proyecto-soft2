@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { ProfesorReviewDAO } from "../../model/dao/profesorreview.dao";
+import { authHandler } from "../middleware/authorization.handler";
 
 const router = Router();
 const service = new ProfesorReviewDAO();
@@ -13,7 +14,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/", authHandler, async (req, res, next) => {
   try {
     const data = req.body;
     const review = await service.create(data);

@@ -1,5 +1,5 @@
 "use client";
-import { IReview } from "@/interfaces/IReview";
+import { IProfesorReview } from "@/interfaces/IReview";
 import React from "react";
 import HabilidadStarRating from "./ui/StarRating";
 import {
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/popover";
 import { Info } from "lucide-react";
 
-const ProfesorReview = ({ resena }: { resena: IReview }) => {
+const ProfesorReview = ({ resena }: { resena: IProfesorReview }) => {
   return (
     <div className="flex flex-row gap-3">
       <Popover>
@@ -21,7 +21,7 @@ const ProfesorReview = ({ resena }: { resena: IReview }) => {
         </PopoverContent>
       </Popover>
       <div>
-        <p key={resena.id}>“{resena.descripcion}”</p>
+        <p key={resena.alumnoId}>“{resena.descripcion}”</p>
         <p className="font-semibold">
           - {resena.alumno?.nombre ?? "Alumno Anónimo"}
         </p>
