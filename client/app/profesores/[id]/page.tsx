@@ -6,14 +6,14 @@ import { IProfesor } from "@/interfaces/IProfesor";
 import Link from "next/link";
 import { ProfesorRadarScore } from "./_components/ProfesorRadarChart";
 import ProfesorReview from "./_components/ProfesorReview";
-import { IReview } from "@/interfaces/IReview";
+import { IProfesorReview } from "@/interfaces/IReview";
 
 interface ProfesorDetalleProps {
   params: {
     id: string;
   };
 }
-const getProfesorAverageScores = (data: IReview[]) => {
+const getProfesorAverageScores = (data: IProfesorReview[]) => {
   const skillScores = {
     Enseñanza: 0,
     Puntualidad: 0,
