@@ -4,7 +4,7 @@ import {
   IProfesorEspecialidad,
   IProfesorSubEspecialidad,
 } from "./IEspecialidad";
-import { IReview } from "./IReview";
+import { IProfesorReview } from "./IReview";
 
 export interface IProfesor {
   id: number;
@@ -14,7 +14,7 @@ export interface IProfesor {
   imageUrl: string;
   cuenta: IAccount;
 
-  resenasAsociadas: IReview[];
+  resenasAsociadas: IProfesorReview[];
   clases: IClase[];
   especialidades: IProfesorEspecialidad[];
   profesorSubEspecialidades: IProfesorSubEspecialidad[];
