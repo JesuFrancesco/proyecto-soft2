@@ -1,5 +1,5 @@
 import React from "react";
-import { IReview } from "@/interfaces/IReview";
+import { IProfesorReview } from "@/interfaces/IReview";
 import { Star } from "lucide-react";
 
 const StarRating = ({ title, puntaje }: { title: string; puntaje: number }) => {
@@ -15,7 +15,7 @@ const StarRating = ({ title, puntaje }: { title: string; puntaje: number }) => {
   );
 };
 
-const HabilidadStarRating = ({ resena }: { resena: IReview }) => {
+const HabilidadStarRating = ({ resena }: { resena: IProfesorReview }) => {
   const {
     comunicacion,
     disponibilidad,
