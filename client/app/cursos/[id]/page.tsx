@@ -1,14 +1,12 @@
 "use server";
 
 import { Config } from "@/config/credentials";
-import { IAlumnoClase, IClase } from "@/interfaces/IClase";
-import axios, { AxiosError } from "axios";
+import { IClase } from "@/interfaces/IClase";
+import axios from "axios";
 import Image from "next/image";
-import AlumnoCTAButton from "./_components/ui/BotonMatricula";
-import { getAuthHeaders } from "@/utils/supabase/server";
-import { Button } from "@/components/ui/button";
-import CallToAction from "@/components/common/CTA";
 import AlumnoCTA from "./_components/AlumnoCTA";
+import CursosGrid from "@/components/common/CursosGrid";
+import SimilarCursos from "./_components/SimilarCursos";
 
 interface CursoDetalleProps {
   params: {
@@ -124,6 +122,11 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
       {/* Boton de matricula */}
       <div className="flex justify-center items-center my-4 self-center">
         <AlumnoCTA id={parseInt(id)} />
+      </div>
+
+      <div>
+        Tambien te puede interesar...
+        <SimilarCursos especialidades={[curso.tema.especialidadId]} />
       </div>
     </div>
   );
