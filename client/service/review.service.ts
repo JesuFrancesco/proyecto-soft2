@@ -26,22 +26,22 @@ export const postReseniaDeProfesor = async () => {
   }
 };
 
-export const postReseniaDeClase = async () => {
+export const postReseniaDeClase = async (data: IClaseReview) => {
   const headers = await getAuthHeaders();
 
   try {
-    const { data } = await axios.post<IClaseReview[]>(
+    const response = await axios.post<IClaseReview>(
       `${Config.EXPRESS_API_URL}/clase-reviews`,
-      {
-        headers: headers,
-      }
+      data,
+      { headers }
     );
 
-    return data;
+    return response.data;
   } catch (err) {
     if (err instanceof AxiosError) {
       console.error(err);
-      throw new Error("Algo salio mal");
+      throw new Error("Algo salió mal al enviar la reseña.");
     }
   }
 };
+

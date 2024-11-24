@@ -26,6 +26,7 @@ import TabCalificaciones from "./ui/TabCalificaciones";
 import TabResenias from "./ui/TabResenias";
 
 const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
+
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const handleFavoriteOnClick = async () => {
@@ -74,8 +75,8 @@ const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
         />
       </div>
 
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-        <SheetContent className="w-full">
+      <Sheet  open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+        <SheetContent className="w-full h-full flex flex-col">
           <SheetHeader>
             <SheetTitle>
               <div className="text-3xl">
@@ -102,7 +103,7 @@ const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
             </SheetDescription>
           </SheetHeader>
 
-          <Tabs defaultValue="account">
+          <Tabs defaultValue="account" className="flex-grow">
             <TabsList>
               <TabsTrigger value="contenido">Contenido</TabsTrigger>
               <TabsTrigger value="calendario">Calendario</TabsTrigger>
@@ -141,7 +142,7 @@ const AlumnoCursoWidget = ({ alumnoClase }: { alumnoClase: IAlumnoClase }) => {
               <TabGrupos />
             </TabsContent>
             <TabsContent value="resenias">
-              <TabResenias />
+              <TabResenias reseñas={alumnoClase.clase.claseReviews} clase={alumnoClase.clase} />
             </TabsContent>
           </Tabs>
           <SheetFooter>

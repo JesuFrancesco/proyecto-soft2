@@ -3,7 +3,7 @@ import { IMaterialClase } from "./IMaterialEducativo";
 import { IProfesor } from "./IProfesor";
 import { ISector } from "./ISector";
 import { ISubespecialidad } from "./ISubespecialidad";
-
+import { IClaseReview } from "./IReview";
 export interface IAlumnoClase {
   alumno: IAlumno;
   clase: IClase;
@@ -30,4 +30,5 @@ export interface IClase {
   sector: ISector;
   alumnos: IAlumno[];
   materialClase: IMaterialClase[];
+  claseReviews: IClaseReview[];
 }

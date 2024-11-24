@@ -103,6 +103,7 @@ export class ClaseDAO implements DAO<Clase> {
         profesor: true,
         sector: true,
         alumnos: true,
+        claseReviews : true,
         materialClase: {
           include: {
             material: true,

@@ -69,6 +69,7 @@ export class AlumnoDAO
       include: {
         clase: {
           include: {
+            claseReviews : true,
             materialClase: {
               include: {
                 clase: true,

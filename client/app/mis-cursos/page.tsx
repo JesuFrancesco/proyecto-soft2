@@ -4,7 +4,6 @@ import AlumnoCursoWidget from "./_components/AlumnoCursoWidget";
 
 const MisCursosPage = async () => {
   const clases = await getAlumnoClases();
-
   return (
     <WidgetWrapper
       id="my-courses"
