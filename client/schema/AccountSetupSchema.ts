@@ -28,8 +28,9 @@ export const AccountSetupSchema = z.object({
     .optional(),
   profesor: z
     .object({
+      edad: z.number(),
+      especialidades: z.array(z.number()),
       biografia: z.string(),
-      // TODO: agregar especialidades
     })
     .optional(),
 });

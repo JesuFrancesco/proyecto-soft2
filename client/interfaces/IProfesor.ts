@@ -12,7 +12,7 @@ export interface IProfesor {
   edad: number;
   biografia: string;
   imageUrl: string;
-  cuenta: IAccount;
+  account: IAccount;
 
   resenasAsociadas: IProfesorReview[];
   clases: IClase[];

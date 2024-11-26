@@ -1,5 +1,5 @@
 import { IAccount } from "./IAccount";
-import { IClase } from "./IClase";
+// import { IAlumnoClase } from "./IAlumnoClase";
 
 export interface IAlumno {
   id: number;
@@ -7,7 +7,7 @@ export interface IAlumno {
   edad: number;
   imageUrl: string;
   account: IAccount;
-  clases: IClase[];
+  // clases: IAlumnoClase[];
   // preferencias: alumnopreferencia
   // chats:        chat
   // reviews:      review

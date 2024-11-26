@@ -96,7 +96,7 @@ export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
           },
         },
 
-        cuenta: {
+        account: {
           select: {
             email: true,
             phone: true,
@@ -130,5 +130,33 @@ export class ProfesorDAO implements DAO<Profesor>, IFindByAccountId<Profesor> {
       },
     });
     return profesorEliminado;
+  }
+
+  async findProfesorClases(profesorId: number) {
+    const clases = await this.prisma.alumnoClase.findMany({
+      where: {
+        clase: {
+          profesorId,
+        },
+      },
+      include: {
+        clase: {
+          include: {
+            claseReviews: true,
+            materialClase: {
+              include: {
+                clase: true,
+                material: true,
+              },
+            },
+            profesor: true,
+            sector: true,
+            tema: true,
+          },
+        },
+      },
+    });
+
+    return clases;
   }
 }

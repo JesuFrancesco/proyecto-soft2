@@ -17,7 +17,7 @@ import {
   fetchPaises,
   fetchProvincias,
 } from "@/service/misc.service";
-import { LoaderCircle } from "lucide-react";
+import { Loader2, LoaderCircle } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -45,6 +45,7 @@ import {
 import { FancyMultiSelect } from "@/components/ui/fancy-multiselect";
 import { IEspecialidad } from "@/interfaces/IEspecialidad";
 import { isNumeric } from "@/utils/utils";
+import { useLoading } from "@/hooks/use-loading";
 
 const AccountSetupClientForm = () => {
   const [esAlumno, setEsAlumno] = useState<boolean | null>(null);
@@ -106,18 +107,21 @@ const AccountSetupClientForm = () => {
       alumno: {
         preferencias: [],
       },
+      profesor: {
+        especialidades: [],
+      },
     },
   });
 
   const router = useRouter();
+  const { isLoading, startLoading, stopLoading } = useLoading();
 
   const onSubmit: SubmitHandler<AccountSetupSchemaType> = async (data) => {
-    const { rol } = data;
-
-    // update location
     try {
-      const { pais } = data;
+      startLoading();
+      const { rol, pais } = data;
 
+      // update location
       await updateCountryLocation({
         paisId: pais,
       });
@@ -126,6 +130,7 @@ const AccountSetupClientForm = () => {
         await updatePeruvianLocation(data.peru);
       }
 
+      // update role data
       const roleSetupMap = {
         alumno: submitAlumnoAccountSetup,
         profesor: submitProfesorAccountSetup,
@@ -149,6 +154,8 @@ const AccountSetupClientForm = () => {
         variant: "destructive",
         description: `Algo salió mal.\n${error as Error}`,
       });
+    } finally {
+      stopLoading();
     }
   };
 
@@ -171,8 +178,12 @@ const AccountSetupClientForm = () => {
                     ¿Eres alumno o profesor?
                   </FormLabel>
                   <Select
-                    onValueChange={(e) => {
+                    onValueChange={(e: "alumno" | "profesor") => {
                       field.onChange(e);
+                      form.setValue(
+                        e === "alumno" ? "profesor" : "alumno",
+                        undefined
+                      );
                       setEsAlumno(e === "alumno");
                     }}
                   >
@@ -373,7 +384,7 @@ const AccountSetupClientForm = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="block mb-2">
-                        Ingresa tus gustos académicos
+                        Indica tus especialidades
                       </FormLabel>
                       {especialidadesQuery.isLoading ? (
                         <LoaderCircle className="animate-spin" />
@@ -420,33 +431,90 @@ const AccountSetupClientForm = () => {
                 />
               </>
             ) : (
-              <FormField
-                control={form.control}
-                name="profesor.biografia"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Biografía</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Cuéntanos sobre ti..."
-                        className="resize-none"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <>
+                <FormField
+                  control={form.control}
+                  name="profesor.especialidades"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="block mb-2">
+                        Ingresa tus gustos académicos
+                      </FormLabel>
+                      {especialidadesQuery.isLoading ? (
+                        <LoaderCircle className="animate-spin" />
+                      ) : (
+                        <FancyMultiSelect
+                          data={(
+                            especialidadesQuery.data as IEspecialidad[]
+                          ).map((e) => ({
+                            value: e.id,
+                            label: e.especialidad,
+                          }))}
+                          selected={field.value}
+                          setSelected={field.onChange}
+                        />
+                      )}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* Edad */}
+                <FormField
+                  control={form.control}
+                  name="profesor.edad"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>¿Qué edad tienes?</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          min={4}
+                          placeholder="Tu edad"
+                          {...field}
+                          title="Edad"
+                          pattern="[0-9]*"
+                          onChange={(e) => {
+                            if (isNumeric(e.currentTarget.value))
+                              field.onChange(parseInt(e.currentTarget.value));
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="profesor.biografia"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Biografía</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Cuéntanos sobre ti..."
+                          className="resize-none"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </>
             )}
           </fieldset>
 
           {/* Botón de envío */}
-          <Button
-            type="submit"
-            className="w-full bg-primary hover:bg-primaryg-500 text-white font-semibold py-2 rounded"
-          >
-            Enviar
-          </Button>
+          {isLoading ? (
+            <Loader2 className="animate-spin" />
+          ) : (
+            <Button
+              type="submit"
+              className="w-full bg-primary hover:bg-primaryg-500 text-white font-semibold py-2 rounded"
+            >
+              Enviar
+            </Button>
+          )}
         </form>
       </Form>
     </div>

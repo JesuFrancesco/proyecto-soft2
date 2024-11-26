@@ -12,6 +12,23 @@ export class AccountDAO
 {
   private prisma = new PrismaClient();
 
+  async getRole(id: string | number) {
+    const role = await this.prisma.account.findUnique({
+      where: {
+        id: id as string,
+      },
+      select: {
+        role: true,
+      },
+    });
+
+    if (!role) {
+      throw boom.notFound();
+    }
+
+    return role;
+  }
+
   async findByPk(id: string | number) {
     const account = await this.prisma.account.findUnique({
       where: {
@@ -77,7 +94,7 @@ export class AccountDAO
             nombre: data.nombre,
           },
         },
-        role: "student",
+        role: "alumno",
       },
 
       include: {
@@ -100,23 +117,41 @@ export class AccountDAO
   }
 
   async setupProfesorAccount(accountId: string, data: any) {
-    const acc = await this.prisma.account.update({
+    const { especialidades } = data as { especialidades: number[] };
+
+    const updatedAccount = await this.prisma.account.update({
       where: {
         id: accountId,
       },
+
       data: {
         profesor: {
           create: {
-            ...data,
+            nombre: data.nombre,
+            edad: data.edad,
+            biografia: data.biografia,
           },
         },
+        role: "profesor",
       },
+
       include: {
         profesor: true,
       },
     });
 
-    return acc;
+    const { profesor } = updatedAccount;
+
+    if (profesor !== null && especialidades.length !== 0) {
+      await this.prisma.profesorEspecialidad.createMany({
+        data: especialidades.map((e) => ({
+          profesorId: profesor.id,
+          especialidadId: e,
+        })),
+      });
+    }
+
+    return updatedAccount;
   }
 
   async update(id: string | number, cambios: Partial<Account>) {

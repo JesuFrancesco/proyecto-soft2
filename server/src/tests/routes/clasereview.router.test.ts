@@ -2,12 +2,17 @@ import request from "supertest";
 import express, { Request, Response, NextFunction } from "express";
 import router from "../../mvc/controller/router/clasereview.router";
 
+import { ClaseReviewDAO } from "../../mvc/model/dao/clasereview.dao";
+import { AlumnoDAO } from "../../mvc/model/dao/alumno.dao";
+import { sb } from "../../app";
+
 // Mock de las dependencias
 jest.mock("../../mvc/model/dao/clasereview.dao");
 jest.mock("../../mvc/model/dao/alumno.dao");
 jest.mock("../../mvc/controller/middleware/authorization.handler", () => ({
   authHandler: jest.fn((req, res, next) => next()), // Mock del middleware
 }));
+
 jest.mock("../../app", () => ({
   sb: {
     auth: {
@@ -15,10 +20,6 @@ jest.mock("../../app", () => ({
     },
   },
 }));
-
-import { ClaseReviewDAO } from "../../mvc/model/dao/clasereview.dao";
-import { AlumnoDAO } from "../../mvc/model/dao/alumno.dao";
-import { sb } from "../../app";
 
 // Configurar la aplicación
 const app = express();
@@ -56,7 +57,9 @@ describe("Clasereview Router", () => {
         { id: 2, content: "Excelente clase" },
       ];
 
-      (ClaseReviewDAO.prototype.findAll as jest.Mock).mockResolvedValue(mockReviews);
+      (ClaseReviewDAO.prototype.findAll as jest.Mock).mockResolvedValue(
+        mockReviews
+      );
 
       const res = await request(app).get("/");
 
@@ -89,8 +92,12 @@ describe("Clasereview Router", () => {
       const mockAlumno = { id: 456 };
       const mockReview = { id: 789, content: "Buen trabajo" };
 
-      (AlumnoDAO.prototype.findByAccountId as jest.Mock).mockResolvedValue(mockAlumno);
-      (ClaseReviewDAO.prototype.create as jest.Mock).mockResolvedValue(mockReview);
+      (AlumnoDAO.prototype.findByAccountId as jest.Mock).mockResolvedValue(
+        mockAlumno
+      );
+      (ClaseReviewDAO.prototype.create as jest.Mock).mockResolvedValue(
+        mockReview
+      );
 
       const res = await request(app)
         .post("/")

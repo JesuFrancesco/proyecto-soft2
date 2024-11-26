@@ -27,7 +27,7 @@ model Account {
   updatedAt DateTime @default(now()) @map("updated_at")
 
   alumno   Alumno?   @relation("AccountAlumno")
-  profesor Profesor? @relation("AccountProfessores")
+  profesor Profesor? @relation("AccountProfesor")
   pais     Pais?     @relation(fields: [paisId], references: [id])
 
   paisId         String? @map("pais_id")
@@ -97,11 +97,11 @@ model Profesor {
   chats            Chat[]
   clases           Clase[]                @relation("ProfesorClases")
   resenasAsociadas ProfesorReview[]       @relation("ProfesorReviews")
-  cuenta           Account?               @relation("AccountProfessores", fields: [accountId], references: [id])
+  account          Account?               @relation("AccountProfesor", fields: [accountId], references: [id])
 
   profesorSubEspecialidades ProfesorSubEspecialidad[]
-  accountId                 String?                   @unique @map("account_id") @db.Uuid
 
+  accountId String?  @unique @map("account_id") @db.Uuid
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @map("updated_at")
 

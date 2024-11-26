@@ -1,9 +1,9 @@
 import { IClase } from "./IClase";
 
 export interface IAlumnoClase {
-  nota: number;
   alumnoId: number;
   claseId: number;
+  nota: number;
   createdAt: Date;
   updatedAt: Date;
   clase: IClase;

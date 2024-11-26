@@ -1,4 +1,3 @@
-
 import React from "react";
 import { IClaseReview } from "@/interfaces/IReview";
 import { RadarScoreChart } from "./resenias/RadarScoreChart";
@@ -33,10 +32,15 @@ const getClaseAverageScores = (data: IClaseReview[]) => {
   }));
 };
 
-
-const TabResenias = ({ reseñas, clase }: { reseñas: IClaseReview[], clase: IClase }) => {
+const TabResenias = ({
+  reseñas,
+  clase,
+}: {
+  reseñas: IClaseReview[];
+  clase: IClase;
+}) => {
   const averageScores = getClaseAverageScores(reseñas);
-  const handleSubmit = async (data: any) => {
+  const handleSubmit = async (data: IClaseReview) => {
     try {
       const response = await postReseniaDeClase({
         ...data,
@@ -47,24 +51,26 @@ const TabResenias = ({ reseñas, clase }: { reseñas: IClaseReview[], clase: ICl
       console.error("Error al enviar la reseña:", error);
     }
   };
-  
+
   return (
     <div className="space-y-6 overflow-y-auto h-[34rem]">
-
       {reseñas.length > 0 && (
         <div className="mt-4 border-t relative self-center w-full md:w-3/4 border-gray-300 dark:border-gray-600 pt-4">
-          <h3 className="text-lg font-semibold mb-4">Promedio de habilidades</h3>
+          <h3 className="text-lg font-semibold mb-4">
+            Promedio de habilidades
+          </h3>
           <RadarScoreChart data={averageScores} />
         </div>
       )}
 
       {reseñas.length > 0 ? (
-        reseñas.map((resena, index) => <ClaseReview key={index} resena={resena} />)
+        reseñas.map((resena, index) => (
+          <ClaseReview key={index} resena={resena} />
+        ))
       ) : (
         <p>No hay reseñas disponibles.</p>
       )}
       <FormularioResena onSubmit={handleSubmit} claseId={clase.id} />
-
     </div>
   );
 };

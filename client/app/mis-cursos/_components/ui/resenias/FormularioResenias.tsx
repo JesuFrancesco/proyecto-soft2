@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import InteractiveStarRating from "./InteractiveStarRating";
 import { Button } from "@/components/ui/button";
+import { IClaseReview } from "@/interfaces/IReview";
 
 const FormularioResena = ({
   onSubmit,
   claseId,
 }: {
-  onSubmit: (data: any) => void;
+  onSubmit: (data: IClaseReview) => void;
   claseId: number;
 }) => {
   const [descripcion, setDescripcion] = useState("");
@@ -30,12 +31,19 @@ const FormularioResena = ({
     e.preventDefault();
 
     const nuevaResena = {
-      descripcion,
-      ...ratings,
       claseId,
+      descripcion,
+
+      ensenanza: ratings.ensenanza ?? 0,
+      puntualidad: ratings.puntualidad ?? 0,
+      disponibilidad: ratings.disponibilidad ?? 0,
+      comunicacion: ratings.comunicacion ?? 0,
+      evaluacion: ratings.evaluacion ?? 0,
+      empatia: ratings.empatia ?? 0,
+
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-    };
+    } satisfies IClaseReview;
 
     onSubmit(nuevaResena);
 

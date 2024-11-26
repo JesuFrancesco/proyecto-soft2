@@ -34,7 +34,7 @@ export interface IClaseReview {
   empatia?: number;
 
   profesorId?: number;
-  alumnoId?: number;
+  claseId?: number;
 
   createdAt: string;
   updatedAt: string;

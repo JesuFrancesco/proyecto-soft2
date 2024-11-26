@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import BotonMatricula from "./ui/BotonMatricula";
 import { useQuery } from "@tanstack/react-query";
-import { getMyClases } from "@/service/account.service";
+import { fetchCurrentAlumnoClases } from "@/service/account.service";
 import { IAlumnoClase } from "@/interfaces/IAlumnoClase";
 import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/common/CTA";
@@ -13,7 +13,7 @@ const AlumnoCTAButton = ({ id }: { id: number }) => {
     IAlumnoClase[] | undefined
   >({
     queryKey: ["mis-cursos"],
-    queryFn: () => getMyClases(),
+    queryFn: () => fetchCurrentAlumnoClases(),
     enabled: true,
     retry: false,
   });

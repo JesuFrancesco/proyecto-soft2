@@ -36,6 +36,20 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/role", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const role = await accountService.getRole(id);
+
+    res.json(role);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.patch("/update-country", async (req, res, next) => {
   try {
     const data = req.body;
@@ -217,6 +231,22 @@ profesorRouter.get("/", async (req, res, next) => {
     const alumno = await profesorService.findByAccountId(id);
 
     res.json(alumno);
+  } catch (error) {
+    next(error);
+  }
+});
+
+profesorRouter.get("/clases", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const profesor = await profesorService.findByAccountId(id);
+
+    const clases = await profesorService.findProfesorClases(profesor.id);
+
+    res.json(clases);
   } catch (error) {
     next(error);
   }

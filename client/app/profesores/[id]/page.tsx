@@ -144,14 +144,14 @@ export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
           <p className=" ">
             ✉️ Email:{" "}
             <Link
-              href={profesor.cuenta.email ?? "felix@ejemplo.com"}
+              href={profesor.account.email ?? "felix@ejemplo.com"}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              {profesor.cuenta.email ?? "felix@ejemplo.com"}
+              {profesor.account.email ?? "felix@ejemplo.com"}
             </Link>
           </p>
           <p className=" ">
-            📞 Teléfono: {profesor.cuenta.phone ?? "+51 999 999 999"}
+            📞 Teléfono: {profesor.account.phone ?? "+51 999 999 999"}
           </p>
         </div>
       </div>
