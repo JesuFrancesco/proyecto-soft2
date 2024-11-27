@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useLoading } from "@/hooks/use-loading";
 import { toast } from "@/hooks/use-toast";
 import { IMaterialClase } from "@/interfaces/IMaterialEducativo";
-import { clientDownloadItem } from "@/utils/utils";
+import { serverDownloadItem } from "@/service/download.service";
+// import { clientDownloadItem } from "@/utils/utils";
 import { Download, Loader2 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -15,11 +16,23 @@ const MaterialCursoWidget = ({ item }: { item: IMaterialClase }) => {
       startLoading();
       toast({ description: "¡Iniciando descarga!" });
 
-      await clientDownloadItem(item.material.assetUrl, item.material.nombre);
+      const { buffer, type } = await serverDownloadItem(item.material.assetUrl);
 
+      const reconstructedBlob = new Blob([new Uint8Array(buffer)], { type });
+
+      const blobUrl = URL.createObjectURL(reconstructedBlob);
+
+      const anchor = document.createElement("a");
+      anchor.href = blobUrl;
+      anchor.download = item.material.nombre;
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+
+      URL.revokeObjectURL(blobUrl);
       toast({ description: "¡Descarga completada!" });
     } catch (error) {
-      // manejo de errores
+      toast({ variant: "destructive", description: "Algo salio mal" });
     } finally {
       stopLoading();
     }

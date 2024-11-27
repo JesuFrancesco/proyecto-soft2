@@ -48,7 +48,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
 
         {/* Informacion general */}
         <div className="flex-1 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-          <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">
+          <h2 className="text-3xl font-semibold mb-4 border-b-2 border-primary pb-2">
             Información General
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,10 +84,10 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
 
       {/* Resumen de profesor */}
       <div className="my-8">
-        <hr className="border-gray-300" />
+        <hr className="border-primary" />
       </div>
       <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
-        <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">
+        <h2 className="text-3xl font-semibold mb-4 border-b-2 border-primary pb-2">
           Información del Profesor
         </h2>
         <p>
@@ -100,7 +100,7 @@ export default async function CursoDetalle({ params }: CursoDetalleProps) {
 
       {/* Material de clase */}
       <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2">
+        <h2 className="text-3xl font-semibold mb-4 border-b-2 border-primary pb-2">
           Material de Clase
         </h2>
         {curso.materialClase && curso.materialClase.length > 0 ? (
