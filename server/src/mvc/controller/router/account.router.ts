@@ -129,6 +129,20 @@ router.post("/setup-profesor", async (req, res, next) => {
   }
 });
 
+router.delete("/", async (req, res, next) => {
+  try {
+    const user = await sb.auth.getUser();
+
+    const id = user.data.user?.id as string;
+
+    const account = await accountService.deleteByPk(id);
+
+    res.json(account);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // #=====================
 // | /account/alumno/...
 // #=====================

@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Filter, Loader2 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { UseFormReturn } from "react-hook-form";
-import { fetchClasesByQuery } from "@/service/clase.service";
+import { fetchAllClases, fetchClasesByQuery } from "@/service/clase.service";
 import { IClase } from "@/interfaces/IClase";
 import { CursoQuerySchemaType } from "@/schema/CursoFilterSchema";
 
@@ -25,7 +25,10 @@ export function TextInputCursosFilter({
 }) {
   const { refetch } = useQuery<IClase[]>({
     queryKey: ["clases"],
-    queryFn: () => fetchClasesByQuery(form.getValues()),
+    queryFn: () =>
+      form.getValues().query
+        ? fetchClasesByQuery(form.getValues())
+        : fetchAllClases(),
     enabled: false,
     retry: false,
   });

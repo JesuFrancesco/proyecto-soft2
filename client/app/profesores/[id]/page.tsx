@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ProfesorRadarScore } from "./_components/ProfesorRadarChart";
 import ProfesorReview from "./_components/ProfesorReview";
 import { IProfesorReview } from "@/interfaces/IReview";
+import { Badge } from "@/components/ui/badge";
 
 interface ProfesorDetalleProps {
   params: {
@@ -80,8 +81,9 @@ export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
         <div className="mt-8 border-t border-gray-300 dark:border-gray-600 pt-4">
           <h3 className="text-lg font-semibold mb-2">Biografía</h3>
           <p className="text-justify">
-            {profesor.biografia ??
-              "Felix es un apasionado profesor de matemáticas con más de 10 años de experiencia en la enseñanza. Su enfoque pedagógico se centra en hacer que los conceptos complejos sean accesibles y comprensibles para todos los estudiantes. Ha participado en diversas conferencias y talleres sobre enseñanza de matemáticas y está comprometido con el desarrollo académico de sus alumnos."}
+            {profesor.biografia ?? (
+              <i>El profesor no ha adjuntado biografía...</i>
+            )}
           </p>
         </div>
 
@@ -106,8 +108,12 @@ export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
                       hour12: true,
                     })}
                   </span>{" "}
-                  {clase.esVirtual && <span>(Virtual)</span>}
-                  {clase.esGrupal && <span>(Grupal)</span>}
+                  {clase.esVirtual && (
+                    <Badge className="font-bold">Virtual</Badge>
+                  )}{" "}
+                  {clase.esGrupal && (
+                    <Badge className="font-bold">Grupal</Badge>
+                  )}
                 </li>
               ))}
             </ul>

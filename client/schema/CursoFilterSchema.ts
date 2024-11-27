@@ -7,7 +7,7 @@ export const CursoFilterSchema = z.object({
 export type CursoFilterSchemaType = z.infer<typeof CursoFilterSchema>;
 
 export const CursoQuerySchema = z.object({
-  query: z.string().min(1, "Ingresa un término de búsqueda"),
+  query: z.string(),
 });
 
 export type CursoQuerySchemaType = z.infer<typeof CursoQuerySchema>;

@@ -20,7 +20,11 @@ export const headerData: HeaderProps = {
           href: "/cursos",
         },
         {
-          label: "Preferencia",
+          label: "Por horario",
+          href: "/cursos-calendario",
+        },
+        {
+          label: "Por preferencia",
           href: "/cursos-por-preferencia",
         },
       ],

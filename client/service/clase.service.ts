@@ -1,11 +1,10 @@
 "use server";
 import { Config } from "@/config/credentials";
 import { IClase } from "@/interfaces/IClase";
-import { IEspecialidad } from "@/interfaces/IEspecialidad";
 import { CursoFilterSchemaType } from "@/schema/CursoFilterSchema";
 import axios from "axios";
 
-export const fetchClases = async () => {
+export const fetchAllClases = async () => {
   const { data } = await axios.get<IClase[]>(
     Config.EXPRESS_API_URL + "/clases"
   );

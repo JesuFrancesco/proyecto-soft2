@@ -3,13 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { IClase } from "@/interfaces/IClase";
 import {
-  fetchClases,
+  fetchAllClases,
   fetchClasesByEspecialidad,
 } from "@/service/clase.service";
 import { Loader2 } from "lucide-react";
@@ -21,7 +18,6 @@ import {
   CursoQuerySchemaType,
 } from "@/schema/CursoFilterSchema";
 import { TextInputCursosFilter } from "./ui/InputFilter";
-import { Card } from "@/components/ui/card";
 import CursosGrid from "@/components/common/CursosGrid";
 
 const WidgetCursos = () => {
@@ -52,7 +48,7 @@ const WidgetCursos = () => {
     queryKey: ["clases"],
     queryFn:
       checkboxForm.getValues().items.length === 0
-        ? () => fetchClases()
+        ? () => fetchAllClases()
         : () => fetchClasesByEspecialidad(checkboxForm.getValues()),
     enabled: true,
     retry: true,

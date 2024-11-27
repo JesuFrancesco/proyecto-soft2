@@ -23,7 +23,7 @@ const CursosGrid = ({ clases }: { clases: IClase[] }) => {
           </div>
 
           <h3 className="text-lg font-semibold line-clamp-2">
-            {course.tema.subespecialidad}
+            {course.id} - {course.tema.subespecialidad}
           </h3>
 
           <p className="text-gray-600 dark:text-gray-300 mt-2">

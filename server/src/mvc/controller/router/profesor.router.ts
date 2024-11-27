@@ -18,7 +18,8 @@ router.get("/:id", async (req, res, next) => {
 
 router.get("/", async (req, res, next) => {
   try {
-    const profesores = await service.findAll();
+    // const profesores = await service.findAll();
+    const profesores = await service.findAllByRating();
     res.json(profesores);
   } catch (error) {
     next(error);

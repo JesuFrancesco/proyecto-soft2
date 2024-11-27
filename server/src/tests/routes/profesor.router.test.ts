@@ -1,7 +1,7 @@
 import request from "supertest";
 import express, { Request, Response, NextFunction } from "express";
 import router from "../../mvc/controller/router/profesor.router";
-import boom from "@hapi/boom"
+import boom from "@hapi/boom";
 import { ProfesorDAO } from "../../mvc/model/dao/profesor.dao";
 
 // Mock de las dependencias
@@ -55,9 +55,8 @@ describe("Profesor Router", () => {
       );
 
       const res = await request(app).get("/profesores/999");
-      
+
       console.log(res);
-      
 
       expect(res.status).toBe(404);
       expect(res.body).toEqual({ message: "Profesor no encontrado" });
@@ -82,7 +81,7 @@ describe("Profesor Router", () => {
         { id: 2, nombre: "Profesor B" },
       ];
 
-      (ProfesorDAO.prototype.findAll as jest.Mock).mockResolvedValue(
+      (ProfesorDAO.prototype.findAllByRating as jest.Mock).mockResolvedValue(
         mockProfesores
       );
 
@@ -93,7 +92,7 @@ describe("Profesor Router", () => {
     });
 
     it("debería manejar errores al obtener los profesores", async () => {
-      (ProfesorDAO.prototype.findAll as jest.Mock).mockRejectedValue(
+      (ProfesorDAO.prototype.findAllByRating as jest.Mock).mockRejectedValue(
         new Error("Error al obtener profesores")
       );
 

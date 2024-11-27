@@ -168,3 +168,22 @@ export const updatePeruvianLocation = async (data: {
     return false;
   }
 };
+
+export const deleteAccount = async () => {
+  try {
+    const headers = await getAuthHeaders();
+    const response = await axios.delete(Config.EXPRESS_API_URL + "/account", {
+      headers,
+    });
+
+    return response;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      return axiosErrorHandler(error);
+    }
+    console.error("error");
+    console.error(error);
+
+    return false;
+  }
+};

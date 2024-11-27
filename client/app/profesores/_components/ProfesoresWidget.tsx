@@ -15,6 +15,7 @@ import { getAllProfesores } from "@/service/profesor.service";
 import { Loader2 } from "lucide-react";
 import ProfesoresInputFilter from "./ProfesoresFilter";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 const ProfesoresWidget = () => {
   const { data: profesores, isFetching } = useQuery({
@@ -27,8 +28,6 @@ const ProfesoresWidget = () => {
     () => !profesores || profesores.length === 0,
     [profesores]
   );
-
-  const router = useRouter();
 
   if (isFetching) {
     return (
@@ -54,23 +53,22 @@ const ProfesoresWidget = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Card className="shadow-md border rounded-xl hover:shadow-2xl transition duration-300">
-                <CardHeader
-                  onClick={() => router.push(`/profesores/${profesor.id}`)}
-                  className="flex flex-col items-center cursor-pointer p-4"
-                >
-                  <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
-                    <Image
-                      src={profesor.imageUrl}
-                      width={512}
-                      height={512}
-                      alt={profesor.nombre}
-                      className="object-cover"
-                    />
-                  </div>
-                  <CardTitle className="text-xl font-semibold mt-4">
-                    {profesor.nombre}
-                  </CardTitle>
-                </CardHeader>
+                <Link href={`/profesores/${profesor.id}`}>
+                  <CardHeader className="flex flex-col items-center cursor-pointer p-4">
+                    <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
+                      <Image
+                        src={profesor.imageUrl}
+                        width={512}
+                        height={512}
+                        alt={profesor.nombre}
+                        className="object-cover"
+                      />
+                    </div>
+                    <CardTitle className="text-xl font-semibold mt-4">
+                      {profesor.nombre}
+                    </CardTitle>
+                  </CardHeader>
+                </Link>
                 <CardContent className="p-4">
                   <p className="text-sm mb-2">
                     <span className="font-medium">Edad:</span> {profesor.edad}

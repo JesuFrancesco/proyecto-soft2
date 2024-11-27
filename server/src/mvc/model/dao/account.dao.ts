@@ -170,7 +170,13 @@ export class AccountDAO
       where: {
         id: id as string,
       },
+      include: {
+        alumno: true,
+        profesor: true,
+      },
     });
+    console.log(cuentaEliminada);
+
     return cuentaEliminada;
   }
 }

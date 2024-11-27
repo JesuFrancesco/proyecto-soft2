@@ -23,7 +23,7 @@ const featuresHome = {
       icon: Search,
       callToAction: {
         text: "Ver lista de materias",
-        href: "/",
+        href: "/cursos",
       },
     },
     {
@@ -33,7 +33,7 @@ const featuresHome = {
       icon: ListCheck,
       callToAction: {
         text: "Ver lista de profesores",
-        href: "/",
+        href: "/profesores",
       },
     },
     {
@@ -43,7 +43,7 @@ const featuresHome = {
       icon: MapPinCheckInside,
       callToAction: {
         text: "Ver disponibilidad de horarios",
-        href: "/",
+        href: "/cursos-calendario",
       },
     },
   ],
