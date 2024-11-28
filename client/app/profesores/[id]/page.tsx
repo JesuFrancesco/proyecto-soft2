@@ -47,6 +47,8 @@ export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
     `${Config.EXPRESS_API_URL}/profesores/${id}`
   );
 
+  const { account } = profesor;
+
   return (
     <div className="flex flex-col items-center justify-center p-1 md:p-6">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 w-full md:w-3/4">
@@ -150,14 +152,14 @@ export default async function ProfesoresPage({ params }: ProfesorDetalleProps) {
           <p className=" ">
             ✉️ Email:{" "}
             <Link
-              href={profesor.account.email ?? "felix@ejemplo.com"}
+              href={account && account.email ? account.email : "felix@ejemplo.com"}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              {profesor.account.email ?? "felix@ejemplo.com"}
+              {account && account.email ? account.email : "felix@ejemplo.com"}
             </Link>
           </p>
           <p className=" ">
-            📞 Teléfono: {profesor.account.phone ?? "+51 999 999 999"}
+            📞 Teléfono: {account && account.phone ? account.phone : "+51 999 999 999"}
           </p>
         </div>
       </div>
