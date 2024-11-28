@@ -6,7 +6,6 @@ import { ClaseReviewDAO } from "../../mvc/model/dao/clasereview.dao";
 import { AlumnoDAO } from "../../mvc/model/dao/alumno.dao";
 import { sb } from "../../app";
 
-// Mock de las dependencias
 jest.mock("../../mvc/model/dao/clasereview.dao");
 jest.mock("../../mvc/model/dao/alumno.dao");
 jest.mock("../../mvc/controller/middleware/authorization.handler", () => ({
@@ -21,12 +20,10 @@ jest.mock("../../app", () => ({
   },
 }));
 
-// Configurar la aplicación
 const app = express();
 app.use(express.json());
 app.use("/", router);
 
-// Interfaz para manejar errores personalizados
 interface CustomError extends Error {
   output?: {
     statusCode?: number;
@@ -34,7 +31,6 @@ interface CustomError extends Error {
   };
 }
 
-// Middleware para capturar errores
 app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
   res.status(err.output?.statusCode || 500).json({
     message: err.message || "Error interno del servidor",
@@ -43,11 +39,11 @@ app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
 
 describe("Clasereview Router", () => {
   beforeEach(() => {
-    jest.clearAllMocks(); // Limpia los mocks antes de cada prueba
+    jest.clearAllMocks();
   });
 
   afterAll(() => {
-    jest.restoreAllMocks(); // Restaura todos los mocks después de las pruebas
+    jest.restoreAllMocks();
   });
 
   describe("GET /", () => {
@@ -101,7 +97,7 @@ describe("Clasereview Router", () => {
 
       const res = await request(app)
         .post("/")
-        .set("Authorization", "Bearer token123") // Agregar encabezado de autorización si es necesario
+        .set("Authorization", "Bearer token123")
         .send({ content: "Buen trabajo" });
 
       expect(res.status).toBe(201);
